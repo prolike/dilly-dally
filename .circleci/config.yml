@@ -118,7 +118,7 @@ jobs:
 
 workflows:
   version: 2
-  gitlabelwizard:
+  dillydally:
     jobs:
       - integrate:
           filters:
