@@ -46,7 +46,7 @@ limitations under the License.
         var provider = new firebase.auth.GithubAuthProvider();
         // [END createprovider]
         // [START addscopes]
-        provider.addScope('repo');
+        //provider.addScope('repo');
         // [END addscopes]
         // [START signin]
         firebase.auth().signInWithRedirect(provider);
@@ -119,6 +119,8 @@ limitations under the License.
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
           document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('firebase-UID').textContent = uid;
+          document.getElementById('firebase-name').textContent = displayName;
           document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
           // [END_EXCLUDE]
         } else {
@@ -128,6 +130,8 @@ limitations under the License.
           document.getElementById('quickstart-sign-in').textContent = 'Sign in with GitHub';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
+          document.getElementById('firebase-UID').textContent = 'null';
+          document.getElementById('firebase-name').textContent = 'null';
           // [END_EXCLUDE]
         }
         // [START_EXCLUDE]
@@ -171,10 +175,14 @@ limitations under the License.
           <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in with GitHub</button>
 
           <!-- Container where we'll display the user details -->
-          <div class="quickstart-user-details-container">
+            <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <div>Firebase auth <code>currentUser</code> object value:</div>
+            <div>Firebase auth <code>currentUser</code> object value:</div>     
             <pre><code id="quickstart-account-details">null</code></pre>
+            <div>Firebase  <code>user ID</code></div>     
+            <pre><code id="firebase-UID">null</code></pre>
+             <div>Firebase  <code>full Name</code></div>     
+            <pre><code id="firebase-name">null</code></pre>
             <div>GitHub OAuth Access Token:</div>
             <pre><code id="quickstart-oauthtoken">null</code></pre>
           </div>
