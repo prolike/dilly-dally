@@ -11,62 +11,70 @@
 </head>
 
 <body>
-	<body>
-		<h1>Test firebase firestore</h1>
-		<input type="text" id="userName" placeholder="User name" />
-		<input type="text" id="date" placeholder="Date" />
-		<input type="text" id="project" placeholder="Project name" />
-		<input type="number" id="hours" placeholder="Work hours" />
-		<input type="text" id="category" placeholder="Work category" />
-		<input type="text" id="comment" placeholder="Comment" />
-		<button id="saveMe">Save</button>
+	<h1>Test firebase firestore</h1>
+	<input type="text" id="userName" placeholder="User name" />
+	<input type="text" id="date" placeholder="Date" />
+	<input type="text" id="project" placeholder="Project name" />
+	<input type="text" accept="" id="hours" placeholder="Work hours" />
+	<input type="text" id="category" placeholder="Work category" />
+	<input type="text" id="comment" placeholder="Comment" />
+	<button id="saveMe" type="button">Save</button>
 
-		<script>
-			// Config for firebase connection
-			var config = {
-				apiKey: '### INSERT API KEY HERE###',
-				authDomain: 'eur3 (europe-west) ',
-				projectId: 'prolike-stack'
-			};
+	<script>
+		// Config for firebase connection
+		var config = {
+			apiKey: '### INSERT API KEY HERE###',
+			authDomain: 'eur3 (europe-west) ',
+			projectId: 'prolike-stack'
+		};
 
-			// Intalize the firebase app
-			firebase.initializeApp(config);
-			let db = firebase.firestore();
+		// Intalize the firebase app
+		firebase.initializeApp(config);
+		let db = firebase.firestore();
 
-			// The input values from index.html
-			const inputUserName = document.querySelector("#userName");
-			const inputDate = document.querySelector("#date");
-			const inputProject = document.querySelector("#project");
-			const inputCategory = document.querySelector("#category");
-			const inputWorkHours = document.querySelector("#hours");
-			const inputComment = document.querySelector("#comment");
-			const button = document.querySelector("#saveMe");
+		// The input values from index.html
+		const inputUserName = document.querySelector("#userName");
+		const inputDate = document.querySelector("#date");
+		const inputProject = document.querySelector("#project");
+		const inputCategory = document.querySelector("#category");
+		const inputWorkHours = document.querySelector("#hours");
+		const inputComment = document.querySelector("#comment");
+		const button = document.querySelector("#saveMe");
 
-			// When click, insert the data into firestore
-			button.addEventListener("click", function () {
-				const data = {
-					date: inputDate.value,
-					project: inputProject.value,
-					category: inputCategory.value,
-					hours: inputWorkHours.value,
-					comment: inputComment.value
-				}
-				db.collection("users").add(data)
-					.then(function (docRef) {
-						console.log("Document written with data");
-					})
-					.catch(function (error) {
-						console.error("Error adding document: ", error);
-					});
+		// When click, insert the data into firestore
+		button.addEventListener("click", function () {
+			const data = {
+				date: inputDate.value,
+				project: inputProject.value,
+				category: inputCategory.value,
+				hours: inputWorkHours.value,
+				comment: inputComment.value
+			}
+			db.collection("users").add(data)
+				.then(function (docRef) {
+					console.log("Data was saved", docRef);
+				})
+				.catch(function (error) {
+					console.error("Error saving data: ", error);
+				});
+			clearInput();
+		});
 
-			});
+		//Clear input from textfields
+		function clearInput() {
+			document.getElementById('userName').value = "";
+			document.getElementById('date').value = "";
+			document.getElementById('project').value = "";
+			document.getElementById('hours').value = "";
+			document.getElementById('category').value = "";
+			document.getElementById('comment').value = "";
+		}
 			/*getRealTimeUpdates = function(){
-						db.collection("users").doc("test").onSnapshot(function(doc){
-							console.log(doc.data())
-						})
-					}
-					getRealTimeUpdates();*/
-		</script>
-	</body>
-
+	db.collection("users").doc("test").onSnapshot(function(doc){
+		console.log(doc.data())
+	})
+}
+getRealTimeUpdates();*/
+	</script>
+</body>
 </html>
