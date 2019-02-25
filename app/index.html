@@ -5,20 +5,47 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="">
+	<link rel="stylesheet" href="./style.css">
 	<title>Welcome to Firebase Hosting</title>
 	<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
 <body>
-	<h1>Test firebase firestore</h1>
-	<input type="text" id="userName" placeholder="User name" />
-	<input type="text" id="date" placeholder="Date" />
-	<input type="text" id="project" placeholder="Project name" />
-	<input type="text" accept="" id="hours" placeholder="Work hours" />
-	<input type="text" id="category" placeholder="Work category" />
-	<input type="text" id="comment" placeholder="Comment" />
-	<button id="saveMe" type="button">Save</button>
+	<div class="container-fluid">
+		<div class="row m-auto">
+			<div class="col-lg-12 timereg">
+				<h1><img class="logo" src="./prolike_logo.jpg" alt="project_logo">Prolike work hours</h1>
+				<label>User</label>
+				<input type="text" id="userName" placeholder="User name" />
+				<label>Project</label>
+				<input type="text" id="project" placeholder="Project name" />
+				<label>Date</label>
+				<input type="text" id="date" placeholder="YYYY/MM/DD" />
+				<label>Start time</label>
+				<input type="text" id="start" placeholder="HH:mm" />
+				<label>End time</label>
+				<input type="text" id="end" placeholder="HH:mm" />
+				<label>Category</label>
+				<select id="category">
+					<option value="" disabled selected>Select category</option>
+					<option value="prolike">Prolike</option>
+					<option value="honeypot">Honeypot</option>
+					<option value="explore">Explore</option>
+					<option value="internship">Internship</option>
+					<option value="social">Social</option>
+				</select>
+				<label>Comment</label>
+				<input class="textarea" type="text" id="comment" placeholder="Work description" />
+				<button id="saveMe" type="button" class="btn btn-primary">Save</button>
+			</div>
+		</div>
+	</div>
 
 	<script>
 		// Config for firebase connection
@@ -34,25 +61,28 @@
 
 		// The input values from index.html
 		const inputUserName = document.querySelector("#userName");
-		const inputDate = document.querySelector("#date");
 		const inputProject = document.querySelector("#project");
+		const inputDate = document.querySelector("#date");
+		const inputStart = document.querySelector("#start");
+		const inputEnd = document.querySelector("#end");
 		const inputCategory = document.querySelector("#category");
-		const inputWorkHours = document.querySelector("#hours");
 		const inputComment = document.querySelector("#comment");
 		const button = document.querySelector("#saveMe");
+		console.log(firebase.firestore.FieldValue.serverTimestamp());
 
 		// When click, insert the data into firestore
 		button.addEventListener("click", function () {
 			const data = {
-				date: inputDate.value,
 				project: inputProject.value,
+				date: inputDate.value,
+				time_start: inputStart.value,
+				time_end: inputEnd.value,
 				category: inputCategory.value,
-				hours: inputWorkHours.value,
 				comment: inputComment.value
 			}
 			db.collection("users").add(data)
 				.then(function (docRef) {
-					console.log("Data was saved", docRef);
+					console.log("Data was saved in document", docRef);
 				})
 				.catch(function (error) {
 					console.error("Error saving data: ", error);
@@ -63,18 +93,29 @@
 		//Clear input from textfields
 		function clearInput() {
 			document.getElementById('userName').value = "";
-			document.getElementById('date').value = "";
 			document.getElementById('project').value = "";
-			document.getElementById('hours').value = "";
-			document.getElementById('category').value = "";
+			document.getElementById('date').value = "";
+			document.getElementById('start').value = "";
+			document.getElementById('end').value = "";
+			document.getElementById('category').selectedIndex = 0;
 			document.getElementById('comment').value = "";
 		}
 			/*getRealTimeUpdates = function(){
-	db.collection("users").doc("test").onSnapshot(function(doc){
-		console.log(doc.data())
-	})
+db.collection("users").doc("test").onSnapshot(function(doc){
+console.log(doc.data())
+})
 }
 getRealTimeUpdates();*/
 	</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 </body>
+
 </html>
