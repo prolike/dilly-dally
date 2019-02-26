@@ -5,10 +5,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="">
-	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./css/style.css">
 	<title>Welcome to Firebase Hosting</title>
-	<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase-firestore.js"></script>
+	<script src="/__/firebase/5.7.0/firebase-app.js"></script>
+	<script src="/__/firebase/5.7.0/firebase-firestore.js"></script>
+    <script src="/__/firebase/5.7.0/firebase-auth.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -17,129 +20,55 @@
 </head>
 
 <body>
-	<div class="container-fluid">
+	<center><button disabled class="btn btn-primary" id="login_button">Sign in with Google</button></center>
+
+<table class="table table-dark" id="personTable">
+  <thead>
+    <tr>
+      <th scope="col">Categoy</th>
+      <th scope="col">Date</th>
+      <th scope="col">Project</th>
+      <th scope="col">Time_end</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
 		<div class="row m-auto">
 			<div class="col-lg-12 timereg">
-				<h1><img class="logo" src="./prolike_logo.jpg" alt="project_logo">Prolike work hours</h1>
-				<form id="data-form">
-					<label>User</label>
-					<input type="text" id="userName" placeholder="User name" />
-					<label>Project</label>
-					<input type="text" id="project" placeholder="Project name" />
-					<label>Date</label>
-					<input type="text" id="date" placeholder="DD/MM/YYYY" />
-					<label>Start time</label>
-					<input type="text" id="start" placeholder="HH:mm" />
-					<label>End time</label>
-					<input type="text" id="end" placeholder="HH:mm" />
-					<label>Category</label>
-					<select id="category">
-						<option value="" disabled selected>Select category</option>
-						<option value="prolike">Prolike</option>
-						<option value="honeypot">Honeypot</option>
-						<option value="explore">Explore</option>
-						<option value="internship">Internship</option>
-						<option value="social">Social</option>
-					</select>
-					<label>Comment</label>
-					<input class="textarea" type="text" id="comment" placeholder="Work description" />
-					<button id="saveMe" type="button" class="btn btn-primary">Save</button>
-				</form>
+				<h1><img class="logo" src="./images/prolike_logo.jpg" alt="project_logo">Prolike work hours</h1>
+			<!-- Button that handles sign-in/sign-out -->
+	            
+				<label>User</label>
+				<input type="text" id="userName" placeholder="User name" />
+				<label>Project</label>
+				<input type="text" id="project" placeholder="Project name" />
+				<label>Date</label>
+				<input type="text" id="date" placeholder="YYYY/MM/DD" />
+				<label>Start time</label>
+				<input type="text" id="start" placeholder="HH:mm" />
+				<label>End time</label>
+				<input type="text" id="end" placeholder="HH:mm" />
+				<label>Category</label>
+				<select id="category">
+					<option value="" disabled selected>Select category</option>
+					<option value="prolike">Prolike</option>
+					<option value="honeypot">Honeypot</option>
+					<option value="explore">Explore</option>
+					<option value="internship">Internship</option>
+					<option value="social">Social</option>
+				</select>
+				<label>Comment</label>
+				<input class="textarea" type="text" id="comment" placeholder="Work description" />
+				<button id="saveMe" type="button" class="btn btn-primary">Save</button>
 			</div>
 		</div>
 	</div>
 
-	<script>
-		// Config for firebase connection
-		var config = {
-			apiKey: '### INSERT API KEY HERE###',
-			authDomain: 'eur3 (europe-west) ',
-			projectId: 'prolike-stack'
-		};
+	<script src="./scripts/firestore_handler.js"></script>
+	<script src="./scripts/auth_handler.js"></script>
+	<script src="./scripts/documentMani.js"></script>
 
-		// Intalize the firebase app
-		firebase.initializeApp(config);
-		let db = firebase.firestore();
-
-		// The input values from index.html
-		const inputUserName = document.querySelector("#userName");
-		const inputProject = document.querySelector("#project");
-		const inputDate = document.querySelector("#date");
-		const inputStart = document.querySelector("#start");
-		const inputEnd = document.querySelector("#end");
-		const inputCategory = document.querySelector("#category");
-		const inputComment = document.querySelector("#comment");
-		const button = document.querySelector("#saveMe");
-
-		//Get current time
-		// console.log(firebase.firestore.FieldValue.serverTimestamp());
-
-		// When clicked, insert the data into firestore
-		button.addEventListener("click", function () {
-			//Database data
-			const data = {
-				project: inputProject.value,
-				date: inputDate.value,
-				time_start: firebase.firestore.Timestamp.fromDate(startTimeDate()),
-				time_end: firebase.firestore.Timestamp.fromDate(endTimeDate()),
-				category: inputCategory.value,
-				comment: inputComment.value
-			}
-			//DB query
-			db.collection("users").add(data)
-				.then(function (docRef) {
-					console.log("Data was saved in document", docRef);
-				})
-				.catch(function (error) {
-					console.error("Error saving data: ", error);
-				});
-			clearInput();
-		});
-
-		//Creates and returns start time Date() object based on user input.
-		function startTimeDate() {
-			console.log(inputStart.value);
-			var time = inputStart.value.split(":");
-			console.log(inputDate.value);
-			var date = inputDate.value.split("/");
-
-			//Format = Date(year,month(0-11),day,hour,min,sec)
-			var workTimeStart = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-			console.log("Start: ", workTimeStart.toLocaleString('da-DK', { timeZone: 'WET' }));
-			return workTimeStart;
-		}
-
-		//Creates and returns end time Date() object based on user input.
-		function endTimeDate() {
-			console.log(inputEnd.value);
-			var time = inputEnd.value.split(":");
-			var date = inputDate.value.split("/");
-
-			//Date format = Date(year,month(0-11),day,hour,min,sec)
-			var workTimeEnd = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-			console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'WET' }));
-			return workTimeEnd;
-		}
-
-		//Clear input from textfields
-		function clearInput() {
-			const form = document.querySelector("#data-form")
-			form.reset();
-			//document.getElementById('userName').value = "";
-			//document.getElementById('project').value = "";
-			//document.getElementById('date').value = "";
-			//document.getElementById('start').value = "";
-			//document.getElementById('end').value = "";
-			//document.getElementById('category').selectedIndex = 0;
-			//document.getElementById('comment').value = "";
-		}
-			/*getRealTimeUpdates = function(){
-			db.collection("users").doc("test").onSnapshot(function(doc){
-			console.log(doc.data())
-			})
-			}
-			getRealTimeUpdates();*/
-	</script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
