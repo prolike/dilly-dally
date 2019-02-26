@@ -42,7 +42,8 @@ function intalizeApp(){
 function timeRegSet(data){
       console.log("Saving data")
       console.log(data)
-      db.collection("users").add(data)
+     let email = firebase.auth().currentUser.email
+      db.collection("workers").doc(email).collection("timeregs").add(data)
         .then(function (docRef) {
           console.log("Data was saved in document", docRef);
         })

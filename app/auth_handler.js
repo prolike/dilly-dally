@@ -18,7 +18,6 @@ function initApp() {
       // This gives you a GitHub Access Token. You can use it to access the GitHub API.
       var token = result.credential.accessToken;
       console.log(token)
-
     } else {
       console.log("failed")
       // [END_EXCLUDE]
