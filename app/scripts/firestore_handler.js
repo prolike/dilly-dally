@@ -4,7 +4,7 @@ let db = null;
 function intalizeApp(){
   // Config for firebase connection
     var config = {
-      apiKey: 'AIzaSyAP26LDfU4OMnpBTB4P9Lm9-c_BgF1DxUQ',
+      apiKey: '###',
       authDomain: 'eur3 (europe-west) ',
       projectId: 'prolike-stack'
     };
@@ -32,7 +32,6 @@ function intalizeApp(){
         category: inputCategory.value,
         comment: inputComment.value
       }
-
     //SetTime
     timeRegSet(data)
   });
@@ -42,7 +41,7 @@ function intalizeApp(){
 function timeRegSet(data){
       console.log("Saving data")
       console.log(data)
-     let email = firebase.auth().currentUser.email
+      let email = firebase.auth().currentUser.email
       db.collection("workers").doc(email).collection("timeregs").add(data)
         .then(function (docRef) {
           console.log("Data was saved in document", docRef);
@@ -54,6 +53,23 @@ function timeRegSet(data){
 }
 
   
+
+function timeRegGet(){
+     console.log("Getting data")
+     let email = firebase.auth().currentUser.email
+     db.collection("workers").doc(email).collection("timeregs")
+        .get()
+        .then(function (querySnapshot) {
+          querySnapshot.forEach(function(doc){
+          console.log("Getting", doc.data());
+          addRow(doc.data())
+          })
+        })
+        .catch(function (error) {
+          console.error("Error saving data: ", error);
+        });
+}
+
 
 //Clear input from textfields
 function clearInput() {

@@ -19,11 +19,11 @@ function initApp() {
       var token = result.credential.accessToken;
       console.log(token)
     } else {
-      console.log("failed")
       // [END_EXCLUDE]
     }
     // The signed-in user info.
     var user = result.user;
+    timeRegGet();
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -56,7 +56,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     var isAnonymous = user.isAnonymous;
     var uid = user.uid;
     var providerData = user.providerData;
-    console.log(email);
     document.getElementById('login_button').textContent ="Sign out - " + email;
     // [END_EXCLUDE]
   } else {
