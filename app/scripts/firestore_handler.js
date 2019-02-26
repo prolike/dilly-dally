@@ -21,7 +21,7 @@ function initFireStore() {
   const inputComment = document.querySelector("#comment");
   const button = document.querySelector("#saveMe");
   console.log(firebase.firestore.FieldValue.serverTimestamp());
-
+  getCategories();
   // When clicked, insert the data into firestore
   button.addEventListener("click", function () {
     //Data to be stored
@@ -35,7 +35,7 @@ function initFireStore() {
     }
     //SetTime
     timeRegSet(data);
-    getCategories();
+    
   });
 
   //Creates and returns start time Date() object based on user input.
