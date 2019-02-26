@@ -22,6 +22,7 @@ function initFireStore() {
   const button = document.querySelector("#saveMe");
   console.log(firebase.firestore.FieldValue.serverTimestamp());
   getCategories();
+  getProjects();
   // When clicked, insert the data into firestore
   button.addEventListener("click", function () {
     //Data to be stored
@@ -131,6 +132,42 @@ function getCategories() {
       insertAllCategories(arr)
     })
 }
+
+function getProjects() {
+  console.log("Getting projects")
+
+
+  db.collection("customers")
+    .get()
+    .then(function (querySnapshot) {
+      let customerArr = []
+      let projects = []
+      querySnapshot.forEach(function (doc) {
+        var customer = doc.id
+        customerArr.push(customer)
+        })
+      for(cust in customerArr){
+        var custName = customerArr[cust];
+        db.collection("customers").doc(custName).collection("projects")
+        .get()
+        .then(function (querySnapshot2) {
+          querySnapshot2.forEach(function (doc2) {
+            var project = doc2.id
+            projects.push(project)
+            console.log(project)
+            })
+      })
+       
+      }
+      console.log(projects)
+
+    })
+      
+      //insertAllCategories(arr)
+      
+}
+
+
 initFireStore();
 
 //Clear input from textfields
