@@ -3,7 +3,7 @@ loginButton = document.getElementById('login_button');
 
 function toggleSignIn() {
   if (!firebase.auth().currentUser) {
-    var provider = new firebase.auth.GithubAuthProvider();
+    var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider);
   } else {
     firebase.auth().signOut();
@@ -61,7 +61,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById('login_button').textContent ="Sign out - " + email;
     // [END_EXCLUDE]
   } else {
-    document.getElementById('login_button').textContent = "Sign in with Github";
+    document.getElementById('login_button').textContent = "Sign in with Google";
     // [END_EXCLUDE]
   }
   // [START_EXCLUDE]
