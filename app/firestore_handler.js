@@ -4,12 +4,11 @@ let db = null;
 function intalizeApp(){
   // Config for firebase connection
     var config = {
-      apiKey: '### INSERT API KEY HERE###',
+      apiKey: 'AIzaSyAP26LDfU4OMnpBTB4P9Lm9-c_BgF1DxUQ',
       authDomain: 'eur3 (europe-west) ',
       projectId: 'prolike-stack'
     };
-    // Intalize the firebase app
-    firebase.initializeApp(config);
+    
     db = firebase.firestore();
 
     // The input values from index.html
