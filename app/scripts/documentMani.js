@@ -1,5 +1,10 @@
 
-
+function insertAllRows(data) {
+         for(var obj in data){
+            console.log(data[obj])
+            addRow(data[obj])
+         }
+}
 
 function addRow(data)
 {
@@ -22,5 +27,17 @@ function addRow(data)
          row.appendChild(cell3);
          row.appendChild(cell4);
          tabBody.appendChild(row);
-
 }
+
+
+function insertAllCategories(categoryArray){
+   var select = document.getElementById("category"); 
+   for(var category in categoryArray){
+      var categoryName = categoryArray[category]
+      var el = document.createElement("option");
+       el.textContent = categoryName;
+       el.value = categoryName;
+       select.appendChild(el);
+   }   
+}
+

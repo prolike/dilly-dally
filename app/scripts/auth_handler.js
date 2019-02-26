@@ -12,7 +12,7 @@ function toggleSignIn() {
 }
 
 
-function initApp() {
+function initAuthHandler() {
   firebase.auth().getRedirectResult().then(function(result) {
     if (result.credential) {
       // This gives you a GitHub Access Token. You can use it to access the GitHub API.
@@ -72,4 +72,4 @@ document.getElementById('login_button').addEventListener('click', toggleSignIn, 
 }
 
 
-initApp();
+initAuthHandler();

@@ -1,7 +1,7 @@
 
 let db = null;
 
-function intalizeApp(){
+function initFireStore(){
   // Config for firebase connection
     var config = {
       apiKey: '###',
@@ -35,13 +35,23 @@ function intalizeApp(){
     //SetTime
     timeRegSet(data)
   });
+  getCategories();
 }    
     
+
+
+function getEmail(){
+  let email = firebase.auth().currentUser.email
+  if(!email)
+    return null
+  else
+    return email
+}
 
 function timeRegSet(data){
       console.log("Saving data")
       console.log(data)
-      let email = firebase.auth().currentUser.email
+      let email = getEmail()
       db.collection("workers").doc(email).collection("timeregs").add(data)
         .then(function (docRef) {
           console.log("Data was saved in document", docRef);
@@ -58,18 +68,29 @@ function timeRegGet(){
      console.log("Getting data")
      let email = firebase.auth().currentUser.email
      db.collection("workers").doc(email).collection("timeregs")
-        .get()
-        .then(function (querySnapshot) {
+        .onSnapshot(function (querySnapshot) {
+          let arr = []
           querySnapshot.forEach(function(doc){
           console.log("Getting", doc.data());
-          addRow(doc.data())
+          arr.push(doc.data())
           })
+          insertAllRows(arr)          
         })
-        .catch(function (error) {
-          console.error("Error saving data: ", error);
-        });
 }
 
+function getCategories(){
+     console.log("Getting categories")
+     db.collection("categories")
+        .onSnapshot(function (querySnapshot) {
+          let arr = []
+          querySnapshot.forEach(function(doc){
+          var category = doc.id
+          arr.push((category))
+          })
+          console.log(arr)
+          insertAllCategories(arr)          
+        })
+}
 
 //Clear input from textfields
 function clearInput() {
@@ -82,13 +103,6 @@ function clearInput() {
       document.getElementById('comment').value = "";
     }
 
-intalizeApp();
-
-      /*getRealTimeUpdates = function(){
-db.collection("users").doc("test").onSnapshot(function(doc){
-console.log(doc.data())
-})
-}
-getRealTimeUpdates();*/
+initFireStore();
 
 
