@@ -41,8 +41,8 @@ function setListener() {
         const data = {
             project: inputProject.value,
             date: inputDate.value,
-            time_start: firebase.firestore.Timestamp.fromDate(startTimeDate(inputStart.value, inputDate.value)),
-            time_end: firebase.firestore.Timestamp.fromDate(endTimeDate(inputEnd.value, inputDate.value)),
+            time_start: firebase.firestore.Timestamp.fromDate(formatTimeDate(inputStart.value, inputDate.value)),
+            time_end: firebase.firestore.Timestamp.fromDate(formatTimeDate(inputEnd.value, inputDate.value)),
             category: inputCategory.value,
             comment: inputComment.value
         }
@@ -52,28 +52,27 @@ function setListener() {
 
 }
 //Creates and returns start time Date() object based on user input.
-function startTimeDate(time_start, workDate) {
+function formatTimeDate(time, workDate) {
     //Splits user input into arrays
-    var time = time_start.split(":");
+    //var time = time_start.split(":");
     var date = workDate.split("/");
-
     //Creates date with input arrays returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
-    var workTimeStart = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-    console.log("Start: ", workTimeStart.toLocaleString('da-DK', { timeZone: 'UTC' }));
-    return workTimeStart;
+    var workTime = new Date(date[2] + "-" + date[1] + "-" + date[0]+"T"+time+":00");
+    console.log(workTime)
+    return workTime;
 }
 
 //Creates and returns end time Date() object based on user input.
-function endTimeDate(time_end, workDate) {
+//function endTimeDate(time_end, workDate) {
     //Splits user input into array
-    var time = time_end.split(":");
-    var date = workDate.split("/");
+//    var time = time_end.split(":");
+//    var date = workDate.split("/");
 
     //Creates date with input arrays and returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
-    var workTimeEnd = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-    console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'UTC' }));
-    return workTimeEnd;
-}
+//    var workTimeEnd = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
+//    console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'UTC' }));
+//    return workTimeEnd;
+//}
 
 function getEmail() {
     let email = null;
@@ -114,7 +113,17 @@ function timeRegGet() {
             let arr = [];
             querySnapshot.forEach(function(doc) {
                 console.log("Getting", doc.data());
-                arr.push(doc.data());
+
+                formattedData = doc.data();
+                time_start = new Date(formattedData['time_start'].seconds*1000);
+                time_end = new Date(formattedData['time_end'].seconds*1000)
+                formattedData['time_start'] = time_start.toLocaleTimeString('it-IT')
+                formattedData['time_end'] =  time_end.toLocaleTimeString('it-IT')
+                formattedData['hours'] = new Date(time_end-time_start).toLocaleTimeString('it-IT')
+                formattedData['hours'] = new Date(time_end.getTime()- time_start.getTime()).toLocaleTimeString('it-IT')
+                
+                //console.log(doc.get('time_end').seconds*1000)
+                arr.push(formattedData);
             })
             insertAllRows(arr);
         })

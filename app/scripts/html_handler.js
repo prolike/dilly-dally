@@ -20,7 +20,7 @@ function addRow(data) {
     textnode3 = document.createTextNode(data["project"]);
     textnode4 = document.createTextNode(data["time_start"]);
     textnode5 = document.createTextNode(data["time_end"]);
-    textnode6 = document.createTextNode("0");
+    textnode6 = document.createTextNode(data["hours"]);
     textnode7 = document.createTextNode(data["comment"]);
     cell1.appendChild(textnode1);
     cell2.appendChild(textnode2);
