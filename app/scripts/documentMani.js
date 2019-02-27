@@ -41,3 +41,11 @@ function insertAllCategories(categoryArray){
    }   
 }
 
+
+function insertProject(projectName){
+   var select = document.getElementById("project"); 
+   var el = document.createElement("option");
+   el.textContent = projectName;
+   el.value = projectName;
+   select.appendChild(el);
+}

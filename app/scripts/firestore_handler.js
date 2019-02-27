@@ -136,12 +136,10 @@ function getCategories() {
 function getProjects() {
   console.log("Getting projects")
 
-
   db.collection("customers")
     .get()
     .then(function (querySnapshot) {
       let customerArr = []
-      let projects = []
       querySnapshot.forEach(function (doc) {
         var customer = doc.id
         customerArr.push(customer)
@@ -153,18 +151,12 @@ function getProjects() {
         .then(function (querySnapshot2) {
           querySnapshot2.forEach(function (doc2) {
             var project = doc2.id
-            projects.push(project)
+            insertProject(project)
             console.log(project)
             })
       })
-       
       }
-      console.log(projects)
-
     })
-      
-      //insertAllCategories(arr)
-      
 }
 
 
