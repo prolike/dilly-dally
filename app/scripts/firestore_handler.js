@@ -1,4 +1,3 @@
-
 let db = null;
 
 function initFireStore() {
@@ -20,9 +19,12 @@ function initFireStore() {
   const inputCategory = document.querySelector("#category");
   const inputComment = document.querySelector("#comment");
   const button = document.querySelector("#saveMe");
-  console.log(firebase.firestore.FieldValue.serverTimestamp());
+  //console.log(firebase.firestore.FieldValue.serverTimestamp());
+
+  //Populates the dropdown for Project and Category
   getCategories();
   getProjects();
+
   // When clicked, insert the data into firestore
   button.addEventListener("click", function () {
     //Data to be stored
@@ -36,43 +38,39 @@ function initFireStore() {
     }
     //SetTime
     timeRegSet(data);
-    
   });
 
   //Creates and returns start time Date() object based on user input.
   function startTimeDate() {
     //Splits user input into arrays
-    //console.log(inputStart.value);
     var time = inputStart.value.split(":");
-    //console.log(inputDate.value);
     var date = inputDate.value.split("/");
+
     //Creates date with input arrays returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
     var workTimeStart = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-    console.log("Start: ", workTimeStart.toLocaleString('da-DK', { timeZone: 'WET' }));
+    console.log("Start: ", workTimeStart.toLocaleString('da-DK', { timeZone: 'UTC' }));
     return workTimeStart;
   }
 
   //Creates and returns end time Date() object based on user input.
   function endTimeDate() {
     //Splits user input into array
-    console.log(inputEnd.value);
     var time = inputEnd.value.split(":");
     var date = inputDate.value.split("/");
 
     //Creates date with input arrays and returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
     var workTimeEnd = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-    console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'WET' }));
+    console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'UTC' }));
     return workTimeEnd;
   }
-
 }
 
 function getEmail() {
-  let email = firebase.auth().currentUser.email
+  let email = firebase.auth().currentUser.email;
   if (!email)
-    return null
+    return null;
   else
-    return email
+    return email;
 }
 
 function timeRegSet(data) {
@@ -91,24 +89,24 @@ function timeRegSet(data) {
 
 
 function timeRegGet() {
-  console.log("Getting data")
-  let email = firebase.auth().currentUser.email
+  console.log("Getting data");
+  let email = firebase.auth().currentUser.email;
   db.collection("workers").doc(email).collection("timeregs")
     .onSnapshot(function (querySnapshot) {
-      let arr = []
+      let arr = [];
       querySnapshot.forEach(function (doc) {
         console.log("Getting", doc.data());
-        arr.push(doc.data())
+        arr.push(doc.data());
       })
-      insertAllRows(arr)
+      insertAllRows(arr);
     })
 }
 
 
 function timeRegSet(data) {
-  console.log("Saving data")
-  console.log(data)
-  let email = firebase.auth().currentUser.email
+  //console.log("Saving data")
+  //console.log(data)
+  let email = firebase.auth().currentUser.email;
   db.collection("workers").doc(email).collection("timeregs").add(data)
     .then(function (docRef) {
       console.log("Data was saved in document", docRef);
@@ -120,43 +118,43 @@ function timeRegSet(data) {
 }
 
 function getCategories() {
-  console.log("Getting categories")
+  //console.log("Getting categories");
   db.collection("categories")
     .onSnapshot(function (querySnapshot) {
-      let arr = []
+      let arr = [];
       querySnapshot.forEach(function (doc) {
-        var category = doc.id
-        arr.push((category))
+        var category = doc.id;
+        arr.push((category));
       })
-      console.log(arr)
-      insertAllCategories(arr)
-    })
+      console.log(arr);
+      insertAllCategories(arr);
+    });
 }
 
 function getProjects() {
-  console.log("Getting projects")
+  //console.log("Getting projects")
 
   db.collection("customers")
     .get()
     .then(function (querySnapshot) {
-      let customerArr = []
+      let customerArr = [];
       querySnapshot.forEach(function (doc) {
-        var customer = doc.id
-        customerArr.push(customer)
-        })
-      for(cust in customerArr){
+        var customer = doc.id;
+        customerArr.push(customer);
+      })
+      for (cust in customerArr) {
         var custName = customerArr[cust];
         db.collection("customers").doc(custName).collection("projects")
-        .get()
-        .then(function (querySnapshot2) {
-          querySnapshot2.forEach(function (doc2) {
-            var project = doc2.id
-            insertProject(project)
-            console.log(project)
-            })
-      })
+          .get()
+          .then(function (querySnapshot2) {
+            querySnapshot2.forEach(function (doc2) {
+              var project = doc2.id;
+              insertProject(project);
+              console.log(project);
+            });
+          });
       }
-    })
+    });
 }
 
 
@@ -164,6 +162,6 @@ initFireStore();
 
 //Clear input from textfields
 function clearInput() {
-  const form = document.querySelector("#data-form")
+  const form = document.querySelector("#data-form");
   form.reset();
 }
