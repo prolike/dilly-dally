@@ -157,10 +157,12 @@ function getProjects() {
 }
 
 
-initFireStore();
-
 //Clear input from textfields
 function clearInput() {
   const form = document.querySelector("#data-form");
   form.reset();
 }
+
+
+
+initFireStore();

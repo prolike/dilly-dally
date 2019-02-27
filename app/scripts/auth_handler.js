@@ -23,7 +23,6 @@ function initAuthHandler() {
     }
     // The signed-in user info.
     var user = result.user;
-    timeRegGet();
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -71,5 +70,12 @@ firebase.auth().onAuthStateChanged(function(user) {
 document.getElementById('login_button').addEventListener('click', toggleSignIn, false);
 }
 
+
+function isSignedIn(){
+  if(!firebase.auth().currentUser){
+    return false;
+  }
+  return true;
+}
 
 initAuthHandler();
