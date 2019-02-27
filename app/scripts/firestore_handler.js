@@ -9,6 +9,8 @@ function initFireStore() {
         projectId: 'prolike-stack'
     };
     db = firebase.firestore();
+    const settings = {timestampsInSnapshots: true};
+    db.settings(settings);
 }
 
 function populateDropdowns() {
