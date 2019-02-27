@@ -11,13 +11,13 @@ function initFireStore() {
     db = firebase.firestore();
 }
 
-function populateDropdowns(){
+function populateDropdowns() {
     //Populates the dropdown for Project and Category
     getCategories();
     getProjects();
 }
 
-function populateTable(){
+function populateTable() {
     //Populates the table for timeregs
     timeRegGet();
 }
@@ -39,46 +39,46 @@ function setListener() {
         const data = {
             project: inputProject.value,
             date: inputDate.value,
-            time_start: firebase.firestore.Timestamp.fromDate(startTimeDate()),
-            time_end: firebase.firestore.Timestamp.fromDate(endTimeDate()),
+            time_start: firebase.firestore.Timestamp.fromDate(startTimeDate(inputStart.value, inputDate.value)),
+            time_end: firebase.firestore.Timestamp.fromDate(endTimeDate(inputEnd.value, inputDate.value)),
             category: inputCategory.value,
             comment: inputComment.value
         }
-        //SetTime
+        console.log(data)
         timeRegSet(data);
     });
-        //Creates and returns start time Date() object based on user input.
-    function startTimeDate() {
-        //Splits user input into arrays
-        var time = inputStart.value.split(":");
-        var date = inputDate.value.split("/");
 
-        //Creates date with input arrays returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
-        var workTimeStart = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-        console.log("Start: ", workTimeStart.toLocaleString('da-DK', { timeZone: 'UTC' }));
-        return workTimeStart;
-    }
+}
+//Creates and returns start time Date() object based on user input.
+function startTimeDate(time_start, workDate) {
+    //Splits user input into arrays
+    var time = time_start.split(":");
+    var date = workDate.split("/");
 
-    //Creates and returns end time Date() object based on user input.
-    function endTimeDate() {
-        //Splits user input into array
-        var time = inputEnd.value.split(":");
-        var date = inputDate.value.split("/");
+    //Creates date with input arrays returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
+    var workTimeStart = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
+    console.log("Start: ", workTimeStart.toLocaleString('da-DK', { timeZone: 'UTC' }));
+    return workTimeStart;
+}
 
-        //Creates date with input arrays and returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
-        var workTimeEnd = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-        console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'UTC' }));
-        return workTimeEnd;
-    }
+//Creates and returns end time Date() object based on user input.
+function endTimeDate(time_end, workDate) {
+    //Splits user input into array
+    var time = time_end.split(":");
+    var date = workDate.split("/");
+
+    //Creates date with input arrays and returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
+    var workTimeEnd = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
+    console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'UTC' }));
+    return workTimeEnd;
 }
 
 function getEmail() {
     let email = null;
-    try{
-      email = firebase.auth().currentUser.email;
-    }
-    catch(e){
-      console.log(e)
+    try {
+        email = firebase.auth().currentUser.email;
+    } catch (e) {
+        console.log(e)
     }
     if (!email)
         return null;
@@ -93,10 +93,12 @@ function timeRegSet(data) {
     db.collection("workers").doc(email).collection("timeregs").add(data)
         .then(function(docRef) {
             console.log("Data was saved in document", docRef);
+            console.log(data)
         })
         .catch(function(error) {
             console.error("Error saving data: ", error);
-        });    db.collection("workers").doc(email).collection("timeregs").add(data)
+        });
+    db.collection("workers").doc(email).collection("timeregs").add(data)
 
     clearInput();
 }
