@@ -11,7 +11,6 @@ function initFireStore() {
   db = firebase.firestore();
 
   // The input values from index.html
-  const inputUserName = document.querySelector("#userName");
   const inputProject = document.querySelector("#project");
   const inputDate = document.querySelector("#date");
   const inputStart = document.querySelector("#start");

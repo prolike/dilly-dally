@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="">
 	<link rel="stylesheet" href="./css/style.css">
-	<title>Welcome to Firebase Hosting</title>
+	<title>Welcome to Prolike Work Hours</title>
 	<script src="/__/firebase/5.7.0/firebase-app.js"></script>
 	<script src="/__/firebase/5.7.0/firebase-firestore.js"></script>
 	<script src="/__/firebase/5.7.0/firebase-auth.js"></script>
@@ -19,7 +19,6 @@
 
 <body>
 	<center><button disabled class="btn btn-primary" id="login_button">Sign in with Google</button></center>
-
 	<table class="table table-dark" id="personTable">
 		<thead>
 			<tr>
@@ -38,13 +37,12 @@
 				<form id="data-form">
 					<h1><img class="logo" src="./images/prolike_logo.jpg" alt="project_logo">Prolike work hours</h1>
 					<!-- Button that handles sign-in/sign-out -->
-					<label>User</label>
-					<input type="text" id="userName" placeholder="User name" />
+					<label>Project</label>
 					<select id="project">
 						<option value="" disabled selected>Select project</option>
 					</select>
 					<label>Date</label>
-					<input type="text" id="date" placeholder="YYYY/MM/DD" />
+					<input type="text" id="date" placeholder="DD//MM/YYYY" />
 					<label>Start time</label>
 					<input type="text" id="start" placeholder="HH:mm" />
 					<label>End time</label>
