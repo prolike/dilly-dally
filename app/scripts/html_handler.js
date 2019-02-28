@@ -1,12 +1,4 @@
-function insertAllRowsProject(data) {
-    removeAllRows();
-     for (var obj in data) {
-         console.log(data[obj])
-         addRowProject(data[obj])
-     }
- }
- 
- 
+
  function addRowProject(data) {
     console.log(data)
      tabBody = document.getElementsByTagName("tbody").item(0);
