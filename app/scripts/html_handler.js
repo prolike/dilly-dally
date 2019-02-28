@@ -4,17 +4,8 @@ function insertAllRows(data) {
         console.log(data[obj])
         addRow(data[obj])
     }
-    showAllids();
 }
 
-function showAllids(){
-   var elements = document.getElementsByClassName('delete')
-   for(el in elements){
-      elements[el].addEventListener("click", function(){
-         console.log(elements[el].getAttribute("id"))
-      });
-   }
-}
 function removeAllRows(){
    var i = 0;
     document.querySelectorAll('tr').forEach(function(node) {
