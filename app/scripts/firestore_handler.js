@@ -117,11 +117,10 @@ function timeRegGet() {
                 formattedData = doc.data();
                 time_start = new Date(formattedData['time_start'].seconds*1000);
                 time_end = new Date(formattedData['time_end'].seconds*1000)
-                formattedData['time_start'] = time_start.toLocaleTimeString('it-IT')
-                formattedData['time_end'] =  time_end.toLocaleTimeString('it-IT')
-                formattedData['hours'] = new Date(time_end-time_start).toLocaleTimeString('it-IT')
-                formattedData['hours'] = new Date(time_end.getTime()- time_start.getTime()).toLocaleTimeString('it-IT')
-                
+                formattedData['time_start'] = time_start.toLocaleTimeString('it-IT',{hour: '2-digit', minute:'2-digit'})
+                formattedData['time_end'] =  time_end.toLocaleTimeString('it-IT',{hour: '2-digit', minute:'2-digit'})
+                var diff = new Date(time_end- time_start)
+                formattedData['hours'] = (diff.getHours()<10?'0':'') + diff.getHours() + ":" + (diff.getMinutes()<10?'0':'') + diff.getMinutes()
                 //console.log(doc.get('time_end').seconds*1000)
                 arr.push(formattedData);
             })
