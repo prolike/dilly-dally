@@ -87,14 +87,23 @@ function timeRegSet(data) {
     console.log("Saving data")
     console.log(data)
     let email = getEmail()
+    function addRef(ref){
+      let companyName = data['project'].split("/")[0]
+      let projectName = data['project'].split("/")[1]
+      console.log(companyName)
+      db.collection("customers").doc(companyName)
+      .collection("projects").doc(projectName).collection("timeregs").add({docRef:ref})
+    }
     db.collection("workers").doc(email).collection("timeregs").add(data)
         .then(function(docRef) {
             console.log("Data was saved in document", docRef);
             console.log(data)
+            addRef(docRef.path)
         })
         .catch(function(error) {
             console.error("Error saving data: ", error);
         });
+    
     clearInput();
 }
 
