@@ -103,6 +103,20 @@ function timeRegSet(data) {
 }
 
 
+function timeRegRemove(id) {
+    console.log("Removing timereg")
+    let email = getEmail()
+    db.collection("workers").doc(email).collection("timeregs").doc(id)
+        .delete()
+        .then(function(docRef) {
+            console.log("Data was REMOVED", docRef);
+        })
+        .catch(function(error) {
+            console.error("Error Removing data: ", error);
+        });
+}
+
+
 function timeRegGet() {
     console.log("Getting data");
     let email = getEmail();
@@ -123,6 +137,7 @@ function timeRegGet() {
                 var diff = new Date(diffMili - 3600000)
                 formattedData['hours'] = (diff.getHours() < 10 ? '0' : '') + diff.getHours() + ":" + (diff.getMinutes() < 10 ? '0' : '') + diff.getMinutes()
                 //console.log(doc.get('time_end').seconds*1000)
+                formattedData['id'] = doc.id
                 arr.push(formattedData);
             })
             insertAllRows(arr);
