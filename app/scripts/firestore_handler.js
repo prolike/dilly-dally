@@ -110,10 +110,7 @@ function timeRegGet() {
         .onSnapshot(function(querySnapshot) {
             let arr = [];
             querySnapshot.forEach(function(doc) {
-                console.log("Getting", doc.data());
-
                 formattedData = doc.data();
-                console.log(formattedData['time_start'])
                 time_start = new Date(formattedData['time_start'].seconds * 1000);
                 time_end = new Date(formattedData['time_end'].seconds * 1000)
                 formattedData['time_start'] = time_start.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })
