@@ -9,7 +9,7 @@ function initFireStore() {
         projectId: 'prolike-stack'
     };
     db = firebase.firestore();
-    const settings = {timestampsInSnapshots: true};
+    const settings = { timestampsInSnapshots: true };
     db.settings(settings);
 }
 
@@ -57,18 +57,18 @@ function formatTimeDate(time, workDate) {
     //var time = time_start.split(":");
     var date = workDate.split("/");
     //Creates date with input arrays returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
-    var workTime = new Date(date[2] + "-" + date[1] + "-" + date[0]+"T"+time+":00");
+    var workTime = new Date(date[2] + "-" + date[1] + "-" + date[0] + "T" + time + ":00");
     console.log(workTime)
     return workTime;
 }
 
 //Creates and returns end time Date() object based on user input.
 //function endTimeDate(time_end, workDate) {
-    //Splits user input into array
+//Splits user input into array
 //    var time = time_end.split(":");
 //    var date = workDate.split("/");
 
-    //Creates date with input arrays and returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
+//Creates date with input arrays and returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
 //    var workTimeEnd = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
 //    console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'UTC' }));
 //    return workTimeEnd;
@@ -99,8 +99,6 @@ function timeRegSet(data) {
         .catch(function(error) {
             console.error("Error saving data: ", error);
         });
-    db.collection("workers").doc(email).collection("timeregs").add(data)
-
     clearInput();
 }
 
@@ -108,7 +106,7 @@ function timeRegSet(data) {
 function timeRegGet() {
     console.log("Getting data");
     let email = getEmail();
-    db.collection("workers").doc(email).collection("timeregs")
+    db.collection("workers").doc(email).collection("timeregs").orderBy('date')
         .onSnapshot(function(querySnapshot) {
             let arr = [];
             querySnapshot.forEach(function(doc) {
@@ -116,14 +114,14 @@ function timeRegGet() {
 
                 formattedData = doc.data();
                 console.log(formattedData['time_start'])
-                time_start = new Date(formattedData['time_start'].seconds*1000);
-                time_end = new Date(formattedData['time_end'].seconds*1000)
-                formattedData['time_start'] = time_start.toLocaleTimeString('it-IT',{hour: '2-digit', minute:'2-digit'})
-                formattedData['time_end'] =  time_end.toLocaleTimeString('it-IT',{hour: '2-digit', minute:'2-digit'})
+                time_start = new Date(formattedData['time_start'].seconds * 1000);
+                time_end = new Date(formattedData['time_end'].seconds * 1000)
+                formattedData['time_start'] = time_start.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })
+                formattedData['time_end'] = time_end.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })
                 var diffMili = Math.abs(time_end - time_start)
-                
-                var diff = new Date(diffMili-3600000)
-                formattedData['hours'] = (diff.getHours()<10?'0':'') + diff.getHours() + ":" + (diff.getMinutes()<10?'0':'') + diff.getMinutes()
+
+                var diff = new Date(diffMili - 3600000)
+                formattedData['hours'] = (diff.getHours() < 10 ? '0' : '') + diff.getHours() + ":" + (diff.getMinutes() < 10 ? '0' : '') + diff.getMinutes()
                 //console.log(doc.get('time_end').seconds*1000)
                 arr.push(formattedData);
             })
@@ -131,20 +129,6 @@ function timeRegGet() {
         })
 }
 
-
-function timeRegSet(data) {
-    //console.log("Saving data")
-    //console.log(data)
-    let email = firebase.auth().currentUser.email;
-    db.collection("workers").doc(email).collection("timeregs").add(data)
-        .then(function(docRef) {
-            console.log("Data was saved in document", docRef);
-        })
-        .catch(function(error) {
-            console.error("Error saving data: ", error);
-        });
-    clearInput();
-}
 
 function getCategories() {
     //console.log("Getting categories");
@@ -155,35 +139,48 @@ function getCategories() {
                 var category = doc.id;
                 arr.push((category));
             })
-            console.log(arr);
             insertAllCategories(arr);
         });
 }
 
 function getProjects() {
     //console.log("Getting projects")
+    var customerArr = []
+
+    function addCustomer(customerName) {
+        customerArr.push(customerName)
+    }
+
+    function addProjects() {
+        for (cust in customerArr) {
+            var custName = customerArr[cust];
+            console.log(custName)
+            load(custName)
+        }
+    }
+
+    function load(custName) {
+        db.collection("customers").doc(custName).collection("projects")
+            .get()
+            .then(function(querySnapshot2) {
+                querySnapshot2.forEach(function(doc2) {
+                    var project = doc2.id;
+                    insertProject(custName + "/" + project);
+                });
+            });
+    }
 
     db.collection("customers")
         .get()
         .then(function(querySnapshot) {
-            let customerArr = [];
             querySnapshot.forEach(function(doc) {
                 var customer = doc.id;
-                customerArr.push(customer);
+                addCustomer(customer);
             })
-            for (cust in customerArr) {
-                var custName = customerArr[cust];
-                db.collection("customers").doc(custName).collection("projects")
-                    .get()
-                    .then(function(querySnapshot2) {
-                        querySnapshot2.forEach(function(doc2) {
-                            var project = doc2.id;
-                            insertProject(project);
-                            console.log(project);
-                        });
-                    });
-            }
+            addProjects();
         });
+
+
 }
 
 
