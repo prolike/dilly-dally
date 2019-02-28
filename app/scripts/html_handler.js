@@ -17,10 +17,10 @@ function removeAllRows(){
     console.log("row removed")
     });
 }
+
 function addRow(data) {
-
+   console.log(data)
     tabBody = document.getElementsByTagName("tbody").item(0);
-
     row = document.createElement("tr");
     cell1 = document.createElement("td");
     cell2 = document.createElement("td");
@@ -29,6 +29,7 @@ function addRow(data) {
     cell5 = document.createElement("td");
     cell6 = document.createElement("td");
     cell7 = document.createElement("td");
+    cell8 = document.createElement("td");
     textnode1 = document.createTextNode(data["date"]);
     textnode2 = document.createTextNode(data["category"]);
     textnode3 = document.createTextNode(data["project"]);
@@ -36,6 +37,14 @@ function addRow(data) {
     textnode5 = document.createTextNode(data["time_end"]);
     textnode6 = document.createTextNode(data["hours"]);
     textnode7 = document.createTextNode(data["comment"]);
+    textnode8 = document.createElement("button");
+    textnode8.addEventListener("click", function(){
+         console.log(data['id'])
+         timeRegRemove(data['id']);
+         row.remove();
+      });
+    x = document.createTextNode("Delete me");
+    textnode8.appendChild(x)
     cell1.appendChild(textnode1);
     cell2.appendChild(textnode2);
     cell3.appendChild(textnode3);
@@ -43,6 +52,7 @@ function addRow(data) {
     cell5.appendChild(textnode5);
     cell6.appendChild(textnode6);
     cell7.appendChild(textnode7);
+    cell8.appendChild(textnode8);
     row.appendChild(cell1);
     row.appendChild(cell2);
     row.appendChild(cell3);
@@ -50,6 +60,7 @@ function addRow(data) {
     row.appendChild(cell5);
     row.appendChild(cell6);
     row.appendChild(cell7);
+    row.appendChild(cell8);
     tabBody.appendChild(row);
 }
 

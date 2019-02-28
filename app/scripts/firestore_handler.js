@@ -1,6 +1,5 @@
 let db = null;
 
-
 function initFireStore() {
     // Config for firebase connection
     var config = {
@@ -49,8 +48,17 @@ function setListener() {
         console.log(data)
         timeRegSet(data);
     });
-
 }
+
+function changeListener() {
+    const inputInvoiceProject = document.querySelector("#project")
+
+    inputInvoiceProject.addEventListener("change", function () {
+        console.log("Chosen project: ",inputInvoiceProject.value);
+        //projectTimeRegGet(inputInvoiceProject.value);
+    }, false);
+}
+
 //Creates and returns start time Date() object based on user input.
 function formatTimeDate(time, workDate) {
     //Splits user input into arrays
@@ -61,18 +69,6 @@ function formatTimeDate(time, workDate) {
     console.log(workTime)
     return workTime;
 }
-
-//Creates and returns end time Date() object based on user input.
-//function endTimeDate(time_end, workDate) {
-//Splits user input into array
-//    var time = time_end.split(":");
-//    var date = workDate.split("/");
-
-//Creates date with input arrays and returns it (Date format: Date(year,month(0-11),day,hour,min,sec)
-//    var workTimeEnd = new Date(Date.UTC(date[2], date[1] - 1, date[0], time[0], time[1], 0));
-//    console.log("End: ", workTimeEnd.toLocaleString('da-DK', { timeZone: 'UTC' }));
-//    return workTimeEnd;
-//}
 
 function getEmail() {
     let email = null;
@@ -103,6 +99,20 @@ function timeRegSet(data) {
 }
 
 
+function timeRegRemove(id) {
+    console.log("Removing timereg")
+    let email = getEmail()
+    db.collection("workers").doc(email).collection("timeregs").doc(id)
+        .delete()
+        .then(function(docRef) {
+            console.log("Data was REMOVED", docRef);
+        })
+        .catch(function(error) {
+            console.error("Error Removing data: ", error);
+        });
+}
+
+
 function timeRegGet() {
     console.log("Getting data");
     let email = getEmail();
@@ -120,12 +130,12 @@ function timeRegGet() {
                 var diff = new Date(diffMili - 3600000)
                 formattedData['hours'] = (diff.getHours() < 10 ? '0' : '') + diff.getHours() + ":" + (diff.getMinutes() < 10 ? '0' : '') + diff.getMinutes()
                 //console.log(doc.get('time_end').seconds*1000)
+                formattedData['id'] = doc.id
                 arr.push(formattedData);
             })
             insertAllRows(arr);
         })
 }
-
 
 function getCategories() {
     //console.log("Getting categories");
@@ -179,7 +189,6 @@ function getProjects() {
 
 
 }
-
 
 //Clear input from textfields
 function clearInput() {
