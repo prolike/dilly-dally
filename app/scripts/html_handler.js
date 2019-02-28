@@ -1,12 +1,26 @@
 function insertAllRows(data) {
+   removeAllRows();
     for (var obj in data) {
         console.log(data[obj])
         addRow(data[obj])
     }
 }
 
+function removeAllRows(){
+   var i = 0;
+    document.querySelectorAll('tr').forEach(function(node) {
+    if(i > 0){
+      node.remove();
+    }
+    i++;
+    
+    console.log("row removed")
+    });
+}
 function addRow(data) {
+
     tabBody = document.getElementsByTagName("tbody").item(0);
+
     row = document.createElement("tr");
     cell1 = document.createElement("td");
     cell2 = document.createElement("td");
@@ -36,7 +50,6 @@ function addRow(data) {
     row.appendChild(cell5);
     row.appendChild(cell6);
     row.appendChild(cell7);
-    console.log(textnode7)
     tabBody.appendChild(row);
 }
 
