@@ -56,46 +56,7 @@ function changeListener() {
     inputInvoiceProject.addEventListener("change", function () {
         console.log("Chosen project: ",inputInvoiceProject.value);
         //projectTimeRegGet(inputInvoiceProject.value);
-        let customerName = inputInvoiceProject.value.split("/")[0];
-        let projectName = inputInvoiceProject.value.split("/")[1];
-        projectTimeRegGet(customerName, projectName);
     }, false);
-}
-
-function projectTimeRegGet(customerName, projectName){
-    function loadDocRefs(path){
-        db.collection(path[0]).doc(path[1]).collection(path[2]).doc(path[3])
-        .onSnapshot(function(doc1) {
-            
-                console.log("Getting", doc1.data());
-                
-                formattedData = doc1.data();
-                console.log(formattedData['time_start'])
-                time_start = new Date(formattedData['time_start'].seconds * 1000);
-                time_end = new Date(formattedData['time_end'].seconds * 1000)
-                formattedData['time_start'] = time_start.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })
-                formattedData['time_end'] = time_end.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })
-                var diffMili = Math.abs(time_end - time_start)
-                var diff = new Date(diffMili - 3600000)
-                formattedData['hours'] = (diff.getHours() < 10 ? '0' : '') + diff.getHours() + ":" + (diff.getMinutes() < 10 ? '0' : '') + diff.getMinutes()
-                //console.log(doc.get('time_end').seconds*1000)
-                formattedData['id'] = doc1.id
-                console.log(formattedData);
-                addRowProject(formattedData);
-            })
-    }
-        db.collection("customers").doc(customerName).collection("projects").doc(projectName).collection("timeregs")
-        .onSnapshot(function(querySnapshot) {
-            let arr = [];
-            querySnapshot.forEach(function(doc) { 
-                console.log(doc.data())
-            console.log(doc.data()["docRef"]);
-            
-            const path = doc.data()["docRef"].split("/");
-            loadDocRefs(path);
-        }
-    )})
-
 }
 
 //Creates and returns start time Date() object based on user input.
@@ -126,14 +87,23 @@ function timeRegSet(data) {
     console.log("Saving data")
     console.log(data)
     let email = getEmail()
+    function addRef(ref){
+      let companyName = data['project'].split("/")[0]
+      let projectName = data['project'].split("/")[1]
+      console.log(companyName)
+      db.collection("customers").doc(companyName)
+      .collection("projects").doc(projectName).collection("timeregs").add({docRef:ref})
+    }
     db.collection("workers").doc(email).collection("timeregs").add(data)
         .then(function(docRef) {
             console.log("Data was saved in document", docRef);
             console.log(data)
+            addRef(docRef.path)
         })
         .catch(function(error) {
             console.error("Error saving data: ", error);
         });
+    
     clearInput();
 }
 
@@ -159,10 +129,7 @@ function timeRegGet() {
         .onSnapshot(function(querySnapshot) {
             let arr = [];
             querySnapshot.forEach(function(doc) {
-                console.log("Getting", doc.data());
-
                 formattedData = doc.data();
-                console.log(formattedData['time_start'])
                 time_start = new Date(formattedData['time_start'].seconds * 1000);
                 time_end = new Date(formattedData['time_end'].seconds * 1000)
                 formattedData['time_start'] = time_start.toLocaleTimeString('it-IT', { hour: '2-digit', minute: '2-digit' })
