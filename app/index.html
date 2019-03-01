@@ -4,14 +4,22 @@
 <head>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Main jQuery -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
     <script type="text/javascript" src="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <link rel="stylesheet" href="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css">
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/jquery-clockpicker.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/jquery-clockpicker.css">
+    <link rel="stylesheet" href="./css/style4.css">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="">
@@ -22,20 +30,72 @@
     <script src="/__/firebase/5.7.0/firebase-auth.js"></script>
     <script src="/__/firebase/init.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <center><button disabled class="btn btn-primary" id="login_button">Sign in with Google</button></center>
-    <div class="container-fluid">
-        <div class="row m-auto">
-            <div class="col-lg-12 timereg">
-                <form id="data-form">
-                    <h1><img class="logo" src="./images/prolike_logo.jpg" alt="project_logo">Prolike work hours</h1>
-                    <!-- Button that handles sign-in/sign-out -->
-                    <label>Date</label>
-                    <div id="sandbox-container">
-                        <div class="input-daterange input-group" id="datepicker">
-                            <input type="text" class="input-sm form-control" name="date" placeholder="DD/MM/YYYY" id="date" style="text-align:left;">
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img class="logo" id="sidebarCollapse" src="./images/prolike_logo.jpg" alt="project_logo">
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#">
+                        <i class="far fa-calendar-alt"></i>
+                        Timereg
+                    </a>
+                    <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-tasks"></i>
+                        Overview
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        Project report
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="far fa-user"></i>
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <i class="fas fa-cog"></i>
+                        Settings
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <center><button disabled class="btn btn-primary" id="login_button">Sign in with Google</button></center>
+        <div class="container-fluid">
+            <div class="row m-auto">
+                <div class="col-lg-12 timereg">
+                    <form id="data-form">
+                        <h1><img class="logo" src="./images/prolike_logo.jpg" alt="project_logo">Prolike work hours
+                        </h1>
+                        <!-- Button that handles sign-in/sign-out -->
+                        <label>Date</label>
+                        <div id="sandbox-container">
+                            <div class="input-daterange input-group" id="datepicker">
+                                <input type="text" class="input-sm form-control" name="date" placeholder="DD/MM/YYYY"
+                                    id="date" style="text-align:left;">
+                            </div>
+                        </div>
+
+                        <label>Start time</label>
+                        <div class="input-group clockpicker">
+                            <input type="text" class="form-control" id="start" placeholder="HH:mm" value="09:00">
+                        </div>
+                        <label>End time</label>
+                        <div class="input-group clockpicker">
+                            <input type="text" class="form-control" id="end" placeholder="HH:mm" value="16:00">
                         </div>
                     </div>
                     <label>Start time</label>
@@ -63,21 +123,32 @@
             </div>
         </div>
     </div>
+
     <script src="./scripts/firestore_handler.js"></script>
     <script src="./scripts/auth_handler.js"></script>
     <script src="./scripts/html_handler.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+
+
     <script>
-    // INIT FIRESTORE HANDLER
-    initFireStore();
-    populateDropdowns();
-    setListener();
+        // INIT FIRESTORE HANDLER
+        initFireStore();
+        populateDropdowns();
+        setListener();
 
-    // INIT AUTH HANDLER
-    initAuthHandler();
+        // INIT AUTH HANDLER
+        initAuthHandler();
 
-    // Set date to today
-    let today = new Date().toLocaleDateString('da-DK', { day: '2-digit', month: '2-digit', year: 'numeric' })
-    document.getElementById("date").value = today
+        // Set date to today
+        let today = new Date().toLocaleDateString('da-DK', { day: '2-digit', month: '2-digit', year: 'numeric' })
+        document.getElementById("date").value = today
 
     // Datepicker
     $('#sandbox-container input').datepicker({
@@ -107,6 +178,20 @@
     	d3 = new Date(d2-d1-3600000)
     	document.getElementById("hours").value = d3.toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' })
     }
+        // Datepicker
+        $('#sandbox-container input').datepicker({
+            format: "dd/mm/yyyy",
+            weekStart: 1,
+            maxViewMode: 2,
+            todayBtn: "linked",
+            clearBtn: true,
+            autoclose: true,
+            todayHighlight: true
+        });
+
+        $('.clockpicker').clockpicker({
+            autoclose: true,
+        });
     </script>
 </body>
 
