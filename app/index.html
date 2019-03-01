@@ -13,7 +13,8 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
-    <script type="text/javascript" src="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script>
+    <script type="text/javascript"
+        src="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script>
     <link rel="stylesheet" href="http://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css">
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/jquery-clockpicker.js"></script>
@@ -73,14 +74,13 @@
             </ul>
         </nav>
 
+        <!-- Button that handles sign-in/sign-out -->
         <center><button disabled class="btn btn-primary" id="login_button">Sign in with Google</button></center>
         <div class="container-fluid">
             <div class="row m-auto">
                 <div class="col-lg-12 timereg">
                     <form id="data-form">
-                        <h1><img class="logo" src="./images/prolike_logo.jpg" alt="project_logo">Prolike work hours
-                        </h1>
-                        <!-- Button that handles sign-in/sign-out -->
+                        <h1><img class="logo" src="./images/prolike_logo.jpg" alt="project_logo">Prolike work hours</h1>
                         <label>Date</label>
                         <div id="sandbox-container">
                             <div class="input-daterange input-group" id="datepicker">
@@ -88,111 +88,83 @@
                                     id="date" style="text-align:left;">
                             </div>
                         </div>
-
                         <label>Start time</label>
                         <div class="input-group clockpicker">
-                            <input type="text" class="form-control" id="start" placeholder="HH:mm" value="09:00">
+                            <input type="text" class="form-control" id="start" value="09:00">
                         </div>
                         <label>End time</label>
                         <div class="input-group clockpicker">
-                            <input type="text" class="form-control" id="end" placeholder="HH:mm" value="16:00">
+                            <input type="text" class="form-control" id="end" value="16:00">
                         </div>
-                    </div>
-                    <label>Start time</label>
-                    <div class="input-group clockpicker">
-                        <input type="text" class="form-control" id="start" value="09:00">
-                    </div>
-                    <label>End time</label>
-                    <div class="input-group clockpicker">
-                        <input type="text" class="form-control" id="end" value="16:00">
-                    </div>
-                    <label>Work Hours</label>
-                    <input type="text" class="form-control" id="hours" value="7">
-                    <label>Category</label>
-                    <select id="category">
-                        <option value="" disabled selected>Select category</option>
-                    </select>
-                    <label>Project</label>
-                    <select id="project">
-                        <option value="" disabled selected>Select project</option>
-                    </select>
-                    <label>Comment</label>
-                    <input class="textarea" type="text" id="comment" placeholder="Work description" />
-                    <button id="saveMe" type="button" class="btn btn-primary">Save</button>
-                </form>
+                        <label>Work Hours</label>
+                        <input type="text" class="form-control" id="hours" value="7">
+                        <label>Category</label>
+                        <select id="category">
+                            <option value="" disabled selected>Select category</option>
+                        </select>
+                        <label>Project</label>
+                        <select id="project">
+                            <option value="" disabled selected>Select project</option>
+                        </select>
+                        <label>Comment</label>
+                        <input class="textarea" type="text" id="comment" placeholder="Work description" />
+                        <button id="saveMe" type="button" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
 
-    <script src="./scripts/firestore_handler.js"></script>
-    <script src="./scripts/auth_handler.js"></script>
-    <script src="./scripts/html_handler.js"></script>
+        <script src="./scripts/firestore_handler.js"></script>
+        <script src="./scripts/auth_handler.js"></script>
+        <script src="./scripts/html_handler.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
+        <script>
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
             });
-        });
-    </script>
 
+            // INIT FIRESTORE HANDLER
+            initFireStore();
+            populateDropdowns();
+            setListener();
 
-    <script>
-        // INIT FIRESTORE HANDLER
-        initFireStore();
-        populateDropdowns();
-        setListener();
+            // INIT AUTH HANDLER
+            initAuthHandler();
 
-        // INIT AUTH HANDLER
-        initAuthHandler();
+            // Set date to today
+            let today = new Date().toLocaleDateString('da-DK', { day: '2-digit', month: '2-digit', year: 'numeric' })
+            document.getElementById("date").value = today
 
-        // Set date to today
-        let today = new Date().toLocaleDateString('da-DK', { day: '2-digit', month: '2-digit', year: 'numeric' })
-        document.getElementById("date").value = today
+            // Datepicker
+            $('#sandbox-container input').datepicker({
+                format: "dd/mm/yyyy",
+                weekStart: 1,
+                maxViewMode: 2,
+                todayBtn: "linked",
+                clearBtn: true,
+                autoclose: true,
+                todayHighlight: true
+            });
+            console.log("asd")
+            $('.clockpicker').clockpicker({
+                autoclose: true,
+                afterDone: function () {
+                    calcHours()
+                }
+            });
 
-    // Datepicker
-    $('#sandbox-container input').datepicker({
-        format: "dd/mm/yyyy",
-        weekStart: 1,
-        maxViewMode: 2,
-        todayBtn: "linked",
-        clearBtn: true,
-        autoclose: true,
-        todayHighlight: true
-    });
-    console.log("asd")
-    $('.clockpicker').clockpicker({
-    	autoclose: true,
-        afterDone: function() {
-            calcHours()
-       }
-    });
-
-    function calcHours(){
-    	let start_time = document.getElementById("start").value
-    	let end_time = document.getElementById("end").value
-    	console.log(start_time,end_time)
-    	d1 = new Date(1990,1,1,start_time.split(":")[0],start_time.split(":")[1])
-    	d2 = new Date(1990,1,1,end_time.split(":")[0],end_time.split(":")[1])
-    	console.log(d2-d1)
-    	d3 = new Date(d2-d1-3600000)
-    	document.getElementById("hours").value = d3.toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' })
-    }
-        // Datepicker
-        $('#sandbox-container input').datepicker({
-            format: "dd/mm/yyyy",
-            weekStart: 1,
-            maxViewMode: 2,
-            todayBtn: "linked",
-            clearBtn: true,
-            autoclose: true,
-            todayHighlight: true
-        });
-
-        $('.clockpicker').clockpicker({
-            autoclose: true,
-        });
-    </script>
+            function calcHours() {
+                let start_time = document.getElementById("start").value
+                let end_time = document.getElementById("end").value
+                console.log(start_time, end_time)
+                d1 = new Date(1990, 1, 1, start_time.split(":")[0], start_time.split(":")[1])
+                d2 = new Date(1990, 1, 1, end_time.split(":")[0], end_time.split(":")[1])
+                console.log(d2 - d1)
+                d3 = new Date(d2 - d1 - 3600000)
+                document.getElementById("hours").value = d3.toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit' })
+            }
+        </script>
 </body>
-
 </html>

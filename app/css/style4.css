@@ -65,6 +65,10 @@ span {
     align-items: stretch;
 }
 
+#login_button {
+    position: absolute;
+}
+
 #sidebar {
     min-width: 250px;
     max-width: 250px;
@@ -146,6 +150,7 @@ span {
 
 #sidebar ul li a i {
     margin-right: 10px;
+    color: #1a2336;
 }
 
 #sidebar ul li.active>a,
