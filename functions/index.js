@@ -1,36 +1,23 @@
 const functions = require('firebase-functions');
 
+// The Firebase Admin SDK to access the Firebase Realtime Database.
+const admin = require('firebase-admin');
+var config = {
+    projectId: "prolike-stack",
+  };
+admin.initializeApp(config);
+let db = admin.firestore();
 
 
-// Functions called from webapp
- exports.webappapi = functions.https.onCall((data, context) => {
-  console.log(data)
-  console.log(context)
-  return "asd"
- });
+// Functions called from http API
+exports.api = functions.https.onCall((data,context) => {
+    console.log(data)
+    console.log(context)
+    return "asd"
+});
 
- exports.api = functions.https.onRequest((request, response) => {
-  response.send("Hello from Firebase!");
- });
- 
-
-
-exports.getAllProjects = function(customerName, projectName, data){
- 	console.log(customerName,projectName,data)
- } 
-exports.getAllCategories = function(customerName, projectName, data){
- 	console.log(customerName,projectName,data)
- } 
-
- exports.getAllTimeRegistrations = function(customerName, projectName, data){
- 	console.log(customerName,projectName,data)
- } 
-
- exports.timeRegistrationAdd = function(customerName, projectName, data){
- 	console.log(customerName,projectName,data)
- } 
-
- exports.timeRegistrationRemove = function(customerName, projectName, timeRegistrationID){
- 	console.log(customerName,projectName,timeRegistrationID)}
- 
+// Functions called from http API
+exports.webApi = functions.https.onRequest((request, response) => {
+    response.send("Hello from Firebase!");
+});
 
