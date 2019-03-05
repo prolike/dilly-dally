@@ -1,1 +1,19 @@
 // Here you can add other styles
+
+.sidebar {
+    background: #1A2336;
+    color: white;
+}
+
+.sidebar .nav-link .nav-icon {
+    color: white;
+}
+
+.sidebar .nav-link.active {
+    background: #ffc400;
+    color: #1A2336;
+}
+
+.sidebar .nav-link.active .nav-icon {
+    color: #1A2336;
+}

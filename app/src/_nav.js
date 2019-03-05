@@ -2,7 +2,7 @@ export default {
   items: [{
       name: 'Timeregistration',
       url: '/timeregistration/registration',
-      icon: 'icon-speedometer',
+      icon: 'cui-calendar',
       badge: {
         variant: 'primary',
         text: 'NEW'
@@ -11,7 +11,7 @@ export default {
     {
       name: 'Timeoverview',
       url: '/timeregistration/timeoverview',
-      icon: 'icon-speedometer',
+      icon: 'cui-list',
       badge: {
         variant: 'primary',
         text: 'NEW'
@@ -20,7 +20,7 @@ export default {
     {
       name: 'Invoice report',
       url: '/invoice/report',
-      icon: 'icon-speedometer',
+      icon: 'cui-cart',
       badge: {
         variant: 'primary',
         text: 'NEW'
@@ -29,7 +29,7 @@ export default {
     {
       name: 'Dashboard',
       url: '/dashboard',
-      icon: 'icon-speedometer',
+      icon: 'cui-dashboard',
       badge: {
         variant: 'primary',
         text: 'NEW'
