@@ -10,9 +10,36 @@ exports.intalizeFirestoreHandler = function(db) {
     db = db;
 }
 
-exports.getAllProjects = function(customerName, projectName, data) {
-    console.log(customerName, projectName, data)
+exports.getAllCustomersName = async () => {
+    let array = []
+    const snapshot = await db.collection("customers")
+        .get()
+        .catch(function(error) {
+            console.error("Error", error);
+        });
+    snapshot.forEach((doc) => {
+        array.push(doc.id)
+    })
+    return array
+
 }
+
+exports.getAllProjectForCustomer = async (customerName) => {
+    let array = []
+    const snapshot = await db.collection("customers")
+        .doc(customerName)
+        .collection("projects")
+        .get()
+        .catch(function(error) {
+            console.error("Error", error);
+        });
+    snapshot.forEach((doc) => {
+        array.push(doc.data())
+    })
+    return array
+
+}
+
 
 exports.getAllCategories = async () => {
     let array = []
@@ -26,7 +53,6 @@ exports.getAllCategories = async () => {
     })
     return array
 }
-
 
 
 exports.getAllTimeRegistrationsForEmail = async (email) => {
@@ -59,7 +85,7 @@ exports.timeRegistrationRemove = async (email, ID) => {
         .doc(email)
         .collection("timeregs")
         .doc(ID)
-        .delete(data)
+        .delete()
         .catch(function(error) {
             console.error("Error", error);
         });
