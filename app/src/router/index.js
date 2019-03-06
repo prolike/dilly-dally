@@ -50,7 +50,6 @@ const CoreUIIcons = () => import('@/views/icons/CoreUIIcons')
 // Views - Notifications
 const Alerts = () => import('@/views/notifications/Alerts')
 const Badges = () => import('@/views/notifications/Badges')
-const Modals = () => import('@/views/notifications/Modals')
 
 // Views - Pages
 const Page404 = () => import('@/views/pages/Page404')
