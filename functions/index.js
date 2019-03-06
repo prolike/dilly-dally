@@ -12,7 +12,6 @@ const firestoreHandler = require('./handlers/firestoreHandler.js');
 exports.getAllCategories = functions.https.onCall(async (data, context) => {
     var result = await firestoreHandler.getAllCategories();
     return result
-
 });
 
 // Functions called from http API
@@ -24,7 +23,6 @@ exports.getAllCustomersName = functions.https.onCall(async (data, context) => {
 // Functions called from http API
 exports.getAllProjectForCustomer = functions.https.onCall(async (data, context) => {
     var customerName = data.customerName
-    console.log(data)
     var result = await firestoreHandler.getAllProjectForCustomer(customerName);
     return result
 
@@ -38,19 +36,16 @@ exports.getAllTimeRegistrationsForEmail = functions.https.onCall(async (data, co
 });
 // Functions called from http API
 exports.timeRegistrationAdd = functions.https.onCall(async (data, context) => {
-	var email = data.email
-	var content = data.data
-    var result = await firestoreHandler.timeRegistrationAdd(email,content);
+    var email = data.email
+    var content = data.data
+    var result = await firestoreHandler.timeRegistrationAdd(email, content);
     return result
 
 });
 // Functions called from http API
 exports.timeRegistrationRemove = functions.https.onCall(async (data, context) => {
-	var email = data.email
-	var docID = data.docID
-    var result = await firestoreHandler.timeRegistrationRemove(email,docID);
+    var email = data.email
+    var docID = data.docID
+    var result = await firestoreHandler.timeRegistrationRemove(email, docID);
     return result
 });
-
-
-
