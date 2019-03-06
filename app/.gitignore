@@ -7,6 +7,7 @@ package-lock.json
 /tests/e2e/reports/
 selenium-debug.log
 
+jest_o
 # local env files
 .env.local
 .env.*.local
