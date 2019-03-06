@@ -1,0 +1,752 @@
+a83f2715494f6c4cd066ed8327eb7938
+/* istanbul ignore next */var cov_1dbgslrl33 = function () {
+  var path = "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/notifications/Alerts.vue",
+      hash = "a647735304ee2f972262e17fa5aebe3f541fc42c",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/notifications/Alerts.vue",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 1
+        },
+        end: {
+          line: 177,
+          column: 4
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 0
+        },
+        end: {
+          line: 7,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 154,
+          column: 15
+        },
+        end: {
+          line: 175,
+          column: 1
+        }
+      },
+      "4": {
+        start: {
+          line: 158,
+          column: 4
+        },
+        end: {
+          line: 162,
+          column: 6
+        }
+      },
+      "5": {
+        start: {
+          line: 167,
+          column: 6
+        },
+        end: {
+          line: 167,
+          column: 47
+        }
+      },
+      "6": {
+        start: {
+          line: 171,
+          column: 6
+        },
+        end: {
+          line: 171,
+          column: 47
+        }
+      },
+      "7": {
+        start: {
+          line: 176,
+          column: 0
+        },
+        end: {
+          line: 176,
+          column: 27
+        }
+      },
+      "8": {
+        start: {
+          line: 178,
+          column: 20
+        },
+        end: {
+          line: 178,
+          column: 89
+        }
+      },
+      "9": {
+        start: {
+          line: 178,
+          column: 114
+        },
+        end: {
+          line: 178,
+          column: 187
+        }
+      },
+      "10": {
+        start: {
+          line: 179,
+          column: 0
+        },
+        end: {
+          line: 179,
+          column: 6604
+        }
+      },
+      "11": {
+        start: {
+          line: 179,
+          column: 54
+        },
+        end: {
+          line: 179,
+          column: 58
+        }
+      },
+      "12": {
+        start: {
+          line: 179,
+          column: 66
+        },
+        end: {
+          line: 179,
+          column: 84
+        }
+      },
+      "13": {
+        start: {
+          line: 179,
+          column: 92
+        },
+        end: {
+          line: 179,
+          column: 108
+        }
+      },
+      "14": {
+        start: {
+          line: 179,
+          column: 109
+        },
+        end: {
+          line: 179,
+          column: 6603
+        }
+      },
+      "15": {
+        start: {
+          line: 179,
+          column: 5066
+        },
+        end: {
+          line: 179,
+          column: 5096
+        }
+      },
+      "16": {
+        start: {
+          line: 179,
+          column: 5254
+        },
+        end: {
+          line: 179,
+          column: 5283
+        }
+      },
+      "17": {
+        start: {
+          line: 179,
+          column: 5790
+        },
+        end: {
+          line: 179,
+          column: 5812
+        }
+      },
+      "18": {
+        start: {
+          line: 179,
+          column: 6130
+        },
+        end: {
+          line: 179,
+          column: 6152
+        }
+      },
+      "19": {
+        start: {
+          line: 180,
+          column: 0
+        },
+        end: {
+          line: 180,
+          column: 37
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 1,
+            column: 2
+          },
+          end: {
+            line: 1,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 1,
+            column: 12
+          },
+          end: {
+            line: 177,
+            column: 1
+          }
+        },
+        line: 1
+      },
+      "1": {
+        name: "render",
+        decl: {
+          start: {
+            line: 179,
+            column: 35
+          },
+          end: {
+            line: 179,
+            column: 41
+          }
+        },
+        loc: {
+          start: {
+            line: 179,
+            column: 45
+          },
+          end: {
+            line: 179,
+            column: 6604
+          }
+        },
+        line: 179
+      },
+      "2": {
+        name: "(anonymous_2)",
+        decl: {
+          start: {
+            line: 179,
+            column: 5049
+          },
+          end: {
+            line: 179,
+            column: 5050
+          }
+        },
+        loc: {
+          start: {
+            line: 179,
+            column: 5065
+          },
+          end: {
+            line: 179,
+            column: 5097
+          }
+        },
+        line: 179
+      },
+      "3": {
+        name: "(anonymous_3)",
+        decl: {
+          start: {
+            line: 179,
+            column: 5237
+          },
+          end: {
+            line: 179,
+            column: 5238
+          }
+        },
+        loc: {
+          start: {
+            line: 179,
+            column: 5253
+          },
+          end: {
+            line: 179,
+            column: 5284
+          }
+        },
+        line: 179
+      },
+      "4": {
+        name: "(anonymous_4)",
+        decl: {
+          start: {
+            line: 179,
+            column: 5773
+          },
+          end: {
+            line: 179,
+            column: 5774
+          }
+        },
+        loc: {
+          start: {
+            line: 179,
+            column: 5789
+          },
+          end: {
+            line: 179,
+            column: 5813
+          }
+        },
+        line: 179
+      },
+      "5": {
+        name: "(anonymous_5)",
+        decl: {
+          start: {
+            line: 179,
+            column: 6113
+          },
+          end: {
+            line: 179,
+            column: 6114
+          }
+        },
+        loc: {
+          start: {
+            line: 179,
+            column: 6129
+          },
+          end: {
+            line: 179,
+            column: 6153
+          }
+        },
+        line: 179
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 178,
+            column: 20
+          },
+          end: {
+            line: 178,
+            column: 89
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 178,
+            column: 50
+          },
+          end: {
+            line: 178,
+            column: 72
+          }
+        }, {
+          start: {
+            line: 178,
+            column: 75
+          },
+          end: {
+            line: 178,
+            column: 89
+          }
+        }],
+        line: 178
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 178,
+            column: 114
+          },
+          end: {
+            line: 178,
+            column: 187
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 178,
+            column: 151
+          },
+          end: {
+            line: 178,
+            column: 172
+          }
+        }, {
+          start: {
+            line: 178,
+            column: 174
+          },
+          end: {
+            line: 178,
+            column: 187
+          }
+        }],
+        line: 178
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 179,
+            column: 92
+          },
+          end: {
+            line: 179,
+            column: 108
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 179,
+            column: 92
+          },
+          end: {
+            line: 179,
+            column: 104
+          }
+        }, {
+          start: {
+            line: 179,
+            column: 106
+          },
+          end: {
+            line: 179,
+            column: 108
+          }
+        }],
+        line: 179
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 179,
+            column: 5343
+          },
+          end: {
+            line: 179,
+            column: 5386
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 179,
+            column: 5368
+          },
+          end: {
+            line: 179,
+            column: 5377
+          }
+        }, {
+          start: {
+            line: 179,
+            column: 5378
+          },
+          end: {
+            line: 179,
+            column: 5386
+          }
+        }],
+        line: 179
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0,
+      "17": 0,
+      "18": 0,
+      "19": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0],
+      "3": [0, 0]
+    },
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+; /* istanbul ignore next */cov_1dbgslrl33.s[0]++;
+(function () {
+  "use strict";
+
+  /* istanbul ignore next */cov_1dbgslrl33.f[0]++;
+  cov_1dbgslrl33.s[1]++;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  /* istanbul ignore next */cov_1dbgslrl33.s[2]++;
+  exports.default = void 0;
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var _default = /* istanbul ignore next */(cov_1dbgslrl33.s[3]++, {
+    name: 'alerts',
+
+    data() {
+      /* istanbul ignore next */cov_1dbgslrl33.s[4]++;
+
+      return {
+        dismissSecs: 10,
+        dismissCountDown: 0,
+        showDismissibleAlert: false
+      };
+    },
+
+    methods: {
+      countDownChanged(dismissCountDown) {
+        /* istanbul ignore next */cov_1dbgslrl33.s[5]++;
+
+        this.dismissCountDown = dismissCountDown;
+      },
+
+      showAlert() {
+        /* istanbul ignore next */cov_1dbgslrl33.s[6]++;
+
+        this.dismissCountDown = this.dismissSecs;
+      }
+
+    }
+  });
+  /* istanbul ignore next */cov_1dbgslrl33.s[7]++;
+  exports.default = _default;
+})();
+var defaultExport = /* istanbul ignore next */(cov_1dbgslrl33.s[8]++, module.exports.__esModule ? /* istanbul ignore next */(cov_1dbgslrl33.b[0][0]++, module.exports.default) : /* istanbul ignore next */(cov_1dbgslrl33.b[0][1]++, module.exports));var __vue__options__ = /* istanbul ignore next */(cov_1dbgslrl33.s[9]++, typeof defaultExport === "function" ? /* istanbul ignore next */(cov_1dbgslrl33.b[1][0]++, defaultExport.options) : /* istanbul ignore next */(cov_1dbgslrl33.b[1][1]++, defaultExport));
+/* istanbul ignore next */cov_1dbgslrl33.s[10]++;
+__vue__options__.render = function render() {
+  /* istanbul ignore next */cov_1dbgslrl33.f[1]++;
+  var _vm = /* istanbul ignore next */(cov_1dbgslrl33.s[11]++, this);var _h = /* istanbul ignore next */(cov_1dbgslrl33.s[12]++, _vm.$createElement);var _c = /* istanbul ignore next */(cov_1dbgslrl33.s[13]++, /* istanbul ignore next */(cov_1dbgslrl33.b[2][0]++, _vm._self._c) || /* istanbul ignore next */(cov_1dbgslrl33.b[2][1]++, _h)); /* istanbul ignore next */cov_1dbgslrl33.s[14]++;
+  return _c('div', { staticClass: "wrapper" }, [_c('div', { staticClass: "animated fadeIn" }, [_c('b-row', [_c('b-col', { attrs: { "cols": "12", "md": "6" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _c('strong', [_vm._v(" Bootstrap Alert")]), _vm._v(" "), _c('div', { staticClass: "card-header-actions" }, [_c('a', { staticClass: "card-header-action", attrs: { "href": "https://bootstrap-vue.js.org/docs/components/alert", "rel": "noreferrer noopener", "target": "_blank" } }, [_c('small', { staticClass: "text-muted" }, [_vm._v("docs")])])])]), _vm._v(" "), _c('div', [_c('b-alert', { attrs: { "show": "", "variant": "primary" } }, [_vm._v("Primary Alert")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "secondary" } }, [_vm._v("Secondary Alert")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "success" } }, [_vm._v("Success Alert")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "danger" } }, [_vm._v("Danger Alert")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "warning" } }, [_vm._v("Warning Alert")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "info" } }, [_vm._v("Info Alert")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "light" } }, [_vm._v("Light Alert")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "dark" } }, [_vm._v("Dark Alert")])], 1)])], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "md": "6" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _vm._v(" Alert\n            "), _c('small', [_vm._v(" use "), _c('code', [_vm._v(".alert-link")]), _vm._v(" to provide links")])]), _vm._v(" "), _c('div', [_c('b-alert', { attrs: { "show": "", "variant": "primary" } }, [_vm._v("\n              Primary Alert with "), _c('a', { staticClass: "alert-link", attrs: { "href": "#" } }, [_vm._v("an example link")]), _vm._v(".\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "secondary" } }, [_vm._v("\n              Secondary Alert with "), _c('a', { staticClass: "alert-link", attrs: { "href": "#" } }, [_vm._v("an example link")]), _vm._v(".\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "success" } }, [_vm._v("\n              Success Alert with "), _c('a', { staticClass: "alert-link", attrs: { "href": "#" } }, [_vm._v("an example link")]), _vm._v(".\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "danger" } }, [_vm._v("\n              Danger Alert with "), _c('a', { staticClass: "alert-link", attrs: { "href": "#" } }, [_vm._v("an example link")]), _vm._v(".\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "warning" } }, [_vm._v("\n              Warning Alert with "), _c('a', { staticClass: "alert-link", attrs: { "href": "#" } }, [_vm._v("an example link")]), _vm._v(".\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "info" } }, [_vm._v("\n              Info Alert with "), _c('a', { staticClass: "alert-link", attrs: { "href": "#" } }, [_vm._v("an example link")]), _vm._v(".\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "light" } }, [_vm._v("\n              Light Alert with "), _c('a', { staticClass: "alert-link", attrs: { "href": "#" } }, [_vm._v("an example link")]), _vm._v(".\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "dark" } }, [_vm._v("\n              Dark Alert with\n              "), _c('b-link', { staticClass: "alert-link", attrs: { "href": "#" } }, [_vm._v("an example link")]), _vm._v("\n              .\n            ")], 1)], 1)])], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "md": "6" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _vm._v(" Alerts "), _c('small', [_vm._v("with additional content")])]), _vm._v(" "), _c('b-alert', { attrs: { "show": "", "variant": "success" } }, [_c('h4', { staticClass: "alert-heading" }, [_vm._v("Well done!")]), _vm._v(" "), _c('p', [_vm._v("\n              Aww yeah, you successfully read this important alert message.\n              This example text is going to run a bit longer so that you can see\n              how spacing within an alert works with this kind of content.\n            ")]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('p', { staticClass: "mb-0" }, [_vm._v("\n              Whenever you need to, be sure to use margin utilities to keep things nice and tidy.\n            ")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "md": "6" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _vm._v(" Alerts "), _c('small', [_vm._v("dismissible")])]), _vm._v(" "), _c('div', [_c('b-alert', { attrs: { "show": "", "dismissible": "" } }, [_vm._v("\n              Dismissible Alert!\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "variant": "danger", "dismissible": "", "show": _vm.showDismissibleAlert }, on: { "dismissed": function ($event) {
+        /* istanbul ignore next */cov_1dbgslrl33.f[2]++;
+        cov_1dbgslrl33.s[15]++;
+        _vm.showDismissibleAlert = false;
+      } } }, [_vm._v("\n            Dismissible Alert!\n          ")]), _vm._v(" "), _c('b-btn', { staticClass: "m-1", attrs: { "variant": "info" }, on: { "click": function ($event) {
+        /* istanbul ignore next */cov_1dbgslrl33.f[3]++;
+        cov_1dbgslrl33.s[16]++;
+        _vm.showDismissibleAlert = true;
+      } } }, [_vm._v("\n            Show dismissible alert (" + _vm._s(_vm.showDismissibleAlert ? /* istanbul ignore next */(cov_1dbgslrl33.b[3][0]++, 'visible') : /* istanbul ignore next */(cov_1dbgslrl33.b[3][1]++, 'hidden')) + ")\n          ")])], 1)]), _vm._v(" "), _c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _vm._v(" Alerts "), _c('small', [_vm._v("auto dismissible")])]), _vm._v(" "), _c('div', [_c('b-alert', { attrs: { "show": _vm.dismissCountDown, "dismissible": "", "variant": "warning" }, on: { "dismissed": function ($event) {
+        /* istanbul ignore next */cov_1dbgslrl33.f[4]++;
+        cov_1dbgslrl33.s[17]++;
+        _vm.dismissCountdown = 0;
+      }, "dismiss-count-down": _vm.countDownChanged } }, [_vm._v("\n              Alert will dismiss after "), _c('strong', [_vm._v(_vm._s(_vm.dismissCountDown))]), _vm._v(" seconds...\n            ")]), _vm._v(" "), _c('b-alert', { attrs: { "show": _vm.dismissCountDown, "dismissible": "", "variant": "info" }, on: { "dismissed": function ($event) {
+        /* istanbul ignore next */cov_1dbgslrl33.f[5]++;
+        cov_1dbgslrl33.s[18]++;
+        _vm.dismissCountdown = 0;
+      }, "dismiss-count-down": _vm.countDownChanged } }, [_vm._v("\n              Alert will dismiss after " + _vm._s(_vm.dismissCountDown) + " seconds...\n              "), _c('b-progress', { attrs: { "variant": "info", "max": _vm.dismissSecs, "value": _vm.dismissCountDown, "height": "4px" } })], 1), _vm._v(" "), _c('b-btn', { staticClass: "m-1", attrs: { "variant": "info" }, on: { "click": _vm.showAlert } }, [_vm._v("\n              Show alert with timer\n            ")])], 1)])], 1)], 1)], 1)]);
+};
+/* istanbul ignore next */cov_1dbgslrl33.s[19]++;
+__vue__options__.staticRenderFns = [];

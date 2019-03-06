@@ -1,0 +1,384 @@
+68ae923a3dea2c5a3c3ea3fa1abf956b
+/* istanbul ignore next */var cov_11sdmnfw9i = function () {
+  var path = "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/dashboard/CardLine1ChartExample.vue",
+      hash = "63533a05acd7c16bbfee4a76f33049e862bcabd4",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/dashboard/CardLine1ChartExample.vue",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 1
+        },
+        end: {
+          line: 74,
+          column: 4
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 0
+        },
+        end: {
+          line: 7,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 9,
+          column: 18
+        },
+        end: {
+          line: 9,
+          column: 40
+        }
+      },
+      "4": {
+        start: {
+          line: 11,
+          column: 41
+        },
+        end: {
+          line: 11,
+          column: 97
+        }
+      },
+      "5": {
+        start: {
+          line: 13,
+          column: 23
+        },
+        end: {
+          line: 13,
+          column: 73
+        }
+      },
+      "6": {
+        start: {
+          line: 15,
+          column: 15
+        },
+        end: {
+          line: 72,
+          column: 1
+        }
+      },
+      "7": {
+        start: {
+          line: 20,
+          column: 25
+        },
+        end: {
+          line: 20,
+          column: 81
+        }
+      },
+      "8": {
+        start: {
+          line: 21,
+          column: 22
+        },
+        end: {
+          line: 26,
+          column: 6
+        }
+      },
+      "9": {
+        start: {
+          line: 27,
+          column: 4
+        },
+        end: {
+          line: 69,
+          column: 7
+        }
+      },
+      "10": {
+        start: {
+          line: 73,
+          column: 0
+        },
+        end: {
+          line: 73,
+          column: 27
+        }
+      },
+      "11": {
+        start: {
+          line: 75,
+          column: 20
+        },
+        end: {
+          line: 75,
+          column: 89
+        }
+      },
+      "12": {
+        start: {
+          line: 75,
+          column: 114
+        },
+        end: {
+          line: 75,
+          column: 187
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 1,
+            column: 2
+          },
+          end: {
+            line: 1,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 1,
+            column: 12
+          },
+          end: {
+            line: 74,
+            column: 1
+          }
+        },
+        line: 1
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 20,
+            column: 25
+          },
+          end: {
+            line: 20,
+            column: 81
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 20,
+            column: 25
+          },
+          end: {
+            line: 20,
+            column: 68
+          }
+        }, {
+          start: {
+            line: 20,
+            column: 72
+          },
+          end: {
+            line: 20,
+            column: 81
+          }
+        }],
+        line: 20
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 75,
+            column: 20
+          },
+          end: {
+            line: 75,
+            column: 89
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 75,
+            column: 50
+          },
+          end: {
+            line: 75,
+            column: 72
+          }
+        }, {
+          start: {
+            line: 75,
+            column: 75
+          },
+          end: {
+            line: 75,
+            column: 89
+          }
+        }],
+        line: 75
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 75,
+            column: 114
+          },
+          end: {
+            line: 75,
+            column: 187
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 75,
+            column: 151
+          },
+          end: {
+            line: 75,
+            column: 172
+          }
+        }, {
+          start: {
+            line: 75,
+            column: 174
+          },
+          end: {
+            line: 75,
+            column: 187
+          }
+        }],
+        line: 75
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0
+    },
+    f: {
+      "0": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0]
+    },
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+; /* istanbul ignore next */cov_11sdmnfw9i.s[0]++;
+(function () {
+  "use strict";
+
+  /* istanbul ignore next */cov_11sdmnfw9i.f[0]++;
+  cov_11sdmnfw9i.s[1]++;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  /* istanbul ignore next */cov_11sdmnfw9i.s[2]++;
+  exports.default = void 0;
+
+  var _vueChartjs = /* istanbul ignore next */(cov_11sdmnfw9i.s[3]++, require("vue-chartjs"));
+
+  var _coreuiPluginChartjsCustomTooltips = /* istanbul ignore next */(cov_11sdmnfw9i.s[4]++, require("@coreui/coreui-plugin-chartjs-custom-tooltips"));
+
+  var _coreuiUtilities = /* istanbul ignore next */(cov_11sdmnfw9i.s[5]++, require("@coreui/coreui/dist/js/coreui-utilities"));
+
+  var _default = /* istanbul ignore next */(cov_11sdmnfw9i.s[6]++, {
+    extends: _vueChartjs.Line,
+    props: ['height', 'width'],
+
+    mounted() {
+      const brandPrimary = /* istanbul ignore next */(cov_11sdmnfw9i.s[7]++, /* istanbul ignore next */(cov_11sdmnfw9i.b[0][0]++, (0, _coreuiUtilities.getStyle)('--primary')) || /* istanbul ignore next */(cov_11sdmnfw9i.b[0][1]++, '#20a8d8'));
+      const datasets1 = /* istanbul ignore next */(cov_11sdmnfw9i.s[8]++, [{
+        label: 'My First dataset',
+        backgroundColor: brandPrimary,
+        borderColor: 'rgba(255,255,255,.55)',
+        data: [65, 59, 84, 84, 51, 55, 40]
+      }]);
+      /* istanbul ignore next */cov_11sdmnfw9i.s[9]++;
+      this.renderChart({
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: datasets1
+      }, {
+        tooltips: {
+          enabled: false,
+          custom: _coreuiPluginChartjsCustomTooltips.CustomTooltips
+        },
+        maintainAspectRatio: false,
+        legend: {
+          display: false
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              color: 'transparent',
+              zeroLineColor: 'transparent'
+            },
+            ticks: {
+              fontSize: 2,
+              fontColor: 'transparent'
+            }
+          }],
+          yAxes: [{
+            display: false,
+            ticks: {
+              display: false,
+              min: Math.min.apply(Math, datasets1[0].data) - 5,
+              max: Math.max.apply(Math, datasets1[0].data) + 5
+            }
+          }]
+        },
+        elements: {
+          line: {
+            borderWidth: 1
+          },
+          point: {
+            radius: 4,
+            hitRadius: 10,
+            hoverRadius: 4
+          }
+        }
+      });
+    }
+
+  });
+  /* istanbul ignore next */cov_11sdmnfw9i.s[10]++;
+  exports.default = _default;
+})();
+var defaultExport = /* istanbul ignore next */(cov_11sdmnfw9i.s[11]++, module.exports.__esModule ? /* istanbul ignore next */(cov_11sdmnfw9i.b[1][0]++, module.exports.default) : /* istanbul ignore next */(cov_11sdmnfw9i.b[1][1]++, module.exports));var __vue__options__ = /* istanbul ignore next */(cov_11sdmnfw9i.s[12]++, typeof defaultExport === "function" ? /* istanbul ignore next */(cov_11sdmnfw9i.b[2][0]++, defaultExport.options) : /* istanbul ignore next */(cov_11sdmnfw9i.b[2][1]++, defaultExport));

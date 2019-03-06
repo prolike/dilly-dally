@@ -1,9 +1,4 @@
-const firebase = require("firebase");
-require("firebase/functions");
 
-var app = firebase.initializeApp({
-  projectId: 'prolike-stack'
-});
 
 
 app.functions().useFunctionsEmulator('http://localhost:5000')

@@ -1,0 +1,412 @@
+3cb359f8a96779ab12ddf5f5f6e4cbb9
+/* istanbul ignore next */var cov_2ktwg3onkc = function () {
+  var path = "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/pages/Register.vue",
+      hash = "2f71eb587551496cd126a1d072277870725b2fde",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/pages/Register.vue",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 1
+        },
+        end: {
+          line: 70,
+          column: 4
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 0
+        },
+        end: {
+          line: 7,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 66,
+          column: 15
+        },
+        end: {
+          line: 68,
+          column: 1
+        }
+      },
+      "4": {
+        start: {
+          line: 69,
+          column: 0
+        },
+        end: {
+          line: 69,
+          column: 27
+        }
+      },
+      "5": {
+        start: {
+          line: 71,
+          column: 20
+        },
+        end: {
+          line: 71,
+          column: 89
+        }
+      },
+      "6": {
+        start: {
+          line: 71,
+          column: 114
+        },
+        end: {
+          line: 71,
+          column: 187
+        }
+      },
+      "7": {
+        start: {
+          line: 72,
+          column: 0
+        },
+        end: {
+          line: 72,
+          column: 2138
+        }
+      },
+      "8": {
+        start: {
+          line: 72,
+          column: 54
+        },
+        end: {
+          line: 72,
+          column: 58
+        }
+      },
+      "9": {
+        start: {
+          line: 72,
+          column: 66
+        },
+        end: {
+          line: 72,
+          column: 84
+        }
+      },
+      "10": {
+        start: {
+          line: 72,
+          column: 92
+        },
+        end: {
+          line: 72,
+          column: 108
+        }
+      },
+      "11": {
+        start: {
+          line: 72,
+          column: 109
+        },
+        end: {
+          line: 72,
+          column: 2137
+        }
+      },
+      "12": {
+        start: {
+          line: 73,
+          column: 0
+        },
+        end: {
+          line: 73,
+          column: 37
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 1,
+            column: 2
+          },
+          end: {
+            line: 1,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 1,
+            column: 12
+          },
+          end: {
+            line: 70,
+            column: 1
+          }
+        },
+        line: 1
+      },
+      "1": {
+        name: "render",
+        decl: {
+          start: {
+            line: 72,
+            column: 35
+          },
+          end: {
+            line: 72,
+            column: 41
+          }
+        },
+        loc: {
+          start: {
+            line: 72,
+            column: 45
+          },
+          end: {
+            line: 72,
+            column: 2138
+          }
+        },
+        line: 72
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 71,
+            column: 20
+          },
+          end: {
+            line: 71,
+            column: 89
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 71,
+            column: 50
+          },
+          end: {
+            line: 71,
+            column: 72
+          }
+        }, {
+          start: {
+            line: 71,
+            column: 75
+          },
+          end: {
+            line: 71,
+            column: 89
+          }
+        }],
+        line: 71
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 71,
+            column: 114
+          },
+          end: {
+            line: 71,
+            column: 187
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 71,
+            column: 151
+          },
+          end: {
+            line: 71,
+            column: 172
+          }
+        }, {
+          start: {
+            line: 71,
+            column: 174
+          },
+          end: {
+            line: 71,
+            column: 187
+          }
+        }],
+        line: 71
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 72,
+            column: 92
+          },
+          end: {
+            line: 72,
+            column: 108
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 72,
+            column: 92
+          },
+          end: {
+            line: 72,
+            column: 104
+          }
+        }, {
+          start: {
+            line: 72,
+            column: 106
+          },
+          end: {
+            line: 72,
+            column: 108
+          }
+        }],
+        line: 72
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0]
+    },
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+; /* istanbul ignore next */cov_2ktwg3onkc.s[0]++;
+(function () {
+  "use strict";
+
+  /* istanbul ignore next */cov_2ktwg3onkc.f[0]++;
+  cov_2ktwg3onkc.s[1]++;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  /* istanbul ignore next */cov_2ktwg3onkc.s[2]++;
+  exports.default = void 0;
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var _default = /* istanbul ignore next */(cov_2ktwg3onkc.s[3]++, {
+    name: 'Register'
+  });
+  /* istanbul ignore next */cov_2ktwg3onkc.s[4]++;
+  exports.default = _default;
+})();
+var defaultExport = /* istanbul ignore next */(cov_2ktwg3onkc.s[5]++, module.exports.__esModule ? /* istanbul ignore next */(cov_2ktwg3onkc.b[0][0]++, module.exports.default) : /* istanbul ignore next */(cov_2ktwg3onkc.b[0][1]++, module.exports));var __vue__options__ = /* istanbul ignore next */(cov_2ktwg3onkc.s[6]++, typeof defaultExport === "function" ? /* istanbul ignore next */(cov_2ktwg3onkc.b[1][0]++, defaultExport.options) : /* istanbul ignore next */(cov_2ktwg3onkc.b[1][1]++, defaultExport));
+/* istanbul ignore next */cov_2ktwg3onkc.s[7]++;
+__vue__options__.render = function render() {
+  /* istanbul ignore next */cov_2ktwg3onkc.f[1]++;
+  var _vm = /* istanbul ignore next */(cov_2ktwg3onkc.s[8]++, this);var _h = /* istanbul ignore next */(cov_2ktwg3onkc.s[9]++, _vm.$createElement);var _c = /* istanbul ignore next */(cov_2ktwg3onkc.s[10]++, /* istanbul ignore next */(cov_2ktwg3onkc.b[2][0]++, _vm._self._c) || /* istanbul ignore next */(cov_2ktwg3onkc.b[2][1]++, _h)); /* istanbul ignore next */cov_2ktwg3onkc.s[11]++;
+  return _c('div', { staticClass: "app flex-row align-items-center" }, [_c('div', { staticClass: "container" }, [_c('b-row', { staticClass: "justify-content-center" }, [_c('b-col', { attrs: { "md": "6", "sm": "8" } }, [_c('b-card', { staticClass: "mx-4", attrs: { "no-body": "" } }, [_c('b-card-body', { staticClass: "p-4" }, [_c('b-form', [_c('h1', [_vm._v("Register")]), _vm._v(" "), _c('p', { staticClass: "text-muted" }, [_vm._v("Create your account")]), _vm._v(" "), _c('b-input-group', { staticClass: "mb-3" }, [_c('b-input-group-prepend', [_c('b-input-group-text', [_c('i', { staticClass: "icon-user" })])], 1), _vm._v(" "), _c('b-form-input', { staticClass: "form-control", attrs: { "type": "text", "placeholder": "Username", "autocomplete": "username" } })], 1), _vm._v(" "), _c('b-input-group', { staticClass: "mb-3" }, [_c('b-input-group-prepend', [_c('b-input-group-text', [_vm._v("@")])], 1), _vm._v(" "), _c('b-form-input', { staticClass: "form-control", attrs: { "type": "text", "placeholder": "Email", "autocomplete": "email" } })], 1), _vm._v(" "), _c('b-input-group', { staticClass: "mb-3" }, [_c('b-input-group-prepend', [_c('b-input-group-text', [_c('i', { staticClass: "icon-lock" })])], 1), _vm._v(" "), _c('b-form-input', { staticClass: "form-control", attrs: { "type": "password", "placeholder": "Password", "autocomplete": "new-password" } })], 1), _vm._v(" "), _c('b-input-group', { staticClass: "mb-4" }, [_c('b-input-group-prepend', [_c('b-input-group-text', [_c('i', { staticClass: "icon-lock" })])], 1), _vm._v(" "), _c('b-form-input', { staticClass: "form-control", attrs: { "type": "password", "placeholder": "Repeat password", "autocomplete": "new-password" } })], 1), _vm._v(" "), _c('b-button', { attrs: { "variant": "success", "block": "" } }, [_vm._v("Create Account")])], 1)], 1), _vm._v(" "), _c('b-card-footer', { staticClass: "p-4" }, [_c('b-row', [_c('b-col', { attrs: { "cols": "6" } }, [_c('b-button', { staticClass: "btn btn-facebook", attrs: { "block": "" } }, [_c('span', [_vm._v("facebook")])])], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "6" } }, [_c('b-button', { staticClass: "btn btn-twitter", attrs: { "block": "", "type": "button" } }, [_c('span', [_vm._v("twitter")])])], 1)], 1)], 1)], 1)], 1)], 1)], 1)]);
+};
+/* istanbul ignore next */cov_2ktwg3onkc.s[12]++;
+__vue__options__.staticRenderFns = [];

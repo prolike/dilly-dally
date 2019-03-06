@@ -1,0 +1,545 @@
+927f4d91066b0f3eee4c33f626dbd6a2
+/* istanbul ignore next */var cov_26aikyd7f1 = function () {
+  var path = "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/buttons/ButtonGroups.vue",
+      hash = "631b8bd82e0738676510ddc0c2b66bc091e65823",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/buttons/ButtonGroups.vue",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 1
+        },
+        end: {
+          line: 203,
+          column: 4
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 0
+        },
+        end: {
+          line: 7,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 199,
+          column: 15
+        },
+        end: {
+          line: 201,
+          column: 1
+        }
+      },
+      "4": {
+        start: {
+          line: 202,
+          column: 0
+        },
+        end: {
+          line: 202,
+          column: 27
+        }
+      },
+      "5": {
+        start: {
+          line: 204,
+          column: 20
+        },
+        end: {
+          line: 204,
+          column: 89
+        }
+      },
+      "6": {
+        start: {
+          line: 204,
+          column: 114
+        },
+        end: {
+          line: 204,
+          column: 187
+        }
+      },
+      "7": {
+        start: {
+          line: 205,
+          column: 0
+        },
+        end: {
+          line: 205,
+          column: 7053
+        }
+      },
+      "8": {
+        start: {
+          line: 205,
+          column: 54
+        },
+        end: {
+          line: 205,
+          column: 58
+        }
+      },
+      "9": {
+        start: {
+          line: 205,
+          column: 66
+        },
+        end: {
+          line: 205,
+          column: 84
+        }
+      },
+      "10": {
+        start: {
+          line: 205,
+          column: 92
+        },
+        end: {
+          line: 205,
+          column: 108
+        }
+      },
+      "11": {
+        start: {
+          line: 205,
+          column: 109
+        },
+        end: {
+          line: 205,
+          column: 7052
+        }
+      },
+      "12": {
+        start: {
+          line: 206,
+          column: 0
+        },
+        end: {
+          line: 206,
+          column: 37
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 1,
+            column: 2
+          },
+          end: {
+            line: 1,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 1,
+            column: 12
+          },
+          end: {
+            line: 203,
+            column: 1
+          }
+        },
+        line: 1
+      },
+      "1": {
+        name: "render",
+        decl: {
+          start: {
+            line: 205,
+            column: 35
+          },
+          end: {
+            line: 205,
+            column: 41
+          }
+        },
+        loc: {
+          start: {
+            line: 205,
+            column: 45
+          },
+          end: {
+            line: 205,
+            column: 7053
+          }
+        },
+        line: 205
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 204,
+            column: 20
+          },
+          end: {
+            line: 204,
+            column: 89
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 204,
+            column: 50
+          },
+          end: {
+            line: 204,
+            column: 72
+          }
+        }, {
+          start: {
+            line: 204,
+            column: 75
+          },
+          end: {
+            line: 204,
+            column: 89
+          }
+        }],
+        line: 204
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 204,
+            column: 114
+          },
+          end: {
+            line: 204,
+            column: 187
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 204,
+            column: 151
+          },
+          end: {
+            line: 204,
+            column: 172
+          }
+        }, {
+          start: {
+            line: 204,
+            column: 174
+          },
+          end: {
+            line: 204,
+            column: 187
+          }
+        }],
+        line: 204
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 205,
+            column: 92
+          },
+          end: {
+            line: 205,
+            column: 108
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 205,
+            column: 92
+          },
+          end: {
+            line: 205,
+            column: 104
+          }
+        }, {
+          start: {
+            line: 205,
+            column: 106
+          },
+          end: {
+            line: 205,
+            column: 108
+          }
+        }],
+        line: 205
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0]
+    },
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+; /* istanbul ignore next */cov_26aikyd7f1.s[0]++;
+(function () {
+  "use strict";
+
+  /* istanbul ignore next */cov_26aikyd7f1.f[0]++;
+  cov_26aikyd7f1.s[1]++;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  /* istanbul ignore next */cov_26aikyd7f1.s[2]++;
+  exports.default = void 0;
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var _default = /* istanbul ignore next */(cov_26aikyd7f1.s[3]++, {
+    name: 'button-groups'
+  });
+  /* istanbul ignore next */cov_26aikyd7f1.s[4]++;
+  exports.default = _default;
+})();
+var defaultExport = /* istanbul ignore next */(cov_26aikyd7f1.s[5]++, module.exports.__esModule ? /* istanbul ignore next */(cov_26aikyd7f1.b[0][0]++, module.exports.default) : /* istanbul ignore next */(cov_26aikyd7f1.b[0][1]++, module.exports));var __vue__options__ = /* istanbul ignore next */(cov_26aikyd7f1.s[6]++, typeof defaultExport === "function" ? /* istanbul ignore next */(cov_26aikyd7f1.b[1][0]++, defaultExport.options) : /* istanbul ignore next */(cov_26aikyd7f1.b[1][1]++, defaultExport));
+/* istanbul ignore next */cov_26aikyd7f1.s[7]++;
+__vue__options__.render = function render() {
+  /* istanbul ignore next */cov_26aikyd7f1.f[1]++;
+  var _vm = /* istanbul ignore next */(cov_26aikyd7f1.s[8]++, this);var _h = /* istanbul ignore next */(cov_26aikyd7f1.s[9]++, _vm.$createElement);var _c = /* istanbul ignore next */(cov_26aikyd7f1.s[10]++, /* istanbul ignore next */(cov_26aikyd7f1.b[2][0]++, _vm._self._c) || /* istanbul ignore next */(cov_26aikyd7f1.b[2][1]++, _h)); /* istanbul ignore next */cov_26aikyd7f1.s[11]++;
+  return _c('div', { staticClass: "wrapper" }, [_c('div', { staticClass: "animated fadeIn" }, [_c('b-row', [_c('b-col', { attrs: { "cols": "12" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _c('strong', [_vm._v(" Bootstrap button group")]), _vm._v(" "), _c('div', { staticClass: "card-header-actions" }, [_c('a', { staticClass: "card-header-action", attrs: { "href": "https://bootstrap-vue.js.org/docs/components/button-group", "rel": "noreferrer noopener", "target": "_blank" } }, [_c('small', { staticClass: "text-muted" }, [_vm._v("docs")])])])]), _vm._v(" "), _c('div', [_c('b-button-group', [_c('b-button', [_vm._v("One")]), _vm._v(" "), _c('b-button', [_vm._v("Two")]), _vm._v(" "), _c('b-button', [_vm._v("Three")]), _vm._v(" "), _c('b-button', [_vm._v("Four")]), _vm._v(" "), _c('b-button', { staticClass: "d-sm-down-none" }, [_vm._v("Five")])], 1), _vm._v(" "), _c('br'), _c('br'), _vm._v(" "), _c('b-button-group', [_c('b-button', { staticClass: "d-sm-down-none", attrs: { "variant": "success" } }, [_vm._v("Success")]), _vm._v(" "), _c('b-button', { attrs: { "variant": "info" } }, [_vm._v("Info")]), _vm._v(" "), _c('b-button', { attrs: { "variant": "warning" } }, [_vm._v("Warn")]), _vm._v(" "), _c('b-button', { staticClass: "d-sm-down-none", attrs: { "variant": "primary" } }, [_vm._v("Primary")]), _vm._v(" "), _c('b-button', { attrs: { "variant": "danger" } }, [_vm._v("Danger")]), _vm._v(" "), _c('b-button', { attrs: { "variant": "link" } }, [_vm._v("Link")])], 1)], 1)])], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _c('strong', [_vm._v(" Button group ")]), _vm._v("sizing\n          ")]), _vm._v(" "), _c('div', [_c('b-button-group', [_c('b-button', [_vm._v("Left")]), _vm._v(" "), _c('b-button', [_vm._v("Middle")]), _vm._v(" "), _c('b-button', [_vm._v("Right")])], 1), _vm._v(" "), _c('br'), _c('br'), _vm._v(" "), _c('b-button-group', { attrs: { "size": "sm" } }, [_c('b-button', [_vm._v("Left")]), _vm._v(" "), _c('b-button', [_vm._v("Middle")]), _vm._v(" "), _c('b-button', [_vm._v("Right")])], 1), _vm._v(" "), _c('br'), _c('br'), _vm._v(" "), _c('b-button-group', { attrs: { "size": "lg" } }, [_c('b-button', [_vm._v("Left")]), _vm._v(" "), _c('b-button', [_vm._v("Middle")]), _vm._v(" "), _c('b-button', [_vm._v("Right")])], 1)], 1)])], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _c('strong', [_vm._v(" Button group ")]), _vm._v("dropdown support\n          ")]), _vm._v(" "), _c('div', [_c('b-button-group', [_c('b-button', { staticClass: "d-sm-down-none" }, [_vm._v("Button 1")]), _vm._v(" "), _c('b-button', { staticClass: "d-sm-down-none" }, [_vm._v("Button 2")]), _vm._v(" "), _c('b-dropdown', { attrs: { "right": "", "text": "Menu", "variant": "success" } }, [_c('b-dropdown-item', [_vm._v("Item 1")]), _vm._v(" "), _c('b-dropdown-item', [_vm._v("Item 2")]), _vm._v(" "), _c('b-dropdown-divider'), _vm._v(" "), _c('b-dropdown-item', [_vm._v("Item 3")])], 1), _vm._v(" "), _c('b-button', { staticClass: "d-sm-down-none" }, [_vm._v("Button 3")]), _vm._v(" "), _c('b-dropdown', { attrs: { "right": "", "split": "", "text": "Split Menu", "variant": "info" } }, [_c('b-dropdown-item', [_vm._v("Item 1")]), _vm._v(" "), _c('b-dropdown-item', [_vm._v("Item 2")]), _vm._v(" "), _c('b-dropdown-divider'), _vm._v(" "), _c('b-dropdown-item', [_vm._v("Item 3")])], 1)], 1)], 1)])], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _c('strong', [_vm._v(" Button group ")]), _vm._v("vertical variation\n          ")]), _vm._v(" "), _c('div', [_c('b-button-group', { attrs: { "vertical": "" } }, [_c('b-button', [_vm._v("Top")]), _vm._v(" "), _c('b-button', [_vm._v("Middle")]), _vm._v(" "), _c('b-button', [_vm._v("Bottom")])], 1)], 1)])], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12" } }, [_c('b-card', { attrs: { "header-tag": "header", "footer-tag": "footer" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "fa fa-align-justify" }), _vm._v(" "), _c('strong', [_vm._v("Button toolbar")]), _vm._v(" "), _c('small', [_vm._v("with button groups")]), _vm._v(" "), _c('div', { staticClass: "card-header-actions" }, [_c('a', { staticClass: "card-header-action", attrs: { "href": "https://bootstrap-vue.js.org/docs/components/button-toolbar", "rel": "noreferrer noopener", "target": "_blank" } }, [_c('small', { staticClass: "text-muted" }, [_vm._v("docs")])])])]), _vm._v(" "), _c('div', [_c('b-button-toolbar', { attrs: { "key-nav": "", "aria-label": "Toolbar with button groups" } }, [_c('b-button-group', { staticClass: "mx-1" }, [_c('b-btn', { staticClass: "d-sm-down-none" }, [_vm._v("«")]), _vm._v(" "), _c('b-btn', [_vm._v("‹")])], 1), _vm._v(" "), _c('b-button-group', { staticClass: "mx-1" }, [_c('b-btn', { staticClass: "d-sm-down-none" }, [_vm._v("Edit")]), _vm._v(" "), _c('b-btn', [_vm._v("Undo")]), _vm._v(" "), _c('b-btn', [_vm._v("Redo")])], 1), _vm._v(" "), _c('b-button-group', { staticClass: "mx-1" }, [_c('b-btn', [_vm._v("›")]), _vm._v(" "), _c('b-btn', { staticClass: "d-sm-down-none" }, [_vm._v("»")])], 1)], 1)], 1), _vm._v(" "), _c('hr', { staticClass: "d-sm-down-none" }), _vm._v(" "), _c('div', [_c('b-button-toolbar', { staticClass: "d-sm-down-none", attrs: { "aria-label": "Toolbar with button groups and input groups" } }, [_c('b-button-group', { staticClass: "mx-1", attrs: { "size": "sm" } }, [_c('b-btn', [_vm._v("New")]), _vm._v(" "), _c('b-btn', [_vm._v("Edit")])], 1), _vm._v(" "), _c('b-input-group', { staticClass: "w-25 mx-1", attrs: { "size": "sm" } }, [_c('b-input-group-prepend', [_c('b-input-group-text', [_vm._v("$")])], 1), _vm._v(" "), _c('b-form-input', { staticClass: "text-right", attrs: { "value": "100" } }), _vm._v(" "), _c('b-input-group-append', [_c('b-input-group-text', [_vm._v(".00")])], 1)], 1), _vm._v(" "), _c('b-input-group', { staticClass: "w-25 mx-1", attrs: { "size": "sm" } }, [_c('b-input-group-prepend', [_c('b-input-group-text', [_vm._v("Size")])], 1), _vm._v(" "), _c('b-form-select', { attrs: { "value": "Medium", "options": ['Large', 'Medium', 'Small'] } })], 1), _vm._v(" "), _c('b-button-group', { staticClass: "mx-1", attrs: { "size": "sm" } }, [_c('b-btn', [_vm._v("Save")]), _vm._v(" "), _c('b-btn', [_vm._v("Cancel")])], 1)], 1)], 1), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', [_c('b-button-toolbar', { attrs: { "aria-label": "Toolbar with button groups and dropdown menu" } }, [_c('b-button-group', { staticClass: "mx-1 d-sm-down-none" }, [_c('b-btn', [_vm._v("New")]), _vm._v(" "), _c('b-btn', [_vm._v("Edit")]), _vm._v(" "), _c('b-btn', [_vm._v("Undo")])], 1), _vm._v(" "), _c('b-dropdown', { staticClass: "mx-1", attrs: { "right": "", "text": "menu" } }, [_c('b-dropdown-item', [_vm._v("Item 1")]), _vm._v(" "), _c('b-dropdown-item', [_vm._v("Item 2")]), _vm._v(" "), _c('b-dropdown-item', [_vm._v("Item 3")])], 1), _vm._v(" "), _c('b-button-group', { staticClass: "mx-1" }, [_c('b-btn', [_vm._v("Save")]), _vm._v(" "), _c('b-btn', [_vm._v("Cancel")])], 1)], 1)], 1)])], 1)], 1)], 1)]);
+};
+/* istanbul ignore next */cov_26aikyd7f1.s[12]++;
+__vue__options__.staticRenderFns = [];

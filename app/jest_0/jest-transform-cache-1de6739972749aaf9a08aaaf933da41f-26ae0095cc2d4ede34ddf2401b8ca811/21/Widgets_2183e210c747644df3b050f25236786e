@@ -1,0 +1,885 @@
+88bce4bcef462822c3612f542dc065d2
+/* istanbul ignore next */var cov_6blcxkgb4 = function () {
+  var path = "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/Widgets.vue",
+      hash = "1bd310573d6327343758468d89aa4f119e9d5116",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/Widgets.vue",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 1
+        },
+        end: {
+          line: 508,
+          column: 4
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 29
+        },
+        end: {
+          line: 4,
+          column: 147
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 8,
+          column: 3
+        }
+      },
+      "3": {
+        start: {
+          line: 9,
+          column: 0
+        },
+        end: {
+          line: 9,
+          column: 25
+        }
+      },
+      "4": {
+        start: {
+          line: 11,
+          column: 29
+        },
+        end: {
+          line: 11,
+          column: 97
+        }
+      },
+      "5": {
+        start: {
+          line: 494,
+          column: 15
+        },
+        end: {
+          line: 506,
+          column: 1
+        }
+      },
+      "6": {
+        start: {
+          line: 501,
+          column: 4
+        },
+        end: {
+          line: 503,
+          column: 6
+        }
+      },
+      "7": {
+        start: {
+          line: 507,
+          column: 0
+        },
+        end: {
+          line: 507,
+          column: 27
+        }
+      },
+      "8": {
+        start: {
+          line: 509,
+          column: 20
+        },
+        end: {
+          line: 509,
+          column: 89
+        }
+      },
+      "9": {
+        start: {
+          line: 509,
+          column: 114
+        },
+        end: {
+          line: 509,
+          column: 187
+        }
+      },
+      "10": {
+        start: {
+          line: 510,
+          column: 0
+        },
+        end: {
+          line: 510,
+          column: 21993
+        }
+      },
+      "11": {
+        start: {
+          line: 510,
+          column: 54
+        },
+        end: {
+          line: 510,
+          column: 58
+        }
+      },
+      "12": {
+        start: {
+          line: 510,
+          column: 66
+        },
+        end: {
+          line: 510,
+          column: 84
+        }
+      },
+      "13": {
+        start: {
+          line: 510,
+          column: 92
+        },
+        end: {
+          line: 510,
+          column: 108
+        }
+      },
+      "14": {
+        start: {
+          line: 510,
+          column: 109
+        },
+        end: {
+          line: 510,
+          column: 21992
+        }
+      },
+      "15": {
+        start: {
+          line: 511,
+          column: 0
+        },
+        end: {
+          line: 511,
+          column: 37
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 1,
+            column: 2
+          },
+          end: {
+            line: 1,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 1,
+            column: 12
+          },
+          end: {
+            line: 508,
+            column: 1
+          }
+        },
+        line: 1
+      },
+      "1": {
+        name: "render",
+        decl: {
+          start: {
+            line: 510,
+            column: 35
+          },
+          end: {
+            line: 510,
+            column: 41
+          }
+        },
+        loc: {
+          start: {
+            line: 510,
+            column: 45
+          },
+          end: {
+            line: 510,
+            column: 21993
+          }
+        },
+        line: 510
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 509,
+            column: 20
+          },
+          end: {
+            line: 509,
+            column: 89
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 509,
+            column: 50
+          },
+          end: {
+            line: 509,
+            column: 72
+          }
+        }, {
+          start: {
+            line: 509,
+            column: 75
+          },
+          end: {
+            line: 509,
+            column: 89
+          }
+        }],
+        line: 509
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 509,
+            column: 114
+          },
+          end: {
+            line: 509,
+            column: 187
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 509,
+            column: 151
+          },
+          end: {
+            line: 509,
+            column: 172
+          }
+        }, {
+          start: {
+            line: 509,
+            column: 174
+          },
+          end: {
+            line: 509,
+            column: 187
+          }
+        }],
+        line: 509
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 510,
+            column: 92
+          },
+          end: {
+            line: 510,
+            column: 108
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 510,
+            column: 92
+          },
+          end: {
+            line: 510,
+            column: 104
+          }
+        }, {
+          start: {
+            line: 510,
+            column: 106
+          },
+          end: {
+            line: 510,
+            column: 108
+          }
+        }],
+        line: 510
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0]
+    },
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+; /* istanbul ignore next */cov_6blcxkgb4.s[0]++;
+(function () {
+  "use strict";
+
+  /* istanbul ignore next */cov_6blcxkgb4.f[0]++;
+  var _interopRequireDefault = /* istanbul ignore next */(cov_6blcxkgb4.s[1]++, require("/home/oem/Desktop/Prolike/dilly-dally/app/node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault"));
+
+  /* istanbul ignore next */cov_6blcxkgb4.s[2]++;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  /* istanbul ignore next */cov_6blcxkgb4.s[3]++;
+  exports.default = void 0;
+
+  var _SocialBoxChartExample = /* istanbul ignore next */(cov_6blcxkgb4.s[4]++, _interopRequireDefault(require("./dashboard/SocialBoxChartExample")));
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var _default = /* istanbul ignore next */(cov_6blcxkgb4.s[5]++, {
+    name: 'widgets',
+    components: {
+      SocialBoxChartExample: _SocialBoxChartExample.default
+    },
+
+    data() {
+      /* istanbul ignore next */cov_6blcxkgb4.s[6]++;
+
+      return {
+        msg: 'Widgets'
+      };
+    }
+
+  });
+  /* istanbul ignore next */cov_6blcxkgb4.s[7]++;
+  exports.default = _default;
+})();
+var defaultExport = /* istanbul ignore next */(cov_6blcxkgb4.s[8]++, module.exports.__esModule ? /* istanbul ignore next */(cov_6blcxkgb4.b[0][0]++, module.exports.default) : /* istanbul ignore next */(cov_6blcxkgb4.b[0][1]++, module.exports));var __vue__options__ = /* istanbul ignore next */(cov_6blcxkgb4.s[9]++, typeof defaultExport === "function" ? /* istanbul ignore next */(cov_6blcxkgb4.b[1][0]++, defaultExport.options) : /* istanbul ignore next */(cov_6blcxkgb4.b[1][1]++, defaultExport));
+/* istanbul ignore next */cov_6blcxkgb4.s[10]++;
+__vue__options__.render = function render() {
+  /* istanbul ignore next */cov_6blcxkgb4.f[1]++;
+  var _vm = /* istanbul ignore next */(cov_6blcxkgb4.s[11]++, this);var _h = /* istanbul ignore next */(cov_6blcxkgb4.s[12]++, _vm.$createElement);var _c = /* istanbul ignore next */(cov_6blcxkgb4.s[13]++, /* istanbul ignore next */(cov_6blcxkgb4.b[2][0]++, _vm._self._c) || /* istanbul ignore next */(cov_6blcxkgb4.b[2][1]++, _h)); /* istanbul ignore next */cov_6blcxkgb4.s[14]++;
+  return _c('div', { staticClass: "animated fadeIn" }, [_c('b-row', [_c('b-col', { attrs: { "sm": "6", "lg": "3" } }, [_c('b-card', [_c('div', { staticClass: "h4 m-0" }, [_vm._v("89.9%")]), _vm._v(" "), _c('div', [_vm._v("Lorem ipsum...")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs my-3", attrs: { "height": "{}", "variant": "success", "value": 25 } }), _vm._v(" "), _c('small', { staticClass: "text-muted" }, [_vm._v("Lorem ipsum dolor sit amet enim.")])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "lg": "3" } }, [_c('b-card', [_c('div', { staticClass: "h4 m-0" }, [_vm._v("12.124")]), _vm._v(" "), _c('div', [_vm._v("Lorem ipsum...")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs my-3", attrs: { "height": "{}", "variant": "info", "value": 25 } }), _vm._v(" "), _c('small', { staticClass: "text-muted" }, [_vm._v("Lorem ipsum dolor sit amet enim.")])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "lg": "3" } }, [_c('b-card', [_c('div', { staticClass: "h4 m-0" }, [_vm._v("$98.111,00")]), _vm._v(" "), _c('div', [_vm._v("Lorem ipsum...")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs my-3", attrs: { "height": "{}", "variant": "warning", "value": 25 } }), _vm._v(" "), _c('small', { staticClass: "text-muted" }, [_vm._v("Lorem ipsum dolor sit amet enim.")])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "lg": "3" } }, [_c('b-card', [_c('div', { staticClass: "h4 m-0" }, [_vm._v("2 TB")]), _vm._v(" "), _c('div', [_vm._v("Lorem ipsum...")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs my-3", attrs: { "height": "{}", "variant": "danger", "value": 25 } }), _vm._v(" "), _c('small', { staticClass: "text-muted" }, [_vm._v("Lorem ipsum dolor sit amet enim.")])], 1)], 1)], 1), _vm._v(" "), _c('b-row', [_c('b-col', { attrs: { "sm": "6", "lg": "3" } }, [_c('b-card', { staticClass: "text-white bg-primary" }, [_c('div', { staticClass: "h4 m-0" }, [_vm._v("89.9%")]), _vm._v(" "), _c('div', [_vm._v("Lorem ipsum...")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs my-3", attrs: { "height": "{}", "value": 25 } }), _vm._v(" "), _c('small', { staticClass: "text-muted" }, [_vm._v("Lorem ipsum dolor sit amet enim.")])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "lg": "3" } }, [_c('b-card', { staticClass: "text-white bg-warning" }, [_c('div', { staticClass: "h4 m-0" }, [_vm._v("12.124")]), _vm._v(" "), _c('div', [_vm._v("Lorem ipsum...")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs my-3", attrs: { "height": "{}", "value": 25 } }), _vm._v(" "), _c('small', { staticClass: "text-muted" }, [_vm._v("Lorem ipsum dolor sit amet enim.")])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "lg": "3" } }, [_c('b-card', { staticClass: "text-white bg-danger" }, [_c('div', { staticClass: "h4 m-0" }, [_vm._v("$98.111,00")]), _vm._v(" "), _c('div', [_vm._v("Lorem ipsum...")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs my-3", attrs: { "height": "{}", "value": 25 } }), _vm._v(" "), _c('small', { staticClass: "text-muted" }, [_vm._v("Lorem ipsum dolor sit amet enim.")])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "lg": "3" } }, [_c('b-card', { staticClass: "text-white bg-info" }, [_c('div', { staticClass: "h4 m-0" }, [_vm._v("2 TB")]), _vm._v(" "), _c('div', [_vm._v("Lorem ipsum...")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs my-3", attrs: { "height": "{}", "value": 25 } }), _vm._v(" "), _c('small', { staticClass: "text-muted" }, [_vm._v("Lorem ipsum dolor sit amet enim.")])], 1)], 1)], 1), _vm._v(" "), _c('b-row', [_c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-3 clearfix" }, [_c('i', { staticClass: "fa fa-cogs bg-primary p-3 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-primary mb-0 mt-2" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-3 clearfix" }, [_c('i', { staticClass: "fa fa-laptop bg-info p-3 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-info mb-0 mt-2" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-3 clearfix" }, [_c('i', { staticClass: "fa fa-moon-o bg-warning p-3 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-warning mb-0 mt-2" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-3 clearfix" }, [_c('i', { staticClass: "fa fa-bell bg-danger p-3 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-danger mb-0 mt-2" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true, "footer-class": "px-3 py-2" } }, [_c('b-card-body', { staticClass: "p-3 clearfix" }, [_c('i', { staticClass: "fa fa-cogs bg-primary p-3 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-primary mb-0 mt-2" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])]), _vm._v(" "), _c('div', { attrs: { "slot": "footer" }, slot: "footer" }, [_c('b-link', { staticClass: "font-weight-bold font-xs btn-block text-muted", attrs: { "href": "#" } }, [_vm._v("View More "), _c('i', { staticClass: "fa fa-angle-right float-right font-lg" })])], 1)], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true, "footer-class": "px-3 py-2" } }, [_c('b-card-body', { staticClass: "p-3 clearfix" }, [_c('i', { staticClass: "fa fa-laptop bg-info p-3 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-info mb-0 mt-2" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])]), _vm._v(" "), _c('div', { attrs: { "slot": "footer" }, slot: "footer" }, [_c('b-link', { staticClass: "font-weight-bold font-xs btn-block text-muted", attrs: { "href": "#" } }, [_vm._v("View More "), _c('i', { staticClass: "fa fa-angle-right float-right font-lg" })])], 1)], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true, "footer-class": "px-3 py-2" } }, [_c('b-card-body', { staticClass: "p-3 clearfix" }, [_c('i', { staticClass: "fa fa-moon-o bg-warning p-3 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-warning mb-0 mt-2" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])]), _vm._v(" "), _c('div', { attrs: { "slot": "footer" }, slot: "footer" }, [_c('b-link', { staticClass: "font-weight-bold font-xs btn-block text-muted", attrs: { "href": "#" } }, [_vm._v("View More "), _c('i', { staticClass: "fa fa-angle-right float-right font-lg" })])], 1)], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true, "footer-class": "px-3 py-2" } }, [_c('b-card-body', { staticClass: "p-3 clearfix" }, [_c('i', { staticClass: "fa fa-bell bg-danger p-3 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-danger mb-0 mt-2" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])]), _vm._v(" "), _c('div', { attrs: { "slot": "footer" }, slot: "footer" }, [_c('b-link', { staticClass: "font-weight-bold font-xs btn-block text-muted", attrs: { "href": "#" } }, [_vm._v("View More "), _c('i', { staticClass: "fa fa-angle-right float-right font-lg" })])], 1)], 1)], 1)], 1), _vm._v(" "), _c('b-row', [_c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-0 clearfix" }, [_c('i', { staticClass: "fa fa-cogs bg-primary p-4 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-primary mb-0 pt-3" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-0 clearfix" }, [_c('i', { staticClass: "fa fa-laptop bg-info p-4 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-info mb-0 pt-3" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-0 clearfix" }, [_c('i', { staticClass: "fa fa-moon-o bg-warning p-4 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-warning mb-0 pt-3" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-0 clearfix" }, [_c('i', { staticClass: "fa fa-bell bg-danger p-4 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-danger mb-0 pt-3" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-0 clearfix" }, [_c('i', { staticClass: "fa fa-cogs bg-primary p-4 px-5 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-primary mb-0 pt-3" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-0 clearfix" }, [_c('i', { staticClass: "fa fa-laptop bg-info p-4 px-5 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-info mb-0 pt-3" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-0 clearfix" }, [_c('i', { staticClass: "fa fa-moon-o bg-warning p-4 px-5 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-warning mb-0 pt-3" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "cols": "12", "sm": "6", "lg": "3" } }, [_c('b-card', { attrs: { "no-body": true } }, [_c('b-card-body', { staticClass: "p-0 clearfix" }, [_c('i', { staticClass: "fa fa-bell bg-danger p-4 px-5 font-2xl mr-3 float-left" }), _vm._v(" "), _c('div', { staticClass: "h5 text-danger mb-0 pt-3" }, [_vm._v("$1.999,50")]), _vm._v(" "), _c('div', { staticClass: "text-muted text-uppercase font-weight-bold font-xs" }, [_vm._v("Income")])])], 1)], 1)], 1), _vm._v(" "), _c('b-row', [_c('b-col', { attrs: { "md": "3", "sm": "6" } }, [_c('div', { staticClass: "brand-card" }, [_c('div', { staticClass: "brand-card-header bg-facebook" }, [_c('i', { staticClass: "fa fa-facebook" }), _vm._v(" "), _c('div', { staticClass: "chart-wrapper" }, [_c('social-box-chart-example', { attrs: { "data": [65, 59, 84, 84, 51, 55, 40] } })], 1)]), _vm._v(" "), _c('div', { staticClass: "brand-card-body" }, [_c('div', [_c('div', { staticClass: "text-value" }, [_vm._v("89k")]), _vm._v(" "), _c('div', { staticClass: "text-uppercase text-muted small" }, [_vm._v("friends")])]), _vm._v(" "), _c('div', [_c('div', { staticClass: "text-value" }, [_vm._v("459")]), _vm._v(" "), _c('div', { staticClass: "text-uppercase text-muted small" }, [_vm._v("feeds")])])])])]), _vm._v(" "), _c('b-col', { attrs: { "md": "3", "sm": "6" } }, [_c('div', { staticClass: "brand-card" }, [_c('div', { staticClass: "brand-card-header bg-twitter" }, [_c('i', { staticClass: "fa fa-twitter" }), _vm._v(" "), _c('div', { staticClass: "chart-wrapper" }, [_c('social-box-chart-example', { attrs: { "data": [1, 13, 9, 17, 34, 41, 38] } })], 1)]), _vm._v(" "), _c('div', { staticClass: "brand-card-body" }, [_c('div', [_c('div', { staticClass: "text-value" }, [_vm._v("973k")]), _vm._v(" "), _c('div', { staticClass: "text-uppercase text-muted small" }, [_vm._v("followers")])]), _vm._v(" "), _c('div', [_c('div', { staticClass: "text-value" }, [_vm._v("1.792")]), _vm._v(" "), _c('div', { staticClass: "text-uppercase text-muted small" }, [_vm._v("tweets")])])])])]), _vm._v(" "), _c('b-col', { attrs: { "md": "3", "sm": "6" } }, [_c('div', { staticClass: "brand-card" }, [_c('div', { staticClass: "brand-card-header bg-linkedin" }, [_c('i', { staticClass: "fa fa-linkedin" }), _vm._v(" "), _c('div', { staticClass: "chart-wrapper" }, [_c('social-box-chart-example', { attrs: { "data": [78, 81, 80, 45, 34, 12, 40] } })], 1)]), _vm._v(" "), _c('div', { staticClass: "brand-card-body" }, [_c('div', [_c('div', { staticClass: "text-value" }, [_vm._v("500+")]), _vm._v(" "), _c('div', { staticClass: "text-uppercase text-muted small" }, [_vm._v("contacts")])]), _vm._v(" "), _c('div', [_c('div', { staticClass: "text-value" }, [_vm._v("292")]), _vm._v(" "), _c('div', { staticClass: "text-uppercase text-muted small" }, [_vm._v("feeds")])])])])]), _vm._v(" "), _c('b-col', { attrs: { "md": "3", "sm": "6" } }, [_c('div', { staticClass: "brand-card" }, [_c('div', { staticClass: "brand-card-header bg-google-plus" }, [_c('i', { staticClass: "fa fa-google-plus" }), _vm._v(" "), _c('div', { staticClass: "chart-wrapper" }, [_c('social-box-chart-example', { attrs: { "data": [35, 23, 56, 22, 97, 23, 64] } })], 1)]), _vm._v(" "), _c('div', { staticClass: "brand-card-body" }, [_c('div', [_c('div', { staticClass: "text-value" }, [_vm._v("894")]), _vm._v(" "), _c('div', { staticClass: "text-uppercase text-muted small" }, [_vm._v("followers")])]), _vm._v(" "), _c('div', [_c('div', { staticClass: "text-value" }, [_vm._v("92")]), _vm._v(" "), _c('div', { staticClass: "text-uppercase text-muted small" }, [_vm._v("circles")])])])])])], 1), _vm._v(" "), _c('b-card-group', { staticClass: "mb-4" }, [_c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-people" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("87.500")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Visitors")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "info", "value": 25 } })], 1), _vm._v(" "), _c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-user-follow" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("385")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("New Clients")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "success", "value": 25 } })], 1), _vm._v(" "), _c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-basket-loaded" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("1238")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Products sold")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "warning", "value": 25 } })], 1), _vm._v(" "), _c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-pie-chart" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("28%")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Returning Visitors")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "value": 25 } })], 1), _vm._v(" "), _c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-speedometer" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("5:34:11")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Avg. Time")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "danger", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-row', [_c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-people" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("87.500")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Visitors")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "info", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-user-follow" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("385")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("New Clients")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "success", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-basket-loaded" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("1238")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Products sold")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "warning", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-pie-chart" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("28%")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Returning Visitors")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-speedometer" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("5:34:11")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Avg. Time")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "danger", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-speech" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("972")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Comments")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-xs mt-3 mb-0", attrs: { "height": "{}", "variant": "info", "value": 25 } })], 1)], 1)], 1), _vm._v(" "), _c('b-row', [_c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', { staticClass: "text-white bg-info" }, [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-people" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("87.500")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Visitors")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs mt-3", attrs: { "height": "{}", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', { staticClass: "text-white bg-success" }, [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-user-follow" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("385")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("New Clients")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs mt-3", attrs: { "height": "{}", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', { staticClass: "text-white bg-warning" }, [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-basket-loaded" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("1238")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Products sold")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs mt-3", attrs: { "height": "{}", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', { staticClass: "text-white bg-primary" }, [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-pie-chart" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("28%")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Returning Visitors")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs mt-3", attrs: { "height": "{}", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', { staticClass: "text-white bg-danger" }, [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-speedometer" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("5:34:11")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Avg. Time")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs mt-3", attrs: { "height": "{}", "value": 25 } })], 1)], 1), _vm._v(" "), _c('b-col', { attrs: { "sm": "6", "md": "2" } }, [_c('b-card', { staticClass: "text-white bg-info" }, [_c('div', { staticClass: "h1 text-muted text-right mb-4" }, [_c('i', { staticClass: "icon-speech" })]), _vm._v(" "), _c('div', { staticClass: "h4 mb-0" }, [_vm._v("972")]), _vm._v(" "), _c('small', { staticClass: "text-muted text-uppercase font-weight-bold" }, [_vm._v("Comments")]), _vm._v(" "), _c('b-progress', { staticClass: "progress-white progress-xs mt-3", attrs: { "height": "{}", "value": 25 } })], 1)], 1)], 1)], 1);
+};
+/* istanbul ignore next */cov_6blcxkgb4.s[15]++;
+__vue__options__.staticRenderFns = [];

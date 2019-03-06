@@ -1,0 +1,445 @@
+a7115e953ce0e5551bdd12ae95a9bd88
+/* istanbul ignore next */var cov_wijtvnzf1 = function () {
+  var path = "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/theme/Colors.vue",
+      hash = "9c96cab6fc66314a2ca4dba407e4322855684c44",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/theme/Colors.vue",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 1
+        },
+        end: {
+          line: 81,
+          column: 4
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 29
+        },
+        end: {
+          line: 4,
+          column: 147
+        }
+      },
+      "2": {
+        start: {
+          line: 6,
+          column: 0
+        },
+        end: {
+          line: 8,
+          column: 3
+        }
+      },
+      "3": {
+        start: {
+          line: 9,
+          column: 0
+        },
+        end: {
+          line: 9,
+          column: 25
+        }
+      },
+      "4": {
+        start: {
+          line: 11,
+          column: 18
+        },
+        end: {
+          line: 11,
+          column: 65
+        }
+      },
+      "5": {
+        start: {
+          line: 74,
+          column: 15
+        },
+        end: {
+          line: 79,
+          column: 1
+        }
+      },
+      "6": {
+        start: {
+          line: 80,
+          column: 0
+        },
+        end: {
+          line: 80,
+          column: 27
+        }
+      },
+      "7": {
+        start: {
+          line: 82,
+          column: 20
+        },
+        end: {
+          line: 82,
+          column: 89
+        }
+      },
+      "8": {
+        start: {
+          line: 82,
+          column: 114
+        },
+        end: {
+          line: 82,
+          column: 187
+        }
+      },
+      "9": {
+        start: {
+          line: 83,
+          column: 0
+        },
+        end: {
+          line: 83,
+          column: 3516
+        }
+      },
+      "10": {
+        start: {
+          line: 83,
+          column: 54
+        },
+        end: {
+          line: 83,
+          column: 58
+        }
+      },
+      "11": {
+        start: {
+          line: 83,
+          column: 66
+        },
+        end: {
+          line: 83,
+          column: 84
+        }
+      },
+      "12": {
+        start: {
+          line: 83,
+          column: 92
+        },
+        end: {
+          line: 83,
+          column: 108
+        }
+      },
+      "13": {
+        start: {
+          line: 83,
+          column: 109
+        },
+        end: {
+          line: 83,
+          column: 3515
+        }
+      },
+      "14": {
+        start: {
+          line: 84,
+          column: 0
+        },
+        end: {
+          line: 84,
+          column: 37
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 1,
+            column: 2
+          },
+          end: {
+            line: 1,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 1,
+            column: 12
+          },
+          end: {
+            line: 81,
+            column: 1
+          }
+        },
+        line: 1
+      },
+      "1": {
+        name: "render",
+        decl: {
+          start: {
+            line: 83,
+            column: 35
+          },
+          end: {
+            line: 83,
+            column: 41
+          }
+        },
+        loc: {
+          start: {
+            line: 83,
+            column: 45
+          },
+          end: {
+            line: 83,
+            column: 3516
+          }
+        },
+        line: 83
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 82,
+            column: 20
+          },
+          end: {
+            line: 82,
+            column: 89
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 82,
+            column: 50
+          },
+          end: {
+            line: 82,
+            column: 72
+          }
+        }, {
+          start: {
+            line: 82,
+            column: 75
+          },
+          end: {
+            line: 82,
+            column: 89
+          }
+        }],
+        line: 82
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 82,
+            column: 114
+          },
+          end: {
+            line: 82,
+            column: 187
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 82,
+            column: 151
+          },
+          end: {
+            line: 82,
+            column: 172
+          }
+        }, {
+          start: {
+            line: 82,
+            column: 174
+          },
+          end: {
+            line: 82,
+            column: 187
+          }
+        }],
+        line: 82
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 83,
+            column: 92
+          },
+          end: {
+            line: 83,
+            column: 108
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 83,
+            column: 92
+          },
+          end: {
+            line: 83,
+            column: 104
+          }
+        }, {
+          start: {
+            line: 83,
+            column: 106
+          },
+          end: {
+            line: 83,
+            column: 108
+          }
+        }],
+        line: 83
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0]
+    },
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+; /* istanbul ignore next */cov_wijtvnzf1.s[0]++;
+(function () {
+  "use strict";
+
+  /* istanbul ignore next */cov_wijtvnzf1.f[0]++;
+  var _interopRequireDefault = /* istanbul ignore next */(cov_wijtvnzf1.s[1]++, require("/home/oem/Desktop/Prolike/dilly-dally/app/node_modules/@babel/runtime-corejs2/helpers/interopRequireDefault"));
+
+  /* istanbul ignore next */cov_wijtvnzf1.s[2]++;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  /* istanbul ignore next */cov_wijtvnzf1.s[3]++;
+  exports.default = void 0;
+
+  var _ColorTheme = /* istanbul ignore next */(cov_wijtvnzf1.s[4]++, _interopRequireDefault(require("./ColorTheme")));
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var _default = /* istanbul ignore next */(cov_wijtvnzf1.s[5]++, {
+    name: 'colors',
+    components: {
+      ColorTheme: _ColorTheme.default
+    }
+  });
+  /* istanbul ignore next */cov_wijtvnzf1.s[6]++;
+  exports.default = _default;
+})();
+var defaultExport = /* istanbul ignore next */(cov_wijtvnzf1.s[7]++, module.exports.__esModule ? /* istanbul ignore next */(cov_wijtvnzf1.b[0][0]++, module.exports.default) : /* istanbul ignore next */(cov_wijtvnzf1.b[0][1]++, module.exports));var __vue__options__ = /* istanbul ignore next */(cov_wijtvnzf1.s[8]++, typeof defaultExport === "function" ? /* istanbul ignore next */(cov_wijtvnzf1.b[1][0]++, defaultExport.options) : /* istanbul ignore next */(cov_wijtvnzf1.b[1][1]++, defaultExport));
+/* istanbul ignore next */cov_wijtvnzf1.s[9]++;
+__vue__options__.render = function render() {
+  /* istanbul ignore next */cov_wijtvnzf1.f[1]++;
+  var _vm = /* istanbul ignore next */(cov_wijtvnzf1.s[10]++, this);var _h = /* istanbul ignore next */(cov_wijtvnzf1.s[11]++, _vm.$createElement);var _c = /* istanbul ignore next */(cov_wijtvnzf1.s[12]++, /* istanbul ignore next */(cov_wijtvnzf1.b[2][0]++, _vm._self._c) || /* istanbul ignore next */(cov_wijtvnzf1.b[2][1]++, _h)); /* istanbul ignore next */cov_wijtvnzf1.s[13]++;
+  return _c('div', { staticClass: "animated fadeIn" }, [_c('b-card', { attrs: { "header-tag": "header" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "icon-drop" }), _vm._v(" Theme colors\n    ")]), _vm._v(" "), _c('b-card-body', [_c('b-row', [_c('color-theme', { attrs: { "color": "bg-primary" } }, [_c('h6', [_vm._v("Brand Primary Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-secondary" } }, [_c('h6', [_vm._v("Brand Secondary Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-success" } }, [_c('h6', [_vm._v("Brand Success Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-danger" } }, [_c('h6', [_vm._v("Brand Danger Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-warning" } }, [_c('h6', [_vm._v("Brand Warning Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-info" } }, [_c('h6', [_vm._v("Brand Info Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-light" } }, [_c('h6', [_vm._v("Brand Light Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-dark" } }, [_c('h6', [_vm._v("Brand Dark Color")])])], 1)], 1)], 1), _vm._v(" "), _c('b-card', { attrs: { "header-tag": "header" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "icon-drop" }), _vm._v(" Grays\n    ")]), _vm._v(" "), _c('b-card-body', [_c('b-row', [_c('color-theme', { attrs: { "color": "bg-gray-100" } }, [_c('h6', [_vm._v("Brand 100 Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-gray-200" } }, [_c('h6', [_vm._v("Brand 200 Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-gray-300" } }, [_c('h6', [_vm._v("Brand 300 Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-gray-400" } }, [_c('h6', [_vm._v("Brand 400 Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-gray-500" } }, [_c('h6', [_vm._v("Brand 500 Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-gray-600" } }, [_c('h6', [_vm._v("Brand 600 Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-gray-700" } }, [_c('h6', [_vm._v("Brand 700 Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-gray-800" } }, [_c('h6', [_vm._v("Brand 800 Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-gray-900" } }, [_c('h6', [_vm._v("Brand 900 Color")])])], 1)], 1)], 1), _vm._v(" "), _c('b-card', { attrs: { "header-tag": "header" } }, [_c('div', { attrs: { "slot": "header" }, slot: "header" }, [_c('i', { staticClass: "icon-drop" }), _vm._v(" Additional colors\n    ")]), _vm._v(" "), _c('b-card-body', [_c('b-row', [_c('color-theme', { attrs: { "color": "bg-blue" } }, [_c('h6', [_vm._v("Brand Blue Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-indigo" } }, [_c('h6', [_vm._v("Brand Indigo Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-purple" } }, [_c('h6', [_vm._v("Brand Purple Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-pink" } }, [_c('h6', [_vm._v("Brand Pink Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-red" } }, [_c('h6', [_vm._v("Brand Red Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-orange" } }, [_c('h6', [_vm._v("Brand Orange Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-yellow" } }, [_c('h6', [_vm._v("Brand Yellow Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-green" } }, [_c('h6', [_vm._v("Brand Green Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-teal" } }, [_c('h6', [_vm._v("Brand Teal Color")])]), _vm._v(" "), _c('color-theme', { attrs: { "color": "bg-cyan" } }, [_c('h6', [_vm._v("Brand Cyan Color")])])], 1)], 1)], 1)], 1);
+};
+/* istanbul ignore next */cov_wijtvnzf1.s[14]++;
+__vue__options__.staticRenderFns = [];

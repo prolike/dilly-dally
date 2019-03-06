@@ -1,0 +1,614 @@
+0d4269d621a7efc9ee86a9ff484de9f6
+/* istanbul ignore next */var cov_avnc629bl = function () {
+  var path = "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/theme/Typography.vue",
+      hash = "454b9130a9b1fa78f964daf4cb70363983d63d9c",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "/home/oem/Desktop/Prolike/dilly-dally/app/src/views/theme/Typography.vue",
+    statementMap: {
+      "0": {
+        start: {
+          line: 1,
+          column: 1
+        },
+        end: {
+          line: 165,
+          column: 4
+        }
+      },
+      "1": {
+        start: {
+          line: 4,
+          column: 0
+        },
+        end: {
+          line: 6,
+          column: 3
+        }
+      },
+      "2": {
+        start: {
+          line: 7,
+          column: 0
+        },
+        end: {
+          line: 7,
+          column: 25
+        }
+      },
+      "3": {
+        start: {
+          line: 161,
+          column: 15
+        },
+        end: {
+          line: 163,
+          column: 1
+        }
+      },
+      "4": {
+        start: {
+          line: 164,
+          column: 0
+        },
+        end: {
+          line: 164,
+          column: 27
+        }
+      },
+      "5": {
+        start: {
+          line: 166,
+          column: 20
+        },
+        end: {
+          line: 166,
+          column: 89
+        }
+      },
+      "6": {
+        start: {
+          line: 166,
+          column: 114
+        },
+        end: {
+          line: 166,
+          column: 187
+        }
+      },
+      "7": {
+        start: {
+          line: 167,
+          column: 0
+        },
+        end: {
+          line: 167,
+          column: 126
+        }
+      },
+      "8": {
+        start: {
+          line: 167,
+          column: 54
+        },
+        end: {
+          line: 167,
+          column: 58
+        }
+      },
+      "9": {
+        start: {
+          line: 167,
+          column: 66
+        },
+        end: {
+          line: 167,
+          column: 84
+        }
+      },
+      "10": {
+        start: {
+          line: 167,
+          column: 92
+        },
+        end: {
+          line: 167,
+          column: 108
+        }
+      },
+      "11": {
+        start: {
+          line: 167,
+          column: 109
+        },
+        end: {
+          line: 167,
+          column: 125
+        }
+      },
+      "12": {
+        start: {
+          line: 168,
+          column: 0
+        },
+        end: {
+          line: 168,
+          column: 6771
+        }
+      },
+      "13": {
+        start: {
+          line: 168,
+          column: 64
+        },
+        end: {
+          line: 168,
+          column: 68
+        }
+      },
+      "14": {
+        start: {
+          line: 168,
+          column: 76
+        },
+        end: {
+          line: 168,
+          column: 94
+        }
+      },
+      "15": {
+        start: {
+          line: 168,
+          column: 102
+        },
+        end: {
+          line: 168,
+          column: 118
+        }
+      },
+      "16": {
+        start: {
+          line: 168,
+          column: 119
+        },
+        end: {
+          line: 168,
+          column: 6769
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 1,
+            column: 2
+          },
+          end: {
+            line: 1,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 1,
+            column: 12
+          },
+          end: {
+            line: 165,
+            column: 1
+          }
+        },
+        line: 1
+      },
+      "1": {
+        name: "render",
+        decl: {
+          start: {
+            line: 167,
+            column: 35
+          },
+          end: {
+            line: 167,
+            column: 41
+          }
+        },
+        loc: {
+          start: {
+            line: 167,
+            column: 45
+          },
+          end: {
+            line: 167,
+            column: 126
+          }
+        },
+        line: 167
+      },
+      "2": {
+        name: "render",
+        decl: {
+          start: {
+            line: 168,
+            column: 45
+          },
+          end: {
+            line: 168,
+            column: 51
+          }
+        },
+        loc: {
+          start: {
+            line: 168,
+            column: 55
+          },
+          end: {
+            line: 168,
+            column: 6770
+          }
+        },
+        line: 168
+      }
+    },
+    branchMap: {
+      "0": {
+        loc: {
+          start: {
+            line: 166,
+            column: 20
+          },
+          end: {
+            line: 166,
+            column: 89
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 166,
+            column: 50
+          },
+          end: {
+            line: 166,
+            column: 72
+          }
+        }, {
+          start: {
+            line: 166,
+            column: 75
+          },
+          end: {
+            line: 166,
+            column: 89
+          }
+        }],
+        line: 166
+      },
+      "1": {
+        loc: {
+          start: {
+            line: 166,
+            column: 114
+          },
+          end: {
+            line: 166,
+            column: 187
+          }
+        },
+        type: "cond-expr",
+        locations: [{
+          start: {
+            line: 166,
+            column: 151
+          },
+          end: {
+            line: 166,
+            column: 172
+          }
+        }, {
+          start: {
+            line: 166,
+            column: 174
+          },
+          end: {
+            line: 166,
+            column: 187
+          }
+        }],
+        line: 166
+      },
+      "2": {
+        loc: {
+          start: {
+            line: 167,
+            column: 92
+          },
+          end: {
+            line: 167,
+            column: 108
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 167,
+            column: 92
+          },
+          end: {
+            line: 167,
+            column: 104
+          }
+        }, {
+          start: {
+            line: 167,
+            column: 106
+          },
+          end: {
+            line: 167,
+            column: 108
+          }
+        }],
+        line: 167
+      },
+      "3": {
+        loc: {
+          start: {
+            line: 168,
+            column: 102
+          },
+          end: {
+            line: 168,
+            column: 118
+          }
+        },
+        type: "binary-expr",
+        locations: [{
+          start: {
+            line: 168,
+            column: 102
+          },
+          end: {
+            line: 168,
+            column: 114
+          }
+        }, {
+          start: {
+            line: 168,
+            column: 116
+          },
+          end: {
+            line: 168,
+            column: 118
+          }
+        }],
+        line: 168
+      }
+    },
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 0,
+      "16": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0,
+      "2": 0
+    },
+    b: {
+      "0": [0, 0],
+      "1": [0, 0],
+      "2": [0, 0],
+      "3": [0, 0]
+    },
+    _coverageSchema: "332fd63041d2c1bcb487cc26dd0d5f7d97098a6c"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+; /* istanbul ignore next */cov_avnc629bl.s[0]++;
+(function () {
+  "use strict";
+
+  /* istanbul ignore next */cov_avnc629bl.f[0]++;
+  cov_avnc629bl.s[1]++;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  /* istanbul ignore next */cov_avnc629bl.s[2]++;
+  exports.default = void 0;
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var _default = /* istanbul ignore next */(cov_avnc629bl.s[3]++, {
+    name: 'typography'
+  });
+  /* istanbul ignore next */cov_avnc629bl.s[4]++;
+  exports.default = _default;
+})();
+var defaultExport = /* istanbul ignore next */(cov_avnc629bl.s[5]++, module.exports.__esModule ? /* istanbul ignore next */(cov_avnc629bl.b[0][0]++, module.exports.default) : /* istanbul ignore next */(cov_avnc629bl.b[0][1]++, module.exports));var __vue__options__ = /* istanbul ignore next */(cov_avnc629bl.s[6]++, typeof defaultExport === "function" ? /* istanbul ignore next */(cov_avnc629bl.b[1][0]++, defaultExport.options) : /* istanbul ignore next */(cov_avnc629bl.b[1][1]++, defaultExport));
+/* istanbul ignore next */cov_avnc629bl.s[7]++;
+__vue__options__.render = function render() {
+  /* istanbul ignore next */cov_avnc629bl.f[1]++;
+  var _vm = /* istanbul ignore next */(cov_avnc629bl.s[8]++, this);var _h = /* istanbul ignore next */(cov_avnc629bl.s[9]++, _vm.$createElement);var _c = /* istanbul ignore next */(cov_avnc629bl.s[10]++, /* istanbul ignore next */(cov_avnc629bl.b[2][0]++, _vm._self._c) || /* istanbul ignore next */(cov_avnc629bl.b[2][1]++, _h)); /* istanbul ignore next */cov_avnc629bl.s[11]++;
+  return _vm._m(0);
+};
+/* istanbul ignore next */cov_avnc629bl.s[12]++;
+__vue__options__.staticRenderFns = [function render() {
+  /* istanbul ignore next */cov_avnc629bl.f[2]++;
+  var _vm = /* istanbul ignore next */(cov_avnc629bl.s[13]++, this);var _h = /* istanbul ignore next */(cov_avnc629bl.s[14]++, _vm.$createElement);var _c = /* istanbul ignore next */(cov_avnc629bl.s[15]++, /* istanbul ignore next */(cov_avnc629bl.b[3][0]++, _vm._self._c) || /* istanbul ignore next */(cov_avnc629bl.b[3][1]++, _h)); /* istanbul ignore next */cov_avnc629bl.s[16]++;
+  return _c('div', { staticClass: "animated fadeIn" }, [_c('div', { staticClass: "card" }, [_c('div', { staticClass: "card-header" }, [_vm._v("\n      Headings\n    ")]), _vm._v(" "), _c('div', { staticClass: "card-body" }, [_c('p', [_vm._v("Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.")]), _vm._v(" "), _c('table', { staticClass: "table" }, [_c('thead', [_c('tr', [_c('th', [_vm._v("Heading")]), _vm._v(" "), _c('th', [_vm._v("Example")])])]), _vm._v(" "), _c('tbody', [_c('tr', [_c('td', [_c('p', [_c('code', { staticClass: "highlighter-rouge" }, [_vm._v("<h1></h1>")])])]), _vm._v(" "), _c('td', [_c('span', { staticClass: "h1" }, [_vm._v("h1. Bootstrap heading")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('p', [_c('code', { staticClass: "highlighter-rouge" }, [_vm._v("<h2></h2>")])])]), _vm._v(" "), _c('td', [_c('span', { staticClass: "h2" }, [_vm._v("h2. Bootstrap heading")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('p', [_c('code', { staticClass: "highlighter-rouge" }, [_vm._v("<h3></h3>")])])]), _vm._v(" "), _c('td', [_c('span', { staticClass: "h3" }, [_vm._v("h3. Bootstrap heading")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('p', [_c('code', { staticClass: "highlighter-rouge" }, [_vm._v("<h4></h4>")])])]), _vm._v(" "), _c('td', [_c('span', { staticClass: "h4" }, [_vm._v("h4. Bootstrap heading")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('p', [_c('code', { staticClass: "highlighter-rouge" }, [_vm._v("<h5></h5>")])])]), _vm._v(" "), _c('td', [_c('span', { staticClass: "h5" }, [_vm._v("h5. Bootstrap heading")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('p', [_c('code', { staticClass: "highlighter-rouge" }, [_vm._v("<h6></h6>")])])]), _vm._v(" "), _c('td', [_c('span', { staticClass: "h6" }, [_vm._v("h6. Bootstrap heading")])])])])])])]), _vm._v(" "), _c('div', { staticClass: "card" }, [_c('div', { staticClass: "card-header" }, [_vm._v("\n      Headings\n    ")]), _vm._v(" "), _c('div', { staticClass: "card-body" }, [_c('p', [_c('code', { staticClass: "highlighter-rouge" }, [_vm._v(".h1")]), _vm._v(" through "), _c('code', { staticClass: "highlighter-rouge" }, [_vm._v(".h6")]), _vm._v(" classes are also available, for when you want to match the font styling of a heading but cannot use the associated HTML element.")]), _vm._v(" "), _c('div', { staticClass: "bd-example" }, [_c('p', { staticClass: "h1" }, [_vm._v("h1. Bootstrap heading")]), _vm._v(" "), _c('p', { staticClass: "h2" }, [_vm._v("h2. Bootstrap heading")]), _vm._v(" "), _c('p', { staticClass: "h3" }, [_vm._v("h3. Bootstrap heading")]), _vm._v(" "), _c('p', { staticClass: "h4" }, [_vm._v("h4. Bootstrap heading")]), _vm._v(" "), _c('p', { staticClass: "h5" }, [_vm._v("h5. Bootstrap heading")]), _vm._v(" "), _c('p', { staticClass: "h6" }, [_vm._v("h6. Bootstrap heading")])])])]), _vm._v(" "), _c('div', { staticClass: "card" }, [_c('div', { staticClass: "card-header" }, [_vm._v("\n      Display headings\n    ")]), _vm._v(" "), _c('div', { staticClass: "card-body" }, [_c('p', [_vm._v("Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a "), _c('strong', [_vm._v("display heading")]), _vm._v("—a larger, slightly more opinionated heading style.")]), _vm._v(" "), _c('div', { staticClass: "bd-example bd-example-type" }, [_c('table', { staticClass: "table" }, [_c('tbody', [_c('tr', [_c('td', [_c('span', { staticClass: "display-1" }, [_vm._v("Display 1")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('span', { staticClass: "display-2" }, [_vm._v("Display 2")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('span', { staticClass: "display-3" }, [_vm._v("Display 3")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('span', { staticClass: "display-4" }, [_vm._v("Display 4")])])])])])])])]), _vm._v(" "), _c('div', { staticClass: "card" }, [_c('div', { staticClass: "card-header" }, [_vm._v("\n      Inline text elements\n    ")]), _vm._v(" "), _c('div', { staticClass: "card-body" }, [_c('p', [_vm._v("Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a "), _c('strong', [_vm._v("display heading")]), _vm._v("—a larger, slightly more opinionated heading style.")]), _vm._v(" "), _c('div', { staticClass: "bd-example" }, [_c('p', [_vm._v("You can use the mark tag to "), _c('mark', [_vm._v("highlight")]), _vm._v(" text.")]), _vm._v(" "), _c('p', [_c('del', [_vm._v("This line of text is meant to be treated as deleted text.")])]), _vm._v(" "), _c('p', [_c('s', [_vm._v("This line of text is meant to be treated as no longer accurate.")])]), _vm._v(" "), _c('p', [_c('ins', [_vm._v("This line of text is meant to be treated as an addition to the document.")])]), _vm._v(" "), _c('p', [_c('u', [_vm._v("This line of text will render as underlined")])]), _vm._v(" "), _c('p', [_c('small', [_vm._v("This line of text is meant to be treated as fine print.")])]), _vm._v(" "), _c('p', [_c('strong', [_vm._v("This line rendered as bold text.")])]), _vm._v(" "), _c('p', [_c('em', [_vm._v("This line rendered as italicized text.")])])])])]), _vm._v(" "), _c('div', { staticClass: "card" }, [_c('div', { staticClass: "card-header" }, [_vm._v("\n      Description list alignment\n    ")]), _vm._v(" "), _c('div', { staticClass: "card-body" }, [_c('p', [_vm._v("Align terms and descriptions horizontally by using our grid system’s predefined classes (or semantic mixins). For longer terms, you can optionally add a "), _c('code', { staticClass: "highlighter-rouge" }, [_vm._v(".text-truncate")]), _vm._v(" class to truncate the text with an ellipsis.")]), _vm._v(" "), _c('div', { staticClass: "bd-example" }, [_c('dl', { staticClass: "row" }, [_c('dt', { staticClass: "col-sm-3" }, [_vm._v("Description lists")]), _vm._v(" "), _c('dd', { staticClass: "col-sm-9" }, [_vm._v("A description list is perfect for defining terms.")]), _vm._v(" "), _c('dt', { staticClass: "col-sm-3" }, [_vm._v("Euismod")]), _vm._v(" "), _c('dd', { staticClass: "col-sm-9" }, [_c('p', [_vm._v("Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.")]), _vm._v(" "), _c('p', [_vm._v("Donec id elit non mi porta gravida at eget metus.")])]), _vm._v(" "), _c('dt', { staticClass: "col-sm-3" }, [_vm._v("Malesuada porta")]), _vm._v(" "), _c('dd', { staticClass: "col-sm-9" }, [_vm._v("Etiam porta sem malesuada magna mollis euismod.")]), _vm._v(" "), _c('dt', { staticClass: "col-sm-3 text-truncate" }, [_vm._v("Truncated term is truncated")]), _vm._v(" "), _c('dd', { staticClass: "col-sm-9" }, [_vm._v("Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.")]), _vm._v(" "), _c('dt', { staticClass: "col-sm-3" }, [_vm._v("Nesting")]), _vm._v(" "), _c('dd', { staticClass: "col-sm-9" }, [_c('dl', { staticClass: "row" }, [_c('dt', { staticClass: "col-sm-4" }, [_vm._v("Nested definition list")]), _vm._v(" "), _c('dd', { staticClass: "col-sm-8" }, [_vm._v("Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.")])])])])])])])]);
+}];

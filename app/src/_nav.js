@@ -1,9 +1,5 @@
 export default {
-  items: [{
-    name: 'Dashboard',
-    url: '/dashboard',
-    icon: 'cui-dashboard'
-  },
+  items: [
   {
     name: 'Time Registration',
     url: '/timeregistration/registration',
@@ -18,5 +14,6 @@ export default {
     name: 'Invoice report',
     url: '/invoice/report',
     icon: 'cui-file',
-  }]
+  }
+  ]
 }
