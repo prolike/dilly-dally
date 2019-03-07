@@ -65,19 +65,23 @@ function getAllProjectIDForCustomer(customerName) {
   })
 }
 
+
+
 function getAllTimeRegistrationsForEmail(email) {
-  var array = null
-  var data = { email: email }
-  var getAllTimeRegistrationsForEmail = functions.httpsCallable('getAllTimeRegistrationsForEmail');
-  getAllTimeRegistrationsForEmail(data).then(result => {
-    // Read result of the Cloud Function.
-    array = result.data
-    console.log(array)
-    // ...
-  }).catch(error => {
-    console.log(error);
-    // ...
-  });
+  return new Promise((resolve, reject) => {
+    var data = { email: email }
+    var getAllTimeRegistrationsForEmail = functions.httpsCallable('getAllTimeRegistrationsForEmail');
+    getAllTimeRegistrationsForEmail(data).then(result => {
+      // Read result of the Cloud Function.
+      var array = result.data
+      resolve(array)
+      // ...
+    }).catch(error => {
+      console.log(error);
+      reject(error)
+      // ...
+    });
+  })
 }
 
 function timeRegistrationAdd(email, form) {
@@ -114,4 +118,5 @@ function timeRegistrationRemove(email, docID) {
   });
 }
 
-export { getAllCategories, getAllCustomersName, getAllProjectIDForCustomer, timeRegistrationAdd }
+export { getAllCategories, getAllCustomersName, getAllProjectIDForCustomer, 
+  timeRegistrationAdd, getAllTimeRegistrationsForEmail }

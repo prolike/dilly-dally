@@ -32,7 +32,6 @@ exports.getAllTimeRegistrationsForEmail = functions.https.onCall(async (data, co
     var email = data.email
     var result = await firestoreHandler.getAllTimeRegistrationsForEmail(email);
     return result
-
 });
 // Functions called from http API
 exports.timeRegistrationAdd = functions.https.onCall(async (data, context) => {

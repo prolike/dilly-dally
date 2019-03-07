@@ -55,18 +55,18 @@ exports.getAllCategories = async () => {
 }
 
 
+
 exports.getAllTimeRegistrationsForEmail = async (email) => {
     let array = []
     const snapshot = await db.collection("workers")
         .doc(email)
         .collection("timeregs")
-        .orderBy('date')
         .get()
         .catch(function(error) {
             console.error("Error", error);
         });
     snapshot.forEach((doc) => {
-        array.push(doc.id)
+        array.push(doc.data())
     })
     return array
 }
