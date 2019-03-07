@@ -9,6 +9,7 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
 import firebase from 'firebase'
+import VueSweetalert2 from 'vue-sweetalert2';
 
 
 
@@ -16,7 +17,7 @@ import firebase from 'firebase'
 
 // todo
 // cssVars()
-
+Vue.use(VueSweetalert2)
 Vue.use(BootstrapVue)
 
 /* eslint-disable no-new */

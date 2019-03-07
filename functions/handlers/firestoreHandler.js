@@ -60,6 +60,7 @@ exports.getAllTimeRegistrationsForEmail = async (email) => {
     const snapshot = await db.collection("workers")
         .doc(email)
         .collection("timeregs")
+        .orderBy('date')
         .get()
         .catch(function(error) {
             console.error("Error", error);

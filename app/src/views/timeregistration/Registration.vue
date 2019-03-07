@@ -10,27 +10,27 @@
             <div class="row">
               <div class="col-lg-4 specialized-box">
                 <label>Date</label>
-                <datepicker></datepicker>
+                <datepicker :value="form.date" monday-first format="dd/MM/yyyy" v-model="form.date"></datepicker>
                 <label>Start time</label>
                 <div class="input-group clockpicker">
-                  <input type="text" class="form-control" id="start" placeholder="09:00">
+                  <input type="text" class="form-control" id="start" placeholder="09:00" v-model="form.startTime">
                 </div>
                 <label>End time</label>
                 <div class="input-group clockpicker">
-                  <input type="text" class="form-control" id="end" placeholder="16:00">
+                  <input type="text" class="form-control" id="end" placeholder="16:00" v-model="form.endTime">
                 </div>
               </div>
               <div class="col-lg-4 specialized-box">
                 <label>Work Hours</label>
-                <input type="text" class="form-control" id="hours" value="7">
+                <input type="text" class="form-control" id="hours" value="7" v-model="form.workHours">
                 <label>Category</label>
-                <select v-model="selected">
+                <select v-model="form.category">
                   <option v-for="item in categories" :value="item">
                     {{item}}
                   </option>
                 </select>
                 <label>Project</label>
-                <select v-model="selected">
+                <select v-model="form.project">
                   <option v-for="item in projects" :value="item">
                     {{item}}
                   </option>
@@ -38,7 +38,7 @@
               </div>
               <div class="col-lg-4 specialized-box">
                 <label>Comment</label>
-                <input class="textarea" type="text" id="comment" placeholder="Work description" />
+                <input class="textarea" type="text" id="comment" placeholder="Work description" v-model="form.comment" />
                 <button id="saveMe" type="button" class="btn btn-primary" v-on:click="registerTime()">Save</button>
               </div>
             </div>
@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import { getAllCategories, getAllCustomersName, getAllProjectIDForCustomer } from "../../controller/apiHandler";
+import { getAllCategories, getAllCustomersName, getAllProjectIDForCustomer, timeRegistrationAdd } from "../../controller/apiHandler";
 import Datepicker from 'vuejs-datepicker';
 
 export default {
@@ -59,6 +59,15 @@ export default {
   },
   data: function() {
     return {
+      form: {
+        date: "",
+        startTime: "",
+        endTime: "",
+        workHours: "",
+        category: "",
+        project: "",
+        comment: ""
+      },
       categories: [],
       customers: [],
       projects: [],
@@ -67,6 +76,9 @@ export default {
     }
   },
   methods: {
+    getTodayDate() {
+      this.form.date = new Date()
+    },
     timeChangeHandler() {
       // ...
     },
@@ -88,12 +100,22 @@ export default {
       })
     },
     registerTime: function() {
-        console.log("sad")
+      console.log(this.form)
+      timeRegistrationAdd("ansty93@hehe.com", this.form).then((response) => {
+        console.log(response)
+
+      })
+      this.$swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      )
     }
   },
   mounted() {
     this.getCategories()
     this.getAllCustomersName()
+    this.getTodayDate()
   }
 }
 

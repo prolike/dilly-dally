@@ -39,9 +39,9 @@ exports.timeRegistrationAdd = functions.https.onCall(async (data, context) => {
     var email = data.email
     var content = data.data
     var result = await firestoreHandler.timeRegistrationAdd(email, content);
-    return result
-
+    return true
 });
+
 // Functions called from http API
 exports.timeRegistrationRemove = functions.https.onCall(async (data, context) => {
     var email = data.email
