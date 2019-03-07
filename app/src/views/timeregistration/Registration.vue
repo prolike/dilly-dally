@@ -10,11 +10,7 @@
             <div class="row">
               <div class="col-lg-4 specialized-box">
                 <label>Date</label>
-                <div id="sandbox-container">
-                  <div class="input-daterange input-group" id="datepicker">
-                    <input type="text" class="form-control input-sm" name="date" placeholder="DD/MM/YYYY" id="date" style="text-align:left;">
-                  </div>
-                </div>
+                <datepicker></datepicker>
                 <label>Start time</label>
                 <div class="input-group clockpicker">
                   <input type="text" class="form-control" id="start" placeholder="09:00">
@@ -43,7 +39,7 @@
               <div class="col-lg-4 specialized-box">
                 <label>Comment</label>
                 <input class="textarea" type="text" id="comment" placeholder="Work description" />
-                <button id="saveMe" type="button" class="btn btn-primary">Save</button>
+                <button id="saveMe" type="button" class="btn btn-primary" v-on:click="registerTime()">Save</button>
               </div>
             </div>
           </form>
@@ -54,17 +50,26 @@
 </template>
 <script>
 import { getAllCategories, getAllCustomersName, getAllProjectIDForCustomer } from "../../controller/apiHandler";
+import Datepicker from 'vuejs-datepicker';
 
 export default {
   name: 'TimeRegistration',
+  components: {
+    Datepicker
+  },
   data: function() {
     return {
       categories: [],
       customers: [],
-      projects: []
+      projects: [],
+      defaultHour: new Date().getHours(),
+      defaultMinute: new Date().getMinutes()
     }
   },
   methods: {
+    timeChangeHandler() {
+      // ...
+    },
     getCategories: function() {
       getAllCategories().then((response) => {
         this.categories = response
@@ -77,10 +82,13 @@ export default {
           var customerName = response[i]
           getAllProjectIDForCustomer(customerName).then((projectName) => {
             console.log(projectName)
-            this.projects.push(customerName+"/"+projectName)
+            this.projects.push(customerName + "/" + projectName)
           })
         }
       })
+    },
+    registerTime: function() {
+        console.log("sad")
     }
   },
   mounted() {
