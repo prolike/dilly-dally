@@ -34,7 +34,7 @@ exports.getAllProjectForCustomer = async (customerName) => {
             console.error("Error", error);
         });
     snapshot.forEach((doc) => {
-        array.push(doc.data())
+        array.push(doc.id)
     })
     return array
 

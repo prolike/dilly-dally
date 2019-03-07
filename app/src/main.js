@@ -24,8 +24,14 @@ new Vue({
   el: '#app',
   router,
   created() {
+
     var config = {
-      projectId: "prolike-stack"
+      apiKey: "AIzaSyAP26LDfU4OMnpBTB4P9Lm9-c_BgF1DxUQ",
+      authDomain: "prolike-stack.firebaseapp.com",
+      databaseURL: "https://prolike-stack.firebaseio.com",
+      projectId: "prolike-stack",
+      storageBucket: "prolike-stack.appspot.com",
+      messagingSenderId: "320832304478"
     };
     //Initalize firebase
     firebase.initializeApp(config);
@@ -34,8 +40,7 @@ new Vue({
         console.log("signed in")
         //this.$router.push('')
       } else {
-        console.log("signed out")
-        //this.$router.push('login')
+        this.$router.push('login')
       }
     });
   },
