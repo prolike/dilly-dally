@@ -88,16 +88,17 @@ export default {
       })
     },
     getAllCustomersName: function() {
+      var custArr = []
       getAllCustomersName().then((response) => {
-        this.customers = response
-        for (var i in response) {
-          var customerName = response[i]
-          getAllProjectsForCustomer(customerName).then((projectName) => {
-            console.log(projectName)
-            this.projects.push(customerName + "/" + projectName)
+        var custArr = response
+        response.forEach(async (item) => {
+          getAllProjectsForCustomer(item).then((response) => {
+            this.projects.push(item + "/" + response)
           })
-        }
+        })
       })
+
+
     },
     registerTime: function() {
       console.log(this.form)

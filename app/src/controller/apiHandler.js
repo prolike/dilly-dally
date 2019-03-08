@@ -68,7 +68,6 @@ function getAllTimeRegsForProject(customerName, projectID) {
 function getAllProjectsForCustomer(customerName) {
   return new Promise((resolve, reject) => {
     var data = { customerName: customerName }
-    console.log(data)
     var getAllProjectsForCustomer = functions.httpsCallable('getAllProjectsForCustomer');
     getAllProjectsForCustomer(data).then(result => {
       // Read result of the Cloud Function.
