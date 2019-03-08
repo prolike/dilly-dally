@@ -21,11 +21,17 @@ exports.getAllCustomersName = functions.https.onCall(async (data, context) => {
 
 });
 // Functions called from http API
-exports.getAllProjectForCustomer = functions.https.onCall(async (data, context) => {
+exports.getAllTimeRegsForProject = functions.https.onCall(async (data, context) => {
     var customerName = data.customerName
-    var result = await firestoreHandler.getAllProjectForCustomer(customerName);
+    var projectID = data.projectID
+    var result = await firestoreHandler.getAllTimeRegsForProject(customerName,projectID);
     return result
-
+});
+// Functions called from http API
+exports.getAllProjectsForCustomer = functions.https.onCall(async (data, context) => {
+    var customerName = data.customerName
+    var result = await firestoreHandler.getAllProjectsForCustomer(customerName);
+    return result
 });
 // Functions called from http API
 exports.getAllTimeRegistrationsForEmail = functions.https.onCall(async (data, context) => {

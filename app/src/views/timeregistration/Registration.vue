@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import { getAllCategories, getAllCustomersName, getAllProjectIDForCustomer, timeRegistrationAdd } from "../../controller/apiHandler";
+import { getAllCategories, getAllCustomersName, getAllProjectsForCustomer, timeRegistrationAdd } from "../../controller/apiHandler";
 import Datepicker from 'vuejs-datepicker';
 
 export default {
@@ -92,7 +92,7 @@ export default {
         this.customers = response
         for (var i in response) {
           var customerName = response[i]
-          getAllProjectIDForCustomer(customerName).then((projectName) => {
+          getAllProjectsForCustomer(customerName).then((projectName) => {
             console.log(projectName)
             this.projects.push(customerName + "/" + projectName)
           })

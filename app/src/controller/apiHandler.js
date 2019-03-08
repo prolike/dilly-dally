@@ -45,13 +45,32 @@ function getAllCustomersName() {
 
 }
 
-function getAllProjectIDForCustomer(customerName) {
+
+function getAllTimeRegsForProject(customerName, projectID) {
+  return new Promise((resolve, reject) => {
+    var data = { customerName: customerName, projectID: projectID }
+    console.log(data)
+    var getAllTimeRegsForProject = functions.httpsCallable('getAllTimeRegsForProject');
+    getAllTimeRegsForProject(data).then(result => {
+      // Read result of the Cloud Function.
+      var array = result.data
+      resolve(array)
+      //asd 
+      // ...
+    }).catch(error => {
+      console.log(error);
+      reject(error)
+      // ...
+    });
+  })
+}
+
+function getAllProjectsForCustomer(customerName) {
   return new Promise((resolve, reject) => {
     var data = { customerName: customerName }
     console.log(data)
-
-    var getAllProjectForCustomer = functions.httpsCallable('getAllProjectForCustomer');
-    getAllProjectForCustomer(data).then(result => {
+    var getAllProjectsForCustomer = functions.httpsCallable('getAllProjectsForCustomer');
+    getAllProjectsForCustomer(data).then(result => {
       // Read result of the Cloud Function.
       var array = result.data
       resolve(array)
@@ -118,5 +137,11 @@ function timeRegistrationRemove(email, docID) {
   });
 }
 
-export { getAllCategories, getAllCustomersName, getAllProjectIDForCustomer, 
-  timeRegistrationAdd, getAllTimeRegistrationsForEmail }
+export {
+  getAllCategories,
+  getAllCustomersName,
+  getAllProjectsForCustomer,
+  timeRegistrationAdd,
+  getAllTimeRegistrationsForEmail,
+  getAllTimeRegsForProject
+}
