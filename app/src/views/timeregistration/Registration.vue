@@ -26,7 +26,7 @@
                 <label>Category</label>
                 <select v-model="form.category">
                   <option v-for="item in categories" :value="item">
-                    {{item}}
+                    {{item.id}}
                   </option>
                 </select>
                 <label>Project</label>
@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import { getAllCategories, getAllCustomersName, getAllProjectsForCustomer, timeRegistrationAdd } from "../../controller/apiHandler";
+import { firestore } from "../../main";
 import Datepicker from 'vuejs-datepicker';
 
 export default {
@@ -68,8 +68,6 @@ export default {
         project: "",
         comment: ""
       },
-      categories: [],
-      customers: [],
       projects: [],
       defaultHour: new Date().getHours(),
       defaultMinute: new Date().getMinutes()
@@ -79,32 +77,32 @@ export default {
     getTodayDate() {
       this.form.date = new Date()
     },
-    timeChangeHandler() {
-      // ...
-    },
     getCategories: function() {
-      getAllCategories().then((response) => {
-        this.categories = response
-      })
+      this.$binding("categories", firestore.collection("categories"))
+        .then((categories) => {})
     },
     getAllCustomersName: function() {
-      var custArr = []
-      getAllCustomersName().then((response) => {
-        var custArr = response
-        response.forEach(async (item) => {
-          getAllProjectsForCustomer(item).then((response) => {
-            this.projects.push(item + "/" + response)
+      this.$binding("customers", firestore.collection("customers"))
+        .then((customers) => {
+          this.getAllProjects();
+        })
+
+    },
+    getAllProjects : function(){
+      this.customers.forEach(cust => {
+        this.$binding("asd", firestore.collection("customers").doc(cust.id).collection("projects")).then((projectArr) => {
+          projectArr.forEach(project => {
+            this.projects.push(cust.id + "/" + project.id)
           })
         })
       })
-
-
     },
     registerTime: function() {
       console.log(this.form)
-      timeRegistrationAdd("ansty93@hehe.com", this.form).then((response) => {
+      var data = this.form
+      var email = "ansty93@hehe.com"
+      firestore.collection("workers").doc(email).collection("timeregs").add(data).then((response) => {
         console.log(response)
-
       })
       this.$swal.fire(
         'Good job!',

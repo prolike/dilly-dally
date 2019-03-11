@@ -3,7 +3,7 @@
     <label>Customer</label>
     <select v-model="selected" @change="onChange($event)">
       <option v-for="item in customersName" :value="item">
-        {{item}}
+        {{item.id}}
       </option>
     </select>
     <table class="table table-dark">
@@ -35,7 +35,7 @@
   </div>
 </template>
 <script>
-import { getAllCustomersName, getAllProjectsForCustomer, getAllTimeRegistrationsForEmail , getAllTimeRegsForProject} from "../../controller/apiHandler";
+import { firestore } from '../../main';
 
 export default {
   name: 'InvoiceOverview',
@@ -49,23 +49,22 @@ export default {
   },
   methods: {
     getAllCustomersName() {
-      getAllCustomersName().then((response) => {
-        this.customersName = response
-        console.log(this.customersName)
-      })
+      console.log("asd")
+      this.$binding("customersName", firestore.collection("customers"))
+        .then((customersName) => {
+          console.log(customersName) // => __ob__: Observer
+        })
+    },
+    getAllInvoices() {
+      console.log("asd")
+      this.$binding("customersName", firestore.collection("customers"))
+        .then((customersName) => {
+          console.log(customersName) // => __ob__: Observer
+        })
     },
     onChange(event) {
       var customerName = event.target.value
-      getAllProjectsForCustomer(customerName).then((response) => {
-        console.log(response)
-        for(var i in response){
-            var projectID = response[i]
-            getAllTimeRegsForProject(customerName,projectID).then((timereg) => {
-                console.log(timereg)
-                this.timeRegistration = timereg
-            })
-        }
-      })
+
     }
   },
   mounted() {

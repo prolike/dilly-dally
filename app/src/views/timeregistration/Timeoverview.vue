@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr v-for="item in timeRegistration">
-          <td>{{ item.date }}</td>
+          <td>{{ getDate(item.date) }}</td>
           <td>{{ item.category }}</td>
           <td>{{ item.project }}</td>
           <td>{{ item.startTime }}</td>
@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import { getAllTimeRegistrationsForEmail } from "../../controller/apiHandler";
+import { firestore } from "../../main";
 
 export default {
   name: 'TimeRegistrationOverview',
@@ -41,10 +41,13 @@ export default {
   methods: {
     getAllTimeRegistrations() {
       var email = "ansty93@hehe.com"
-      getAllTimeRegistrationsForEmail(email).then((response) => {
-        console.log(response)
-        this.timeRegistration = response
-      })
+      this.$binding("timeRegistration", firestore.collection("workers").doc(email).collection("timeregs"))
+        .then((timeRegistration) => {
+          
+        })
+    },
+    getDate(date) {
+      return date.toDate()
     }
   },
   mounted() {

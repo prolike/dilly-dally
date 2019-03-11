@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import firebase from 'firebase';
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
