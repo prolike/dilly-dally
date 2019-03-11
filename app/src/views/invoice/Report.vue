@@ -56,7 +56,6 @@ export default {
         })
     },
     getAllInvoices() {
-      console.log("asd")
       this.$binding("customersName", firestore.collection("customers"))
         .then((customersName) => {
           console.log(customersName) // => __ob__: Observer

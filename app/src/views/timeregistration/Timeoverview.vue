@@ -47,7 +47,7 @@ export default {
         })
     },
     getDate(date) {
-      return date.toDate()
+      return date.toDate().toDateString("da-DK");
     }
   },
   mounted() {

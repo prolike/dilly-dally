@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import firebase from 'firebase'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
 // Views
 const Dashboard = () => import('@/views/Dashboard')
+
+const Error404 = () => import('@/views/Page404')
 const Colors = () => import('@/views/theme/Colors')
 const Typography = () => import('@/views/theme/Typography')
 const Login = () => import('@/views/login/Login')
@@ -33,7 +36,20 @@ var router = new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes: [{
       path: '/',
-      redirect: '/dashboard',
+      redirect: '/login'
+    }, {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+    {
+      path: '*',
+      redirect: '/login'
+    }, {
+      path: '/home',
+      meta: {
+        requiresAuth: true
+      },
       name: 'Home',
       component: DefaultContainer,
       children: [{
@@ -57,14 +73,29 @@ var router = new Router({
           component: Dashboard
         }
       ]
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login,
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  let currentUser = firebase.auth().currentUser
+  let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  if (requiresAuth) {
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (!user) {
+        console.log("not auth ffs")
+        next('login')
+      } else {
+        console.log("yes auth ffs")
+        next()
+      }
+    })
+  } else {
+    console.log("Not required")
+    next()
+  }
+})
+
 
 
 export default router;
