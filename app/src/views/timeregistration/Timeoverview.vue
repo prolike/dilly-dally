@@ -10,6 +10,8 @@
           <th scope="col">Time_end</th>
           <th scope="col">Hours</th>
           <th scope="col">Comment</th>
+          <th scope="col">Approved</th>
+          <th scope="col">Invoiced</th>
           <th scope="col">Delete</th>
         </tr>
       </thead>
@@ -22,6 +24,9 @@
           <td>{{ item.endTime }}</td>
           <td>{{ item.workHours }}</td>
           <td>{{ item.comment }}</td>
+          <td>??</td>
+          <td>??</td>
+
           <td><button v-on:click="deleteMe(item.id)"> Delete me</button></td>
         </tr>
       </tbody>
