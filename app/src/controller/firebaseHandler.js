@@ -11,11 +11,24 @@ const firebaseApp = firebase.initializeApp({
 
 console.log("hallo")
 const firestore = firebaseApp.firestore()
+
 var user = null
 
-
-function setUser(user){
-	user = user
-	console.log("user set" + user)
+function setUser(authedUser){
+	user = authedUser
+	console.log("User SET")
 }
-export {firestore,user, setUser}
+
+function getUser(){
+	console.log("getting user")
+	console.log(user)
+	return user
+}
+
+function isReady(){
+	if(user) return true
+	else return false
+}
+
+
+export {firestore, setUser, getUser, isReady}

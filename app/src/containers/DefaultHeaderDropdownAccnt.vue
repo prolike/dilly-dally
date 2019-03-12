@@ -13,24 +13,38 @@
 </template>
 <script>
 import { HeaderDropdown as AppHeaderDropdown } from '@coreui/vue'
-import { user } from '../controller/firebaseHandler';
+import { getUser, isReady } from '../controller/firebaseHandler';
 
 export default {
   name: 'DefaultHeaderDropdownAccnt',
   components: {
     AppHeaderDropdown
   },
-  created() {
-    if (!user) {
-      console.log("IS NOT SIGNED IN")
+  data: function() {
+    return {
+      user: ""
     }
   },
+  mounted() {
+    this.checkUser()
+  },
   methods: {
-    getImageUrl() {
-      return user.photoURL
+    checkUser() {
+      if (isReady == false) {
+        console.log("IS NOT SIGNED IN")
+        window.setTimeout(this.checkUser, 100); /* this checks the flag every 100 milliseconds*/
+      } else {
+        console.log("IS SIGNED IN")
+        this.user = getUser()
+        console.log(this.user)
+      }
     },
+    getImageUrl() {
+      return this.user.photoURL
+    },
+
     getEmail() {
-      return user.email
+      return this.user.email
     },
     logOut() {
       console.log("logging out")
