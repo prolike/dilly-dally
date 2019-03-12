@@ -22,7 +22,7 @@
           <td>{{ item.endTime }}</td>
           <td>{{ item.workHours }}</td>
           <td>{{ item.comment }}</td>
-          <td>Delete me</td>
+          <td><button v-on:click="deleteMe(item.id)"> Delete me</button></td>
         </tr>
       </tbody>
     </table>
@@ -42,11 +42,14 @@ export default {
   },
   methods: {
     getAllTimeRegistrations() {
-
       this.$binding("timeRegistration", firestore.collection("workers").doc(this.email).collection("timeregs"))
         .then((timeRegistration) => {
 
         })
+    },
+    deleteMe(id) {
+      console.log(id)
+      firestore.collection("workers").doc(this.email).collection("timeregs").doc(id).delete()
     },
     getDate(date) {
       return date.toDate().toDateString("da-DK");
