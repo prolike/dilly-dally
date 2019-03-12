@@ -14,21 +14,29 @@ const firestore = firebaseApp.firestore()
 
 var user = null
 
-function setUser(authedUser){
-	user = authedUser
-	console.log("User SET")
+function setUser(authedUser) {
+  user = authedUser
+  console.log("User SET")
 }
 
-function getUser(){
-	console.log("getting user")
-	console.log(user)
-	return user
+function getUser() {
+  console.log("getting user")
+  console.log(user)
+  return user
 }
 
-function isReady(){
-	if(user) return true
-	else return false
+function logOut() {
+  firebase.auth().signOut().then(function() {
+    console.log("Sign-out successful")
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
+
+function isReady() {
+  if (user) return true
+  else return false
 }
 
 
-export {firestore, setUser, getUser, isReady}
+export { firestore, setUser, getUser, isReady, logOut }

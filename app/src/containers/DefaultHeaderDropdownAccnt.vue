@@ -13,7 +13,7 @@
 </template>
 <script>
 import { HeaderDropdown as AppHeaderDropdown } from '@coreui/vue'
-import { getUser, isReady } from '../controller/firebaseHandler';
+import { getUser, isReady , logOut} from '../controller/firebaseHandler';
 
 export default {
   name: 'DefaultHeaderDropdownAccnt',
@@ -48,11 +48,7 @@ export default {
     },
     logOut() {
       console.log("logging out")
-      firebase.auth().signOut().then(function() {
-        console.log("Sign-out successful")
-      }).catch(function(error) {
-        // An error happened.
-      });
+      logOut()
     },
   },
 }
