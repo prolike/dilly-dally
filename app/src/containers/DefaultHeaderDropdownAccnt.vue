@@ -13,7 +13,7 @@
 </template>
 <script>
 import { HeaderDropdown as AppHeaderDropdown } from '@coreui/vue'
-import firebase from 'firebase'
+import { user } from '../controller/firebaseHandler';
 
 export default {
   name: 'DefaultHeaderDropdownAccnt',
@@ -21,18 +21,15 @@ export default {
     AppHeaderDropdown
   },
   created() {
-    var user = firebase.auth().currentUser;
     if (!user) {
       console.log("IS NOT SIGNED IN")
     }
   },
   methods: {
     getImageUrl() {
-      var user = firebase.auth().currentUser;
       return user.photoURL
     },
     getEmail() {
-      var user = firebase.auth().currentUser;
       return user.email
     },
     logOut() {

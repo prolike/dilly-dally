@@ -1,5 +1,4 @@
-import {firebase} from 'firebase'
-
+import firebase from 'firebase'
 
 const firebaseApp = firebase.initializeApp({
   apiKey: "AIzaSyAP26LDfU4OMnpBTB4P9Lm9-c_BgF1DxUQ",
@@ -10,5 +9,13 @@ const firebaseApp = firebase.initializeApp({
   messagingSenderId: "320832304478"
 });
 
+console.log("hallo")
+const firestore = firebaseApp.firestore()
+var user = null
 
-export const firestore = firebaseApp.firestore()
+
+function setUser(user){
+	user = user
+	console.log("user set" + user)
+}
+export {firestore,user, setUser}

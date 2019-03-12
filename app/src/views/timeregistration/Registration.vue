@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import { firestore } from "../../main";
+import { firestore } from '../../controller/firebaseHandler';;
 import Datepicker from 'vuejs-datepicker';
 
 export default {

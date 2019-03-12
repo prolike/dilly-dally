@@ -35,7 +35,7 @@
   </div>
 </template>
 <script>
-import { firestore } from '../../main';
+import { firestore } from '../../controller/firebaseHandler';
 
 export default {
   name: 'InvoiceOverview',

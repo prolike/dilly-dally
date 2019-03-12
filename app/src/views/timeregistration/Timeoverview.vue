@@ -16,7 +16,7 @@
       <tbody>
         <tr v-for="item in timeRegistration">
           <td>{{ getDate(item.date) }}</td>
-          <td>{{ item.category }}</td>
+          <td>{{ item.category.id }}</td>
           <td>{{ item.project }}</td>
           <td>{{ item.startTime }}</td>
           <td>{{ item.endTime }}</td>
@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import { firestore } from "../../main";
+import { firestore, user} from '../../controller/firebaseHandler';
 
 export default {
   name: 'TimeRegistrationOverview',
@@ -41,6 +41,7 @@ export default {
   methods: {
     getAllTimeRegistrations() {
       var email = "ansty93@hehe.com"
+      console.log("email"+user)
       this.$binding("timeRegistration", firestore.collection("workers").doc(email).collection("timeregs"))
         .then((timeRegistration) => {
           

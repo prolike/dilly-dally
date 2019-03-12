@@ -11,6 +11,7 @@ import router from './router'
 import VueSweetalert2 from 'vue-sweetalert2';
 import VueFirestore from 'vue-firestore'
 import firebase from 'firebase'
+import {firestore,user} from './controller/firebaseHandler'
 // todo
 // cssVars()
 Vue.use(VueFirestore, {
@@ -21,24 +22,13 @@ Vue.use(VueSweetalert2)
 Vue.use(BootstrapVue)
 
 
-const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyAP26LDfU4OMnpBTB4P9Lm9-c_BgF1DxUQ",
-  authDomain: "prolike-stack.firebaseapp.com",
-  databaseURL: "https://prolike-stack.firebaseio.com",
-  projectId: "prolike-stack",
-  storageBucket: "prolike-stack.appspot.com",
-  messagingSenderId: "320832304478"
-});
 
-
-export const firestore = firebaseApp.firestore()
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   methods: {},
-  created() {
-  },
+  created() {},
   template: '<App/>',
   components: {
     App
