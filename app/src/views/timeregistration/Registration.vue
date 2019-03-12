@@ -49,7 +49,7 @@
   </div>
 </template>
 <script>
-import { firestore } from '../../controller/firebaseHandler';;
+import { firestore, getUser } from '../../controller/firebaseHandler';;
 import Datepicker from 'vuejs-datepicker';
 
 export default {
@@ -70,7 +70,9 @@ export default {
       },
       projects: [],
       defaultHour: new Date().getHours(),
-      defaultMinute: new Date().getMinutes()
+      defaultMinute: new Date().getMinutes(),
+      user: "",
+      email: ""
     }
   },
   methods: {
@@ -88,7 +90,7 @@ export default {
         })
 
     },
-    getAllProjects : function(){
+    getAllProjects: function() {
       this.customers.forEach(cust => {
         this.$binding("asd", firestore.collection("customers").doc(cust.id).collection("projects")).then((projectArr) => {
           projectArr.forEach(project => {
@@ -100,8 +102,7 @@ export default {
     registerTime: function() {
       console.log(this.form)
       var data = this.form
-      var email = "ansty93@hehe.com"
-      firestore.collection("workers").doc(email).collection("timeregs").add(data).then((response) => {
+      firestore.collection("workers").doc(this.email).collection("timeregs").add(data).then((response) => {
         console.log(response)
       })
       this.$swal.fire(
@@ -112,6 +113,8 @@ export default {
     }
   },
   mounted() {
+    this.user = getUser()
+    this.email = this.user.email
     this.getCategories()
     this.getAllCustomersName()
     this.getTodayDate()

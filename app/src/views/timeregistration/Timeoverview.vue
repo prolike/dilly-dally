@@ -29,22 +29,23 @@
   </div>
 </template>
 <script>
-import { firestore, user} from '../../controller/firebaseHandler';
+import { firestore, getUser } from '../../controller/firebaseHandler';
 
 export default {
   name: 'TimeRegistrationOverview',
   data: function() {
     return {
-      timeRegistration: []
+      timeRegistration: [],
+      email: "",
+      user: ""
     }
   },
   methods: {
     getAllTimeRegistrations() {
-      var email = "ansty93@hehe.com"
-      console.log("email"+user)
-      this.$binding("timeRegistration", firestore.collection("workers").doc(email).collection("timeregs"))
+
+      this.$binding("timeRegistration", firestore.collection("workers").doc(this.email).collection("timeregs"))
         .then((timeRegistration) => {
-          
+
         })
     },
     getDate(date) {
@@ -52,7 +53,11 @@ export default {
     }
   },
   mounted() {
+    this.user = getUser()
+    this.email = this.user.email
+    console.log(this.email)
     this.getAllTimeRegistrations()
+
   }
 }
 
