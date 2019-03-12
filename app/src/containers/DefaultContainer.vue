@@ -46,7 +46,7 @@
     <TheFooter>
       <!--footer-->
       <div>
-        <a href="https://prolike.io">Prolike</a>
+        <a href="http://www.prolike.io">Prolike</a>
       </div>
       <!--<div class="ml-auto">
         <span class="mr-1">Powered by</span>
