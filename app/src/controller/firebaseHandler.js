@@ -28,6 +28,7 @@ function getUser() {
 function logOut() {
   firebase.auth().signOut().then(function() {
     console.log("Sign-out successful")
+    user = null
   }).catch(function(error) {
     // An error happened.
   });
