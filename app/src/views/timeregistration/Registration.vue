@@ -6,7 +6,7 @@
           <div class="timereg-title">
             <h1>Time Registration</h1>
           </div>
-          <form id="data-form">
+          <form @submit.prevent="registerTime" id="data-form">
             <div class="row">
               <div class="col-lg-4 specialized-box">
                 <label>Date</label>
@@ -15,6 +15,7 @@
                 <div class="input-group clockpicker">
                   <input type="text" class="form-control" id="start" placeholder="09:00" v-model="form.startTime">
                 </div>
+                <div class="text-danger">{{ errors.startTime }}</div>
                 <label>End time</label>
                 <div class="input-group clockpicker">
                   <input type="text" class="form-control" id="end" placeholder="16:00" v-model="form.endTime">
@@ -72,7 +73,9 @@ export default {
       defaultHour: new Date().getHours(),
       defaultMinute: new Date().getMinutes(),
       user: "",
-      email: ""
+      email: "",
+      valid: true,
+      errors: {}
     }
   },
   methods: {
@@ -99,19 +102,40 @@ export default {
         })
       })
     },
+    validateStartTime: function(startTime) {
+      console.log("starttime: "+startTime);
+      if (!startTime.length) {
+        return { valid: false, error: "This field is required" }
+      }
+      if (!startTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
+        return { valid: false, error: "Please, enter a valid time." }
+      }
+      return { valid: true, error: null }
+    },
     registerTime: function() {
-      console.log(this.form)
-      var data = this.form
-      data["startTime"] = this.getTimeStamp(this.date, data["startTime"])
-      data["endTime"] = this.getTimeStamp(this.date, data["endTime"])
-      firestore.collection("workers").doc(this.email).collection("timeregs").add(data).then((response) => {
-        console.log(response)
-      })
-      this.$swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-      )
+      this.errors = {};
+      const validStartTime = this.validateStartTime(this.form.startTime);
+      this.errors.startTime = validStartTime.error;
+      if (this.valid) {
+        this.valid = validStartTime.valid;
+      }
+      console.log(this.valid+" : validation after start")
+      if (this.valid) {
+        console.log(this.form)
+        var data = this.form
+        data["startTime"] = this.getTimeStamp(this.date, data["startTime"])
+        data["endTime"] = this.getTimeStamp(this.date, data["endTime"])
+        firestore.collection("workers").doc(this.email).collection("timeregs").add(data).then((response) => {
+          console.log(response)
+        })
+        this.$swal.fire(
+          'Good job!',
+          'You clicked the button!',
+          'success'
+        )
+      }
+      this.valid = true;
+      this.form.startTime = "";
     },
     getTimeStamp(date, time) {
       var jsTime = time.split(":")
