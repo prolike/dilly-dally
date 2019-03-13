@@ -1,19 +1,28 @@
 export default {
-  items: [
-  {
-    name: 'Time Registration',
-    url: '/home/timeregistration/registration',
-    icon: 'cui-calendar',
-  },
-  {
-    name: 'Your Registrations',
-    url: '/home/timeregistration/timeoverview',
-    icon: 'cui-list',
-  },
-  {
-    name: 'Invoice report',
-    url: '/home/invoice/report',
-    icon: 'cui-file',
-  }
+  items: [{
+      name: 'Dashboard',
+      url: '/home/dashboard',
+      icon: 'cui-calendar',
+    },
+    {
+      name: 'Work registration',
+      url: '/home/timeregistration/registration',
+      icon: 'cui-calendar',
+    },
+    {
+      name: 'Overview',
+      icon: 'icon-puzzle',
+      children: [{
+          name: 'My work registrations',
+          url: '/home/timeregistration/timeoverview',
+          icon: 'cui-list',
+        },
+        {
+          name: 'Analysis',
+          url: '/home/invoice/report',
+          icon: 'cui-file',
+        }
+      ]
+    }
   ]
 }
