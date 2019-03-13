@@ -83,4 +83,32 @@ div.mdl-progress::after {
         padding-right: 20px;
     }
 
+// Her Andreas, her er hvad du skal bruge!
+
+    .spinner-logo {
+        height: 75px;
+        animation: flash 3s ease-in-out infinite;
+    }
+
+    @-webkit-keyframes flash {
+        0%, 50%, 100% {opacity: 1;}
+        25%, 75% {opacity: 0;}
+    }
+    @keyframes flash {
+        0%, 50%, 100% {opacity: 1;}
+        25%, 75% {opacity: 0;}
+    }
+    .flash {
+        -webkit-animation-name: flash;
+        animation-name: flash;
+    }
+
+    h2 {
+        color: white;
+        font-size: 18px;
+        margin-top: 15px;
+        font-family: 'Montserrat', sans-serif;
+        padding-left: 20px;
+    }
+
 }

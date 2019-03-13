@@ -1,8 +1,13 @@
 <template>
   <section class="loginPage">
-    <img class="loginLogo" src="img/brand/prolike-logo.svg" width="89" height="25" alt="Prolike Logo">
+
+    <!--Her Andreas, her er hvad du skal lave i JS!-->
+
+    <!--<img class="loginLogo" src="img/brand/prolike-logo.svg" width="89" height="25" alt="Prolike Logo">
     <h1>Time Registration</h1>
-    <button id="googleLogin" v-on:click="test"><img class="googleIcon" src="img/google-icon.png">Sign in with Google</button>
+    <button id="googleLogin" v-on:click="test"><img class="googleIcon" src="img/google-icon.png">Sign in with Google</button>-->
+    <div><img class="spinner-logo" src="img/yellow-logo.png" alt=""></div>
+    <h2>Authenticating . . .</h2>
   </section>
 </template>
 <script>
