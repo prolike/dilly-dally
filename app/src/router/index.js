@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import firebase from 'firebase'
-import {setUser} from '../controller/firebaseHandler'
+import { setUser, logOut } from '../controller/firebaseHandler'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
@@ -82,18 +82,27 @@ router.beforeEach((to, from, next) => {
   let currentUser = firebase.auth().currentUser
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
   if (requiresAuth) {
-    console.log("auth required")
     firebase.auth().onAuthStateChanged(function(user) {
       if (!user) {
         console.log("not auth ffs")
         next('login')
       } else {
         console.log("yes auth")
-        setUser(user)
-        next()
+        var email = user.email
+        var prolike = email.split("@")[1]
+        if (prolike !== "prolike.io") {
+          console.log("not a prolike account!! LOGGING OUT ")
+          logOut()
+          router.push({ name: 'login', params: "notProlike" })
+        } else {
+          console.log(prolike)
+          setUser(user)
+          next()
+        }
       }
     })
   } else {
+
     console.log("Not required")
     next()
   }
