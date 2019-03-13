@@ -10,7 +10,7 @@
             <div class="row">
               <div class="col-lg-4 specialized-box">
                 <label>Date</label>
-                <datepicker :value="form.date" monday-first format="dd/MM/yyyy" v-model="form.date"></datepicker>
+                <datepicker :value="date" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
                 <label>Start time</label>
                 <div class="input-group clockpicker">
                   <input type="text" class="form-control" id="start" placeholder="09:00" v-model="form.startTime">
@@ -22,7 +22,7 @@
               </div>
               <div class="col-lg-4 specialized-box">
                 <label>Work Hours</label>
-                <input type="text" class="form-control" id="hours" value="7" v-model="form.workHours">
+                <input type="text" class="form-control" id="hours" value="7" v-model="workHours">
                 <label>Category</label>
                 <select v-model="form.category">
                   <option v-for="item in categories" :value="item">
@@ -59,11 +59,11 @@ export default {
   },
   data: function() {
     return {
+      date: "",
+      workHours: "",
       form: {
-        date: "",
         startTime: "",
         endTime: "",
-        workHours: "",
         category: "",
         project: "",
         comment: ""
@@ -77,7 +77,7 @@ export default {
   },
   methods: {
     getTodayDate() {
-      this.form.date = new Date()
+      this.date = new Date()
     },
     getCategories: function() {
       this.$binding("categories", firestore.collection("categories"))
@@ -102,6 +102,8 @@ export default {
     registerTime: function() {
       console.log(this.form)
       var data = this.form
+      data["startTime"] = this.getTimeStamp(this.date, data["startTime"])
+      data["endTime"] = this.getTimeStamp(this.date, data["endTime"])
       firestore.collection("workers").doc(this.email).collection("timeregs").add(data).then((response) => {
         console.log(response)
       })
@@ -110,6 +112,11 @@ export default {
         'You clicked the button!',
         'success'
       )
+    },
+    getTimeStamp(date, time) {
+      var jsTime = time.split(":")
+      console.log(jsTime)
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate(), jsTime[0], jsTime[1])
     }
   },
   mounted() {

@@ -17,12 +17,12 @@
       </thead>
       <tbody>
         <tr v-for="item in timeRegistration">
-          <td>{{ getDate(item.date) }}</td>
+          <td>{{ getDate(item.startTime) }}</td>
           <td>{{ item.category.id }}</td>
           <td>{{ item.project }}</td>
-          <td>{{ item.startTime }}</td>
-          <td>{{ item.endTime }}</td>
-          <td>{{ item.workHours }}</td>
+          <td>{{ getTime(item.startTime) }}</td>
+          <td>{{ getTime(item.endTime) }}</td>
+          <td>workhours</td>
           <td>{{ item.comment }}</td>
           <td>??</td>
           <td>??</td>
@@ -55,6 +55,9 @@ export default {
     deleteMe(id) {
       console.log(id)
       firestore.collection("workers").doc(this.email).collection("timeregs").doc(id).delete()
+    },
+    getTime(date) {
+      return date.toDate().toLocaleTimeString("da-DK");
     },
     getDate(date) {
       return date.toDate().toDateString("da-DK");
