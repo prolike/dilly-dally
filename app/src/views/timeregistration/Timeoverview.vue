@@ -1,37 +1,21 @@
 <template>
-  <div>
-    <table class="table table-dark">
-      <thead>
-        <tr>
-          <th scope="col">Date</th>
-          <th scope="col">Category</th>
-          <th scope="col">Project</th>
-          <th scope="col">Time_start</th>
-          <th scope="col">Time_end</th>
-          <th scope="col">Hours</th>
-          <th scope="col">Comment</th>
-          <th scope="col">Approved</th>
-          <th scope="col">Invoiced</th>
-          <th scope="col">Delete</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in timeRegistration">
-          <td>{{ getDate(item.startTime) }}</td>
-          <td>{{ item.category.id }}</td>
-          <td>{{ item.project }}</td>
-          <td>{{ getTime(item.startTime) }}</td>
-          <td>{{ getTime(item.endTime) }}</td>
-          <td>workhours</td>
-          <td>{{ item.comment }}</td>
-          <td>??</td>
-          <td>??</td>
-
-          <td><button v-on:click="deleteMe(item.id)"> Delete me</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <b-table striped hover fixed :items="timeRegistration" :fields="fields">
+    <template slot="date" slot-scope="data">
+      {{getDate(data.item.startTime)}}
+    </template>
+    <template slot="startTime" slot-scope="data">
+      {{getTime(data.item.startTime)}}
+    </template>
+    <template slot="endTime" slot-scope="data">
+      {{getTime(data.item.endTime)}}
+    </template>
+    <template slot="workHours" slot-scope="data">
+      {{getWorkhours(data.item.startTime,data.item.endTime)}}
+    </template>
+    <template slot="deleteMe" slot-scope="data">
+      <button v-on:click="deleteMe(data.item.id)">Delete me</button>
+    </template>
+  </b-table>
 </template>
 <script>
 import { firestore, getUser } from '../../controller/firebaseHandler';
@@ -40,6 +24,47 @@ export default {
   name: 'TimeRegistrationOverview',
   data: function() {
     return {
+      fields: {
+        category: {
+          // This key overrides `foo`!
+          key: 'category.id',
+          label: 'Category',
+          sortable: true
+        },
+        project: {
+          // This key overrides `foo`!
+          key: 'project',
+          label: 'Project',
+          sortable: true
+        },
+        date: {
+          // This key overrides `foo`!
+          label: 'date',
+          sortable: true
+        },
+        startTime: {
+          // This key overrides `foo`!
+          key: 'startTime',
+          label: 'startTime',
+          sortable: true
+        },
+        endTime: {
+          // This key overrides `foo`!
+          key: 'endTime',
+          label: 'endTime',
+          sortable: true
+        },
+        workHours: {
+          // This key overrides `foo`!
+          label: 'work hours',
+          sortable: true
+        },
+        deleteMe: {
+          // This key overrides `foo`!
+          label: 'Delete me',
+          sortable: false
+        }
+      },
       timeRegistration: [],
       email: "",
       user: ""
@@ -49,18 +74,22 @@ export default {
     getAllTimeRegistrations() {
       this.$binding("timeRegistration", firestore.collection("workers").doc(this.email).collection("timeregs"))
         .then((timeRegistration) => {
-
+          console.log(this.timeRegistration)
         })
     },
     deleteMe(id) {
       console.log(id)
       firestore.collection("workers").doc(this.email).collection("timeregs").doc(id).delete()
     },
-    getTime(date) {
-      return date.toDate().toLocaleTimeString("da-DK");
+    getWorkhours(timestamp1,timestamp2) {
+      var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
+      return new Date(total).toLocaleTimeString("da-DK");
     },
-    getDate(date) {
-      return date.toDate().toDateString("da-DK");
+    getTime(timestamp) {
+      return timestamp.toDate().toLocaleTimeString("da-DK");
+    },
+    getDate(timestamp) {
+      return timestamp.toDate().toDateString("da-DK");
     }
   },
   mounted() {
