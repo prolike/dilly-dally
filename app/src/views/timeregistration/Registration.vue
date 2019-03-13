@@ -10,7 +10,7 @@
             <div class="row">
               <div class="col-lg-4 specialized-box">
                 <label>Date</label>
-                <datepicker :value="date" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
+                <datepicker :value="date" :disabledDates="state.disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
                 <label>Start time</label>
                 <div class="input-group clockpicker">
                   <input type="text" class="form-control" id="start" placeholder="09:00" v-model="form.startTime">
@@ -70,6 +70,11 @@ export default {
         project: "",
         comment: ""
       },
+      state: {
+        disabledDates: {
+          from: new Date(),
+        }
+      },
       projects: [],
       defaultHour: new Date().getHours(),
       defaultMinute: new Date().getMinutes(),
@@ -105,7 +110,7 @@ export default {
       })
     },
     validateStartTime: function(startTime) {
-      console.log("starttime: "+startTime);
+      console.log("starttime: " + startTime);
       if (!startTime.length) {
         return { valid: false, error: "This field is required" }
       }
@@ -115,7 +120,7 @@ export default {
       return { valid: true, error: null }
     },
     validateEndTime: function(endTime) {
-      console.log("endtime: "+endTime);
+      console.log("endtime: " + endTime);
       if (!endTime.length) {
         return { valid: false, error: "This field is required" }
       }
@@ -131,13 +136,13 @@ export default {
       if (this.valid) {
         this.valid = validStartTime.valid;
       }
-      console.log(this.valid+" : validation after start")
+      console.log(this.valid + " : validation after start")
       const validEndTime = this.validateEndTime(this.form.endTime);
       this.errors.endTime = validEndTime.error;
       if (this.valid) {
         this.valid = validEndTime.valid;
       }
-      console.log(this.valid+" : validation after end")
+      console.log(this.valid + " : validation after end")
       if (this.valid) {
         console.log(this.form)
         var data = this.form
@@ -151,8 +156,8 @@ export default {
           'You clicked the button!',
           'success'
         )
-      this.form.startTime = "";
-      this.form.endTime = "";
+        this.form.startTime = "";
+        this.form.endTime = "";
       }
       this.valid = true;
     },
