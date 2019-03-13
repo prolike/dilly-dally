@@ -1,18 +1,16 @@
 <template>
 
-  <body>
-    <center>
-      <!-- The surrounding HTML is left untouched by FirebaseUI.
-         Your app may use that space for branding, controls and other customizations.-->
-      <h1>Welcome to My Awesome App</h1>
-      <div id="firebaseui-auth-container"></div>
-      <div v-if=authenticated>
-        <vue-circle :progress="50" :size="100" :reverse="false" line-cap="round" :fill="fill" empty-fill="rgba(0, 0, 0, .1)" :animation-start-value="0.0" :start-angle="0" insert-mode="append" :thickness="5" :show-percent="true" @vue-circle-progress="progress" @vue-circle-end="progress_end">
-          <p>Slot!</p>
-        </vue-circle>
-      </div>
-    </center>
-  </body>
+  <section class="loginPage">
+    <img
+          class="loginLogo"
+          src="img/brand/prolike-logo.svg"
+          width="89"
+          height="25"
+          alt="Prolike Logo"
+        >
+    <h1>Time Registration</h1>
+   <button id="googleLogin" v-on:click="test"><img class="googleIcon" src="img/google-icon.png">Sign in with Google</button>
+  </section>
 </template>
 <script>
 import VueCircle from 'vue2-circle-progress'
@@ -36,10 +34,12 @@ export default {
     },
     progress_end(event) {
       console.log("Circle progress end");
-    }
-  },
-  mounted() {
-    var uiConfig = {
+    },
+    test(){
+      console.log("hha")
+    },
+    signIn(){
+          var uiConfig = {
       signInSuccessUrl: '/#/home/dashboard',
       signInOptions: [
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -55,7 +55,11 @@ export default {
       if (!ui) {
         ui = new firebaseui.auth.AuthUI(firebase.auth());
       }
-      ui.start('#firebaseui-auth-container', uiConfig);
+      
+    }
+  },
+  mounted() {
+
     }
   }
 
