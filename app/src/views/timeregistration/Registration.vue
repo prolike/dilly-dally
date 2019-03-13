@@ -75,7 +75,8 @@ export default {
       user: "",
       email: "",
       valid: true,
-      errors: {}
+      errors: {},
+      categories: []
     }
   },
   methods: {
