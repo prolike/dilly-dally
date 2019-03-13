@@ -20,6 +20,7 @@
                 <div class="input-group clockpicker">
                   <input type="text" class="form-control" id="end" placeholder="16:00" v-model="form.endTime">
                 </div>
+                <div class="text-danger">{{ errors.endTime }}</div>
               </div>
               <div class="col-lg-4 specialized-box">
                 <label>Work Hours</label>
@@ -113,6 +114,16 @@ export default {
       }
       return { valid: true, error: null }
     },
+    validateEndTime: function(endTime) {
+      console.log("endtime: "+endTime);
+      if (!endTime.length) {
+        return { valid: false, error: "This field is required" }
+      }
+      if (!endTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
+        return { valid: false, error: "Please, enter a valid time." }
+      }
+      return { valid: true, error: null };
+    },
     registerTime: function() {
       this.errors = {};
       const validStartTime = this.validateStartTime(this.form.startTime);
@@ -121,6 +132,12 @@ export default {
         this.valid = validStartTime.valid;
       }
       console.log(this.valid+" : validation after start")
+      const validEndTime = this.validateEndTime(this.form.endTime);
+      this.errors.endTime = validEndTime.error;
+      if (this.valid) {
+        this.valid = validEndTime.valid;
+      }
+      console.log(this.valid+" : validation after end")
       if (this.valid) {
         console.log(this.form)
         var data = this.form
@@ -134,9 +151,10 @@ export default {
           'You clicked the button!',
           'success'
         )
+      this.form.startTime = "";
+      this.form.endTime = "";
       }
       this.valid = true;
-      this.form.startTime = "";
     },
     getTimeStamp(date, time) {
       var jsTime = time.split(":")
