@@ -1,65 +1,67 @@
 <template>
   <div>
-    <div class="container-fluid">
-      <div class="row m-auto">
-        <div class="col-lg-12 timereg">
-          <div class="timereg-title">
-            <h1>Time Registration</h1>
-            <div v-on:click="sendmsg()" class="cross"><i class="fa fa-times"/></div>
-          </div>
-          <form @submit.prevent="registerTime" id="data-form">
-            <div class="row">
-              <div class="col-lg-12 specialized-box">
-                <div class="cell">
-                <label for="">Pick a date</label>
-                <datepicker class="datepick" :value="date" :disabledDates="state.disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
-                </div>
-                <div class="cell">
-                  <label for="">Start time</label>
-                <div class="input-group clockpicker">
-                  <input type="text" class="form-control" id="start" placeholder="09:00" v-model="form.startTime">
-                </div>
-                </div>
-                <div class="text-danger">{{ errors.startTime }}</div>
-                <div class="cell">
-                  <label for="">End time</label>
-                <div class="input-group clockpicker">
-                  <input type="text" class="form-control" id="end" placeholder="16:00" v-model="form.endTime">
+    <div v-for="reg in timeregistrationArr">
+      <div class="container-fluid">
+        <div class="row m-auto">
+          <div class="col-lg-12 timereg">
+            <div class="timereg-title">
+              <h1>Time Registration</h1>
+              <div v-on:click="deleteThisBox(reg.counter)" class="cross"><i class="fa fa-times" /></div>
+            </div>
+            <form @submit.prevent="registerTime" id="data-form">
+              <div class="row">
+                <div class="col-lg-12 specialized-box">
+                  <div class="cell">
+                    <label for="">Pick a date</label>
+                    <datepicker class="datepick" :value="reg.date" :disabledDates="reg.disabledDates" monday-first format="dd/MM/yyyy" v-model="reg.date"></datepicker>
+                  </div>
+                  <div class="cell">
+                    <label for="">Start time</label>
+                    <div class="input-group clockpicker">
+                      <input type="text" class="form-control" id="start" placeholder="09:00" v-model="reg.form.startTime">
+                    </div>
+                  </div>
+                  <div class="text-danger">{{ reg.errors.startTime }}</div>
+                  <div class="cell">
+                    <label for="">End time</label>
+                    <div class="input-group clockpicker">
+                      <input type="text" class="form-control" id="end" placeholder="16:00" v-model="reg.form.endTime">
+                    </div>
+                  </div>
+                  <div class="cell">
+                    <label for="">Category</label>
+                    <div></div>
+                    <select v-model="reg.form.category">
+                      <option value="" disabled hidden>Select a category</option>
+                      <option v-for="item in categories" :value="item">
+                        {{item.id}}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="cell">
+                    <label for="">Project</label>
+                    <div></div>
+                    <select v-model="reg.form.project">
+                      <option value="" disabled hidden>Select a project</option>
+                      <option v-for="item in projects" :value="item">
+                        {{item}}
+                      </option>
+                    </select>
+                  </div>
+                  <div>
+                    <b-tabs content-class="mt-3">
+                      <b-tab title="Comment" active><textarea name="" id="" cols="30" rows="10" placeholder="Write your comment here"></textarea></b-tab>
+                      <b-tab title="Issue"><textarea name="" id="" cols="30" rows="10" placeholder="Here's the comment you wrote"></textarea></b-tab>
+                    </b-tabs>
                   </div>
                 </div>
-                <div class="cell">
-                  <label for="">Category</label>
-                <div></div>
-                <select v-model="form.category">
-                  <option value="" disabled hidden>Select a category</option>
-                  <option v-for="item in categories" :value="item">
-                    {{item.id}}
-                  </option>
-                </select>
-                </div>
-                <div class="cell">
-                  <label for="">Project</label>
-                <div></div>
-                <select v-model="form.project">
-                  <option value="" disabled hidden>Select a project</option>
-                  <option v-for="item in projects" :value="item">
-                    {{item}}
-                  </option>
-                </select>
-                </div>
-                <div>
-                <b-tabs content-class="mt-3">
-                <b-tab title="Comment" active><textarea name="" id="" cols="30" rows="10" placeholder="Write your comment here"></textarea></b-tab>
-                <b-tab title="Issue"><textarea name="" id="" cols="30" rows="10" placeholder="Here's the comment you wrote"></textarea></b-tab>
-                </b-tabs>
-                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-    <button class="timeRegButtons">Save</button><button class="timeRegButtons"><i class="fa fa-plus"></i></button>
+    <button class="timeRegButtons">Save</button><button class="timeRegButtons" v-on:click="appendBox"><i class="fa fa-plus"></i></button>
   </div>
 </template>
 <script>
@@ -73,50 +75,58 @@ export default {
   },
   data: function() {
     return {
-      date: "",
-      workHours: "",
-      form: {
-        startTime: "",
-        endTime: "",
-        category: "",
-        project: "",
-        comment: ""
-      },
-      state: {
+      timeregistrationArr: [],
+      timeregistration: {
+         form: {
+          startTime: "",
+          endTime: "",
+          category: "",
+          project: "",
+          comment: ""
+        },
+        index: 0,
+        date: "",
+        customers: [],
+        defaultHour: new Date().getHours(),
+        defaultMinute: new Date().getMinutes(),
+        valid: true,
+        errors: {},
         disabledDates: {
           from: new Date(),
-        }
+        },
       },
+      categories: [],
       projects: [],
-      defaultHour: new Date().getHours(),
-      defaultMinute: new Date().getMinutes(),
       user: "",
       email: "",
-      valid: true,
-      errors: {},
-      categories: []
     }
   },
   methods: {
-    sendmsg(){
-      console.log("hee")
+    deleteThisBox(index) {
+      console.log(index)
+      this.timeregistrationArr.splice(index, 1)
+    },
+    appendBox() {
+      this.timeregistrationArr.push(this.timeregistration)
     },
     getTodayDate() {
-      this.date = new Date()
+      this.timeregistration.date = new Date()
     },
     getCategories: function() {
       this.$binding("categories", firestore.collection("categories"))
-        .then((categories) => {})
+        .then((categories) => {
+
+        })
     },
     getAllCustomersName: function() {
-      this.$binding("customers", firestore.collection("customers"))
+      this.$binding("timeregistration.customers", firestore.collection("customers"))
         .then((customers) => {
           this.getAllProjects();
         })
 
     },
     getAllProjects: function() {
-      this.customers.forEach(cust => {
+      this.timeregistration.customers.forEach(cust => {
         this.$binding("asd", firestore.collection("customers").doc(cust.id).collection("projects")).then((projectArr) => {
           projectArr.forEach(project => {
             this.projects.push(cust.id + "/" + project.id)
@@ -164,10 +174,9 @@ export default {
         var start = this.getTimestamp(this.date, this.form.startTime)
         var end = this.getTimestamp(this.date, this.form.endTime)
         if (start > end) {
-           data["endTime"] = this.addDay(end);
-           data["startTime"] = start;
-        }
-        else {
+          data["endTime"] = this.addDay(end);
+          data["startTime"] = start;
+        } else {
           data["endTime"] = end;
           data["startTime"] = start;
         }
@@ -188,11 +197,10 @@ export default {
       var jsTime = time.split(":")
       return new Date(date.getFullYear(), date.getMonth(), date.getDate(), jsTime[0], jsTime[1])
     },
-    addDay(date){
+    addDay(date) {
       var newDate = date
-      newDate.setDate(date.getDate()+1)
+      newDate.setDate(date.getDate() + 1)
       return newDate;
-
     }
   },
   mounted() {
@@ -201,10 +209,11 @@ export default {
     this.getCategories()
     this.getAllCustomersName()
     this.getTodayDate()
+    this.appendBox()
   }
 }
-</script>
 
+</script>
 <style lang="scss" scoped>
 .timereg {
   background: #ffffff;
@@ -268,13 +277,13 @@ export default {
   }
 
   .input-group,
-.form-control {
-  width: 200px;
-}
+  .form-control {
+    width: 200px;
+  }
 
-label {
-  font-weight: 500;
-}
+  label {
+    font-weight: 500;
+  }
 }
 
 .timeRegButtons {
