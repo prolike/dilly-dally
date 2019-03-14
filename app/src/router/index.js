@@ -55,17 +55,17 @@ var router = new Router({
       component: DefaultContainer,
       children: [{
           path: 'timeregistration/registration',
-          name: 'Timeregistration',
+          name: 'Time Registration',
           component: Timeregistration
         },
         {
           path: 'timeregistration/timeoverview',
-          name: 'Timeoverview',
+          name: 'My Registrations',
           component: Timeoverview
         },
         {
           path: 'invoice/report',
-          name: 'InvoiceReport',
+          name: 'Invoice Report',
           component: InvoiceReport
         },
         {

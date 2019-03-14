@@ -3,17 +3,41 @@
 * {
     font-family: 'Montserrat', sans-serif;
 }
+.breadcrumb-item {
+    font-weight: 500;
+}
 
 .sidebar {
     background: #ffffff;
-}
+    font-weight: 500;
 
-.sidebar .nav-link .nav-icon {
-    color: #000000;
+    .nav-dropdown.open {
+        background: #ffc400;
+    }
+    .nav-dropdown.open .nav-link {
+        color: #1A2336;
+    }
+    
+    .nav-link .nav-icon {
+        color: #000000;
+    }
+
+    .nav-link:hover, .nav-dropdown.open .nav-link:hover{
+        background: #1A2336;
+        color: #ffffff;
+    }
+
+    .nav-dropdown.open .nav-link.active {
+        background: #1a2336;
+        color: #ffffff;
+    }
+}
+.app-header .nav-item .nav-link > .img-avatar {
+    margin-right: 30px;
 }
 
 .sidebar .nav-link {
-    color: #000000;
+    color: #1A2336;
 }
 
 .sidebar .nav-link.active {
@@ -58,7 +82,6 @@ div.mdl-progress::after {
         font-size: 18.5px;
         text-transform: uppercase;
         letter-spacing:2.5px;
-        font-family: 'Montserrat', sans-serif;
     }
 
     #googleLogin {
@@ -87,8 +110,6 @@ div.mdl-progress::after {
         padding-right: 20px;
     }
 
-// Her Andreas, her er hvad du skal bruge!
-
     .spinner-logo {
         height: 75px;
         animation: flash 3s ease-in-out infinite;
@@ -114,5 +135,4 @@ div.mdl-progress::after {
         font-family: 'Montserrat', sans-serif;
         padding-left: 20px;
     }
-
 }

@@ -2,18 +2,18 @@ export default {
   items: [{
       name: 'Dashboard',
       url: '/home/dashboard',
-      icon: 'cui-calendar',
+      icon: 'cui-chart',
     },
     {
-      name: 'Work registration',
+      name: 'Time registration',
       url: '/home/timeregistration/registration',
-      icon: 'cui-calendar',
+      icon: 'fa fa-calendar',
     },
     {
       name: 'Overview',
       icon: 'icon-puzzle',
       children: [{
-          name: 'My work registrations',
+          name: 'My registrations',
           url: '/home/timeregistration/timeoverview',
           icon: 'cui-list',
         },
