@@ -203,8 +203,8 @@ export default {
     this.getTodayDate()
   }
 }
-
 </script>
+
 <style lang="scss" scoped>
 .timereg {
   background: #ffffff;
@@ -296,6 +296,5 @@ label {
 .timeRegButtons .fa {
   color: #1a2336;
 }
-
 
 </style>
