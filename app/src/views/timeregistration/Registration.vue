@@ -146,8 +146,16 @@ export default {
       if (this.valid) {
         console.log(this.form)
         var data = this.form
-        data["startTime"] = this.getTimeStamp(this.date, data["startTime"])
-        data["endTime"] = this.getTimeStamp(this.date, data["endTime"])
+        var start = this.getTimestamp(this.date, this.form.startTime)
+        var end = this.getTimestamp(this.date, this.form.endTime)
+        if (start > end) {
+           data["endTime"] = this.addDay(end);
+           data["startTime"] = start;
+        }
+        else {
+          data["endTime"] = end;
+          data["startTime"] = start;
+        }
         firestore.collection("workers").doc(this.email).collection("timeregs").add(data).then((response) => {
           console.log(response)
         })
@@ -161,10 +169,15 @@ export default {
       }
       this.valid = true;
     },
-    getTimeStamp(date, time) {
+    getTimestamp(date, time) {
       var jsTime = time.split(":")
-      console.log(jsTime)
       return new Date(date.getFullYear(), date.getMonth(), date.getDate(), jsTime[0], jsTime[1])
+    },
+    addDay(date){
+      var newDate = date
+      newDate.setDate(date.getDate()+1)
+      return newDate;
+
     }
   },
   mounted() {
