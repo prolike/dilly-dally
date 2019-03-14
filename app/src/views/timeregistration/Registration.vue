@@ -5,49 +5,61 @@
         <div class="col-lg-12 timereg">
           <div class="timereg-title">
             <h1>Time Registration</h1>
+            <div v-on:click="sendmsg()" class="cross"><i class="fa fa-times"/></div>
           </div>
           <form @submit.prevent="registerTime" id="data-form">
             <div class="row">
-              <div class="col-lg-4 specialized-box">
-                <label>Date</label>
-                <datepicker :value="date" :disabledDates="state.disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
-                <label>Start time</label>
+              <div class="col-lg-12 specialized-box">
+                <div class="cell">
+                <label for="">Pick a date</label>
+                <datepicker class="datepick" :value="date" :disabledDates="state.disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
+                </div>
+                <div class="cell">
+                  <label for="">Start time</label>
                 <div class="input-group clockpicker">
                   <input type="text" class="form-control" id="start" placeholder="09:00" v-model="form.startTime">
                 </div>
+                </div>
                 <div class="text-danger">{{ errors.startTime }}</div>
-                <label>End time</label>
+                <div class="cell">
+                  <label for="">End time</label>
                 <div class="input-group clockpicker">
                   <input type="text" class="form-control" id="end" placeholder="16:00" v-model="form.endTime">
+                  </div>
                 </div>
-                <div class="text-danger">{{ errors.endTime }}</div>
-              </div>
-              <div class="col-lg-4 specialized-box">
-                <label>Work Hours</label>
-                <input type="text" class="form-control" id="hours" value="7" v-model="workHours">
-                <label>Category</label>
+                <div class="cell">
+                  <label for="">Category</label>
+                <div></div>
                 <select v-model="form.category">
+                  <option value="" disabled hidden>Select a category</option>
                   <option v-for="item in categories" :value="item">
                     {{item.id}}
                   </option>
                 </select>
-                <label>Project</label>
+                </div>
+                <div class="cell">
+                  <label for="">Project</label>
+                <div></div>
                 <select v-model="form.project">
+                  <option value="" disabled hidden>Select a project</option>
                   <option v-for="item in projects" :value="item">
                     {{item}}
                   </option>
                 </select>
-              </div>
-              <div class="col-lg-4 specialized-box">
-                <label>Comment</label>
-                <input class="textarea" type="text" id="comment" placeholder="Work description" v-model="form.comment" />
-                <button id="saveMe" type="button" class="btn btn-primary" v-on:click="registerTime()">Save</button>
+                </div>
+                <div>
+                <b-tabs content-class="mt-3">
+                <b-tab title="Comment" active><textarea name="" id="" cols="30" rows="10" placeholder="Write your comment here"></textarea></b-tab>
+                <b-tab title="Issue"><textarea name="" id="" cols="30" rows="10" placeholder="Here's the comment you wrote"></textarea></b-tab>
+                </b-tabs>
+                </div>
               </div>
             </div>
           </form>
         </div>
       </div>
     </div>
+    <button class="timeRegButtons">Save</button><button class="timeRegButtons"><i class="fa fa-plus"></i></button>
   </div>
 </template>
 <script>
@@ -86,6 +98,9 @@ export default {
     }
   },
   methods: {
+    sendmsg(){
+      console.log("hee")
+    },
     getTodayDate() {
       this.date = new Date()
     },
@@ -194,30 +209,93 @@ export default {
 .timereg {
   background: #ffffff;
   padding: 0;
-  padding-bottom: 100px;
   box-shadow: 0 0 10px solid #000000;
+  margin-bottom: 35px;
+  padding-bottom: 35px;
 }
 
 .timereg-title {
   background: #f0f3f5;
   color: #000000;
   padding: 5px;
-  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
 
   h1 {
     font-size: 16px;
+    font-weight: 600;
   }
-}
 
-.input-group,
-.form-control {
-  width: 80px;
+  .cross {
+    height: 25px;
+    width: 25px;
+    background: #ffc400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .fa {
+      color: #1a2336;
+      font-size: 15px;
+    }
+  }
 }
 
 .specialized-box {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  height: inherit;
+
+  textarea {
+    height: 35px;
+    width: 100%;
+    resize: none;
+  }
+
+  .tab-content .tab-pane {
+    padding: 0;
+  }
+
+  select {
+    height: 35px;
+    width: 200px;
+    background: #ffffff;
+    align-items: center !important;
+  }
+
+  .input-group,
+.form-control {
+  width: 200px;
 }
+
+label {
+  font-weight: 500;
+}
+}
+
+.timeRegButtons {
+  height: 35px;
+  border: none;
+  margin-left: 30px;
+  background: #ffc400;
+  color: #1a2336;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+.timeRegButtons:nth-of-type(2) {
+  margin-left: 10px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.timeRegButtons .fa {
+  color: #1a2336;
+}
+
 
 </style>
