@@ -93,7 +93,7 @@ router.beforeEach((to, from, next) => {
         if (prolike !== "prolike.io") {
           console.log("not a prolike account!! LOGGING OUT ")
           logOut()
-          router.push({ name: 'login', params: "notProlike" })
+          router.push({ name: 'Login', query: {id:"notProlike" }})
         } else {
           console.log(prolike)
           setUser(user)

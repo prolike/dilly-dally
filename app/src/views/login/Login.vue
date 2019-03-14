@@ -3,7 +3,7 @@
     <!--Her Andreas, her er hvad du skal lave i JS!-->
     <div v-if="seen2"><img class="loginLogo" src="img/brand/prolike-logo.svg" width="89" height="25" alt="Prolike Logo">
       <h1>Time Registration</h1>
-      <button id="googleLogin" v-on:click="test"><img class="googleIcon" src="img/google-icon.png">Sign in with Google</button>
+      <button id="googleLogin" v-on:click="signin"><img class="googleIcon" src="img/google-icon.png">Sign in with Google</button>
     </div>
     <div v-if="seen">
       <center>
@@ -14,36 +14,35 @@
   </section>
 </template>
 <script>
-import VueCircle from 'vue2-circle-progress'
 import firebase from 'firebase';
-import router from '../../router/index.js'
+import VueSweetalert2 from 'vue-sweetalert2';
+
 
 export default {
   name: 'Login',
-  router,
-  components: {
-    VueCircle,
-  },
   data() {
     return {
-      fill: { gradient: ["red", "green", "blue"] },
       authenticated: false,
       provider: "",
       seen: false,
       seen2: true
     }
   },
+  updated: function() {
+    var self = this
+    this.$nextTick(function() {
+      if (this.$route.query.id === "notProlike") {
+        self.$swal.fire(
+          'Authenticating failed',
+          "You must log in with a prolike account",
+          'error'
+        )
+      }
+    })
+  },
   methods: {
-    progress(event, progress, stepValue) {
-      console.log(stepValue);
-    },
-    progress_end(event) {
-      console.log("Circle progress end");
-    },
-    initFirebaseLogin() {
-
-    },
-    test() {
+    signin() {
+      var self = this
       this.setLoginState()
       console.log("clicked")
       var provider = new firebase.auth.GoogleAuthProvider();
@@ -53,10 +52,10 @@ export default {
         // The signed-in user info.
         var user = result.user;
         window.location.href = "/#/home/dashboard";
-        this.setdefaultState()
-
+        self.setdefaultState()
         // ...
       }).catch(function(error) {
+
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
@@ -64,21 +63,30 @@ export default {
         var email = error.email;
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
+        self.$swal.fire(
+          'Authenticating failed',
+          errorMessage,
+          'error'
+        )
         // ...
+        console.log(error)
+        self.setdefaultState()
       });
       // ...
     },
     setdefaultState() {
+      console.log("default state SET")
       this.seen = false
       this.seen2 = true
     },
     setLoginState() {
+      console.log("login state SET")
       this.seen = true
       this.seen2 = false
     }
   },
   mounted() {
-
+    this.setdefaultState()
   }
 }
 
