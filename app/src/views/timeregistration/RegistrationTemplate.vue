@@ -3,7 +3,7 @@
     <div class="row m-auto">
       <div class="col-lg-12 timereg">
         <div class="timereg-title">
-          <h1>Time Registration</h1>
+          <h1>Time Registration # {{index}}</h1>
           <div v-on:click="deleteBox" class="cross"><i class="fa fa-times" /></div>
         </div>
         <div class="row">

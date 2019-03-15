@@ -1,7 +1,7 @@
 <template>
   <div>
-    <RegistrationTemplate v-for="(reg,index) in timeregistrationArr" :categories="categories" :projects="projects" :disabledDates="disabledDates" :currentDate="currentDate" v-on:delete-me="deleteThisBox(index)" :key="reg.id"></RegistrationTemplate>
-    <button class="timeRegButtons">Save</button><button class="timeRegButtons" v-on:click="appendBox"><i class="fa fa-plus"></i></button>
+    <RegistrationTemplate v-for="(reg,index) in timeregistrationArr" :categories="categories" :projects="projects" :disabledDates="disabledDates" :currentDate="currentDate" v-on:delete-me="deleteThisBox(index)" :key="reg.id" :index="index" ref="regs"></RegistrationTemplate>
+    <button class="timeRegButtons" v-on:click="save">Save</button><button class="timeRegButtons" v-on:click="appendBox"><i class="fa fa-plus"></i></button>
   </div>
 </template>
 <script>
@@ -32,10 +32,18 @@ export default {
   },
   methods: {
     deleteThisBox(index) {
+      console.log(this.$refs.regs[index].form)
       this.timeregistrationArr.splice(index, 1)
     },
     appendBox() {
       this.timeregistrationArr.push({ id: this.id++ })
+    },
+    save() {
+      this.$refs.regs.forEach(obj => {
+        console.log(obj.form)
+        console.log(obj.date)
+        this.registerTime(obj.date,obj.form)
+      })
     },
     getTodayDate() {
       this.currentDate = new Date()
@@ -82,44 +90,44 @@ export default {
       }
       return { valid: true, error: null };
     },
-    registerTime: function() {
-      this.errors = {};
-      const validStartTime = this.validateStartTime(this.form.startTime);
-      this.errors.startTime = validStartTime.error;
-      if (this.valid) {
-        this.valid = validStartTime.valid;
+    registerTime: function(date,form) {
+      /*     this.errors = {};
+           const validStartTime = this.validateStartTime(this.form.startTime);
+           this.errors.startTime = validStartTime.error;
+           if (this.valid) {
+             this.valid = validStartTime.valid;
+           }
+           console.log(this.valid + " : validation after start")
+           const validEndTime = this.validateEndTime(this.form.endTime);
+           this.errors.endTime = validEndTime.error;
+           if (this.valid) {
+             this.valid = validEndTime.valid;
+           }
+           console.log(this.valid + " : validation after end")
+
+           if (this.valid) {    
+             */
+      
+      var data = form
+      var start = this.getTimestamp(date, data.startTime)
+      var end = this.getTimestamp(date, data.endTime)
+      if (start > end) {
+        data["endTime"] = this.addDay(end);
+        data["startTime"] = start;
+      } else {
+        data["endTime"] = end;
+        data["startTime"] = start;
       }
-      console.log(this.valid + " : validation after start")
-      const validEndTime = this.validateEndTime(this.form.endTime);
-      this.errors.endTime = validEndTime.error;
-      if (this.valid) {
-        this.valid = validEndTime.valid;
-      }
-      console.log(this.valid + " : validation after end")
-      if (this.valid) {
-        console.log(this.form)
-        var data = this.form
-        var start = this.getTimestamp(this.date, this.form.startTime)
-        var end = this.getTimestamp(this.date, this.form.endTime)
-        if (start > end) {
-          data["endTime"] = this.addDay(end);
-          data["startTime"] = start;
-        } else {
-          data["endTime"] = end;
-          data["startTime"] = start;
-        }
-        firestore.collection("workers").doc(this.email).collection("timeregs").add(data).then((response) => {
-          console.log(response)
-        })
-        this.$swal.fire(
-          'Good job!',
-          'You clicked the button!',
-          'success'
-        )
-        this.form.startTime = "";
-        this.form.endTime = "";
-      }
-      this.valid = true;
+      firestore.collection("workers").doc(this.email).collection("timeregs").add(data).then((response) => {
+        console.log(response)
+      })
+      this.$swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      )
+      // }
+      // this.valid = true;
     },
     getTimestamp(date, time) {
       var jsTime = time.split(":")
