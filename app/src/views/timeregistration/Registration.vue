@@ -1,133 +1,61 @@
 <template>
   <div>
-    <div v-for="reg in timeregistrationArr">
-      <div class="container-fluid">
-        <div class="row m-auto">
-          <div class="col-lg-12 timereg">
-            <div class="timereg-title">
-              <h1>Time Registration</h1>
-              <div v-on:click="deleteThisBox(reg.counter)" class="cross"><i class="fa fa-times" /></div>
-            </div>
-            <form @submit.prevent="registerTime" id="data-form">
-              <div class="row">
-                <div class="col-lg-12 specialized-box">
-                  <div class="cell">
-                    <label for="">Pick a date</label>
-                    <datepicker class="datepick" :value="reg.date" :disabledDates="reg.disabledDates" monday-first format="dd/MM/yyyy" v-model="reg.date"></datepicker>
-                  </div>
-                  <div class="cell">
-                    <label for="">Start time</label>
-                    <div class="input-group clockpicker">
-                      <input type="text" class="form-control" id="start" placeholder="09:00" v-model="reg.form.startTime">
-                    </div>
-                  </div>
-                  <div class="text-danger">{{ reg.errors.startTime }}</div>
-                  <div class="cell">
-                    <label for="">End time</label>
-                    <div class="input-group clockpicker">
-                      <input type="text" class="form-control" id="end" placeholder="16:00" v-model="reg.form.endTime">
-                    </div>
-                  </div>
-                  <div class="cell">
-                    <label for="">Category</label>
-                    <div></div>
-                    <select v-model="reg.form.category">
-                      <option value="" disabled hidden>Select a category</option>
-                      <option v-for="item in categories" :value="item">
-                        {{item.id}}
-                      </option>
-                    </select>
-                  </div>
-                  <div class="cell">
-                    <label for="">Project</label>
-                    <div></div>
-                    <select v-model="reg.form.project">
-                      <option value="" disabled hidden>Select a project</option>
-                      <option v-for="item in projects" :value="item">
-                        {{item}}
-                      </option>
-                    </select>
-                  </div>
-                  <div>
-                    <b-tabs content-class="mt-3">
-                      <b-tab title="Comment" active><textarea name="" id="" cols="30" rows="10" placeholder="Write your comment here"></textarea></b-tab>
-                      <b-tab title="Issue"><textarea name="" id="" cols="30" rows="10" placeholder="Here's the comment you wrote"></textarea></b-tab>
-                    </b-tabs>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+    <RegistrationTemplate v-for="(reg,index) in timeregistrationArr" :categories="categories" :projects="projects" :disabledDates="disabledDates" :currentDate="currentDate" v-on:delete-me="deleteThisBox(index)" :key="reg.id"></RegistrationTemplate>
     <button class="timeRegButtons">Save</button><button class="timeRegButtons" v-on:click="appendBox"><i class="fa fa-plus"></i></button>
   </div>
 </template>
 <script>
 import { firestore, getUser } from '../../controller/firebaseHandler';;
-import Datepicker from 'vuejs-datepicker';
+import RegistrationTemplate from './RegistrationTemplate.vue';
 
 export default {
   name: 'TimeRegistration',
   components: {
-    Datepicker
+    RegistrationTemplate
   },
   data: function() {
     return {
       timeregistrationArr: [],
-      timeregistration: {
-         form: {
-          startTime: "",
-          endTime: "",
-          category: "",
-          project: "",
-          comment: ""
-        },
-        index: 0,
-        date: "",
-        customers: [],
-        defaultHour: new Date().getHours(),
-        defaultMinute: new Date().getMinutes(),
-        valid: true,
-        errors: {},
-        disabledDates: {
-          from: new Date(),
-        },
+      disabledDates: {
+        from: new Date(),
       },
+      customers: [],
+      currentDate: "",
       categories: [],
       projects: [],
+      allProjects: [],
+      counter: 0,
       user: "",
       email: "",
+      id: 0
     }
   },
   methods: {
     deleteThisBox(index) {
-      console.log(index)
       this.timeregistrationArr.splice(index, 1)
     },
     appendBox() {
-      this.timeregistrationArr.push(this.timeregistration)
+      this.timeregistrationArr.push({ id: this.id++ })
     },
     getTodayDate() {
-      this.timeregistration.date = new Date()
+      this.currentDate = new Date()
     },
     getCategories: function() {
       this.$binding("categories", firestore.collection("categories"))
         .then((categories) => {
-
+          console.log(this.categories)
         })
     },
     getAllCustomersName: function() {
-      this.$binding("timeregistration.customers", firestore.collection("customers"))
+      this.$binding("customers", firestore.collection("customers"))
         .then((customers) => {
           this.getAllProjects();
         })
 
     },
     getAllProjects: function() {
-      this.timeregistration.customers.forEach(cust => {
-        this.$binding("asd", firestore.collection("customers").doc(cust.id).collection("projects")).then((projectArr) => {
+      this.customers.forEach(cust => {
+        this.$binding("allProjects", firestore.collection("customers").doc(cust.id).collection("projects")).then((projectArr) => {
           projectArr.forEach(project => {
             this.projects.push(cust.id + "/" + project.id)
           })
