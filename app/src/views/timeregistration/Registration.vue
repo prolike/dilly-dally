@@ -1,15 +1,29 @@
 <template>
   <div>
-    <RegistrationTemplate v-for="(reg,index) in timeregistrationArr" :categories="categories" :projects="projects" :disabledDates="disabledDates" :currentDate="currentDate" v-on:delete-me="deleteThisBox(index)" :key="reg.id" :index="index" ref="regs"></RegistrationTemplate>
-    <button class="timeRegButtons" v-on:click="save">Save</button><button class="timeRegButtons" v-on:click="appendBox"><i class="fa fa-plus"></i></button>
+    <RegistrationTemplate
+      v-for="(reg,index) in timeregistrationArr"
+      :categories="categories"
+      :projects="projects"
+      :disabledDates="disabledDates"
+      :currentDate="currentDate"
+      v-on:delete-me="deleteThisBox(index)"
+      :key="reg.id"
+      :index="index"
+      ref="regs"
+    ></RegistrationTemplate>
+    <button class="timeRegButtons" v-on:click="save">Save</button>
+    <button class="timeRegButtons" v-on:click="appendBox">
+      <i class="fa fa-plus"></i>
+    </button>
   </div>
 </template>
 <script>
-import { firestore, getUser } from '../../controller/firebaseHandler';;
-import RegistrationTemplate from './RegistrationTemplate.vue';
+import { firestore, getUser } from "../../controller/firebaseHandler";
+import RegistrationTemplate from "./RegistrationTemplate.vue";
+import { valid } from "semver";
 
 export default {
-  name: 'TimeRegistration',
+  name: "TimeRegistration",
   components: {
     RegistrationTemplate
   },
@@ -17,7 +31,7 @@ export default {
     return {
       timeregistrationArr: [],
       disabledDates: {
-        from: new Date(),
+        from: new Date()
       },
       customers: [],
       currentDate: "",
@@ -28,89 +42,65 @@ export default {
       user: "",
       email: "",
       id: 0
-    }
+    };
   },
   methods: {
     deleteThisBox(index) {
-      console.log(this.$refs.regs[index].form)
-      this.timeregistrationArr.splice(index, 1)
+      console.log(this.$refs.regs[index].form);
+      this.timeregistrationArr.splice(index, 1);
     },
     appendBox() {
-      this.timeregistrationArr.push({ id: this.id++ })
+      this.timeregistrationArr.push({ id: this.id++ });
     },
     save() {
+      var isAllValid = true;
       this.$refs.regs.forEach(obj => {
-        console.log(obj.form)
-        console.log(obj.date)
-        this.registerTime(obj.date,obj.form)
-      })
+        if (!obj.isValid()) {
+          isAllValid = false;
+        }
+      });
+      if (isAllValid) {
+        this.$refs.regs.forEach(obj => {
+          this.registerTime(obj.date, obj.form);
+        });
+      }
     },
     getTodayDate() {
-      this.currentDate = new Date()
+      this.currentDate = new Date();
     },
     getCategories: function() {
-      this.$binding("categories", firestore.collection("categories"))
-        .then((categories) => {
-          console.log(this.categories)
-        })
+      this.$binding("categories", firestore.collection("categories")).then(
+        categories => {
+          console.log(this.categories);
+        }
+      );
     },
     getAllCustomersName: function() {
-      this.$binding("customers", firestore.collection("customers"))
-        .then((customers) => {
+      this.$binding("customers", firestore.collection("customers")).then(
+        customers => {
           this.getAllProjects();
-        })
-
+        }
+      );
     },
     getAllProjects: function() {
       this.customers.forEach(cust => {
-        this.$binding("allProjects", firestore.collection("customers").doc(cust.id).collection("projects")).then((projectArr) => {
+        this.$binding(
+          "allProjects",
+          firestore
+            .collection("customers")
+            .doc(cust.id)
+            .collection("projects")
+        ).then(projectArr => {
           projectArr.forEach(project => {
-            this.projects.push(cust.id + "/" + project.id)
-          })
-        })
-      })
+            this.projects.push(cust.id + "/" + project.id);
+          });
+        });
+      });
     },
-    validateStartTime: function(startTime) {
-      console.log("starttime: " + startTime);
-      if (!startTime.length) {
-        return { valid: false, error: "This field is required" }
-      }
-      if (!startTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
-        return { valid: false, error: "Please, enter a valid time." }
-      }
-      return { valid: true, error: null }
-    },
-    validateEndTime: function(endTime) {
-      console.log("endtime: " + endTime);
-      if (!endTime.length) {
-        return { valid: false, error: "This field is required" }
-      }
-      if (!endTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
-        return { valid: false, error: "Please, enter a valid time." }
-      }
-      return { valid: true, error: null };
-    },
-    registerTime: function(date,form) {
-      /*     this.errors = {};
-           const validStartTime = this.validateStartTime(this.form.startTime);
-           this.errors.startTime = validStartTime.error;
-           if (this.valid) {
-             this.valid = validStartTime.valid;
-           }
-           console.log(this.valid + " : validation after start")
-           const validEndTime = this.validateEndTime(this.form.endTime);
-           this.errors.endTime = validEndTime.error;
-           if (this.valid) {
-             this.valid = validEndTime.valid;
-           }
-           console.log(this.valid + " : validation after end")
-
-           if (this.valid) {    
-             */
-      
-      var data = form
-      var start = this.getTimestamp(date, data.startTime)
-      var end = this.getTimestamp(date, data.endTime)
+    registerTime: function(date, form) {
+      var data = form;
+      var start = this.getTimestamp(date, data.startTime);
+      var end = this.getTimestamp(date, data.endTime);
       if (start > end) {
         data["endTime"] = this.addDay(end);
         data["startTime"] = start;
@@ -118,37 +108,41 @@ export default {
         data["endTime"] = end;
         data["startTime"] = start;
       }
-      firestore.collection("workers").doc(this.email).collection("timeregs").add(data).then((response) => {
-        console.log(response)
-      })
-      this.$swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-      )
-      // }
-      // this.valid = true;
+      firestore
+        .collection("workers")
+        .doc(this.email)
+        .collection("timeregs")
+        .add(data)
+        .then(response => {
+          console.log(response);
+        });
+      this.$swal.fire("Good job!", "You clicked the button!", "success");
     },
     getTimestamp(date, time) {
-      var jsTime = time.split(":")
-      return new Date(date.getFullYear(), date.getMonth(), date.getDate(), jsTime[0], jsTime[1])
+      var jsTime = time.split(":");
+      return new Date(
+        date.getFullYear(),
+        date.getMonth(),
+        date.getDate(),
+        jsTime[0],
+        jsTime[1]
+      );
     },
     addDay(date) {
-      var newDate = date
-      newDate.setDate(date.getDate() + 1)
+      var newDate = date;
+      newDate.setDate(date.getDate() + 1);
       return newDate;
     }
   },
   mounted() {
-    this.user = getUser()
-    this.email = this.user.email
-    this.getCategories()
-    this.getAllCustomersName()
-    this.getTodayDate()
-    this.appendBox()
+    this.user = getUser();
+    this.email = this.user.email;
+    this.getCategories();
+    this.getAllCustomersName();
+    this.getTodayDate();
+    this.appendBox();
   }
-}
-
+};
 </script>
 <style lang="scss" scoped>
 .timereg {
@@ -241,5 +235,4 @@ export default {
 .timeRegButtons .fa {
   color: #1a2336;
 }
-
 </style>

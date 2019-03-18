@@ -18,13 +18,14 @@
                 <input type="text" class="form-control" id="start" placeholder="09:00" v-model="form.startTime">
               </div>
             </div>
-            <div class="text-danger"></div>
+            <div class="text-danger">{{errors.startTime}}</div>
             <div class="cell">
               <label for="">End time</label>
               <div class="input-group clockpicker">
                 <input type="text" class="form-control" id="end" placeholder="16:00" v-model="form.endTime">
               </div>
             </div>
+            <div class="text-danger">{{errors.endTime}}</div>
             <div class="cell">
               <label for="">Category</label>
               <div></div>
@@ -75,7 +76,9 @@ export default {
         category: "",
         project: "",
         comment: ""
-      }
+      },
+      valid: true,
+      errors: {}
     }
   },
   props: {
@@ -88,6 +91,46 @@ export default {
   methods: {
     deleteBox() {
       this.$emit("delete-me")
+    },
+    validateStartTime: function(startTime) {
+      console.log("starttime: " + startTime);
+      if (!startTime.length) {
+        return { valid: false, error: "This field is required" };
+      }
+      if (!startTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
+        return { valid: false, error: "Please, enter a valid time." };
+      }
+      return { valid: true, error: null };
+    },
+    validateEndTime: function(endTime) {
+      console.log("endtime: " + endTime);
+      if (!endTime.length) {
+        return { valid: false, error: "This field is required" };
+      }
+      if (!endTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
+        return { valid: false, error: "Please, enter a valid time." };
+      }
+      return { valid: true, error: null };
+    },
+    isValid() {
+      this.errors = {};
+      const validStartTime = this.validateStartTime(this.form.startTime);
+      this.errors.startTime = validStartTime.error;
+      if (this.valid) {
+        this.valid = validStartTime.valid;
+      }
+      console.log(this.valid + " : validation after start");
+      const validEndTime = this.validateEndTime(this.form.endTime);
+      this.errors.endTime = validEndTime.error;
+      if (this.valid) {
+        this.valid = validEndTime.valid;
+      }
+      console.log(this.valid + " : validation after end")
+      if (this.valid) {
+        return true;
+      }
+      this.valid = true;
+      return false;
     }
   }
 };
