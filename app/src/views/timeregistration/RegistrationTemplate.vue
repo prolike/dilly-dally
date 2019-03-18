@@ -13,17 +13,16 @@
               <datepicker class="datepick" :value="currentDate" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
             </div>
             <div class="cell">
-              <label for="">Start time</label>
-              <div class="input-group clockpicker">
-                <input type="text" class="form-control" id="start" placeholder="09:00" v-model="form.startTime">
-              </div>
+              <bue-field class="label" label="Start time">
+                <bue-input placeholder="09:00" v-model="form.startTime" required pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
+                </bue-input>
+              </bue-field>
             </div>
-            <div class="text-danger">{{errors.startTime}}</div>
             <div class="cell">
-              <label for="">End time</label>
-              <div class="input-group clockpicker">
-                <input type="text" class="form-control" id="end" placeholder="16:00" v-model="form.endTime">
-              </div>
+              <bue-field class="label" label="Start time">
+                <bue-input placeholder="16:00" v-model="form.endTime" required pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
+                </bue-input>
+              </bue-field>
             </div>
             <div class="text-danger">{{errors.endTime}}</div>
             <div class="cell">
@@ -112,24 +111,27 @@ export default {
       }
       return { valid: true, error: null };
     },
-    isValid() {
+    isValid: function() {
+      this.valid = true;
       this.errors = {};
+
       const validStartTime = this.validateStartTime(this.form.startTime);
       this.errors.startTime = validStartTime.error;
       if (this.valid) {
         this.valid = validStartTime.valid;
       }
-      console.log(this.valid + " : validation after start");
+      console.log(this.valid + " : after start");
+      
       const validEndTime = this.validateEndTime(this.form.endTime);
       this.errors.endTime = validEndTime.error;
       if (this.valid) {
         this.valid = validEndTime.valid;
       }
-      console.log(this.valid + " : validation after end")
+      console.log(this.valid + " : after end")
+      
       if (this.valid) {
         return true;
       }
-      this.valid = true;
       return false;
     }
   }
