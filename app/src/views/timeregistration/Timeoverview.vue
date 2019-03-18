@@ -1,21 +1,21 @@
 <template>
-  <b-table striped hover fixed :items="timeRegistration" :fields="fields">
-    <template slot="date" slot-scope="data">
-      {{getDate(data.item.startTime)}}
-    </template>
-    <template slot="startTime" slot-scope="data">
-      {{getTime(data.item.startTime)}}
-    </template>
-    <template slot="endTime" slot-scope="data">
-      {{getTime(data.item.endTime)}}
-    </template>
-    <template slot="workHours" slot-scope="data">
-      {{getWorkhours(data.item.startTime,data.item.endTime)}}
-    </template>
-    <template slot="deleteMe" slot-scope="data">
-      <button v-on:click="deleteMe(data.item.id)">Delete me</button>
-    </template>
-  </b-table>
+  <div>
+    <b-table striped hover fixed 
+    head-variant='dark' 
+    :sort-by.sync="sortBy" 
+    :sort-desc.sync="sortDesc" 
+    :items="timeRegistration" 
+    :fields="fields" :filter="filter">
+      <template slot="workHours" slot-scope="data">
+        {{getWorkhours(data.item.startTime,data.item.endTime)}}
+      </template>
+      <template slot="deleteMe" slot-scope="data">
+        <button v-on:click="deleteMe(data.item.id)">Delete me</button>
+      </template>
+    </b-table>
+    <section> Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
+      <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b></section>
+  </div>
 </template>
 <script>
 import { firestore, getUser } from '../../controller/firebaseHandler';
@@ -24,6 +24,9 @@ export default {
   name: 'TimeRegistrationOverview',
   data: function() {
     return {
+      sortBy: 'startTime',
+      sortDesc: true,
+      sortDirection: 'asc',
       fields: {
         category: {
           // This key overrides `foo`!
@@ -38,26 +41,29 @@ export default {
           sortable: true
         },
         date: {
-          // This key overrides `foo`!
+          key: 'startTime',
           label: 'date',
-          sortable: true
+          sortable: true,
+          formatter: 'getDate'
         },
         startTime: {
           // This key overrides `foo`!
           key: 'startTime',
           label: 'startTime',
-          sortable: true
+          sortable: true,
+          formatter: 'getTime'
         },
         endTime: {
           // This key overrides `foo`!
           key: 'endTime',
           label: 'endTime',
-          sortable: true
+          sortable: true,
+          formatter: 'getTime'
         },
         workHours: {
           // This key overrides `foo`!
           label: 'work hours',
-          sortable: true
+          //sortable: true
         },
         deleteMe: {
           // This key overrides `foo`!
@@ -67,7 +73,8 @@ export default {
       },
       timeRegistration: [],
       email: "",
-      user: ""
+      user: "",
+      filter: null,
     }
   },
   methods: {
@@ -81,12 +88,12 @@ export default {
       console.log(id)
       firestore.collection("workers").doc(this.email).collection("timeregs").doc(id).delete()
     },
-    getWorkhours(timestamp1,timestamp2) {
+    getWorkhours(timestamp1, timestamp2) {
       var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
       return new Date(total).toLocaleTimeString("da-DK");
     },
     getTime(timestamp) {
-      return timestamp.toDate().toLocaleTimeString("da-DK");
+      return String(timestamp.toDate().toLocaleTimeString("da-DK"));
     },
     getDate(timestamp) {
       return timestamp.toDate().toDateString("da-DK");

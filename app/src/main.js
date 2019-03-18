@@ -12,8 +12,7 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import VueFirestore from 'vue-firestore'
 import firebase from 'firebase'
 import {firestore,user} from './controller/firebaseHandler'
-// todo
-// cssVars()
+
 Vue.use(VueFirestore, {
   key: 'id', // the name of the property. Default is '.key'.
   enumerable: true //  whether it is enumerable or not. Default is true.
@@ -28,7 +27,6 @@ new Vue({
   el: '#app',
   router,
   methods: {},
-  created() {},
   template: '<App/>',
   components: {
     App
