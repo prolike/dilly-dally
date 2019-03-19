@@ -121,8 +121,8 @@ export default {
             break;
           }
         case "startTime":
-          a = a.startTime.toDate().getHours() + a.startTime.toDate().getMinutes()
-          b = b.startTime.toDate().getHours() + b.startTime.toDate().getMinutes()
+          a = parseFloat(a.startTime.toDate().getHours() + "." +  a.startTime.toDate().getMinutes())
+          b = parseFloat(b.startTime.toDate().getHours() + "." + b.startTime.toDate().getMinutes())
           if (a > b) {
             return -1
             break;
@@ -134,8 +134,9 @@ export default {
             break;
           }
         case "endTime":
-          a = a.endTime.toDate().getHours() + a.endTime.toDate().getMinutes()
-          b = b.endTime.toDate().getHours() + b.endTime.toDate().getMinutes()
+
+          a = parseFloat("" + a.endTime.toDate().getHours() + "." + a.endTime.toDate().getMinutes())
+          b = parseFloat("" + b.endTime.toDate().getHours() + "." + b.endTime.toDate().getMinutes())
           if (a > b) {
             return -1
             break;
@@ -149,8 +150,8 @@ export default {
         case "workHours":
           var val1 = this.getWorkhoursAsDate(a.startTime, a.endTime)
           var val2 = this.getWorkhoursAsDate(b.startTime, b.endTime)
-          a = val1.getHours() + val1.getMinutes()
-          b = val2.getHours() + val2.getMinutes()
+          a = parseFloat("" + val1.getHours() + "." + val1.getMinutes())
+          b = parseFloat("" + val2.getHours() + "." + val2.getMinutes())
           if (a > b) {
             return -1
             break;
