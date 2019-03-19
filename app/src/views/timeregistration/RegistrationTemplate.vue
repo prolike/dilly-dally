@@ -10,7 +10,7 @@
           <div class="col-lg-12 specialized-box">
             <div class="cell">
               <label for="">Pick a date</label>
-              <datepicker class="datepick" :value="currentDate" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
+              <datepicker class="datepick" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
             </div>
             <div class="cell">
               <bue-field class="label" label="Start time">
@@ -81,11 +81,13 @@ export default {
     }
   },
   props: {
-    currentDate: Date,
     index: Number,
     categories: Array,
     projects: Array,
     disabledDates: Object,
+  },
+  mounted(){
+    this.date = new Date();
   },
   methods: {
     deleteBox() {

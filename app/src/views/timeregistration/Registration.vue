@@ -5,7 +5,6 @@
       :categories="categories"
       :projects="projects"
       :disabledDates="disabledDates"
-      :currentDate="currentDate"
       v-on:delete-me="deleteThisBox(index)"
       :key="reg.id"
       :index="index"
