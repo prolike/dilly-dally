@@ -1,6 +1,18 @@
 <template>
   <div>
-    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare">
+    <b-row>
+      <b-col md="6" class="my-1">
+        <b-form-group label-cols-sm="3" label="Filter" class="mb-0">
+          <b-input-group>
+            <b-form-input v-model="filter" placeholder="Type to Search" />
+            <b-input-group-append>
+              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+            </b-input-group-append>
+          </b-input-group>
+        </b-form-group>
+      </b-col>
+    </b-row>
+    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" :filter="filter" >
       <template slot="year" slot-scope="data">
         {{getYear(data.item.startTime)}}
       </template>
@@ -118,7 +130,7 @@ export default {
             break;
           }
         case "startTime":
-          a = parseFloat(a.startTime.toDate().getHours() + "." +  a.startTime.toDate().getMinutes())
+          a = parseFloat(a.startTime.toDate().getHours() + "." + a.startTime.toDate().getMinutes())
           b = parseFloat(b.startTime.toDate().getHours() + "." + b.startTime.toDate().getMinutes())
           if (a > b) {
             return -1
@@ -181,7 +193,7 @@ export default {
             this.timeRegistration.push(obj)
           })
         })
-        console.log(this.timeRegistration)
+      console.log(this.timeRegistration)
     },
     deleteMe(id) {
       console.log(id)
