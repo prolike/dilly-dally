@@ -1,6 +1,9 @@
 <template>
   <div>
     <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare">
+      <template slot="year" slot-scope="data">
+        {{getYear(data.item.startTime)}}
+      </template>
       <template slot="date" slot-scope="data">
         {{getDate(data.item.startTime)}}
       </template>
@@ -38,9 +41,16 @@ export default {
           label: 'Project',
           sortable: true
         },
+
         date: {
           //key: 'startTime',
-          label: 'date',
+          label: 'Date',
+          sortable: true,
+          //formatter: 'getDate'
+        },
+        year: {
+          //key: 'startTime',
+          label: 'Year',
           sortable: true,
           //formatter: 'getDate'
         },
@@ -84,6 +94,19 @@ export default {
   methods: {
     sortCompare(a, b, key) {
       switch (key) {
+        case "year":
+          a = a.startTime.toDate().getFullYear()
+          b = b.startTime.toDate().getFullYear()
+          if (a > b) {
+            return -1
+            break;
+          } else if (a === b) {
+            return 0
+            break;
+          } else if (a < b) {
+            return 1
+            break;
+          }
         case "date":
           a = a.startTime.toDate()
           b = b.startTime.toDate()
@@ -124,8 +147,8 @@ export default {
             break;
           }
         case "workHours":
-          var val1 = this.getWorkhoursAsDate(a.startTime,a.endTime)
-          var val2 = this.getWorkhoursAsDate(b.startTime,b.endTime)
+          var val1 = this.getWorkhoursAsDate(a.startTime, a.endTime)
+          var val2 = this.getWorkhoursAsDate(b.startTime, b.endTime)
           a = val1.getHours() + val1.getMinutes()
           b = val2.getHours() + val2.getMinutes()
           if (a > b) {
@@ -165,7 +188,10 @@ export default {
       return String(timestamp.toDate().toLocaleTimeString("da-DK"));
     },
     getDate(timestamp) {
-      return timestamp.toDate().toDateString("da-DK");
+      return timestamp.toDate().toLocaleString("en-EN", { weekday: 'short', month: 'short', day: '2-digit' });
+    },
+    getYear(timestamp) {
+      return timestamp.toDate().getFullYear();
     }
   },
   mounted() {
