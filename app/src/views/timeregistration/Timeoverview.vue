@@ -1,11 +1,9 @@
 <template>
   <div>
-    <b-table striped hover fixed 
-    head-variant='dark' 
-    :sort-by.sync="sortBy" 
-    :sort-desc.sync="sortDesc" 
-    :items="timeRegistration" 
-    :fields="fields" :filter="filter">
+    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare">
+      <template slot="date" slot-scope="data">
+        {{getDate(data.item.startTime)}}
+      </template>
       <template slot="workHours" slot-scope="data">
         {{getWorkhours(data.item.startTime,data.item.endTime)}}
       </template>
@@ -41,29 +39,35 @@ export default {
           sortable: true
         },
         date: {
-          key: 'startTime',
+          //key: 'startTime',
           label: 'date',
           sortable: true,
-          formatter: 'getDate'
+          //formatter: 'getDate'
         },
         startTime: {
           // This key overrides `foo`!
           key: 'startTime',
           label: 'startTime',
           sortable: true,
-          formatter: 'getTime'
+          formatter: (value, key, item) => {
+            var formattedTime = this.getTime(value)
+            return formattedTime
+          }
         },
         endTime: {
           // This key overrides `foo`!
           key: 'endTime',
           label: 'endTime',
           sortable: true,
-          formatter: 'getTime'
+          formatter: (value, key, item) => {
+            var formattedTime = this.getTime(value)
+            return formattedTime
+          }
         },
         workHours: {
           // This key overrides `foo`!
-          label: 'work hours',
-          //sortable: true
+          label: 'workHours',
+          sortable: true
         },
         deleteMe: {
           // This key overrides `foo`!
@@ -78,6 +82,67 @@ export default {
     }
   },
   methods: {
+    sortCompare(a, b, key) {
+      switch (key) {
+        case "date":
+          a = a.startTime.toDate()
+          b = b.startTime.toDate()
+          if (a > b) {
+            return -1
+            break;
+          } else if (a === b) {
+            return 0
+            break;
+          } else if (a < b) {
+            return 1
+            break;
+          }
+        case "startTime":
+          a = a.startTime.toDate().getHours() + a.startTime.toDate().getMinutes()
+          b = b.startTime.toDate().getHours() + b.startTime.toDate().getMinutes()
+          if (a > b) {
+            return -1
+            break;
+          } else if (a === b) {
+            return 0
+            break;
+          } else if (a < b) {
+            return 1
+            break;
+          }
+        case "endTime":
+          a = a.endTime.toDate().getHours() + a.endTime.toDate().getMinutes()
+          b = b.endTime.toDate().getHours() + b.endTime.toDate().getMinutes()
+          if (a > b) {
+            return -1
+            break;
+          } else if (a === b) {
+            return 0
+            break;
+          } else if (a < b) {
+            return 1
+            break;
+          }
+        case "workHours":
+          var val1 = this.getWorkhoursAsDate(a.startTime,a.endTime)
+          var val2 = this.getWorkhoursAsDate(b.startTime,b.endTime)
+          a = val1.getHours() + val1.getMinutes()
+          b = val2.getHours() + val2.getMinutes()
+          if (a > b) {
+            return -1
+            break;
+          } else if (a === b) {
+            return 0
+            break;
+          } else if (a < b) {
+            return 1
+            break;
+          }
+        default:
+          return null
+          break;
+      }
+    },
     getAllTimeRegistrations() {
       this.$binding("timeRegistration", firestore.collection("workers").doc(this.email).collection("timeregs"))
         .then((timeRegistration) => {
@@ -87,6 +152,10 @@ export default {
     deleteMe(id) {
       console.log(id)
       firestore.collection("workers").doc(this.email).collection("timeregs").doc(id).delete()
+    },
+    getWorkhoursAsDate(timestamp1, timestamp2) {
+      var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
+      return new Date(total);
     },
     getWorkhours(timestamp1, timestamp2) {
       var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
