@@ -19,12 +19,11 @@
               </bue-field>
             </div>
             <div class="cell">
-              <bue-field class="label" label="Start time">
-                <bue-input placeholder="16:00" v-model="form.endTime" required pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
+              <bue-field class="label" label="End time">
+                <bue-input ref="end" placeholder="16:00" v-model="form.endTime" required pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
                 </bue-input>
               </bue-field>
             </div>
-            <div class="text-danger">{{errors.endTime}}</div>
             <div class="cell">
               <label for="">Category</label>
               <div></div>
@@ -53,6 +52,7 @@
             </div>
           </div>
         </div>
+            <div below class="text-danger">{{errors.time}}</div>
         </form>
       </div>
     </div>
@@ -111,24 +111,43 @@ export default {
       }
       return { valid: true, error: null };
     },
+    validateTimeRange: function(startTime, endTime)
+    {
+      if (startTime == endTime) {
+        this.form.endTime = "";
+        this.$refs.end.focus();
+        return { valid: false, error: "Please, enter a valid time range."};
+      }
+      return { valid: true, error: null };
+    },
     isValid: function() {
       this.valid = true;
       this.errors = {};
 
+      //Validate start time
       const validStartTime = this.validateStartTime(this.form.startTime);
-      this.errors.startTime = validStartTime.error;
+      this.errors.time = validStartTime.error;
       if (this.valid) {
         this.valid = validStartTime.valid;
       }
       console.log(this.valid + " : after start");
-      
+    
+      //Validate end time
       const validEndTime = this.validateEndTime(this.form.endTime);
-      this.errors.endTime = validEndTime.error;
+      this.errors.time = validEndTime.error;
       if (this.valid) {
         this.valid = validEndTime.valid;
       }
       console.log(this.valid + " : after end")
       
+      //Validate time range
+      const validTimeRange = this.validateTimeRange(this.form.startTime, this.form.endTime);
+      this.errors.time = validTimeRange.error; 
+      if(this.valid) {
+        this.valid = validTimeRange.valid;
+      }
+
+      //If still valid after checks
       if (this.valid) {
         return true;
       }
