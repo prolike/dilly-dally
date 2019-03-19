@@ -180,7 +180,7 @@ export default {
       this.$binding("workers", firestore.collection("workers"))
         .then((workers) => {
           workers.forEach(obj => {
-            console.log(obj.id)
+            console.log(obj.id) 
             this.getAllTimeRegistrations(obj.id)
           })
         })
