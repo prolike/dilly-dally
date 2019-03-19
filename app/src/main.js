@@ -12,6 +12,13 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import VueFirestore from 'vue-firestore'
 import firebase from 'firebase'
 import {firestore,user} from './controller/firebaseHandler'
+import { Table } from 'buefy/dist/components/table'
+import { Input } from 'buefy/dist/components/input'
+import { Field } from 'buefy/dist/components/field'
+import 'buefy/dist/buefy.css'
+Vue.component('bue-table', Table)
+Vue.component('bue-input', Input)
+Vue.component('bue-field', Field)
 
 Vue.use(VueFirestore, {
   key: 'id', // the name of the property. Default is '.key'.
