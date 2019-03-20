@@ -50,13 +50,18 @@ export default {
           label: 'Category',
           sortable: true
         },
+        customer: {
+          // This key overrides `foo`!
+          key: 'project.customer',
+          label: 'Customer',
+          sortable: true
+        },
         project: {
           // This key overrides `foo`!
-          key: 'project',
+          key: 'project.title',
           label: 'Project',
           sortable: true
         },
-
         date: {
           //key: 'startTime',
           label: 'Date',
