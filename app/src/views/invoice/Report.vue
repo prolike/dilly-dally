@@ -12,7 +12,10 @@
         </b-form-group>
       </b-col>
     </b-row>
-    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" :filter="filter" >
+    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" :filter="filter" stacked="lg">
+      <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
+        <i class="fa fa-check-square"></i>
+      </template>
       <template slot="year" slot-scope="data">
         {{getYear(data.item.startTime)}}
       </template>
@@ -38,6 +41,18 @@ export default {
       sortDesc: true,
       sortDirection: 'asc',
       fields: {
+        approved: {
+          // This key overrides `foo`!
+          key: 'isApproved',
+          label: 'Approved',
+          sortable: true
+        },
+        paidMonth: {
+          // This key overrides `foo`!
+          key: 'paidMonth',
+          label: 'Paid month',
+          sortable: true
+        },
         category: {
           // This key overrides `foo`!
           key: 'category.id',
@@ -180,7 +195,7 @@ export default {
       this.$binding("workers", firestore.collection("workers"))
         .then((workers) => {
           workers.forEach(obj => {
-            console.log(obj.id) 
+            console.log(obj.id)
             this.getAllTimeRegistrations(obj.id)
           })
         })
