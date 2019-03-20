@@ -136,3 +136,35 @@ div.mdl-progress::after {
         padding-left: 20px;
     }
 }
+
+//Datepicker arrows
+/*label{
+    font-size: 10px;
+    font-weight: 500 !important;
+}*/
+
+.pagination-previous::before {
+    content: '';
+    color: #7957d5;
+    left: 1px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 2px currentColor;
+    border-right: solid 2px currentColor;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  
+  .pagination-next::after {
+    content: '';
+    color: #7957d5;
+    right: 1px;
+    top: -5px;
+    width: 10px;
+    height: 10px;
+    border-top: solid 2px currentColor;
+    border-right: solid 2px currentColor;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }

@@ -9,8 +9,18 @@
         <div class="row">
           <div class="col-lg-12 specialized-box">
             <div class="cell">
-              <label for="">Pick a date</label>
-              <datepicker class="datepick" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>
+              <bue-field label="Select a date">
+                <bue-datepicker
+                  v-model="date"
+                  required
+                  :date-formatter="dateFormatter"
+                  icon
+                  :max-date="todayDate"
+                  :first-day-of-week="1"
+                  editable></bue-datepicker>
+              </bue-field>
+              <!-- <label for="">Pick a date</label>
+              <datepicker class="datepick" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker> -->
             </div>
             <div class="cell">
               <bue-field class="label" label="Start time">
@@ -68,7 +78,7 @@ export default {
   },
   data: function() {
     return {
-      date: "",
+      date: new Date(),
       form: {
         startTime: "",
         endTime: "",
@@ -78,20 +88,24 @@ export default {
       },
       valid: true,
       errors: {}
-    }
+    };
   },
   props: {
     index: Number,
     categories: Array,
     projects: Array,
-    disabledDates: Object,
+    todayDate: Date
   },
-  mounted(){
+  mounted() {
     this.date = new Date();
   },
   methods: {
     deleteBox() {
-      this.$emit("delete-me")
+      this.$emit("delete-me");
+    },
+    dateFormatter(dt) {
+      var dateoptions = { year: "numeric", month: "numeric", day: "numeric" };
+      return dt.toLocaleDateString("da-DK", dateoptions);
     },
     validateStartTime: function(startTime) {
       console.log("starttime: " + startTime);

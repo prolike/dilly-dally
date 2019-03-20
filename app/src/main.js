@@ -15,11 +15,17 @@ import {firestore,user} from './controller/firebaseHandler'
 import { Table } from 'buefy/dist/components/table'
 import { Input } from 'buefy/dist/components/input'
 import { Field } from 'buefy/dist/components/field'
+import { Datepicker } from 'buefy/dist/components/datepicker'
 import 'buefy/dist/buefy.css'
 Vue.component('bue-table', Table)
 Vue.component('bue-input', Input)
 Vue.component('bue-field', Field)
+Vue.component('bue-datepicker', Datepicker)
 
+Vue.use(Field)
+Vue.use(Input)
+Vue.use(Table)
+Vue.use(Datepicker)
 Vue.use(VueFirestore, {
   key: 'id', // the name of the property. Default is '.key'.
   enumerable: true //  whether it is enumerable or not. Default is true.

@@ -4,7 +4,7 @@
       v-for="(reg,index) in timeregistrationArr"
       :categories="categories"
       :projects="projects"
-      :disabledDates="disabledDates"
+      :todayDate="disabledDates"
       v-on:delete-me="deleteThisBox(index)"
       :key="reg.id"
       :index="index"
@@ -29,9 +29,7 @@ export default {
   data: function() {
     return {
       timeregistrationArr: [],
-      disabledDates: {
-        from: new Date()
-      },
+      disabledDates: new Date(),
       customers: [],
       currentDate: "",
       categories: [],
