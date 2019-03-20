@@ -26,7 +26,7 @@ function storeUserInfo(user) {
   var workerRef = firestore.collection("workers").doc(mail)
   workerRef.set({
       mail: mail,
-      displayName : user.displayName,
+      displayName: user.displayName,
       photoURL: user.photoURL,
     }).then(function() {
       console.log("Document successfully written!");
@@ -53,9 +53,15 @@ function logOut() {
 }
 
 function isReady() {
+  console.log("READY",user)
+  if (user) {
+    return true
+  } else { return false }
+}
+
+function isSet() {
   if (user) return true
   else return false
 }
-
 
 export { firestore, setUser, getUser, isReady, logOut }

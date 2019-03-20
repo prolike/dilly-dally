@@ -42,6 +42,7 @@ export default {
           // This key overrides `foo`!
           key: 'paidMonth',
           label: 'Paid month',
+          VARIANT: 'danger',
           sortable: true
         },
         category: {
@@ -128,6 +129,8 @@ export default {
             break;
           }
         case "date":
+          console.log("asasdasdd")
+
           a = a.startTime.toDate()
           b = b.startTime.toDate()
           if (a > b) {
@@ -141,6 +144,7 @@ export default {
             break;
           }
         case "startTime":
+          console.log("asd")
           a = parseFloat(a.startTime.toDate().getHours() + "." + a.startTime.toDate().getMinutes())
           b = parseFloat(b.startTime.toDate().getHours() + "." + b.startTime.toDate().getMinutes())
           if (a > b) {
@@ -154,7 +158,6 @@ export default {
             break;
           }
         case "endTime":
-
           a = parseFloat("" + a.endTime.toDate().getHours() + "." + a.endTime.toDate().getMinutes())
           b = parseFloat("" + b.endTime.toDate().getHours() + "." + b.endTime.toDate().getMinutes())
           if (a > b) {

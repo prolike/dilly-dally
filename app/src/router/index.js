@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import firebase from 'firebase'
-import { setUser, logOut } from '../controller/firebaseHandler'
+import { setUser, logOut, isReady } from '../controller/firebaseHandler'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
@@ -93,16 +93,18 @@ router.beforeEach((to, from, next) => {
         if (prolike !== "prolike.io") {
           console.log("not a prolike account!! LOGGING OUT ")
           logOut()
-          router.push({ name: 'Login', query: {id:"notProlike" }})
+          router.push({ name: 'Login', query: { id: "notProlike" } })
         } else {
-          console.log(prolike)
-          setUser(user)
+          console.log("Prolike login approved")
+          if (!isReady()) {
+            console.log("setting user")
+            setUser(user)
+          }
           next()
         }
       }
     })
   } else {
-
     console.log("Not required")
     next()
   }
