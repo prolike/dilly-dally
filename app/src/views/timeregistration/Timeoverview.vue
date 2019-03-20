@@ -1,6 +1,9 @@
 <template>
   <div>
     <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare">
+      <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
+        <i class="fa fa-check-square"></i>
+      </template>
       <template slot="year" slot-scope="data">
         {{getYear(data.item.startTime)}}
       </template>
@@ -29,6 +32,18 @@ export default {
       sortDesc: true,
       sortDirection: 'asc',
       fields: {
+        approved: {
+          // This key overrides `foo`!
+          key: 'isApproved',
+          label: 'Approved',
+          sortable: true
+        },
+        paidMonth: {
+          // This key overrides `foo`!
+          key: 'paidMonth',
+          label: 'Paid month',
+          sortable: true
+        },
         category: {
           // This key overrides `foo`!
           key: 'category.id',
@@ -121,7 +136,7 @@ export default {
             break;
           }
         case "startTime":
-          a = parseFloat(a.startTime.toDate().getHours() + "." +  a.startTime.toDate().getMinutes())
+          a = parseFloat(a.startTime.toDate().getHours() + "." + a.startTime.toDate().getMinutes())
           b = parseFloat(b.startTime.toDate().getHours() + "." + b.startTime.toDate().getMinutes())
           if (a > b) {
             return -1
