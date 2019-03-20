@@ -9,7 +9,6 @@ const firebaseApp = firebase.initializeApp({
   messagingSenderId: "320832304478"
 });
 
-console.log("hallo")
 const firestore = firebaseApp.firestore()
 
 var user = null
@@ -17,6 +16,25 @@ var user = null
 function setUser(authedUser) {
   user = authedUser
   console.log("User SET")
+  storeUserInfo(user);
+}
+
+
+function storeUserInfo(user) {
+  console.log("storing userinfo")
+  var mail = user.email
+  var workerRef = firestore.collection("workers").doc(mail)
+  workerRef.set({
+      mail: mail,
+      displayName : user.displayName,
+      photoURL: user.photoURL,
+    }).then(function() {
+      console.log("Document successfully written!");
+    })
+    .catch(function(error) {
+      console.error("Error writing document: ", error);
+    });
+
 }
 
 function getUser() {
