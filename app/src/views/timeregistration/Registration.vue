@@ -61,7 +61,9 @@ export default {
       if (isAllValid) {
         this.$refs.regs.forEach(obj => {
           this.registerTime(obj.date, obj.form);
+          this.deleteThisBox(this.timeregistrationArr.length - 1);
         });
+        this.appendBox();
       }
     },
     getTodayDate() {
