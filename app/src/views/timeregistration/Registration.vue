@@ -1,15 +1,6 @@
 <template>
   <div>
-    <RegistrationTemplate
-      v-for="(reg,index) in timeregistrationArr"
-      :categories="categories"
-      :projects="projects"
-      :todayDate="disabledDates"
-      v-on:delete-me="deleteThisBox(index)"
-      :key="reg.id"
-      :index="index"
-      ref="regs"
-    ></RegistrationTemplate>
+    <RegistrationTemplate v-for="(reg,index) in timeregistrationArr" :categories="categories" :projects="projects" :disabledDates="disabledDates" v-on:delete-me="deleteThisBox(index)" :key="reg.id" :index="index" ref="regs"></RegistrationTemplate>
     <button class="timeRegButtons" v-on:click="save">Save</button>
     <button class="timeRegButtons" v-on:click="appendBox">
       <i class="fa fa-plus"></i>
@@ -18,6 +9,7 @@
 </template>
 <script>
 import { firestore, getUser } from "../../controller/firebaseHandler";
+import { firestoreHandler } from "../../controller/firestoreHandler";
 import RegistrationTemplate from "./RegistrationTemplate.vue";
 import { valid } from "semver";
 
@@ -38,7 +30,7 @@ export default {
       counter: 0,
       user: "",
       email: "",
-      id: 0
+      id: 0,
     };
   },
   methods: {
@@ -68,33 +60,12 @@ export default {
       this.currentDate = new Date();
     },
     getCategories: function() {
-      this.$binding("categories", firestore.collection("categories")).then(
-        categories => {
-          console.log(this.categories);
-        }
-      );
-    },
-    getAllCustomersName: function() {
-      this.$binding("customers", firestore.collection("customers")).then(
-        customers => {
-          this.getAllProjects();
-        }
-      );
+      this.categories = firestoreHandler.getCategories();
+      console.log(this.categories)
     },
     getAllProjects: function() {
-      this.customers.forEach(cust => {
-        this.$binding(
-          "allProjects",
-          firestore
-            .collection("customers")
-            .doc(cust.id)
-            .collection("projects")
-        ).then(projectArr => {
-          projectArr.forEach(project => {
-            this.projects.push(cust.id + "/" + project.id);
-          });
-        });
-      });
+      this.projects = firestoreHandler.getProjects();
+      console.log(this.projects)
     },
     registerTime: function(date, form) {
       var data = form;
@@ -107,14 +78,10 @@ export default {
         data["endTime"] = end;
         data["startTime"] = start;
       }
-      firestore
-        .collection("workers")
-        .doc(this.email)
-        .collection("timeregs")
-        .add(data)
-        .then(response => {
-          console.log(response);
-        });
+      
+      var worker = firestoreHandler.getTheWorker(this.email)
+      data["worker"] = worker
+      firestoreHandler.timeRegistrationAdd(data)
       this.$swal.fire("Good job!", "You clicked the button!", "success");
     },
     getTimestamp(date, time) {
@@ -134,14 +101,14 @@ export default {
     }
   },
   mounted() {
-    this.user = getUser();
-    this.email = this.user.email;
+    this.email = getUser().email;
     this.getCategories();
-    this.getAllCustomersName();
+    this.getAllProjects();
     this.getTodayDate();
     this.appendBox();
   }
 };
+
 </script>
 <style lang="scss" scoped>
 .timereg {
@@ -234,4 +201,5 @@ export default {
 .timeRegButtons .fa {
   color: #1a2336;
 }
+
 </style>
