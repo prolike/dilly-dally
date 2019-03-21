@@ -9,7 +9,7 @@ const firebaseApp = firebase.initializeApp({
   messagingSenderId: "320832304478"
 });
 
-const firestore = firebaseApp.firestore()
+const db = firebaseApp.firestore()
 
 var user = null
 
@@ -23,7 +23,7 @@ function setUser(authedUser) {
 function storeUserInfo(user) {
   console.log("storing userinfo")
   var mail = user.email
-  var workerRef = firestore.collection("workers").doc(mail)
+  var workerRef = db.collection("workers").doc(mail)
   workerRef.set({
       mail: mail,
       displayName: user.displayName,
@@ -59,9 +59,10 @@ function isReady() {
   } else { return false }
 }
 
+
 function isSet() {
   if (user) return true
   else return false
 }
 
-export { firestore, setUser, getUser, isReady, logOut }
+export { db, setUser, getUser, isReady, logOut }

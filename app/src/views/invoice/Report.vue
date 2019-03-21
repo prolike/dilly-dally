@@ -32,12 +32,13 @@
 </template>
 <script>
 import { firestore, getUser } from '../../controller/firebaseHandler';
+import { firestoreHandler } from '../../controller/firestoreHandler';
 
 export default {
   name: 'TimeRegistrationOverview',
   data: function() {
     return {
-      sortBy: 'startTime',
+      sortBy: 'date',
       sortDesc: true,
       sortDirection: 'asc',
       fields: {
@@ -136,7 +137,7 @@ export default {
             return 1
             break;
           }
-        case "date":
+/*        case "date":
           a = a.startTime.toDate()
           b = b.startTime.toDate()
           if (a > b) {
@@ -148,7 +149,7 @@ export default {
           } else if (a < b) {
             return 1
             break;
-          }
+          }*/
         case "startTime":
           a = parseFloat(a.startTime.toDate().getHours() + "." + a.startTime.toDate().getMinutes())
           b = parseFloat(b.startTime.toDate().getHours() + "." + b.startTime.toDate().getMinutes())
@@ -163,7 +164,6 @@ export default {
             break;
           }
         case "endTime":
-
           a = parseFloat("" + a.endTime.toDate().getHours() + "." + a.endTime.toDate().getMinutes())
           b = parseFloat("" + b.endTime.toDate().getHours() + "." + b.endTime.toDate().getMinutes())
           if (a > b) {
@@ -196,24 +196,8 @@ export default {
           break;
       }
     },
-    getAllWorkers() {
-      this.$binding("workers", firestore.collection("workers"))
-        .then((workers) => {
-          workers.forEach(obj => {
-            console.log(obj.id)
-            this.getAllTimeRegistrations(obj.id)
-          })
-        })
-    },
-    getAllTimeRegistrations(workerID) {
-      this.$binding("timeRegistration2", firestore.collection("workers").doc(workerID).collection("timeregs"))
-        .then((timeRegistration) => {
-          timeRegistration.forEach(obj => {
-            obj["worker"] = workerID
-            this.timeRegistration.push(obj)
-          })
-        })
-      console.log(this.timeRegistration)
+    getAllTimeRegistrations() {
+      this.timeRegistration = firestoreHandler.getAllTimereg()
     },
     deleteMe(id) {
       console.log(id)
@@ -238,11 +222,7 @@ export default {
     }
   },
   mounted() {
-    this.user = getUser()
-    this.email = this.user.email
-    console.log(this.email)
-    this.getAllWorkers()
-
+    this.getAllTimeRegistrations()
   }
 }
 

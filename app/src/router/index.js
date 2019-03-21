@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import firebase from 'firebase'
 import { setUser, logOut, isReady } from '../controller/firebaseHandler'
+import { firestoreHandler } from '../controller/firestoreHandler'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
