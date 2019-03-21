@@ -4,7 +4,9 @@
       <div class="col-lg-12 timereg">
         <div class="timereg-title">
           <h1>Time Registration # {{index}}</h1>
-          <div v-on:click="deleteBox" class="cross"><i class="fa fa-times" /></div>
+          <div v-on:click="deleteBox" class="cross">
+            <i class="fa fa-times"/>
+          </div>
         </div>
         <div class="row">
           <div class="col-lg-12 specialized-box">
@@ -14,67 +16,77 @@
                   v-model="date"
                   required
                   :date-formatter="dateFormatter"
-                  icon
+                  icon-pack="fa"
+                  icon="calendar"
                   :max-date="todayDate"
                   :first-day-of-week="1"
-                  editable></bue-datepicker>
+                  editable>
+                </bue-datepicker>
               </bue-field>
               <!-- <label for="">Pick a date</label>
-              <datepicker class="datepick" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker> -->
+              <datepicker class="datepick" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>-->
             </div>
             <div class="cell">
               <bue-field class="label" label="Start time">
-                <bue-input placeholder="09:00" v-model="form.startTime" required pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
+                <bue-input
+                  placeholder="09:00"
+                  v-model="form.startTime"
+                  required
+                  pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
                 </bue-input>
               </bue-field>
             </div>
             <div class="cell">
               <bue-field class="label" label="End time">
-                <bue-input ref="end" placeholder="16:00" v-model="form.endTime" required pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
+                <bue-input
+                  ref="end"
+                  placeholder="16:00"
+                  v-model="form.endTime"
+                  required
+                  pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
                 </bue-input>
               </bue-field>
             </div>
             <div class="cell">
-              <label for="">Category</label>
-              <div></div>
-              <select v-model="form.category">
-                <option value="" disabled hidden>Select a category</option>
-                <option v-for="item in categories" :value="item">
-                  {{item.id}}
-                </option>
-              </select>
+              <bue-field label="Category">
+                <bue-select placeholder="Select a category" v-model="form.categories" required>
+                  <!-- <option value disabled hidden>Select a project</option> -->
+                  <option v-for="item in categories" :value="item" :key="item.index">{{ item.id }}</option>
+                </bue-select>
+              </bue-field>
             </div>
             <div class="cell">
-              <label for="">Project</label>
-              <div></div>
-              <select v-model="form.project">
-                <option value="" disabled hidden>Select a project</option>
-                <option v-for="item in projects" :value="item">
-                  {{item}}
-                </option>
-              </select>
+              <bue-field label="Project">
+                <bue-select placeholder="Select a project" v-model="form.project" required>
+                  <!-- <option value disabled hidden>Select a project</option> -->
+                  <option v-for="item in projects" :value="item" :key="item.index">{{ item }}</option>
+                </bue-select>
+              </bue-field>
             </div>
-            <div>
+            <div class="cell">
               <b-tabs content-class="mt-3">
-                <b-tab title="Comment" active><textarea name="" id="" cols="30" rows="10" placeholder="Write your comment here"></textarea></b-tab>
-                <b-tab title="Issue"><textarea name="" id="" cols="30" rows="10" placeholder="Here's the comment you wrote"></textarea></b-tab>
+                <b-tab title="Comment" active>
+                  <textarea name id cols="30" rows="10" placeholder="Write your comment here"></textarea>
+                </b-tab>
+                <b-tab title="Issue">
+                  <textarea name id cols="30" rows="10" placeholder="Here's the comment you wrote"></textarea>
+                </b-tab>
               </b-tabs>
             </div>
           </div>
         </div>
-            <div below class="text-danger">{{errors.time}}</div>
-        </form>
+        <div below class="text-danger">{{errors.time}}</div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import Datepicker from 'vuejs-datepicker';
+import Datepicker from "vuejs-datepicker";
 
 export default {
   name: "RegistrationTemplate",
   components: {
-    Datepicker,
+    Datepicker
   },
   data: function() {
     return {
@@ -127,12 +139,11 @@ export default {
       }
       return { valid: true, error: null };
     },
-    validateTimeRange: function(startTime, endTime)
-    {
+    validateTimeRange: function(startTime, endTime) {
       if (startTime == endTime) {
         this.form.endTime = "";
         this.$refs.end.focus();
-        return { valid: false, error: "Please, enter a valid time range."};
+        return { valid: false, error: "Please, enter a valid time range." };
       }
       return { valid: true, error: null };
     },
@@ -147,19 +158,22 @@ export default {
         this.valid = validStartTime.valid;
       }
       console.log(this.valid + " : after start");
-    
+
       //Validate end time
       const validEndTime = this.validateEndTime(this.form.endTime);
       this.errors.time = validEndTime.error;
       if (this.valid) {
         this.valid = validEndTime.valid;
       }
-      console.log(this.valid + " : after end")
-      
+      console.log(this.valid + " : after end");
+
       //Validate time range
-      const validTimeRange = this.validateTimeRange(this.form.startTime, this.form.endTime);
-      this.errors.time = validTimeRange.error; 
-      if(this.valid) {
+      const validTimeRange = this.validateTimeRange(
+        this.form.startTime,
+        this.form.endTime
+      );
+      this.errors.time = validTimeRange.error;
+      if (this.valid) {
         this.valid = validTimeRange.valid;
       }
 
@@ -171,7 +185,6 @@ export default {
     }
   }
 };
-
 </script>
 <style lang="scss" scoped>
 .timereg {
@@ -264,5 +277,4 @@ export default {
 .timeRegButtons .fa {
   color: #1a2336;
 }
-
 </style>

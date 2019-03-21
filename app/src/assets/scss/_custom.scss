@@ -137,11 +137,13 @@ div.mdl-progress::after {
     }
 }
 
-//Datepicker arrows
-/*label{
+//Form labels
+label{
     font-size: 10px;
     font-weight: 500 !important;
-}*/
+}
+
+//Datepicker arrows
 
 .pagination-previous::before {
     content: '';
