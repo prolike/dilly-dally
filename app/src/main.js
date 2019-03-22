@@ -9,9 +9,6 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
 import VueSweetalert2 from 'vue-sweetalert2';
-import VueFirestore from 'vue-firestore'
-import firebase from 'firebase'
-import {firestore,user} from './controller/firebaseHandler'
 import { Table } from 'buefy/dist/components/table'
 import { Input } from 'buefy/dist/components/input'
 import { Field } from 'buefy/dist/components/field'
@@ -24,10 +21,6 @@ Vue.component('bue-field', Field)
 Vue.component('bue-datepicker', Datepicker)
 Vue.component('bue-select', Select)
 
-Vue.use(VueFirestore, {
-  key: 'id', // the name of the property. Default is '.key'.
-  enumerable: true //  whether it is enumerable or not. Default is true.
-})
 Vue.use(VueSweetalert2)
 Vue.use(BootstrapVue)
 
