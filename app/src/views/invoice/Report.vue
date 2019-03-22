@@ -56,19 +56,19 @@ export default {
         },
         category: {
           // This key overrides `foo`!
-          key: 'category.id',
+          key: 'categories.id',
           label: 'Category',
           sortable: true
         },
         customer: {
           // This key overrides `foo`!
-          key: 'project.customer',
+          key: 'project.customer.name',
           label: 'Customer',
           sortable: true
         },
         project: {
           // This key overrides `foo`!
-          key: 'project.title',
+          key: 'project.id',
           label: 'Project',
           sortable: true
         },
@@ -109,8 +109,13 @@ export default {
           label: 'workHours',
           sortable: true
         },
+        comment: {
+          // This key overrides `foo`!
+          label: 'Comments',
+          sortable: true
+        },
         worker: {
-          key: 'worker',
+          key: 'worker.id',
           label: 'Worker',
           sortable: true
         },
@@ -137,19 +142,19 @@ export default {
             return 1
             break;
           }
-/*        case "date":
-          a = a.startTime.toDate()
-          b = b.startTime.toDate()
-          if (a > b) {
-            return -1
-            break;
-          } else if (a === b) {
-            return 0
-            break;
-          } else if (a < b) {
-            return 1
-            break;
-          }*/
+          /*        case "date":
+                    a = a.startTime.toDate()
+                    b = b.startTime.toDate()
+                    if (a > b) {
+                      return -1
+                      break;
+                    } else if (a === b) {
+                      return 0
+                      break;
+                    } else if (a < b) {
+                      return 1
+                      break;
+                    }*/
         case "startTime":
           a = parseFloat(a.startTime.toDate().getHours() + "." + a.startTime.toDate().getMinutes())
           b = parseFloat(b.startTime.toDate().getHours() + "." + b.startTime.toDate().getMinutes())
@@ -197,7 +202,7 @@ export default {
       }
     },
     getAllTimeRegistrations() {
-     var reg = firestoreHandler.getAllTimeregs()
+      var reg = firestoreHandler.getAllTimeregs()
       console.log(reg)
       console.log(this.timeRegistration)
       this.timeRegistration = reg

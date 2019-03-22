@@ -59,14 +59,14 @@
               <bue-field label="Project">
                 <bue-select placeholder="Select a project" v-model="form.project" required>
                   <!-- <option value disabled hidden>Select a project</option> -->
-                  <option v-for="item in projects" :value="item" :key="item.index">{{ item }}</option>
+                  <option v-for="item in projects" :value="item" :key="item.index">{{ item.id}}</option>
                 </bue-select>
               </bue-field>
             </div>
             <div class="cell">
               <b-tabs content-class="mt-3">
                 <b-tab title="Comment" active>
-                  <textarea name id cols="30" rows="10" placeholder="Write your comment here"></textarea>
+                  <textarea name id cols="30" rows="10" placeholder="Write your comment here" v-model="form.comment"></textarea>
                 </b-tab>
                 <b-tab title="Issue">
                   <textarea name id cols="30" rows="10" placeholder="Here's the comment you wrote"></textarea>

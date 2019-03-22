@@ -48,19 +48,19 @@ export default {
         },
         category: {
           // This key overrides `foo`!
-          key: 'category.id',
+          key: 'categories.id',
           label: 'Category',
           sortable: true
         },
         customer: {
           // This key overrides `foo`!
-          key: 'project.customer',
+          key: 'project.customer.name',
           label: 'Customer',
           sortable: true
         },
         project: {
           // This key overrides `foo`!
-          key: 'project.title',
+          key: 'project.id',
           label: 'Project',
           sortable: true
         },
@@ -99,6 +99,11 @@ export default {
         workHours: {
           // This key overrides `foo`!
           label: 'workHours',
+          sortable: true
+        },
+        comment: {
+          // This key overrides `foo`!
+          label: 'Comments',
           sortable: true
         },
         deleteMe: {
