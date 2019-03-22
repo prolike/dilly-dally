@@ -116,7 +116,7 @@ export default {
       workers: {},
       email: "",
       user: "",
-      filter: null,
+      filter: this.email,
     }
   },
   methods: {
