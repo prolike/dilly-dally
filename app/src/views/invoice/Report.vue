@@ -127,11 +127,11 @@ export default {
     }
   },
   methods: {
-    sortCompare(a, b, key) {
+    sortCompare(a1, b1, key) {
       switch (key) {
         case "year":
-          a = a.startTime.toDate().getFullYear()
-          b = b.startTime.toDate().getFullYear()
+          var a = a1.startTime.toDate().getFullYear()
+          var b = b1.startTime.toDate().getFullYear()
           if (a > b) {
             return -1
             break;
@@ -142,22 +142,22 @@ export default {
             return 1
             break;
           }
-          /*        case "date":
-                    a = a.startTime.toDate()
-                    b = b.startTime.toDate()
-                    if (a > b) {
-                      return -1
-                      break;
-                    } else if (a === b) {
-                      return 0
-                      break;
-                    } else if (a < b) {
-                      return 1
-                      break;
-                    }*/
+        case "date":
+          var a = a1.startTime.toDate()
+          var b = b1.startTime.toDate()
+          if (a > b) {
+            return -1
+            break;
+          } else if (a === b) {
+            return 0
+            break;
+          } else if (a < b) {
+            return 1
+            break;
+          }
         case "startTime":
-          a = parseFloat(a.startTime.toDate().getHours() + "." + a.startTime.toDate().getMinutes())
-          b = parseFloat(b.startTime.toDate().getHours() + "." + b.startTime.toDate().getMinutes())
+          var a = parseFloat(a1.startTime.toDate().getHours() + "." + a1.startTime.toDate().getMinutes())
+          var b = parseFloat(b1.startTime.toDate().getHours() + "." + b1.startTime.toDate().getMinutes())
           if (a > b) {
             return -1
             break;
@@ -169,8 +169,8 @@ export default {
             break;
           }
         case "endTime":
-          a = parseFloat("" + a.endTime.toDate().getHours() + "." + a.endTime.toDate().getMinutes())
-          b = parseFloat("" + b.endTime.toDate().getHours() + "." + b.endTime.toDate().getMinutes())
+          var a = parseFloat("" + a1.endTime.toDate().getHours() + "." + a1.endTime.toDate().getMinutes())
+          var b = parseFloat("" + b1.endTime.toDate().getHours() + "." + b1.endTime.toDate().getMinutes())
           if (a > b) {
             return -1
             break;
@@ -182,10 +182,10 @@ export default {
             break;
           }
         case "workHours":
-          var val1 = this.getWorkhoursAsDate(a.startTime, a.endTime)
-          var val2 = this.getWorkhoursAsDate(b.startTime, b.endTime)
-          a = parseFloat("" + val1.getHours() + "." + val1.getMinutes())
-          b = parseFloat("" + val2.getHours() + "." + val2.getMinutes())
+          var val1 = this.getWorkhoursAsDate(a1.startTime, a1.endTime)
+          var val2 = this.getWorkhoursAsDate(b1.startTime, b1.endTime)
+          var a = parseFloat("" + val1.getHours() + "." + val1.getMinutes())
+          var b = parseFloat("" + val2.getHours() + "." + val2.getMinutes())
           if (a > b) {
             return -1
             break;
