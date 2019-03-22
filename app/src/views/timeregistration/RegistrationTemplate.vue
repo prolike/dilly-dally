@@ -49,7 +49,7 @@
             </div>
             <div class="cell">
               <bue-field label="Category">
-                <bue-select placeholder="Select a category" v-model="form.categories" required>
+                <bue-select placeholder="Select a category" v-model="form.category" required>
                   <!-- <option value disabled hidden>Select a project</option> -->
                   <option v-for="item in categories" :value="item" :key="item.index">{{ item.id }}</option>
                 </bue-select>
@@ -92,11 +92,11 @@ export default {
     return {
       date: new Date(),
       form: {
-        startTime: "",
-        endTime: "",
-        category: "",
-        project: "",
-        comment: ""
+        startTime: null,
+        endTime: null,
+        category: null,
+        project: null,
+        comment: null
       },
       valid: true,
       errors: {}
