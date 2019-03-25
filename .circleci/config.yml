@@ -95,7 +95,7 @@ jobs:
           command: cd app && sudo npm run build-staging
       - run:
           name: Deploy to stage
-          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting -P staging --token=$FIREBASE_TOKEN
+          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting --token=$FIREBASE_TOKEN
   prod:
     docker:
       - image: circleci/node:8.10
