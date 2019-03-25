@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build-staging": "vue-cli-service build --mode staging",
+    "build-production": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e"
@@ -25,6 +26,7 @@
     "core-js": "^2.6.2",
     "css-vars-ponyfill": "^1.16.2",
     "firebase": "^5.8.5",
+    "firebase-functions": "^2.2.1",
     "firebaseui": "^3.5.2",
     "flag-icon-css": "^3.2.0",
     "font-awesome": "^4.7.0",

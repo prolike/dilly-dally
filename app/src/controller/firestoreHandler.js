@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { db } from './firebaseHandler'
+import { firebaseHandler } from './firebaseHandler'
 import VueFirestore from 'vue-firestore'
 import * as firebase from 'firebase';
 
@@ -12,11 +12,11 @@ var firestoreHandler = new Vue({
   name: 'firestoreHandler',
   firestore() {
     return {
-    workers:  db.collection('workers'),
-    categories: db.collection('categories'),
-    customers: db.collection('customers'),
-    timeregistration: db.collection('timeregistration'),
-    projects: db.collection('projects'),
+    workers:  this.db.collection('workers'),
+    categories: this.db.collection('categories'),
+    customers: this.db.collection('customers'),
+    timeregistration: this.db.collection('timeregistration'),
+    projects: this.db.collection('projects'),
   }
   },
   data() {
@@ -25,7 +25,8 @@ var firestoreHandler = new Vue({
       categories: [],
       projects: [],
       customers: [],
-      workers: []
+      workers: [],
+      db: firebaseHandler.getDB()
     }
   },
   methods: {

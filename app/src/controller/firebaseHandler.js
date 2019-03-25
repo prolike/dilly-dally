@@ -1,68 +1,86 @@
 import * as firebase from 'firebase'
+import Vue from 'vue'
 
-const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyAP26LDfU4OMnpBTB4P9Lm9-c_BgF1DxUQ",
-  authDomain: "prolike-stack.firebaseapp.com",
-  databaseURL: "https://prolike-stack.firebaseio.com",
-  projectId: "prolike-stack",
-  storageBucket: "prolike-stack.appspot.com",
-  messagingSenderId: "320832304478"
-});
+var firebaseHandler = new Vue({
+  name: 'FirebaseHandler',
+  data() {
+    return {
+      env: process.env.NODE_ENV,
+      user: null,
+      db: null,
+      firebaseApp: null,
+    }
+  },
+  methods: {
+    initApp() {
+      var config = { // Dev
+        apiKey: "AIzaSyAP26LDfU4OMnpBTB4P9Lm9-c_BgF1DxUQ",
+        authDomain: "prolike-stack.firebaseapp.com",
+        databaseURL: "https://prolike-stack.firebaseio.com",
+        projectId: "prolike-stack",
+        storageBucket: "prolike-stack.appspot.com",
+        messagingSenderId: "320832304478"
+      };
 
-const db = firebaseApp.firestore()
+      if (this.env === "production") {
+        config = { //production
+          apiKey: "AIzaSyAPqEsUTkxgNJl_4sz6LKi-XHgP_3S25No",
+          authDomain: "prolike-stack-prod.firebaseapp.com",
+          databaseURL: "https://prolike-stack-prod.firebaseio.com",
+          projectId: "prolike-stack-prod",
+          storageBucket: "prolike-stack-prod.appspot.com",
+          messagingSenderId: "14479827823"
+        };
+      }
+      this.firebaseApp = firebase.initializeApp(config);
+      this.db = this.firebaseApp.firestore()
+    },
+    getUser() {
+      return this.user
+    },
+    getDB() {
+      return this.db
+    },
+    logOut() {
+      firebase.auth().signOut().then(function() {
+        console.log("Sign-out successful")
+        this.user = null
+      }).catch(function(error) {
+        // An error happened.
+      });
+    },
+    storeUserInfo(user) {
+      console.log("storing userinfo")
+      var mail = user.email
+      var workerRef = this.db.collection("workers").doc(mail)
+      workerRef.set({
+          mail: mail,
+          displayName: user.displayName,
+          photoURL: user.photoURL,
+        }).then(function() {
+          console.log("Document successfully written!");
+        })
+        .catch(function(error) {
+          console.error("Error writing document: ", error);
+        });
 
-var user = null
+    },
+    setUser(authedUser) {
+      this.user = authedUser
+      console.log("User SET")
+      this.storeUserInfo(this.user);
+    },
+    isReady() {
+      console.log("READY", this.user)
+      if (this.user) {
+        return true
+      } else { return false }
+    }
+  },
+  created() {
+    console.log(this.env)
+    this.initApp()
+  }
+})
 
-function setUser(authedUser) {
-  user = authedUser
-  console.log("User SET")
-  storeUserInfo(user);
-}
-
-
-function storeUserInfo(user) {
-  console.log("storing userinfo")
-  var mail = user.email
-  var workerRef = db.collection("workers").doc(mail)
-  workerRef.set({
-      mail: mail,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-    }).then(function() {
-      console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-      console.error("Error writing document: ", error);
-    });
-
-}
-
-function getUser() {
-  console.log("getting user")
-  console.log(user)
-  return user
-}
-
-function logOut() {
-  firebase.auth().signOut().then(function() {
-    console.log("Sign-out successful")
-    user = null
-  }).catch(function(error) {
-    // An error happened.
-  });
-}
-
-function isReady() {
-  console.log("READY",user)
-  if (user) {
-    return true
-  } else { return false }
-}
-
-
-function isSet() {
-  if (user) return true
-  else return false
-}
-
-export { db, setUser, getUser, isReady, logOut }
+export { firebaseHandler }

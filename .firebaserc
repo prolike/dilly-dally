@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "prolike-stack"
+    "default": "prolike-stack",
+    "staging": "prolike-stack",
+    "production": "prolike-stack-prod"
   }
 }

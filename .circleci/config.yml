@@ -26,15 +26,15 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "./functions/package.json" }}
+          - v1-dependencies-{{ checksum "./app/package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: npm install --prefix ./functions/
+      - run: npm install --prefix ./app/
       - save_cache:
           paths:
-            - ./functions/node_modules
-          key: v1-dependencies-{{ checksum "./functions/package.json" }}
-      - run: npm test --prefix ./functions/
+            - ./app/node_modules
+          key: v1-dependencies-{{ checksum "./app/package.json" }}
+      #- run: npm test --prefix ./functions/
 
   end-2-end-test:
     docker:
@@ -47,15 +47,16 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "./functions/package.json" }}
+          - v1-dependencies-{{ checksum "./app/package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: npm install --prefix ./functions/
+      - run: npm install --prefix ./app/
       - save_cache:
           paths:
-            - ./functions/node_modules
-          key: v1-dependencies-{{ checksum "./functions/package.json" }}
-      - run: npm test --prefix ./functions/
+            - ./app/node_modules
+          key: v1-dependencies-{{ checksum "./app/package.json" }}
+      #- run: npm test --prefix ./functions/
+
   deliver:
     docker:
       - image: circleci/node:8.10
@@ -70,6 +71,7 @@ jobs:
       - run:
           name: Deliver
           command: ./play --manuscript .circleci/manuscript.yml --part deliver
+
   stage:
     docker:
       - image: circleci/node:8.10
@@ -77,17 +79,20 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "./functions/package.json" }}
+          - v1-dependencies-{{ checksum "./app/package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: npm install --prefix ./functions/
+      - run: npm install --prefix ./app/
       - save_cache:
           paths:
-            - ./functions/node_modules
-          key: v1-dependencies-{{ checksum "./functions/package.json" }}
+            - ./app/node_modules
+          key: v1-dependencies-{{ checksum "./app/package.json" }}
       - run:
           name: Install Firebase Tools
-          command: sudo npm install --prefix=./firebase-deploy firebase-tools
+          command: sudo npm install --prefix=./firebase-deploy firebase
+      - run:
+          name: Deploy to stage
+          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting -P staging --token=$FIREBASE_TOKEN
   prod:
     docker:
       - image: circleci/node:8.10
@@ -95,26 +100,20 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "./functions/package.json" }}
+          - v1-dependencies-{{ checksum "./app/package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: npm install --prefix ./functions/
+      - run: npm install --prefix ./app/
       - save_cache:
           paths:
-            - ./functions/node_modules
-          key: v1-dependencies-{{ checksum "./functions/package.json" }}
+            - ./app/node_modules
+          key: v1-dependencies-{{ checksum "./app/package.json" }}
       - run:
           name: Install Firebase Tools
           command: sudo npm install --prefix=./firebase-deploy firebase-tools
       - run:
-          name: Set github authentication token in firebase from circleci
-          command: sudo ./firebase-deploy/node_modules/.bin/firebase functions:config:set github.authkey=$GITHUB_BASIC_AUTHENTICATION_TOKEN --token=$FIREBASE_TOKEN
-      - run:
-          name: Set firebase api key in firebase from circleci
-          command: sudo ./firebase-deploy/node_modules/.bin/firebase functions:config:set fb.apikey=$API_KEY --token=$FIREBASE_TOKEN
-      - run:
           name: deploy firebase
-          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only functions --token=$FIREBASE_TOKEN
+          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting -P production --token=$FIREBASE_TOKEN
 
 workflows:
   version: 2

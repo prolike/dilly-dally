@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import firebase from 'firebase'
-import { setUser, logOut, isReady } from '../controller/firebaseHandler'
+import { firebaseHandler } from '../controller/firebaseHandler'
 import { firestoreHandler } from '../controller/firestoreHandler'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
@@ -93,13 +93,13 @@ router.beforeEach((to, from, next) => {
         var prolike = email.split("@")[1]
         if (prolike !== "prolike.io") {
           console.log("not a prolike account!! LOGGING OUT ")
-          logOut()
+          firebaseHandler.logOut()
           router.push({ name: 'Login', query: { id: "notProlike" } })
         } else {
           console.log("Prolike login approved")
-          if (!isReady()) {
+          if (!firebaseHandler.isReady()) {
             console.log("setting user")
-            setUser(user)
+            firebaseHandler.setUser(user)
           }
           next()
         }

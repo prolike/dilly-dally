@@ -13,7 +13,7 @@
 </template>
 <script>
 import { HeaderDropdown as AppHeaderDropdown } from '@coreui/vue'
-import { getUser, isReady , logOut} from '../controller/firebaseHandler';
+import { firebaseHandler } from '../controller/firebaseHandler';
 
 export default {
   name: 'DefaultHeaderDropdownAccnt',
@@ -30,12 +30,12 @@ export default {
   },
   methods: {
     checkUser() {
-      if (isReady == false) {
+      if (firebaseHandler.isReady() == false) {
         console.log("IS NOT SIGNED IN")
         window.setTimeout(this.checkUser, 100); /* this checks the flag every 100 milliseconds*/
       } else {
         console.log("IS SIGNED IN")
-        this.user = getUser()
+        this.user = firebaseHandler.getUser()
         console.log(this.user)
       }
     },
@@ -50,7 +50,7 @@ export default {
     },
     logOut() {
       console.log("logging out")
-      logOut()
+      firebaseHandler.logOut()
     },
   },
 }

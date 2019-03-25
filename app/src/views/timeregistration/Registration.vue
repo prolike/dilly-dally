@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import { firestore, getUser } from "../../controller/firebaseHandler";
+import { firebaseHandler } from "../../controller/firebaseHandler";
 import { firestoreHandler } from "../../controller/firestoreHandler";
 import RegistrationTemplate from "./RegistrationTemplate.vue";
 import { valid } from "semver";
@@ -104,7 +104,7 @@ export default {
     }
   },
   mounted() {
-    this.email = getUser().email;
+    this.email = firebaseHandler.getUser().email;
     this.getCategories();
     this.getAllProjects();
     this.getTodayDate();

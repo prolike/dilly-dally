@@ -23,7 +23,7 @@
 </template>
 <script>
 import { firestoreHandler } from '../../controller/firestoreHandler';
-import { getUser } from '../../controller/firebaseHandler';
+import { firebaseHandler } from '../../controller/firebaseHandler';
 
 export default {
   name: 'TimeRegistrationOverview',
@@ -224,7 +224,7 @@ export default {
   },
   mounted() {
    // firestoreHandler.getTest()
-    this.email = getUser().email
+    this.email = firebaseHandler.getUser().email
     this.getAllMyRegistrations()
     this.filter = this.email
 
