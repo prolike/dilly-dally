@@ -12,7 +12,6 @@
       </template>
       <template slot="workHours" slot-scope="data">
         {{getWorkhours(data.item.startTime,data.item.endTime)}}
-        {{data.item.worker}}
       </template>
       <template slot="deleteMe" slot-scope="data">
         <button v-on:click="deleteMe(data.item.id)">Delete me</button>
