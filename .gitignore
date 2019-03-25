@@ -30,7 +30,7 @@ uploads
 test/unit-test-coverage
 youtransfer.sublime-project
 youtransfer.sublime-workspace
-
+.firebase
 /app/.firebase
 # In-repo upload dir
 .uploads
