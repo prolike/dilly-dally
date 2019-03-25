@@ -137,17 +137,6 @@ div.mdl-progress::after {
     }
 }
 
-//Form labels
-label{
-    font-size: 10px;
-    font-weight: 500 !important;
-}
-
-.help.is-danger {
-    font-family: 'Monserrat', sans-serif;
-    font-weight: bold;
-}
-
 //Datepicker arrows
 
 .fa-angle-left::before {
@@ -183,3 +172,16 @@ label{
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
   }
+
+// Prevents the input fields to jump around
+// whenever the form validator is triggered
+
+.help.is-danger {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: bold;
+    position: absolute;
+}
+
+.control.has-icons-right .input {
+    padding-right: 10px !important;
+}

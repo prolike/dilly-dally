@@ -256,6 +256,9 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   height: inherit;
+  position: relative;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   textarea {
     height: 35px;
@@ -281,7 +284,9 @@ export default {
 
   label {
     font-weight: 500;
+    font-size: 10px;
   }
+
 }
 
 .timeRegButtons {
@@ -303,4 +308,5 @@ export default {
 .timeRegButtons .fa {
   color: #1a2336;
 }
+
 </style>
