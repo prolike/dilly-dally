@@ -143,7 +143,20 @@ label{
     font-weight: 500 !important;
 }
 
+.help.is-danger {
+    font-family: 'Monserrat', sans-serif;
+    font-weight: bold;
+}
+
 //Datepicker arrows
+
+.fa-angle-left::before {
+    content: "";
+}
+
+.fa-angle-right:before {
+    content: "";
+}
 
 .pagination-previous::before {
     content: '';

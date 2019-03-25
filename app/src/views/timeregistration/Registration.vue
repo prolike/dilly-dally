@@ -41,6 +41,10 @@ export default {
     appendBox() {
       this.timeregistrationArr.push({ id: this.id++ });
     },
+    timeFormatter(dt) {
+      var time  = dt.toTimeString().split(' ')[0];
+      return time.slice(0, -3);
+    },
     save() {
       var isAllValid = true;
       this.$refs.regs.forEach(obj => {
@@ -78,20 +82,19 @@ export default {
         data["endTime"] = end;
         data["startTime"] = start;
       }
-      
       var worker = firestoreHandler.getTheWorker(this.email)
       data["worker"] = worker
       firestoreHandler.timeRegistrationAdd(data)
-      this.$swal.fire("Good job!", "You clicked the button!", "success");
+      this.$swal.fire("Success!", "Your registration was saved!", "success");
     },
-    getTimestamp(date, time) {
-      var jsTime = time.split(":");
+    getTimestamp(date, timeDate) {
+      console.log("getTimeStamp() timeDate: "+timeDate);
       return new Date(
         date.getFullYear(),
         date.getMonth(),
         date.getDate(),
-        jsTime[0],
-        jsTime[1]
+        timeDate.getHours(),
+        timeDate.getMinutes()
       );
     },
     addDay(date) {

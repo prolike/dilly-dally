@@ -11,14 +11,15 @@
         <div class="row">
           <div class="col-lg-12 specialized-box">
             <div class="cell">
-              <bue-field label="Select a date">
+              <bue-field label="Date">
                 <bue-datepicker
+                  placeholder="Select a date"
                   v-model="date"
                   required
                   :date-formatter="dateFormatter"
                   icon-pack="fa"
                   icon="calendar"
-                  :max-date="todayDate"
+                  :max-date="new Date()"
                   :first-day-of-week="1"
                   editable>
                 </bue-datepicker>
@@ -28,23 +29,40 @@
             </div>
             <div class="cell">
               <bue-field class="label" label="Start time">
-                <bue-input
+                <bue-timepicker
+                  placeholder="Type or select time"
+                  icon-pack="fa"
+                  icon="clock-o"
+                  v-model="form.startTime"
+                  required
+                  editable>
+                </bue-timepicker>
+                <!-- <bue-input
                   placeholder="09:00"
                   v-model="form.startTime"
                   required
                   pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
-                </bue-input>
+                </bue-input> -->
               </bue-field>
             </div>
             <div class="cell">
               <bue-field class="label" label="End time">
-                <bue-input
+                <bue-timepicker
+                  ref="end"
+                  placeholder="Type or select time"
+                  icon-pack="fa"
+                  icon="clock-o"
+                  v-model="form.endTime"
+                  required
+                  editable>
+                </bue-timepicker>
+                <!-- <bue-input
                   ref="end"
                   placeholder="16:00"
                   v-model="form.endTime"
                   required
                   pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
-                </bue-input>
+                </bue-input> -->
               </bue-field>
             </div>
             <div class="cell">
@@ -117,9 +135,14 @@ export default {
     },
     dateFormatter(dt) {
       var dateoptions = { year: "numeric", month: "numeric", day: "numeric" };
-      return dt.toLocaleDateString("da-DK", dateoptions);
+      return dt.toLocaleDateString("en-GB", dateoptions);
     },
-    validateStartTime: function(startTime) {
+    timeFormatter(dt) {
+      var time  = dt.toTimeString().split(' ')[0];
+      return time.slice(0, -3);
+    },
+    validateStartTime: function(startTimeDate) {
+      var startTime = this.timeFormatter(startTimeDate);
       console.log("starttime: " + startTime);
       if (!startTime.length) {
         return { valid: false, error: "This field is required" };
@@ -129,7 +152,8 @@ export default {
       }
       return { valid: true, error: null };
     },
-    validateEndTime: function(endTime) {
+    validateEndTime: function(endTimeDate) {
+      var endTime = this.timeFormatter(endTimeDate);
       console.log("endtime: " + endTime);
       if (!endTime.length) {
         return { valid: false, error: "This field is required" };
@@ -140,8 +164,10 @@ export default {
       return { valid: true, error: null };
     },
     validateTimeRange: function(startTime, endTime) {
-      if (startTime == endTime) {
-        this.form.endTime = "";
+      console.log("start: "+startTime);
+      console.log("end: "+endTime);
+      if (startTime.getTime() === endTime.getTime()) {
+        this.form.endTime = null;
         this.$refs.end.focus();
         return { valid: false, error: "Please, enter a valid time range." };
       }
