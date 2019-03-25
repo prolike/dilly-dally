@@ -9,7 +9,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-12 specialized-box">
+          <div class="col-lg-12 col-sm-12 specialized-box">
             <div class="cell">
               <bue-field label="Date">
                 <bue-datepicker
@@ -21,8 +21,8 @@
                   icon="calendar"
                   :max-date="new Date()"
                   :first-day-of-week="1"
-                  editable>
-                </bue-datepicker>
+                  editable
+                ></bue-datepicker>
               </bue-field>
               <!-- <label for="">Pick a date</label>
               <datepicker class="datepick" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>-->
@@ -35,14 +35,14 @@
                   icon="clock-o"
                   v-model="form.startTime"
                   required
-                  editable>
-                </bue-timepicker>
+                  editable
+                ></bue-timepicker>
                 <!-- <bue-input
                   placeholder="09:00"
                   v-model="form.startTime"
                   required
                   pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
-                </bue-input> -->
+                </bue-input>-->
               </bue-field>
             </div>
             <div class="cell">
@@ -54,15 +54,15 @@
                   icon="clock-o"
                   v-model="form.endTime"
                   required
-                  editable>
-                </bue-timepicker>
+                  editable
+                ></bue-timepicker>
                 <!-- <bue-input
                   ref="end"
                   placeholder="16:00"
                   v-model="form.endTime"
                   required
                   pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
-                </bue-input> -->
+                </bue-input>-->
               </bue-field>
             </div>
             <div class="cell">
@@ -82,12 +82,20 @@
               </bue-field>
             </div>
             <div class="cell">
-              <b-tabs content-class="mt-3">
-                <b-tab title="Comment" active>
-                  <textarea name id cols="30" rows="10" placeholder="Write your comment here" v-model="form.comment"></textarea>
+              <b-tabs class="comments">
+                <b-tab title="Issue" active>
+                  <textarea
+                    name
+                    id
+                    cols="30"
+                    rows="10"
+                    placeholder="Type in related Issue(s)
+#1, #14, #20 etc."
+                    v-model="form.comment"
+                  ></textarea>
                 </b-tab>
-                <b-tab title="Issue">
-                  <textarea name id cols="30" rows="10" placeholder="Here's the comment you wrote"></textarea>
+                <b-tab title="Comment">
+                  <textarea name id cols="30" rows="10" placeholder="Leave a comment"></textarea>
                 </b-tab>
               </b-tabs>
             </div>
@@ -138,7 +146,7 @@ export default {
       return dt.toLocaleDateString("en-GB", dateoptions);
     },
     timeFormatter(dt) {
-      var time  = dt.toTimeString().split(' ')[0];
+      var time = dt.toTimeString().split(" ")[0];
       return time.slice(0, -3);
     },
     validateStartTime: function(startTimeDate) {
@@ -164,8 +172,8 @@ export default {
       return { valid: true, error: null };
     },
     validateTimeRange: function(startTime, endTime) {
-      console.log("start: "+startTime);
-      console.log("end: "+endTime);
+      console.log("start: " + startTime);
+      console.log("end: " + endTime);
       if (startTime.getTime() === endTime.getTime()) {
         this.form.endTime = null;
         this.$refs.end.focus();
@@ -257,13 +265,18 @@ export default {
   align-items: center;
   height: inherit;
   position: relative;
-  padding-top: 50px;
-  padding-bottom: 50px;
 
   textarea {
-    height: 35px;
+    height: 85px;
     width: 100%;
     resize: none;
+    border-color: #dbdbdb;
+    border-radius: 3.5px;
+    padding: 5px 0px 0px 10px;
+  }
+
+  textarea::placeholder {
+    color: rgba(122, 122, 122, 0.7);
   }
 
   .tab-content .tab-pane {
@@ -286,7 +299,6 @@ export default {
     font-weight: 500;
     font-size: 10px;
   }
-
 }
 
 .timeRegButtons {
@@ -308,5 +320,4 @@ export default {
 .timeRegButtons .fa {
   color: #1a2336;
 }
-
 </style>

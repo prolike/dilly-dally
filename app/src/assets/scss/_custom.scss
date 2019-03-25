@@ -185,3 +185,18 @@ div.mdl-progress::after {
 .control.has-icons-right .input {
     padding-right: 10px !important;
 }
+
+.comments {
+    display: block !important;
+    padding-top: 45px;
+
+}
+
+.tab-content {
+    border: none;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: 600;
+    color: black;
+}
