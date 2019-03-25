@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg">
+    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
       <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
         <i class="fa fa-check-square"></i>
       </template>
@@ -12,6 +12,7 @@
       </template>
       <template slot="workHours" slot-scope="data">
         {{getWorkhours(data.item.startTime,data.item.endTime)}}
+        {{data.item.worker}}
       </template>
       <template slot="deleteMe" slot-scope="data">
         <button v-on:click="deleteMe(data.item.id)">Delete me</button>
@@ -116,7 +117,7 @@ export default {
       workers: {},
       email: "",
       user: "",
-      filter: this.email,
+      filter: null,
     }
   },
   methods: {
@@ -226,7 +227,7 @@ export default {
    // firestoreHandler.getTest()
     this.email = getUser().email
     this.getAllMyRegistrations()
-
+    this.filter = this.email
 
   }
 }
