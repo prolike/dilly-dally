@@ -1,0 +1,26 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+  function signedIn() {	
+      return request.auth.uid != null && request.auth.token.email.matches('^.*[@prolike][.io]$');
+    }
+    match /workers/{workerId} {
+      allow update: if signedIn() && request.auth.token.email == workerId;
+      allow read, create: if signedIn();
+    }
+    match /timeregistration/{document=**} {
+      allow read, write: if signedIn();
+    }
+    match /categories/{document=**} {
+      allow read, write: if signedIn();
+    }
+    match /customers/{document=**} {
+      allow read, write: if signedIn();
+    }
+    match /projects/{document=**} {
+      allow read, write: if signedIn();
+    }
+    match /invoices/{document=**} {
+      allow read, write: if signedIn();
+    }
+  }
+}
