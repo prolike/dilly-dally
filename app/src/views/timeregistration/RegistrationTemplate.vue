@@ -79,14 +79,10 @@
   </div>
 </template>
 <script>
-import Datepicker from "vuejs-datepicker";
 import _ from 'lodash';
 
 export default {
   name: "RegistrationTemplate",
-  components: {
-    Datepicker
-  },
   data: function() {
     return {
       date: new Date(),
