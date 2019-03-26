@@ -111,7 +111,12 @@ export default {
         },
         comment: {
           // This key overrides `foo`!
-          label: 'Comments',
+          label: 'Comment',
+          sortable: true
+        },
+        issue: {
+          // This key overrides `foo`!
+          label: 'Issues',
           sortable: true
         },
         worker: {

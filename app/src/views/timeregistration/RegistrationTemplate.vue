@@ -5,38 +5,21 @@
         <div class="timereg-title">
           <h1>Time Registration # {{index}}</h1>
           <div v-on:click="deleteBox" class="cross">
-            <i class="fa fa-times"/>
+            <i class="fa fa-times" />
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12 col-sm-12 specialized-box">
             <div class="cell">
               <bue-field label="Date">
-                <bue-datepicker
-                  placeholder="Select a date"
-                  v-model="date"
-                  required
-                  :date-formatter="dateFormatter"
-                  icon-pack="fa"
-                  icon="calendar"
-                  :max-date="new Date()"
-                  :first-day-of-week="1"
-                  editable
-                ></bue-datepicker>
+                <bue-datepicker placeholder="Select a date" v-model="date" required :date-formatter="dateFormatter" icon-pack="fa" icon="calendar" :max-date="new Date()" :first-day-of-week="1" editable></bue-datepicker>
               </bue-field>
               <!-- <label for="">Pick a date</label>
               <datepicker class="datepick" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>-->
             </div>
             <div class="cell">
               <bue-field class="label" label="Start time">
-                <bue-timepicker
-                  placeholder="Type or select time"
-                  icon-pack="fa"
-                  icon="clock-o"
-                  v-model="form.startTime"
-                  required
-                  editable
-                ></bue-timepicker>
+                <bue-timepicker placeholder="Type or select time" icon-pack="fa" icon="clock-o" v-model="form.startTime" required editable></bue-timepicker>
                 <!-- <bue-input
                   placeholder="09:00"
                   v-model="form.startTime"
@@ -47,15 +30,7 @@
             </div>
             <div class="cell">
               <bue-field class="label" label="End time">
-                <bue-timepicker
-                  ref="end"
-                  placeholder="Type or select time"
-                  icon-pack="fa"
-                  icon="clock-o"
-                  v-model="form.endTime"
-                  required
-                  editable
-                ></bue-timepicker>
+                <bue-timepicker ref="end" placeholder="Type or select time" icon-pack="fa" icon="clock-o" v-model="form.endTime" required editable></bue-timepicker>
                 <!-- <bue-input
                   ref="end"
                   placeholder="16:00"
@@ -84,18 +59,11 @@
             <div class="cell">
               <b-tabs class="comments">
                 <b-tab title="Issue" active>
-                  <textarea
-                    name
-                    id
-                    cols="30"
-                    rows="10"
-                    placeholder="Type in related Issue(s)
-#1, #14, #20 etc."
-                    v-model="form.comment"
-                  ></textarea>
+                  <textarea cols="30" rows="10" placeholder="Type in related Issue(s)
+#1, #14, #20 etc." v-model="form.issues"></textarea>
                 </b-tab>
                 <b-tab title="Comment">
-                  <textarea name id cols="30" rows="10" placeholder="Leave a comment"></textarea>
+                  <textarea name id cols="30" rows="10" placeholder="Leave a comment" v-model="form.comment"></textarea>
                 </b-tab>
               </b-tabs>
             </div>
@@ -122,7 +90,8 @@ export default {
         endTime: null,
         category: null,
         project: null,
-        comment: null
+        comment: null,
+        issues: null
       },
       valid: true,
       errors: {}
@@ -219,6 +188,7 @@ export default {
     }
   }
 };
+
 </script>
 <style lang="scss" scoped>
 .timereg {
@@ -320,4 +290,5 @@ export default {
 .timeRegButtons .fa {
   color: #1a2336;
 }
+
 </style>
