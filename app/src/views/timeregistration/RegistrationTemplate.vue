@@ -52,7 +52,7 @@
               <bue-field label="Project">
                 <bue-select placeholder="Select a project" v-model="form.project" required>
                   <optgroup v-for="(group, name) in groupedProjects" :label="name">
-                    <option v-for="option in group" :value="option.value">
+                    <option v-for="option in group" :value="option">
                       {{ option.id }}
                     </option>
                   </optgroup>
