@@ -26,7 +26,6 @@
     "core-js": "^2.6.2",
     "css-vars-ponyfill": "^1.16.2",
     "firebase": "^5.8.5",
-    "firebaseui": "^3.5.2",
     "flag-icon-css": "^3.2.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
@@ -39,9 +38,7 @@
     "vue-firestore": "^0.3.21",
     "vue-perfect-scrollbar": "^0.1.0",
     "vue-router": "^3.0.2",
-    "vue-sweetalert2": "^1.6.4",
-    "vue2-circle-progress": "^1.2.3",
-    "vuejs-datepicker": "^1.5.4"
+    "vue-sweetalert2": "^1.6.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
