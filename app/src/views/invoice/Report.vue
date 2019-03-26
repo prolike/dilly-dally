@@ -56,7 +56,7 @@ export default {
         },
         category: {
           // This key overrides `foo`!
-          key: 'categories.id',
+          key: 'category.id',
           label: 'Category',
           sortable: true
         },
