@@ -35,7 +35,8 @@ export default {
   },
   methods: {
     deleteThisBox(index) {
-      console.log(this.$refs.regs[index].form);
+      //console.log(this.$refs.regs[index].form);
+      console.log("Deleting box")
       this.timeregistrationArr.splice(index, 1);
     },
     appendBox() {

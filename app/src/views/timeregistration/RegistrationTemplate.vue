@@ -51,8 +51,12 @@
             <div class="cell">
               <bue-field label="Project">
                 <bue-select placeholder="Select a project" v-model="form.project" required>
+                  <optgroup v-for="(group, name) in projects" :label="name">
+                    <option v-for="option in group" :value="option.value">
+                      {{ option.id }}
+                    </option>
+                  </optgroup>
                   <!-- <option value disabled hidden>Select a project</option> -->
-                  <option v-for="item in projects" :value="item" :key="item.index">{{ item.id}}</option>
                 </bue-select>
               </bue-field>
             </div>
@@ -76,6 +80,7 @@
 </template>
 <script>
 import Datepicker from "vuejs-datepicker";
+import _ from 'lodash';
 
 export default {
   name: "RegistrationTemplate",
@@ -94,7 +99,7 @@ export default {
         issues: null
       },
       valid: true,
-      errors: {}
+      errors: {},
     };
   },
   props: {
@@ -105,6 +110,10 @@ export default {
   },
   mounted() {
     this.date = new Date();
+    this.projects = _(this.projects)
+      .groupBy('customer.name')
+      .value();
+    console.log(this.project)
   },
   methods: {
     deleteBox() {
