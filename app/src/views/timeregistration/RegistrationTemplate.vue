@@ -51,7 +51,7 @@
             <div class="cell">
               <bue-field label="Project">
                 <bue-select placeholder="Select a project" v-model="form.project" required>
-                  <optgroup v-for="(group, name) in projects" :label="name">
+                  <optgroup v-for="(group, name) in groupedProjects" :label="name">
                     <option v-for="option in group" :value="option.value">
                       {{ option.id }}
                     </option>
@@ -100,6 +100,7 @@ export default {
       },
       valid: true,
       errors: {},
+      groupedProjects: null
     };
   },
   props: {
@@ -110,10 +111,10 @@ export default {
   },
   mounted() {
     this.date = new Date();
-    this.projects = _(this.projects)
+    this.groupedProjects = _(this.projects)
       .groupBy('customer.name')
       .value();
-    console.log(this.project)
+    console.log(this.groupedProjects)
   },
   methods: {
     deleteBox() {
