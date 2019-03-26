@@ -2,33 +2,16 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import firebase from 'firebase'
 import { firebaseHandler } from '../controller/firebaseHandler'
-import { firestoreHandler } from '../controller/firestoreHandler'
 // Containers
 const DefaultContainer = () => import('@/containers/DefaultContainer')
 
 // Views
-const Dashboard = () => import('@/views/Dashboard')
-
 const Error404 = () => import('@/views/Page404')
-const Colors = () => import('@/views/theme/Colors')
-const Typography = () => import('@/views/theme/Typography')
+const Dashboard = () => import('@/views/Dashboard')
 const Login = () => import('@/views/login/Login')
-
 const Timeregistration = () => import('@/views/timeregistration/Registration')
 const Timeoverview = () => import('@/views/timeregistration/Timeoverview')
 const InvoiceReport = () => import('@/views/invoice/Report')
-
-// Views - Buttons
-const StandardButtons = () => import('@/views/buttons/StandardButtons')
-const ButtonGroups = () => import('@/views/buttons/ButtonGroups')
-const Dropdowns = () => import('@/views/buttons/Dropdowns')
-const BrandButtons = () => import('@/views/buttons/BrandButtons')
-
-// Views - Icons
-const Flags = () => import('@/views/icons/Flags')
-const FontAwesome = () => import('@/views/icons/FontAwesome')
-const SimpleLineIcons = () => import('@/views/icons/SimpleLineIcons')
-const CoreUIIcons = () => import('@/views/icons/CoreUIIcons')
 
 Vue.use(Router)
 
@@ -110,7 +93,5 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
-
-
 
 export default router;

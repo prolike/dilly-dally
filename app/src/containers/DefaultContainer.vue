@@ -40,13 +40,12 @@
       </main>
       <AppAside fixed>
         <!--aside-->
-        <DefaultAside/>
       </AppAside>
     </div>
     <TheFooter>
       <!--footer-->
       <div>
-        <a href="http://www.prolike.io">Prolike</a>
+        <a href="https://www.prolike.io">Prolike</a>
       </div>
       <!--<div class="ml-auto">
         <span class="mr-1">Powered by</span>
@@ -72,7 +71,6 @@ import {
   Footer as TheFooter,
   Breadcrumb
 } from "@coreui/vue";
-import DefaultAside from "./DefaultAside";
 import DefaultHeaderDropdownAccnt from "./DefaultHeaderDropdownAccnt";
 
 export default {
@@ -84,7 +82,6 @@ export default {
     AppAside,
     TheFooter,
     Breadcrumb,
-    DefaultAside,
     DefaultHeaderDropdownAccnt,
     SidebarForm,
     SidebarFooter,
