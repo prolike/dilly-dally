@@ -30,7 +30,7 @@
         <SidebarForm/>
         <SidebarNav :navItems="nav"></SidebarNav>
         <SidebarFooter/>
-        <SidebarMinimizer/>
+        <!-- <SidebarMinimizer/> -->
       </AppSidebar>
       <main class="main">
         <Breadcrumb :list="list"/>

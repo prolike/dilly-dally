@@ -1,5 +1,6 @@
 export default {
-  items: [{
+  items: [
+    {
       name: 'Dashboard',
       url: '/home/dashboard',
       icon: 'cui-chart',
@@ -10,19 +11,14 @@ export default {
       icon: 'fa fa-calendar',
     },
     {
-      name: 'Overview',
-      icon: 'icon-puzzle',
-      children: [{
-          name: 'My registrations',
-          url: '/home/timeregistration/timeoverview',
-          icon: 'cui-list',
-        },
-        {
-          name: 'Analysis',
-          url: '/home/invoice/report',
-          icon: 'cui-file',
-        }
-      ]
+      name: 'My Registrations',
+      url: '/home/timeregistration/timeoverview',
+      icon: 'cui-list',
+    },
+    {
+      name: 'Analysis',
+      url: '/home/invoice/report',
+      icon: 'cui-calculator',
     }
   ]
 }

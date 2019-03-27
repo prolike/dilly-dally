@@ -10,43 +10,57 @@
 .sidebar {
     background: #ffffff;
     font-weight: 500;
-
-    .nav-dropdown.open {
-        background: #ffc400;
-    }
-    .nav-dropdown.open .nav-link {
-        color: #1A2336;
+    
+    .nav-link {
+        color: #1a2336;
     }
     
     .nav-link .nav-icon {
-        color: #000000;
+        color: #1a2336;
     }
 
-    .nav-link:hover, .nav-dropdown.open .nav-link:hover{
-        background: #1A2336;
-        color: #ffffff;
-    }
-
-    .nav-dropdown.open .nav-link.active {
+    .nav-link.active {
         background: #1a2336;
         color: #ffffff;
     }
+    
+    .nav-link.active .nav-icon {
+        color: #ffffff;
+    }
+    
+    .nav-link:hover {
+        background: #1a2336;
+        color: #ffffff;
+    }
+
+    .nav-link:hover .nav-icon {
+        color: #ffffff;
+    }
+
+    .nav-link.active:hover {
+        background: #1a2336;
+        color: #ffc400;
+    }
+
+    .nav-link.active:hover .nav-icon {
+        color: #ffc400;
+    }
 }
+
+// .sidebar-minimized .sidebar .nav-link:hover {
+//     background: #1a2336 !important;
+//     color: #ffffff;
+// }
+// .sidebar-minimized .sidebar .nav-link.active:hover {
+//     color: #ffc400;    
+// }
+
+// .sidebar-minimized .sidebar .nav-link.active:hover .nav-icon {
+//     color: #ffc400;    
+// }
+
 .app-header .nav-item .nav-link > .img-avatar {
     margin-right: 30px;
-}
-
-.sidebar .nav-link {
-    color: #1A2336;
-}
-
-.sidebar .nav-link.active {
-    background: #1a2336;
-    color: #ffffff;
-}
-
-.sidebar .nav-link.active .nav-icon {
-    color: #ffffff;
 }
 
 .mdl-shadow--2dp {
