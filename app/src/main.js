@@ -10,11 +10,7 @@ import App from './App'
 import router from './router'
 import VueSweetalert2 from 'vue-sweetalert2';
 
-<<<<<<< HEAD
 import  Checkbox from 'buefy/dist/components/checkbox'
-=======
-import Checkbox from 'buefy/dist/components/checkbox'
->>>>>>> Working on #167
 import { Table } from 'buefy/dist/components/table'
 import { Input } from 'buefy/dist/components/input'
 import { Field } from 'buefy/dist/components/field'
