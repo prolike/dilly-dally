@@ -9,6 +9,8 @@ import BootstrapVue from 'bootstrap-vue'
 import App from './App'
 import router from './router'
 import VueSweetalert2 from 'vue-sweetalert2';
+
+import  Checkbox from 'buefy/dist/components/checkbox'
 import { Table } from 'buefy/dist/components/table'
 import { Input } from 'buefy/dist/components/input'
 import { Field } from 'buefy/dist/components/field'
@@ -16,6 +18,7 @@ import { Datepicker } from 'buefy/dist/components/datepicker'
 import { Timepicker } from 'buefy/dist/components/timepicker'
 import { Select } from 'buefy/dist/components/select'
 import 'buefy/dist/buefy.css'
+
 Vue.component('bue-table', Table)
 Vue.component('bue-input', Input)
 Vue.component('bue-field', Field)
@@ -25,7 +28,7 @@ Vue.component('bue-select', Select)
 
 Vue.use(VueSweetalert2)
 Vue.use(BootstrapVue)
-
+Vue.use(Checkbox)
 
 
 /* eslint-disable no-new */
