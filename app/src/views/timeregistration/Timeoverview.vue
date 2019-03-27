@@ -1,5 +1,16 @@
 <template>
-  <div>
+  <section>
+    <section>
+      <bue-field v-for="field in fields" v-if="field.label != 'Delete me'">
+        <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(field.label)">
+          <span>{{field.label}}</span>
+        </b-checkbox-button>
+      </bue-field>
+      <p class="content">
+        <b>Selection:</b>
+        {{ checkboxGroup }}
+      </p>
+    </section>
     <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
       <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
         <i class="fa fa-check-square"></i>
@@ -19,7 +30,7 @@
     </b-table>
     <section> Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
       <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b></section>
-  </div>
+  </section>
 </template>
 <script>
 import { firestoreHandler } from '../../controller/firestoreHandler';
@@ -32,48 +43,65 @@ export default {
       sortBy: 'startTime',
       sortDesc: true,
       sortDirection: 'asc',
+      checkboxGroup: [],
+      display: {
+        color: 'red'
+      },
       fields: {
         approved: {
           // This key overrides `foo`!
           key: 'isApproved',
           label: 'Approved',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         paidMonth: {
           // This key overrides `foo`!
           key: 'paidMonth',
           label: 'Paid month',
           VARIANT: 'danger',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         category: {
           // This key overrides `foo`!
           key: 'category.id',
           label: 'Category',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         customer: {
           // This key overrides `foo`!
           key: 'project.customer.name',
           label: 'Customer',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         project: {
           // This key overrides `foo`!
           key: 'project.id',
           label: 'Project',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         date: {
           //key: 'startTime',
           label: 'Date',
           sortable: true,
-          //formatter: 'getDate'
+          tdClass: null,
+          thClass: null //formatter: 'getDate'
         },
         year: {
           //key: 'startTime',
           label: 'Year',
           sortable: true,
+          tdClass: null,
+          thClass: null
           //formatter: 'getDate'
         },
         startTime: {
@@ -84,7 +112,9 @@ export default {
           formatter: (value, key, item) => {
             var formattedTime = this.getTime(value)
             return formattedTime
-          }
+          },
+          tdClass: null,
+          thClass: null
         },
         endTime: {
           // This key overrides `foo`!
@@ -94,22 +124,29 @@ export default {
           formatter: (value, key, item) => {
             var formattedTime = this.getTime(value)
             return formattedTime
-          }
+          },
+          tdClass: null,
+          thClass: null
         },
         workHours: {
           // This key overrides `foo`!
           label: 'workHours',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         comment: {
           // This key overrides `foo`!
           label: 'Comment',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
-        issue: {
-          // This key overrides `foo`!
+        issues: {
           label: 'Issues',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         deleteMe: {
           // This key overrides `foo`!
@@ -125,6 +162,22 @@ export default {
     }
   },
   methods: {
+    hiddenThis(event) {
+      var ref = this.fields[event.toLowerCase()]
+      console.log(event, ref)
+      if (ref.tdClass === "column-hidden") {
+        console.log("Setting it to visible")
+        ref.tdClass = null
+        ref.thClass = null
+        console.log(ref)
+      } else {
+        console.log("Setting it to hidden")
+        ref.tdClass = "column-hidden"
+        ref.thClass = "column-hidden"
+        console.log(ref)
+      }
+
+    },
     sortCompare(a1, b1, key) {
       switch (key) {
         case "year":
@@ -141,8 +194,8 @@ export default {
             break;
           }
         case "date":
-         var a = a1.startTime.toDate()
-         var b = b1.startTime.toDate()
+          var a = a1.startTime.toDate()
+          var b = b1.startTime.toDate()
           if (a > b) {
             return -1
             break;
@@ -228,7 +281,7 @@ export default {
     }
   },
   mounted() {
-   // firestoreHandler.getTest()
+    // firestoreHandler.getTest()
     this.email = firebaseHandler.getUser().email
     this.getAllMyRegistrations()
     this.filter = this.email
@@ -237,3 +290,5 @@ export default {
 }
 
 </script>
+<style>
+</style>
