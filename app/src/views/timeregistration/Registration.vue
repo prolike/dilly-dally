@@ -35,9 +35,13 @@ export default {
   },
   methods: {
     deleteThisBox(index) {
-      //console.log(this.$refs.regs[index].form);
-      console.log("Deleting box")
-      this.timeregistrationArr.splice(index, 1);
+      if (this.timeregistrationArr.length > 1) {
+        this.timeregistrationArr.splice(index, 1);
+      }
+      else {
+        this.timeregistrationArr.splice(index, 1);
+        this.appendBox();
+      }
     },
     appendBox() {
       this.timeregistrationArr.push({ id: this.id++ });
