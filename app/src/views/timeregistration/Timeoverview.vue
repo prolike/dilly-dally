@@ -1,8 +1,8 @@
 <template>
   <section>
     <section>
-      <bue-field v-for="field in fields" v-if="field.label != 'Delete me'">
-        <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(field.label)">
+      <bue-field v-for="(field,key) in fields" v-if="field.label != 'Delete me'">
+        <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(key)">
           <span>{{field.label}}</span>
         </b-checkbox-button>
       </bue-field>
@@ -58,9 +58,7 @@ export default {
         },
         paidMonth: {
           // This key overrides `foo`!
-          key: 'paidMonth',
           label: 'Paid month',
-          VARIANT: 'danger',
           sortable: true,
           tdClass: null,
           thClass: null
@@ -109,24 +107,24 @@ export default {
           key: 'startTime',
           label: 'startTime',
           sortable: true,
+          tdClass: null,
+          thClass: null,
           formatter: (value, key, item) => {
             var formattedTime = this.getTime(value)
             return formattedTime
           },
-          tdClass: null,
-          thClass: null
         },
         endTime: {
           // This key overrides `foo`!
           key: 'endTime',
           label: 'endTime',
           sortable: true,
+          tdClass: null,
+          thClass: null,
           formatter: (value, key, item) => {
             var formattedTime = this.getTime(value)
             return formattedTime
           },
-          tdClass: null,
-          thClass: null
         },
         workHours: {
           // This key overrides `foo`!
@@ -163,7 +161,8 @@ export default {
   },
   methods: {
     hiddenThis(event) {
-      var ref = this.fields[event.toLowerCase()]
+      console.log(event)
+      var ref = this.fields[event]
       console.log(event, ref)
       if (ref.tdClass === "column-hidden") {
         console.log("Setting it to visible")
