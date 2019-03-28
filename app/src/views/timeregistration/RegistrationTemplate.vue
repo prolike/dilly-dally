@@ -105,14 +105,25 @@ export default {
     projects: Array,
     todayDate: Date
   },
+  watch: {
+    projects: function(newVal, oldVal) { // watch it
+      this.groupedProjects = this.getGroupedProjects();
+      console.log(this.groupedProjects)
+    }
+  },
   mounted() {
+    console.log("sad")
     this.date = new Date();
-    this.groupedProjects = _(this.projects)
-      .groupBy('customer.name')
-      .value();
+    console.log(this.projects)
+    this.groupedProjects = this.getGroupedProjects();
     console.log(this.groupedProjects)
   },
   methods: {
+    getGroupedProjects() {
+      return _(this.projects)
+        .groupBy('customer.name')
+        .value();
+    },
     deleteBox() {
       this.$emit("delete-me");
     },
