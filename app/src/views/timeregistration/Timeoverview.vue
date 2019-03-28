@@ -11,7 +11,7 @@
         {{ checkboxGroup }}
       </p>
     </section>
-    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
+    <b-table striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
       <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
         <i class="fa fa-check-square"></i>
       </template>

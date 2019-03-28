@@ -1,87 +1,118 @@
 <template>
   <div>
-    <b-row>
-      <b-col md="6" class="my-1">
-        <b-form-group label-cols-sm="3" label="Filter" class="mb-0">
-          <b-input-group>
-            <b-form-input v-model="filter" placeholder="Type to Search" />
-            <b-input-group-append>
-              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
-            </b-input-group-append>
-          </b-input-group>
-        </b-form-group>
-      </b-col>
-    </b-row>
-    <b-table striped hover fixed head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" :filter="filter" stacked="lg">
-      <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
-        <i class="fa fa-check-square"></i>
-      </template>
-      <template slot="year" slot-scope="data">
-        {{getYear(data.item.startTime)}}
-      </template>
-      <template slot="date" slot-scope="data">
-        {{getDate(data.item.startTime)}}
-      </template>
-      <template slot="workHours" slot-scope="data">
-        {{getWorkhours(data.item.startTime,data.item.endTime)}}
-      </template>
-    </b-table>
-    <section> Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
-      <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b></section>
+    <section class="myDataFilter">
+      <bue-field v-for="(field,key) in fields">
+        <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(key)">
+          <span>{{field.label}}</span>
+        </b-checkbox-button>
+      </bue-field>
+      <p class="content">
+        <b>Selection:</b>
+        {{ checkboxGroup }}
+      </p>
+    </section>
+    <section>
+      <b-row>
+        <b-col md="6" class="my-1">
+          <b-form-group label-cols-sm="3" label="Filter" class="mb-0">
+            <b-input-group>
+              <b-form-input v-model="filter" placeholder="Type to Search" />
+              <b-input-group-append>
+                <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+              </b-input-group-append>
+            </b-input-group>
+          </b-form-group>
+        </b-col>
+      </b-row>
+    </section>
+    <section>
+      <b-table striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
+        <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
+          <i class="fa fa-check-square"></i>
+        </template>
+        <template slot="year" slot-scope="data">
+          {{getYear(data.item.startTime)}}
+        </template>
+        <template slot="date" slot-scope="data">
+          {{getDate(data.item.startTime)}}
+        </template>
+        <template slot="workHours" slot-scope="data">
+          {{getWorkhours(data.item.startTime,data.item.endTime)}}
+        </template>
+      </b-table>
+      <section> Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
+        <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b></section>
+    </section>
   </div>
 </template>
 <script>
-import { getUser } from '../../controller/firebaseHandler';
 import { firestoreHandler } from '../../controller/firestoreHandler';
+import { firebaseHandler } from '../../controller/firebaseHandler';
 
 export default {
   name: 'TimeRegistrationOverview',
   data: function() {
     return {
-      sortBy: 'date',
+      sortBy: 'startTime',
       sortDesc: true,
       sortDirection: 'asc',
+      checkboxGroup: [],
+      display: {
+        color: 'red'
+      },
       fields: {
         approved: {
           // This key overrides `foo`!
           key: 'isApproved',
           label: 'Approved',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         paidMonth: {
           // This key overrides `foo`!
-          key: 'paidMonth',
           label: 'Paid month',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         category: {
           // This key overrides `foo`!
           key: 'category.id',
           label: 'Category',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         customer: {
           // This key overrides `foo`!
           key: 'project.customer.name',
           label: 'Customer',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         project: {
           // This key overrides `foo`!
           key: 'project.id',
           label: 'Project',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         date: {
           //key: 'startTime',
           label: 'Date',
           sortable: true,
-          //formatter: 'getDate'
+          tdClass: null,
+          thClass: null //formatter: 'getDate'
         },
         year: {
           //key: 'startTime',
           label: 'Year',
           sortable: true,
+          tdClass: null,
+          thClass: null
           //formatter: 'getDate'
         },
         startTime: {
@@ -89,35 +120,44 @@ export default {
           key: 'startTime',
           label: 'startTime',
           sortable: true,
+          tdClass: null,
+          thClass: null,
           formatter: (value, key, item) => {
             var formattedTime = this.getTime(value)
             return formattedTime
-          }
+          },
         },
         endTime: {
           // This key overrides `foo`!
           key: 'endTime',
           label: 'endTime',
           sortable: true,
+          tdClass: null,
+          thClass: null,
           formatter: (value, key, item) => {
             var formattedTime = this.getTime(value)
             return formattedTime
-          }
+          },
         },
         workHours: {
           // This key overrides `foo`!
           label: 'workHours',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         comment: {
           // This key overrides `foo`!
           label: 'Comment',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
-        issue: {
-          // This key overrides `foo`!
+        issues: {
           label: 'Issues',
-          sortable: true
+          sortable: true,
+          tdClass: null,
+          thClass: null
         },
         worker: {
           key: 'worker.id',
@@ -126,12 +166,30 @@ export default {
         },
       },
       timeRegistration: [],
+      workers: {},
       email: "",
       user: "",
       filter: null,
     }
   },
   methods: {
+    hiddenThis(event) {
+      console.log(event)
+      var ref = this.fields[event]
+      console.log(event, ref)
+      if (ref.tdClass === "column-hidden") {
+        console.log("Setting it to visible")
+        ref.tdClass = null
+        ref.thClass = null
+        console.log(ref)
+      } else {
+        console.log("Setting it to hidden")
+        ref.tdClass = "column-hidden"
+        ref.thClass = "column-hidden"
+        console.log(ref)
+      }
+
+    },
     sortCompare(a1, b1, key) {
       switch (key) {
         case "year":
@@ -206,12 +264,15 @@ export default {
           break;
       }
     },
-    getAllTimeRegistrations() {
+    getAllMyRegistrations() {
       var reg = firestoreHandler.getAllTimeregs()
       console.log(reg)
       console.log(this.timeRegistration)
       this.timeRegistration = reg
       console.log(this.timeRegistration)
+    },
+    deleteMe(id) {
+      firestoreHandler.timeRegistrationRemove(id)
     },
     getWorkhoursAsDate(timestamp1, timestamp2) {
       var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
@@ -232,7 +293,10 @@ export default {
     }
   },
   mounted() {
-    this.getAllTimeRegistrations()
+    // firestoreHandler.getTest()
+    this.email = firebaseHandler.getUser().email
+    this.getAllMyRegistrations()
+
   }
 }
 
