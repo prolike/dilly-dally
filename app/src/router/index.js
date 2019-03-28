@@ -19,18 +19,12 @@ var router = new Router({
   mode: 'hash', // https://router.vuejs.org/api/#mode
   linkActiveClass: 'open active',
   scrollBehavior: () => ({ y: 0 }),
-  routes: [{
-      path: '/',
-      redirect: '/login'
-    }, {
+  routes: [{ path: "*", component: Error404 }, {
       path: '/login',
       name: 'Login',
       component: Login
     },
     {
-      path: '*',
-      redirect: '/login'
-    }, {
       path: '/home',
       meta: {
         requiresAuth: true
@@ -63,19 +57,18 @@ var router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  let currentUser = firebase.auth().currentUser
   let requiresAuth = to.matched.some(record => record.meta.requiresAuth)
   if (requiresAuth) {
     firebase.auth().onAuthStateChanged(function(user) {
       if (!user) {
-        console.log("not auth ffs")
-        next('login')
+        console.log("You are not authenticated")
+        router.push({ name: 'Login' })
       } else {
-        console.log("yes auth")
+        console.log("You are authenticated")
         var email = user.email
         var prolike = email.split("@")[1]
         if (prolike !== "prolike.io") {
-          console.log("not a prolike account!! LOGGING OUT ")
+          console.log("Not a prolike account!! LOGGING OUT ")
           firebaseHandler.logOut()
           router.push({ name: 'Login', query: { id: "notProlike" } })
         } else {
