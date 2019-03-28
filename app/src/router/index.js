@@ -23,6 +23,9 @@ var router = new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },{
+      path: '/',
+      redirect: '/login'
     },
     {
       path: '/home',
