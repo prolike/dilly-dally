@@ -32,6 +32,7 @@ export default {
     var self = this
     this.$nextTick(function() {
       if (this.$route.query.id === "notProlike") {
+
         self.$swal.fire(
           'Authenticating failed',
           "You must log in with a prolike account",
@@ -46,6 +47,10 @@ export default {
       this.setLoginState()
       console.log("clicked")
       var provider = new firebase.auth.GoogleAuthProvider();
+      provider.setCustomParameters({
+        prompt: 'select_account',
+        login_hint: 'youraccount@prolike.io'
+      });
       firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;
