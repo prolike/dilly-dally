@@ -205,3 +205,20 @@ div.mdl-progress::after {
     font-weight: 600;
     color: black;
 }
+
+// Section for the data toggler on the
+// 'My Registrations' page.
+
+.myDataFilter {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.b-checkbox.checkbox {
+    margin-right: 5px;
+}
+
+.content {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+}

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <section>
+    <section class="myDataFilter">
       <bue-field v-for="(field,key) in fields" v-if="field.label != 'Delete me'">
         <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(key)">
           <span>{{field.label}}</span>
