@@ -297,4 +297,11 @@ export default {
   color: #1a2336;
 }
 
+// Removes default padding from Bootstraps
+// container-fluid component
+
+.main .container-fluid {
+  padding: 0;
+}
+
 </style>
