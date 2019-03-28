@@ -62,7 +62,6 @@ export default {
           this.registerTime(obj.date, obj.form);
           this.deleteThisBox(this.timeregistrationArr.length - 1);
         });
-        this.appendBox();
       }
     },
     getTodayDate() {
@@ -70,7 +69,6 @@ export default {
     },
     getCategories: function() {
       this.categories = firestoreHandler.getCategories();
-      console.log(this.categories)
     },
     getAllProjects: function() {
       this.projects = firestoreHandler.getProjects();
