@@ -177,6 +177,12 @@ export default {
       totalRows: 0
     }
   },
+  watch: {
+    timeRegistration: function(val) {
+      this.totalRows = this.timeRegistration.length
+    }, //Here we can implement more watchers if we would like to
+    //It looks like vue doesnt care if we add some ,
+  },
   methods: {
     hiddenThis(event) {
       console.log(event)
@@ -276,6 +282,7 @@ export default {
       this.timeRegistration = reg
       console.log(this.timeRegistration)
       this.totalRows = this.timeRegistration.length
+      console.log(this.totalRows)
     },
     deleteMe(id) {
       firestoreHandler.timeRegistrationRemove(id)
