@@ -1,127 +1,86 @@
+const functions = require('firebase-functions');
+
 const admin = require('firebase-admin');
-var db = admin.firestore();
+let db = admin.firestore();
 
-var workers = "workers"
-var timeRegistration = "timeRegistrations"
-var customers = "customers"
+const fs = require('fs')
+var filename = __dirname + "/registrations.csv"
 
+const csv = require('csvtojson')
 
-exports.intalizeFirestoreHandler = function(db) {
-    db = db;
-}
-
-exports.getAllCustomersName = async () => {
-    let array = []
-    const snapshot = await db.collection("customers")
-        .get()
-        .catch(function(error) {
-            console.error("Error", error);
-        });
-    snapshot.forEach((doc) => {
-        array.push(doc.id)
-    })
-    return array
-}
-
-exports.getAllTimeRegsForProject = async (customerName, projectID) => {
-    let array = []
-    const snapshot = await db.collection("customers")
-        .doc(customerName)
-        .collection("projects")
-        .doc(projectID)
-        .collection("timeregs")
-        .get()
-    snapshot.forEach((doc) => {
-        array.push(doc.data().docRef)
-    })
-    let timeregs = []
-    for (var i in array) {
-        var path = array[i].split("/")
-        await db.collection(path[0])
-            .doc(path[1])
-            .collection(path[2])
-            .doc(path[3])
-            .get().then(function(doc) {
-                timeregs.push(doc.data())
+exports.timeRegistrationAdd = async (db2) => {
+    csv()
+        .fromFile(filename)
+        .then((row) => {
+            row.forEach(obj => {
+                var j = {}
+                j = format(obj)
+                addReg(j)
             })
-    }
-
-    return timeregs
+        })
 }
 
-exports.getAllProjectsForCustomer = async (customerName) => {
-    let array = []
-    const snapshot = await db.collection("customers")
-        .doc(customerName)
-        .collection("projects")
-        .get()
-        .catch(function(error) {
-            console.error("Error", error);
-        });
-    snapshot.forEach((doc) => {
-        array.push(doc.id)
-    })
-    return array
-}
-
-
-exports.getAllCategories = async () => {
-    let array = []
-    const snapshot = await db.collection("categories")
-        .get()
-        .catch(function(error) {
-            console.error("Error", error);
-        });
-    snapshot.forEach((doc) => {
-        array.push(doc.id)
-    })
-    return array
-}
-
-
-
-exports.getAllTimeRegistrationsForEmail = async (email) => {
-    let array = []
-    const snapshot = await db.collection("workers")
-        .doc(email)
-        .collection("timeregs")
-        .get()
-        .catch(function(error) {
-            console.error("Error", error);
-        });
-    snapshot.forEach((doc) => {
-        array.push(doc.data())
-    })
-    return array
-}
-
-exports.timeRegistrationAdd = async (email, data) => {
-    function addRef(ref) {
-        let companyName = data['project'].split("/")[0]
-        let projectName = data['project'].split("/")[1]
-        db.collection("customers").doc(companyName)
-            .collection("projects").doc(projectName)
-            .collection("timeregs").add({ docRef: ref })
-    }
-    const snapshot = await db.collection("workers")
-        .doc(email)
-        .collection("timeregs")
+function addReg(data) {
+    console.log(data)
+    db.collection("timeregistration")
         .add(data)
         .then(function(doc) {
-            addRef(doc.path)
+            console.log("doc added")
         })
         .catch(function(error) {
             console.error("Error", error);
         });
 }
 
-exports.timeRegistrationRemove = async (email, ID) => {
-    const snapshot = await db.collection("workers")
-        .doc(email)
-        .collection("timeregs")
-        .doc(ID)
-        .delete()
-        .catch(function(error) {
-            console.error("Error", error);
-        });
+
+function format(row) {
+    console.log(row)
+    row["worker"] = { id: row.Worker }
+    var date = new Date(row['Date (work)'])
+    var date2 = new Date(row['Date (work)'])
+    if (date.getMonth() > 1) {
+        date.setFullYear(2018)
+        date2.setFullYear(2018)
+    } else {
+        date.setFullYear(2019)
+        date2.setFullYear(2019)
+    }
+    date.setHours(9)
+    row['startTime'] = date
+    var workTime = row.Hours.split(".")
+    var hour = parseInt(workTime[0]) + 9
+    var minute = 0
+    try {
+        if (workTime[1] > 0) {
+            minute = (workTime[1] * 60) / 10
+        }
+    } catch (e) {
+        // statements
+        console.log(e);
+    }
+    date2.setHours(hour)
+    date2.setMinutes(minute)
+    row['endTime'] = date2
+    row['category'] = { id: row.Category }
+    row["paidMonth"] = row['Paid (month)']
+    row["project"] = { id: row['Assignment'], customer: { name: row['Assignment'] } }
+    row["status"] = row["Status"]
+    //row["invoice"] = row["Invoice No"]
+    row["comment"] = row["Comment"]
+    row["price"] = row["Price"]
+    row["cost"] = row["Cost"]
+
+    delete row['Paid (month)'];
+    delete row['Worker'];
+    delete row['Assignment'];
+    delete row['Hours'];
+    delete row['Category'];
+    delete row['Date (work)'];
+    delete row['Status'];
+    delete row['field12'];
+    delete row['Invoice No'];
+    delete row['Comment'];
+    delete row['Price'];
+    delete row['Cost'];
+    return row
 }
