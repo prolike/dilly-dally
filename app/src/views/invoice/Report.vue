@@ -14,6 +14,11 @@
     <section>
       <b-row>
         <b-col md="6" class="my-1">
+          <b-form-group label-cols-sm="3" label="Per page" class="mb-0">
+            <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
+          </b-form-group>
+        </b-col>
+        <b-col md="6" class="my-1">
           <b-form-group label-cols-sm="3" label="Filter" class="mb-0">
             <b-input-group>
               <b-form-input v-model="filter" placeholder="Type to Search" />
@@ -26,7 +31,7 @@
       </b-row>
     </section>
     <section>
-      <b-table striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
+      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
         <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
           <i class="fa fa-check-square"></i>
         </template>
@@ -40,6 +45,11 @@
           {{getWorkhours(data.item.startTime,data.item.endTime)}}
         </template>
       </b-table>
+      <section>
+        <b-col md="6" class="my-1">
+          <b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage" class="my-0"></b-pagination>
+        </b-col>
+      </section>
       <section> Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
         <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b></section>
     </section>
@@ -161,6 +171,10 @@ export default {
       email: "",
       user: "",
       filter: null,
+      currentPage: 1,
+      perPage: 10,
+      pageOptions: [10, 25, 50],
+      totalRows: 0
     }
   },
   methods: {
@@ -261,6 +275,7 @@ export default {
       console.log(this.timeRegistration)
       this.timeRegistration = reg
       console.log(this.timeRegistration)
+      this.totalRows = this.timeRegistration.length
     },
     deleteMe(id) {
       firestoreHandler.timeRegistrationRemove(id)
