@@ -3,42 +3,56 @@
     <div class="row m-auto">
       <div class="col-lg-12 timereg">
         <div class="timereg-title">
-          <h1>Time Registration # {{index}}</h1>
+          <h1>Time Registration {{index+1}}</h1>
           <div v-on:click="deleteBox" class="cross">
-            <i class="fa fa-times" />
+            <i class="fa fa-times"/>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12 col-sm-12 specialized-box">
             <div class="cell">
               <bue-field label="Date">
-                <bue-datepicker placeholder="Select a date" v-model="date" required :date-formatter="dateFormatter" icon-pack="fa" icon="calendar" :max-date="new Date()" :first-day-of-week="1" editable></bue-datepicker>
+                <bue-datepicker
+                  placeholder="Select a date"
+                  v-model="date"
+                  required
+                  :date-formatter="dateFormatter"
+                  icon-pack="fa"
+                  icon="calendar"
+                  :max-date="new Date()"
+                  :first-day-of-week="1"
+                  editable
+                ></bue-datepicker>
               </bue-field>
               <!-- <label for="">Pick a date</label>
               <datepicker class="datepick" :disabledDates="disabledDates" monday-first format="dd/MM/yyyy" v-model="date"></datepicker>-->
             </div>
             <div class="cell">
               <bue-field class="label" label="Start time">
-                <bue-timepicker placeholder="Type or select time" icon-pack="fa" icon="clock-o" v-model="form.startTime" required editable></bue-timepicker>
-                <!-- <bue-input
-                  placeholder="09:00"
+                <bue-timepicker
+                  placeholder="Type or select time"
+                  icon-pack="fa"
+                  icon="clock-o"
                   v-model="form.startTime"
                   required
-                  pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
-                </bue-input>-->
+                  editable
+                ></bue-timepicker>
               </bue-field>
+              <div below class="error-text">{{errors.start}}</div>
             </div>
             <div class="cell">
               <bue-field class="label" label="End time">
-                <bue-timepicker ref="end" placeholder="Type or select time" icon-pack="fa" icon="clock-o" v-model="form.endTime" required editable></bue-timepicker>
-                <!-- <bue-input
+                <bue-timepicker
                   ref="end"
-                  placeholder="16:00"
+                  placeholder="Type or select time"
+                  icon-pack="fa"
+                  icon="clock-o"
                   v-model="form.endTime"
                   required
-                  pattern="^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$">
-                </bue-input>-->
+                  editable
+                ></bue-timepicker>
               </bue-field>
+              <div below class="error-text">{{errors.end}}</div>
             </div>
             <div class="cell">
               <bue-field label="Category">
@@ -52,9 +66,7 @@
               <bue-field label="Project">
                 <bue-select placeholder="Select a project" v-model="form.project" required>
                   <optgroup v-for="(group, name) in groupedProjects" :label="name">
-                    <option v-for="option in group" :value="option">
-                      {{ option.id }}
-                    </option>
+                    <option v-for="option in group" :value="option">{{ option.id }}</option>
                   </optgroup>
                   <!-- <option value disabled hidden>Select a project</option> -->
                 </bue-select>
@@ -63,23 +75,34 @@
             <div class="cell">
               <b-tabs class="comments">
                 <b-tab title="Issue" active>
-                  <textarea cols="30" rows="10" placeholder="Type in related Issue(s)
-#1, #14, #20 etc." v-model="form.issues"></textarea>
+                  <textarea
+                    cols="30"
+                    rows="10"
+                    placeholder="Type in related Issue(s)
+#1, #14, #20 etc."
+                    v-model="form.issues"
+                  ></textarea>
                 </b-tab>
                 <b-tab title="Comment">
-                  <textarea name id cols="30" rows="10" placeholder="Leave a comment" v-model="form.comment"></textarea>
+                  <textarea
+                    name
+                    id
+                    cols="30"
+                    rows="10"
+                    placeholder="Leave a comment"
+                    v-model="form.comment"
+                  ></textarea>
                 </b-tab>
               </b-tabs>
             </div>
           </div>
         </div>
-        <div below class="text-danger">{{errors.time}}</div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import _ from 'lodash';
+import _ from "lodash";
 
 export default {
   name: "RegistrationTemplate",
@@ -105,25 +128,14 @@ export default {
     projects: Array,
     todayDate: Date
   },
-  watch: {
-    projects: function(newVal, oldVal) { // watch it
-      this.groupedProjects = this.getGroupedProjects();
-      console.log(this.groupedProjects)
-    }
-  },
   mounted() {
-    console.log("sad")
     this.date = new Date();
-    console.log(this.projects)
-    this.groupedProjects = this.getGroupedProjects();
-    console.log(this.groupedProjects)
+    this.groupedProjects = _(this.projects)
+      .groupBy("customer.name")
+      .value();
+    console.log(this.groupedProjects);
   },
   methods: {
-    getGroupedProjects() {
-      return _(this.projects)
-        .groupBy('customer.name')
-        .value();
-    },
     deleteBox() {
       this.$emit("delete-me");
     },
@@ -136,26 +148,36 @@ export default {
       return time.slice(0, -3);
     },
     validateStartTime: function(startTimeDate) {
-      var startTime = this.timeFormatter(startTimeDate);
-      console.log("starttime: " + startTime);
-      if (!startTime.length) {
-        return { valid: false, error: "This field is required" };
+      console.log("HEJ " + startTimeDate);
+      if (startTimeDate) {
+        var startTime = this.timeFormatter(startTimeDate);
+        console.log("starttime: " + startTime);
+        // if (!startTime.length) {
+        //   return { valid: false, error: "This field is required." };
+        // }
+        if (!startTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
+          return { valid: false, error: "Please, enter a valid time." };
+        }
+        return { valid: true, error: null };
+      } else {
+        return { valid: false, error: "Start time is required." };
       }
-      if (!startTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
-        return { valid: false, error: "Please, enter a valid time." };
-      }
-      return { valid: true, error: null };
     },
     validateEndTime: function(endTimeDate) {
-      var endTime = this.timeFormatter(endTimeDate);
-      console.log("endtime: " + endTime);
-      if (!endTime.length) {
-        return { valid: false, error: "This field is required" };
+      console.log("HEY " + endTimeDate);
+      if (endTimeDate) {
+        var endTime = this.timeFormatter(endTimeDate);
+        console.log("endtime: " + endTime);
+        // if (!endTime.length) {
+        //   return { valid: false, error: "This field is required." };
+        // }
+        if (!endTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
+          return { valid: false, error: "Please, enter a valid time." };
+        }
+        return { valid: true, error: null };
+      } else {
+        return { valid: false, error: "End time is required." };
       }
-      if (!endTime.match(/^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/)) {
-        return { valid: false, error: "Please, enter a valid time." };
-      }
-      return { valid: true, error: null };
     },
     validateTimeRange: function(startTime, endTime) {
       console.log("start: " + startTime);
@@ -173,27 +195,29 @@ export default {
 
       //Validate start time
       const validStartTime = this.validateStartTime(this.form.startTime);
-      this.errors.time = validStartTime.error;
+      this.errors.start = validStartTime.error;
       if (this.valid) {
+        console.log(validStartTime.valid + " : validStart");
         this.valid = validStartTime.valid;
       }
       console.log(this.valid + " : after start");
 
       //Validate end time
       const validEndTime = this.validateEndTime(this.form.endTime);
-      this.errors.time = validEndTime.error;
+      this.errors.end = validEndTime.error;
       if (this.valid) {
+        console.log(validEndTime.valid + " : validEnd");
         this.valid = validEndTime.valid;
       }
       console.log(this.valid + " : after end");
 
       //Validate time range
-      const validTimeRange = this.validateTimeRange(
-        this.form.startTime,
-        this.form.endTime
-      );
-      this.errors.time = validTimeRange.error;
       if (this.valid) {
+        const validTimeRange = this.validateTimeRange(
+          this.form.startTime,
+          this.form.endTime
+        );
+        this.errors.end = validTimeRange.error;
         this.valid = validTimeRange.valid;
       }
 
@@ -205,7 +229,6 @@ export default {
     }
   }
 };
-
 </script>
 <style lang="scss" scoped>
 .timereg {
@@ -288,6 +311,12 @@ export default {
   }
 }
 
+//Adjust height of Start/End time to match other fields
+
+.field:not(:last-child) {
+  padding-top: 12px;
+}
+
 .timeRegButtons {
   height: 35px;
   border: none;
@@ -307,12 +336,4 @@ export default {
 .timeRegButtons .fa {
   color: #1a2336;
 }
-
-// Removes default padding from Bootstraps
-// container-fluid component
-
-.main .container-fluid {
-  padding: 0;
-}
-
 </style>
