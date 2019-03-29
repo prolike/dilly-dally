@@ -267,13 +267,17 @@ export default {
     },
     getWorkhours(timestamp1, timestamp2) {
       var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
-      return new Date(total).toLocaleTimeString("da-DK");
+      //Using 'da-DK' to separate hours and minutes with a '.'
+      var time = new Date(total).toLocaleTimeString("da-DK").slice(0, -3);
+      return time;
     },
     getTime(timestamp) {
-      return String(timestamp.toDate().toLocaleTimeString("da-DK"));
+      //Using 'de-DE' to separate hours and minutes with a ':'
+      return String(timestamp.toDate().toLocaleTimeString("de-DE").slice(0, -3));
     },
     getDate(timestamp) {
-      return timestamp.toDate().toLocaleString("en-EN", { weekday: 'short', month: 'short', day: '2-digit' });
+      //Using 'en-GB' to get day before month: 'weekday', 'day' 'month'
+      return timestamp.toDate().toLocaleString("en-GB", { weekday: 'short', month: 'short', day: 'numeric' });
     },
     getYear(timestamp) {
       return timestamp.toDate().getFullYear();

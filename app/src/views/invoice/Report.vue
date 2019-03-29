@@ -62,7 +62,6 @@ export default {
       },
       fields: {
         approved: {
-          // This key overrides `foo`!
           key: 'isApproved',
           label: 'Approved',
           sortable: true,
@@ -70,14 +69,12 @@ export default {
           thClass: null
         },
         paidMonth: {
-          // This key overrides `foo`!
           label: 'Paid month',
           sortable: true,
           tdClass: null,
           thClass: null
         },
         category: {
-          // This key overrides `foo`!
           key: 'category.id',
           label: 'Category',
           sortable: true,
@@ -85,7 +82,6 @@ export default {
           thClass: null
         },
         customer: {
-          // This key overrides `foo`!
           key: 'project.customer.name',
           label: 'Customer',
           sortable: true,
@@ -93,7 +89,6 @@ export default {
           thClass: null
         },
         project: {
-          // This key overrides `foo`!
           key: 'project.id',
           label: 'Project',
           sortable: true,
@@ -116,7 +111,6 @@ export default {
           //formatter: 'getDate'
         },
         startTime: {
-          // This key overrides `foo`!
           key: 'startTime',
           label: 'startTime',
           sortable: true,
@@ -128,7 +122,6 @@ export default {
           },
         },
         endTime: {
-          // This key overrides `foo`!
           key: 'endTime',
           label: 'endTime',
           sortable: true,
@@ -140,14 +133,12 @@ export default {
           },
         },
         workHours: {
-          // This key overrides `foo`!
           label: 'workHours',
           sortable: true,
           tdClass: null,
           thClass: null
         },
         comment: {
-          // This key overrides `foo`!
           label: 'Comment',
           sortable: true,
           tdClass: null,
@@ -280,13 +271,17 @@ export default {
     },
     getWorkhours(timestamp1, timestamp2) {
       var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
-      return new Date(total).toLocaleTimeString("da-DK");
+      //Using 'da-DK' to separate hours and minutes with a '.'
+      var time = new Date(total).toLocaleTimeString("da-DK").slice(0, -3);
+      return time;
     },
     getTime(timestamp) {
-      return String(timestamp.toDate().toLocaleTimeString("da-DK"));
+      //Using 'de-DE' to separate hours and minutes with a ':'
+      return String(timestamp.toDate().toLocaleTimeString("de-DE").slice(0, -3));
     },
     getDate(timestamp) {
-      return timestamp.toDate().toLocaleString("en-EN", { weekday: 'short', month: 'short', day: '2-digit' });
+      //Using 'en-GB' to get day before month: 'weekday', 'day' 'month'
+      return timestamp.toDate().toLocaleString("en-GB", { weekday: 'short', month: 'short', day: 'numeric' });
     },
     getYear(timestamp) {
       return timestamp.toDate().getFullYear();
