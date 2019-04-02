@@ -21,7 +21,7 @@ exports.timeRegistrationAdd = async (db2) => {
 }
 
 function addReg(data) {
-    console.log(data)
+    // console.log(data)
     db.collection("timeregistration")
         .add(data)
         .then(function(doc) {
@@ -34,17 +34,10 @@ function addReg(data) {
 
 
 function format(row) {
-    console.log(row)
-    row["worker"] = { id: row.Worker }
+    //console.log(row)
+    row["worker"] = { id: row.Worker + "@prolike.io" }
     var date = new Date(row['Date (work)'])
     var date2 = new Date(row['Date (work)'])
-    if (date.getMonth() > 1) {
-        date.setFullYear(2018)
-        date2.setFullYear(2018)
-    } else {
-        date.setFullYear(2019)
-        date2.setFullYear(2019)
-    }
     date.setHours(9)
     row['startTime'] = date
     var workTime = row.Hours.split(".")
@@ -69,7 +62,9 @@ function format(row) {
     row["comment"] = row["Comment"]
     row["price"] = row["Price"]
     row["cost"] = row["Cost"]
-
+    row["issues"] = row["comment"].match(/\#[0-9]*/g)
+    //console.log(row["issues"])
+   // console.log(row["comment"])
     delete row['Paid (month)'];
     delete row['Worker'];
     delete row['Assignment'];
@@ -82,5 +77,7 @@ function format(row) {
     delete row['Comment'];
     delete row['Price'];
     delete row['Cost'];
+    delete row['field13'];
+
     return row
 }
