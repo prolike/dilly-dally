@@ -32,6 +32,11 @@
     </section>
     <section>
       <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
+        <template slot="top-row" slot-scope="{ fields }">
+          <td v-for="(field,key) in fields" :key="field.key">
+            <input v-model="filters[field.key]" :placeholder="field.key">
+          </td>
+        </template>
         <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
           <i class="fa fa-check-square"></i>
         </template>
@@ -171,10 +176,27 @@ export default {
       email: "",
       user: "",
       filter: null,
+      filters: {
+        isApproved : "",
+        isApproved : "",
+      },
       currentPage: 1,
       perPage: 10,
       pageOptions: [10, 25, 50],
       totalRows: 0
+    }
+  },
+  computed: {
+    filtered() {
+      const filtered = this.items.filter(item => {
+        return Object.keys(this.filters).every(key =>
+          String(item[key]).includes(this.filters[key]))
+      })
+      return filtered.length > 0 ? filtered : [{
+        id: '',
+        issuedBy: '',
+        issuedTo: ''
+      }]
     }
   },
   methods: {
