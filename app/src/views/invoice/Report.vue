@@ -31,92 +31,7 @@
       </b-row>
     </section>
     <section>
-      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
-        <template slot="top-row" slot-scope="fields">
-          <td :class="fields.fields[0].tdClass">
-            <input type="checkbox" :class="fields.fields[0].tdClass" id="defaultUnchecked">
-          </td>
-          <td :class="fields.fields[1].tdClass">
-            <div class="cell">
-              <bue-select>
-                <option></option>
-                <option v-for="item in uniquePaid" :value="item">{{ item }}</option>
-              </bue-select>
-              </bue-field>
-            </div>
-          </td>
-          <td :class="fields.fields[2].tdClass">
-            <div class="cell">
-              <bue-select>
-                <option></option>
-                <option v-for="item in uniqueCategory" :value="item">{{ item }}</option>
-              </bue-select>
-              </bue-field>
-            </div>
-          </td>
-          <td :class="fields.fields[3].tdClass">
-            <div class="cell">
-              <bue-select>
-                <option></option>
-                <option v-for="item in uniqueCustomer" :value="item">{{ item }}</option>
-              </bue-select>
-              </bue-field>
-            </div>
-          </td>
-          <td :class="fields.fields[4].tdClass">
-            <div class="cell">
-              <bue-select>
-                <option></option>
-                <option v-for="item in uniqueProject" :value="item">{{ item }}</option>
-              </bue-select>
-              </bue-field>
-            </div>
-          </td>
-          <td :class="fields.fields[5].tdClass">
-            <div class="cell">
-              <bue-datepicker placeholder="Select a date" :date-formatter="dateFormatter" icon-pack="fa" icon="calendar" :max-date="new Date()" :first-day-of-week="1" editable></bue-datepicker>
-            </div>
-          </td>
-          <td :class="fields.fields[6].tdClass">
-            <div class="cell">
-              <bue-select>
-                <option></option>
-                <option v-for="item in uniqueYear" :value="item">{{ item }}</option>
-              </bue-select>
-              </bue-field>
-            </div>
-          </td>
-          <td :class="fields.fields[7].tdClass">
-            ?
-          </td>
-          <td :class="fields.fields[8].tdClass">
-            ?
-          </td>
-          <td :class="fields.fields[9].tdClass">
-            ?
-          </td>
-          <td :class="fields.fields[10].tdClass">
-            <b-form-input v-model="filter" placeholder="" />
-          </td>
-          <td :class="fields.fields[11].tdClass">
-            <div class="cell">
-              <bue-select>
-                <option></option>
-                <option v-for="item in uniqueIssues" :value="item">{{ item }}</option>
-              </bue-select>
-              </bue-field>
-            </div>
-          </td>
-          <td :class="fields.fields[12].tdClass">
-            <div class="cell">
-              <bue-select>
-                <option></option>
-                <option v-for="item in uniqueWorkers" :value="item">{{ item }}</option>
-              </bue-select>
-              </bue-field>
-            </div>
-          </td>
-        </template>
+      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
         <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
           <i class="fa fa-check-square"></i>
         </template>
@@ -143,7 +58,6 @@
 <script>
 import { firestoreHandler } from '../../controller/firestoreHandler';
 import { firebaseHandler } from '../../controller/firebaseHandler';
-import _ from "lodash";
 
 export default {
   name: 'TimeRegistrationOverview',
@@ -162,15 +76,13 @@ export default {
           label: 'Approved',
           sortable: true,
           tdClass: null,
-          thClass: null,
-          filter: "",
+          thClass: null
         },
         paidMonth: {
           label: 'Paid month',
           sortable: true,
           tdClass: null,
-          thClass: null,
-          filter: "",
+          thClass: null
         },
         category: {
           key: 'category.id',
@@ -262,45 +174,53 @@ export default {
       currentPage: 1,
       perPage: 10,
       pageOptions: [10, 25, 50],
-      totalRows: 0
+      totalRows: 0,
+      filters: {
+        workers: ["loubnielsen@prolike.io"],
+        category: "",
+        customer: "",
+        project: "",
+        dateFrom: new Date(2019,2,24),
+        dateTo: new Date(2019,2,28),
+      },
     }
   },
   computed: {
     filtered() {
-      const filtered = this.items.filter(item => {
+      const filtered = this.timeRegistration.filter(item => {
         return Object.keys(this.filters).every(key =>
-          String(item[key]).includes(this.filters[key]))
+          this.filterMe(key, item))
       })
-      return filtered.length > 0 ? filtered : [{
-        id: '',
-        issuedBy: '',
-        issuedTo: ''
-      }]
-    },
-    uniqueCategory: function() {
-      return _.uniq(_.map(this.timeRegistration, 'category.id'))
-    },
-    uniquePaid: function() {
-      return _.uniq(_.map(this.timeRegistration, 'paidMonth'))
-    },
-    uniqueCustomer: function() {
-      return _.uniq(_.map(this.timeRegistration, 'project.customer.name'))
-    },
-    uniqueProject: function() {
-      return _.uniq(_.map(this.timeRegistration, 'project.id'))
-    },
-    uniqueYear: function() {
-      return "?"
-    },
-    uniqueIssues: function() {
-      return _.uniq(_.flatMap(this.timeRegistration, 'issues'))
-    },
-    uniqueWorkers: function() {
-      return _.uniq(_.map(this.timeRegistration, 'worker.id'))
-    },
-
+      return filtered
+    }
   },
   methods: {
+    filterMe(key, item) {
+      // String(item[key]).includes(this.filters[key]))
+      switch (key) {
+        case "workers":
+          return this.filters["workers"].some(r => String(item["worker"].id).includes(r))
+          break;
+        case "category":
+          return String(item[key].id).includes(this.filters[key])
+          break;
+        case "customer":
+          return String(item["project"]["customer"]["name"]).includes(this.filters[key])
+          break;
+        case "project":
+          return String(item["project"]["id"]).includes(this.filters[key])
+          break;
+        case "dateFrom":
+          return item["startTime"].toDate() > this.filters[key]
+          break;
+        case "dateTo":
+          return item["startTime"].toDate() < this.filters[key]
+          break;
+        default:
+          return true
+          break;
+      }
+    },
     hiddenThis(event) {
       console.log(event)
       var ref = this.fields[event]
@@ -316,47 +236,6 @@ export default {
         ref.thClass = "column-hidden"
         console.log(ref)
       }
-
-    },
-    dateFormatter(dt) {
-      var dateoptions = { year: "numeric", month: "numeric", day: "numeric" };
-      return dt.toLocaleDateString("en-GB", dateoptions);
-    },
-    timeFormatter(dt) {
-      var time = dt.toTimeString().split(" ")[0];
-      return time.slice(0, -3);
-    },
-    getAllMyRegistrations() {
-      var reg = firestoreHandler.getAllTimeregs()
-      console.log(reg)
-      console.log(this.timeRegistration)
-      this.timeRegistration = reg
-      console.log(this.timeRegistration)
-      this.totalRows = this.timeRegistration.length
-    },
-    deleteMe(id) {
-      firestoreHandler.timeRegistrationRemove(id)
-    },
-    getWorkhoursAsDate(timestamp1, timestamp2) {
-      var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
-      return new Date(total);
-    },
-    getWorkhours(timestamp1, timestamp2) {
-      var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
-      //Using 'da-DK' to separate hours and minutes with a '.'
-      var time = new Date(total).toLocaleTimeString("da-DK").slice(0, -3);
-      return time;
-    },
-    getTime(timestamp) {
-      //Using 'de-DE' to separate hours and minutes with a ':'
-      return String(timestamp.toDate().toLocaleTimeString("de-DE").slice(0, -3));
-    },
-    getDate(timestamp) {
-      //Using 'en-GB' to get day before month: 'weekday', 'day' 'month'
-      return timestamp.toDate().toLocaleString("en-GB", { weekday: 'short', month: 'short', day: 'numeric' });
-    },
-    getYear(timestamp) {
-      return timestamp.toDate().getFullYear();
     },
     sortCompare(a1, b1, key) {
       switch (key) {
@@ -432,11 +311,40 @@ export default {
           break;
       }
     },
+    getAllMyRegistrations() {
+      var reg = firestoreHandler.getAllTimeregs()
+      this.timeRegistration = reg
+      this.totalRows = this.timeRegistration.length
+    },
+    deleteMe(id) {
+      firestoreHandler.timeRegistrationRemove(id)
+    },
+    getWorkhoursAsDate(timestamp1, timestamp2) {
+      var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
+      return new Date(total);
+    },
+    getWorkhours(timestamp1, timestamp2) {
+      var total = timestamp2.toDate() - timestamp1.toDate() - 3600000
+      //Using 'da-DK' to separate hours and minutes with a '.'
+      var time = new Date(total).toLocaleTimeString("da-DK").slice(0, -3);
+      return time;
+    },
+    getTime(timestamp) {
+      //Using 'de-DE' to separate hours and minutes with a ':'
+      return String(timestamp.toDate().toLocaleTimeString("de-DE").slice(0, -3));
+    },
+    getDate(timestamp) {
+      //Using 'en-GB' to get day before month: 'weekday', 'day' 'month'
+      return timestamp.toDate().toLocaleString("en-GB", { weekday: 'short', month: 'short', day: 'numeric' });
+    },
+    getYear(timestamp) {
+      return timestamp.toDate().getFullYear();
+    }
   },
   mounted() {
+    // firestoreHandler.getTest()
     this.email = firebaseHandler.getUser().email
     this.getAllMyRegistrations()
-    console.log(this.groupedCategory)
 
   }
 }
