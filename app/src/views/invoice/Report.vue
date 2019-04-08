@@ -12,6 +12,19 @@
       </p>
     </section>
     <section>
+      <multiselect v-model="filters.workers" :options="uniqueWorkers" :multiple="true" placeholder="Pick a worker"></multiselect>
+      <multiselect v-model="filters.category" :options="uniqueCategory" :multiple="true" placeholder="Pick a category"></multiselect>
+      <multiselect v-model="filters.paidMonth" :options="uniquePaid" :multiple="true" placeholder="Pick a paidMonth"></multiselect>
+      <multiselect v-model="filters.customer" :options="uniqueCustomer" :multiple="true" placeholder="Pick a customer"></multiselect>
+      <multiselect v-model="filters.project" :options="uniqueProject" :multiple="true" placeholder="Pick a project"></multiselect>
+      <bue-field label="Date From">
+        <bue-datepicker placeholder="Select a date" v-model="filters.dateFrom" required icon-pack="fa" icon="calendar" :max-date="date" :first-day-of-week="1"></bue-datepicker>
+      </bue-field>
+      <bue-field label="Date To">
+        <bue-datepicker placeholder="Select a date" v-model="filters.dateTo" required icon-pack="fa" icon="calendar" :max-date="date" :first-day-of-week="1"></bue-datepicker>
+      </bue-field>
+    </section>
+    <section>
       <b-row>
         <b-col md="6" class="my-1">
           <b-form-group label-cols-sm="3" label="Per page" class="mb-0">
@@ -31,16 +44,7 @@
       </b-row>
     </section>
     <section>
-<<<<<<< HEAD
-      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
-        <template slot="top-row" slot-scope="{ fields }">
-          <td v-for="(field,key) in fields" :key="field.key">
-            <input v-model="filters[field.key]" :placeholder="field.key">
-          </td>
-        </template>
-=======
       <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
->>>>>>> ec01c6e804ab1081a641c78c2f1b00448d027ff5
         <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
           <i class="fa fa-check-square"></i>
         </template>
@@ -67,11 +71,19 @@
 <script>
 import { firestoreHandler } from '../../controller/firestoreHandler';
 import { firebaseHandler } from '../../controller/firebaseHandler';
+import Multiselect from 'vue-multiselect'
+import _ from 'lodash'
 
 export default {
   name: 'TimeRegistrationOverview',
+  components: {
+    Multiselect
+  },
   data: function() {
     return {
+      date: new Date(),
+      value: [],
+      options: ["asd", "asdx"],
       sortBy: 'startTime',
       sortDesc: true,
       sortDirection: 'asc',
@@ -180,21 +192,17 @@ export default {
       email: "",
       user: "",
       filter: null,
-      filters: {
-        isApproved : "",
-        isApproved : "",
-      },
       currentPage: 1,
       perPage: 10,
       pageOptions: [10, 25, 50],
       totalRows: 0,
       filters: {
-        workers: ["loubnielsen@prolike.io"],
+        workers: [],
         category: "",
         customer: "",
         project: "",
-        dateFrom: new Date(2019,2,24),
-        dateTo: new Date(2019,2,28),
+        dateFrom: undefined,
+        dateTo: new Date(),
       },
     }
   },
@@ -205,27 +213,46 @@ export default {
           this.filterMe(key, item))
       })
       return filtered
-    }
-  },
-  computed: {
-    filtered() {
-      const filtered = this.items.filter(item => {
-        return Object.keys(this.filters).every(key =>
-          String(item[key]).includes(this.filters[key]))
-      })
-      return filtered.length > 0 ? filtered : [{
-        id: '',
-        issuedBy: '',
-        issuedTo: ''
-      }]
-    }
+    },
+    uniqueCategory: function() {
+      return _.uniq(_.map(this.timeRegistration, 'category.id'))
+    },
+    uniquePaid: function() {
+      return _.uniq(_.map(this.timeRegistration, 'paidMonth'))
+    },
+    uniqueCustomer: function() {
+      return _.uniq(_.map(this.timeRegistration, 'project.customer.name'))
+    },
+    uniqueProject: function() {
+      return _.uniq(_.map(this.timeRegistration, 'project.id'))
+    },
+    uniqueYear: function() {
+      return "?"
+    },
+    uniqueIssues: function() {
+      return _.uniq(_.flatMap(this.timeRegistration, 'issues'))
+    },
+    uniqueWorkers: function() {
+      return _.uniq(_.map(this.timeRegistration, 'worker.id'))
+    },
   },
   methods: {
+
+    addTag(newTag) {
+      const tag = {
+        name: newTag,
+        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
+      }
+      this.options.push(tag)
+      this.value.push(tag)
+    },
     filterMe(key, item) {
       // String(item[key]).includes(this.filters[key]))
       switch (key) {
         case "workers":
-          return this.filters["workers"].some(r => String(item["worker"].id).includes(r))
+          if (this.filters["workers"].length === 0) {
+            return true
+          } else { return this.filters["workers"].some(r => String(item["worker"].id).includes(r)) }
           break;
         case "category":
           return String(item[key].id).includes(this.filters[key])
@@ -237,10 +264,15 @@ export default {
           return String(item["project"]["id"]).includes(this.filters[key])
           break;
         case "dateFrom":
-          return item["startTime"].toDate() > this.filters[key]
+          if (this.filters[key] === undefined) {
+            return true
+          } else { return item["startTime"].toDate() > this.filters[key] }
           break;
         case "dateTo":
           return item["startTime"].toDate() < this.filters[key]
+          break;
+        case "paidMonth":
+          return String(item["paidMonth"]).includes(this.filters[key])
           break;
         default:
           return true
@@ -365,7 +397,11 @@ export default {
     },
     getYear(timestamp) {
       return timestamp.toDate().getFullYear();
-    }
+    },
+    dateFormatter(dt) {
+      var dateoptions = { year: "numeric", month: "numeric", day: "numeric" };
+      return dt.toLocaleDateString("en-GB", dateoptions);
+    },
   },
   mounted() {
     // firestoreHandler.getTest()
@@ -376,3 +412,4 @@ export default {
 }
 
 </script>
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
