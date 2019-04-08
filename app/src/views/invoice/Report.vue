@@ -18,10 +18,10 @@
       <multiselect v-model="filters.customer" :options="uniqueCustomer" :multiple="true" placeholder="Pick a customer"></multiselect>
       <multiselect v-model="filters.project" :options="uniqueProject" :multiple="true" placeholder="Pick a project"></multiselect>
       <bue-field label="Date From">
-        <bue-datepicker placeholder="Select a date" v-model="filters.dateFrom" required icon-pack="fa" icon="calendar" :max-date="date" :first-day-of-week="1"></bue-datepicker>
+        <bue-datepicker placeholder="Select a date" v-model="filters.dateFrom" icon-pack="fa" icon="calendar" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
       </bue-field>
       <bue-field label="Date To">
-        <bue-datepicker placeholder="Select a date" v-model="filters.dateTo" required icon-pack="fa" icon="calendar" :max-date="date" :first-day-of-week="1"></bue-datepicker>
+        <bue-datepicker placeholder="Select a date" v-model="filters.dateTo" icon-pack="fa" icon="calendar" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
       </bue-field>
     </section>
     <section>
@@ -193,7 +193,7 @@ export default {
         customer: [],
         project: [],
         dateFrom: undefined,
-        dateTo: new Date(),
+        dateTo: undefined,
       },
     }
   },
@@ -266,7 +266,9 @@ export default {
           } else { return item["startTime"].toDate() > this.filters[key] }
           break;
         case "dateTo":
-          return item["startTime"].toDate() < this.filters[key]
+          if (this.filters[key] === undefined) {
+            return true
+          } else { return item["startTime"].toDate() < this.filters[key] }
           break;
         case "paidMonth":
           if (this.filters["paidMonth"].length === 0) {
