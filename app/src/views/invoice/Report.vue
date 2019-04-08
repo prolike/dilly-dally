@@ -44,7 +44,7 @@
       </b-row>
     </section>
     <section>
-      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
+      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl" :filter="filter">
         <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
           <i class="fa fa-check-square"></i>
         </template>
@@ -84,8 +84,8 @@ export default {
       date: new Date(),
       value: [],
       options: ["asd", "asdx"],
-      sortBy: 'startTime',
-      sortDesc: true,
+      sortBy: 'date',
+      sortDesc: false,
       sortDirection: 'asc',
       checkboxGroup: [],
       display: {
@@ -132,14 +132,6 @@ export default {
           sortable: true,
           tdClass: null,
           thClass: null //formatter: 'getDate'
-        },
-        year: {
-          //key: 'startTime',
-          label: 'Year',
-          sortable: true,
-          tdClass: null,
-          thClass: null
-          //formatter: 'getDate'
         },
         startTime: {
           key: 'startTime',
@@ -195,7 +187,6 @@ export default {
       currentPage: 1,
       perPage: 10,
       pageOptions: [10, 25, 50],
-      totalRows: 0,
       filters: {
         workers: [],
         category: "",
@@ -213,6 +204,9 @@ export default {
           this.filterMe(key, item))
       })
       return filtered
+    },
+    totalRows: function(){
+      return this.filtered.length
     },
     uniqueCategory: function() {
       return _.uniq(_.map(this.timeRegistration, 'category.id'))
@@ -237,15 +231,6 @@ export default {
     },
   },
   methods: {
-
-    addTag(newTag) {
-      const tag = {
-        name: newTag,
-        code: newTag.substring(0, 2) + Math.floor((Math.random() * 10000000))
-      }
-      this.options.push(tag)
-      this.value.push(tag)
-    },
     filterMe(key, item) {
       // String(item[key]).includes(this.filters[key]))
       switch (key) {
@@ -372,7 +357,7 @@ export default {
     getAllMyRegistrations() {
       var reg = firestoreHandler.getAllTimeregs()
       this.timeRegistration = reg
-      this.totalRows = this.timeRegistration.length
+      
     },
     deleteMe(id) {
       firestoreHandler.timeRegistrationRemove(id)
@@ -393,10 +378,7 @@ export default {
     },
     getDate(timestamp) {
       //Using 'en-GB' to get day before month: 'weekday', 'day' 'month'
-      return timestamp.toDate().toLocaleString("en-GB", { weekday: 'short', month: 'short', day: 'numeric' });
-    },
-    getYear(timestamp) {
-      return timestamp.toDate().getFullYear();
+      return timestamp.toDate().toLocaleString("en-GB", { year: 'numeric', weekday: 'short', month: 'short', day: 'numeric' });
     },
     dateFormatter(dt) {
       var dateoptions = { year: "numeric", month: "numeric", day: "numeric" };
