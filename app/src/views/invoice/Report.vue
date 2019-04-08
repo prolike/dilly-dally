@@ -189,9 +189,9 @@ export default {
       pageOptions: [10, 25, 50],
       filters: {
         workers: [],
-        category: "",
-        customer: "",
-        project: "",
+        category: [],
+        customer: [],
+        project: [],
         dateFrom: undefined,
         dateTo: new Date(),
       },
@@ -205,7 +205,7 @@ export default {
       })
       return filtered
     },
-    totalRows: function(){
+    totalRows: function() {
       return this.filtered.length
     },
     uniqueCategory: function() {
@@ -240,13 +240,25 @@ export default {
           } else { return this.filters["workers"].some(r => String(item["worker"].id).includes(r)) }
           break;
         case "category":
-          return String(item[key].id).includes(this.filters[key])
+          if (this.filters["category"].length === 0) {
+            return true
+          } else {
+            return this.filters[key].some(r => String(item[key].id).includes(r))
+          }
           break;
         case "customer":
-          return String(item["project"]["customer"]["name"]).includes(this.filters[key])
+          if (this.filters["customer"].length === 0) {
+            return true
+          } else {
+            return this.filters[key].some(r => String(item["project"]["customer"]["name"]).includes(r))
+          }
           break;
         case "project":
-          return String(item["project"]["id"]).includes(this.filters[key])
+          if (this.filters["project"].length === 0) {
+            return true
+          } else {
+            return this.filters[key].some(r => String(item["project"]["id"]).includes(r))
+          }
           break;
         case "dateFrom":
           if (this.filters[key] === undefined) {
@@ -257,7 +269,11 @@ export default {
           return item["startTime"].toDate() < this.filters[key]
           break;
         case "paidMonth":
-          return String(item["paidMonth"]).includes(this.filters[key])
+          if (this.filters["paidMonth"].length === 0) {
+            return true
+          } else {
+            return this.filters[key].some(r => String(item["paidMonth"]).includes(r))
+          }
           break;
         default:
           return true
@@ -357,7 +373,7 @@ export default {
     getAllMyRegistrations() {
       var reg = firestoreHandler.getAllTimeregs()
       this.timeRegistration = reg
-      
+
     },
     deleteMe(id) {
       firestoreHandler.timeRegistrationRemove(id)
