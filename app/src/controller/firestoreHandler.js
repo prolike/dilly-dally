@@ -57,6 +57,9 @@ var firestoreHandler = new Vue({
     getCustomers() {
       return this.customers
     },
+    getCurrentTimestamp(){
+      return this.db.Timestamp.fromDate(new Date())
+    }
   },
   mounted() {
     

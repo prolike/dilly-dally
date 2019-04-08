@@ -31,12 +31,16 @@
       </b-row>
     </section>
     <section>
+<<<<<<< HEAD
       <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
         <template slot="top-row" slot-scope="{ fields }">
           <td v-for="(field,key) in fields" :key="field.key">
             <input v-model="filters[field.key]" :placeholder="field.key">
           </td>
         </template>
+=======
+      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
+>>>>>>> ec01c6e804ab1081a641c78c2f1b00448d027ff5
         <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
           <i class="fa fa-check-square"></i>
         </template>
@@ -183,7 +187,24 @@ export default {
       currentPage: 1,
       perPage: 10,
       pageOptions: [10, 25, 50],
-      totalRows: 0
+      totalRows: 0,
+      filters: {
+        workers: ["loubnielsen@prolike.io"],
+        category: "",
+        customer: "",
+        project: "",
+        dateFrom: new Date(2019,2,24),
+        dateTo: new Date(2019,2,28),
+      },
+    }
+  },
+  computed: {
+    filtered() {
+      const filtered = this.timeRegistration.filter(item => {
+        return Object.keys(this.filters).every(key =>
+          this.filterMe(key, item))
+      })
+      return filtered
     }
   },
   computed: {
@@ -200,6 +221,32 @@ export default {
     }
   },
   methods: {
+    filterMe(key, item) {
+      // String(item[key]).includes(this.filters[key]))
+      switch (key) {
+        case "workers":
+          return this.filters["workers"].some(r => String(item["worker"].id).includes(r))
+          break;
+        case "category":
+          return String(item[key].id).includes(this.filters[key])
+          break;
+        case "customer":
+          return String(item["project"]["customer"]["name"]).includes(this.filters[key])
+          break;
+        case "project":
+          return String(item["project"]["id"]).includes(this.filters[key])
+          break;
+        case "dateFrom":
+          return item["startTime"].toDate() > this.filters[key]
+          break;
+        case "dateTo":
+          return item["startTime"].toDate() < this.filters[key]
+          break;
+        default:
+          return true
+          break;
+      }
+    },
     hiddenThis(event) {
       console.log(event)
       var ref = this.fields[event]
@@ -215,7 +262,6 @@ export default {
         ref.thClass = "column-hidden"
         console.log(ref)
       }
-
     },
     sortCompare(a1, b1, key) {
       switch (key) {
@@ -293,10 +339,7 @@ export default {
     },
     getAllMyRegistrations() {
       var reg = firestoreHandler.getAllTimeregs()
-      console.log(reg)
-      console.log(this.timeRegistration)
       this.timeRegistration = reg
-      console.log(this.timeRegistration)
       this.totalRows = this.timeRegistration.length
     },
     deleteMe(id) {
