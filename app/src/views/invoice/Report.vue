@@ -14,20 +14,21 @@
       </section>
       <section class="categoryOverview col-lg-8">
         <div class="selectionHeader">Economy</div>
+        <b-table show-empty striped hover head-variant='dark' :items="groupByFilteredCategory"></b-table>
       </section>
     </div>
     <div class="filterBars">
       <button class="clear-button">Clear Selection</button>
       <div class="filterBars-right col-lg-6">
-          <h1>Per page</h1>
-          <b-form-select  v-model="perPage" :options="pageOptions"></b-form-select>
-          <h1>Filter</h1>
-          <div class="search-and-button">
-            <b-form-input v-model="filter"  placeholder="Type to Search" />
-            <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
-          </div>
+        <h1>Per page</h1>
+        <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
+        <h1>Filter</h1>
+        <div class="search-and-button">
+          <b-form-input v-model="filter" placeholder="Type to Search" />
+          <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+        </div>
       </div>
-  </div>
+    </div>
     <section>
       <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl" :filter="filter">
         <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
@@ -214,6 +215,55 @@ export default {
     uniqueWorkers: function() {
       return _.uniq(_.map(this.timeRegistration, 'worker.id'))
     },
+    groupByFilteredCategory: function() {
+      var grouped = _(this.filtered)
+        .groupBy("category.id")
+        .map((value, key) => {
+          var totalHours = this.getWorkhours1(_.sum(value.map((val, k) => {
+            return this.sumDate(val["startTime"], val["endTime"])
+          })))
+          var totalCost = _.sum(value.map((val, k) => {
+            var sumHours = this.sumDate(val["startTime"], val["endTime"])
+            var total = this.getWorkhours1(sumHours)
+            var sum = 0
+            if (val["project"]["categories"].hasOwnProperty(key)) {
+              sum = total * val["project"]["categories"][key]["cost"]
+            } else {
+              sum = total * val["category"]["cost"]
+            }
+            return sum
+          }))
+          var totalPrice = _.sum(value.map((val, k) => {
+            var sumHours = this.sumDate(val["startTime"], val["endTime"])
+            var total = this.getWorkhours1(sumHours)
+            var sum = 0
+            if (val["project"]["categories"].hasOwnProperty(key)) {
+              sum = total * val["project"]["categories"][key]["price"]
+            } else {
+              sum = total * val["category"]["price"]
+            }
+            return sum
+          }))
+
+          return {
+            label: key,
+            count: _.size(value),
+            hours: totalHours,
+            cost: totalCost,
+            price: totalPrice,
+          }
+        })
+        .value();
+      var totalCost = _.sumBy(grouped, 'cost')
+      var totalPrice = _.sumBy(grouped, 'price')
+      var totalHours = _.sumBy(grouped, 'hours')
+      var totalCount = _.sumBy(grouped, 'count')
+      console.log(totalPrice)
+      grouped.push({ "label": "Total", "count": totalCount, "hours": totalHours, "cost": totalCost, "price": totalPrice })
+      console.log(grouped)
+
+      return grouped
+    },
   },
   methods: {
     filterMe(key, item) {
@@ -375,9 +425,18 @@ export default {
       var time = new Date(total).toLocaleTimeString("da-DK").slice(0, -3);
       return time;
     },
+    getWorkhours1(timestamp) {
+
+      var time = timestamp / 3600000 + 1
+      return time;
+    },
     getTime(timestamp) {
       //Using 'de-DE' to separate hours and minutes with a ':'
       return String(timestamp.toDate().toLocaleTimeString("de-DE").slice(0, -3));
+    },
+    sumDate(timestamp, timestamp2) {
+      var total = timestamp2.toDate() - timestamp.toDate() - 3600000
+      return total
     },
     getDate(timestamp) {
       //Using 'en-GB' to get day before month: 'weekday', 'day' 'month'
@@ -398,11 +457,7 @@ export default {
 
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-
-
-
 <!-- Calendar icon for later use: icon-pack="fa" icon="calendar" -->
-
 <!-- Something that got removed, that we might keep for later use aswell:
 
 <section class="myDataFilter">
