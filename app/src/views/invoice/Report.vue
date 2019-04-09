@@ -5,7 +5,7 @@
         <div class="selectionHeader">Filter</div>
         <multiselect v-model="filters.workers" :options="uniqueWorkers" :multiple="true" placeholder="Pick a worker"></multiselect>
         <multiselect v-model="filters.category" :options="uniqueCategory" :multiple="true" placeholder="Pick a category"></multiselect>
-        <multiselect v-model="filters.paidMonth" :options="uniquePaid" :multiple="true" placeholder="Pick a paidMonth"></multiselect>
+        <multiselect v-model="filters.paidMonth" :options="uniquePaid" :multiple="true" placeholder="Pick a paid month"></multiselect>
         <multiselect v-model="filters.customer" :options="uniqueCustomer" :multiple="true" placeholder="Pick a customer"></multiselect>
         <multiselect v-model="filters.project" :options="uniqueProject" :multiple="true" placeholder="Pick a project"></multiselect>
         <bue-field>
@@ -18,26 +18,14 @@
     </div>
     <div class="filterBars">
       <button class="clear-button">Clear Selection</button>
-      <div class="filterBars-right col-lg-7">
-      <section>
-        <b-row>
-          <b-col md="6" class="my-1">
-            <b-form-group label-cols-sm="3" label="Per page" class="mb-0">
-              <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
-            </b-form-group>
-          </b-col>
-          <b-col md="6" class="my-1">
-            <b-form-group label-cols-sm="3" label="Filter" class="mb-0">
-              <b-input-group>
-                <b-form-input v-model="filter" placeholder="Type to Search" />
-                  <b-input-group-append>
-                <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
-                  </b-input-group-append>
-              </b-input-group>
-            </b-form-group>
-          </b-col>
-        </b-row>
-      </section>
+      <div class="filterBars-right col-lg-6">
+          <h1>Per page</h1>
+          <b-form-select  v-model="perPage" :options="pageOptions"></b-form-select>
+          <h1>Filter</h1>
+          <div class="search-and-button">
+            <b-form-input v-model="filter"  placeholder="Type to Search" />
+            <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+          </div>
       </div>
   </div>
     <section>

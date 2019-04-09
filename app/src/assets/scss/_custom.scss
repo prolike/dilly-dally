@@ -270,7 +270,8 @@ div.mdl-progress::after {
     }
 }
 
-// Styling for the two filter bars
+// Styling for the two filter bars and the
+// entire section containing them.
 .filterBars {
     width: 100%;
     height: auto;
@@ -280,6 +281,7 @@ div.mdl-progress::after {
     .custom-select,
     .form-control {
         height: 45px;
+        max-width: 300px;
     }
     .btn-secondary.disabled,
     .btn-secondary:disabled {
@@ -290,6 +292,10 @@ div.mdl-progress::after {
         opacity: 1;
         box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
         height: 45px;
+        font-size: 16px;
+    }
+    h1 {
+        display: inline-block;
     }
 }
 
@@ -304,7 +310,14 @@ div.mdl-progress::after {
 }
 
 .filterBars-right {
-    padding: 0;
+    padding: 0 !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .search-and-button {
+        display: flex;
+    }
 }
 
 // Miscellaneous
