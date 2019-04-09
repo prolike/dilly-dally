@@ -1,0 +1,126 @@
+// Styling for the two upper boxes on the analysis
+// page, and for the two filter bars below them.
+.two-box-box {
+    height: auto;
+    width: 90.5%; // !!! Fix this at some point
+    display: flex;
+    justify-content: space-between;
+    .col-lg-5,
+    .col-lg-8 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    // Filter Selection
+    .filterSelection {
+        width: 650px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+    }
+    .selectionHeader {
+        width: 100%;
+        height: 55px;
+        background: #1a2336;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+    // Category Overview
+    .categoryOverview {
+        height: 312px;
+        width: inherit;
+        background: #fff;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+        margin-left: 30px;
+    }
+}
+
+// Styling for the two filter bars and the
+// entire section containing them.
+.filterBars {
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    .custom-select,
+    .form-control {
+        height: 45px;
+        max-width: 300px;
+    }
+    .btn-secondary.disabled,
+    .btn-secondary:disabled {
+        background: #ffc400;
+        color: #1a2336;
+        font-weight: 600;
+        width: 100px;
+        opacity: 1;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+        height: 45px;
+        font-size: 16px;
+    }
+    h1 {
+        display: inline-block;
+    }
+}
+
+.clear-button {
+    width: 160px;
+    height: 45px;
+    background: #ffc400;
+    border: none;
+    color: #1a2336;
+    font-weight: 600;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+}
+
+.filterBars-right {
+    padding: 0 !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .search-and-button {
+        display: flex;
+    }
+}
+
+// Miscellaneous
+.custom-select,
+.form-control {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+}
+
+.datepicker .input {
+    height: 43px;
+}
+
+.myPagination {
+    display: flex;
+    width: 100px;
+    padding: 30px 0;
+    .col-md-6 {
+        padding: 0;
+    }
+}
+
+.myPaginationInfo {
+    padding-bottom: 30px;
+    font-size: 15px;
+}
+
+.page-item.active .page-link {
+    background-color: #ffc400;
+    color: #1a2336;
+    font-weight: 600;
+    border-color: #dfac04
+}
+
+.page-link,
+.page-link:hover {
+    color: #1a2336;
+}
+
+.page-link:focus {
+    outline: none !important;
+    box-shadow: none;
+}
