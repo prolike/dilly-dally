@@ -1,48 +1,45 @@
 <template>
   <div>
-    <section class="myDataFilter">
-      <bue-field v-for="(field,key) in fields">
-        <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(key)">
-          <span>{{field.label}}</span>
-        </b-checkbox-button>
-      </bue-field>
-      <p class="content">
-        <b>Selection:</b>
-        {{ checkboxGroup }}
-      </p>
-    </section>
-    <section>
-      <multiselect v-model="filters.workers" :options="uniqueWorkers" :multiple="true" placeholder="Pick a worker"></multiselect>
-      <multiselect v-model="filters.category" :options="uniqueCategory" :multiple="true" placeholder="Pick a category"></multiselect>
-      <multiselect v-model="filters.paidMonth" :options="uniquePaid" :multiple="true" placeholder="Pick a paidMonth"></multiselect>
-      <multiselect v-model="filters.customer" :options="uniqueCustomer" :multiple="true" placeholder="Pick a customer"></multiselect>
-      <multiselect v-model="filters.project" :options="uniqueProject" :multiple="true" placeholder="Pick a project"></multiselect>
-      <bue-field label="Date From">
-        <bue-datepicker placeholder="Select a date" v-model="filters.dateFrom" icon-pack="fa" icon="calendar" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
-      </bue-field>
-      <bue-field label="Date To">
-        <bue-datepicker placeholder="Select a date" v-model="filters.dateTo" icon-pack="fa" icon="calendar" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
-      </bue-field>
-    </section>
-    <section>
-      <b-row>
-        <b-col md="6" class="my-1">
-          <b-form-group label-cols-sm="3" label="Per page" class="mb-0">
-            <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
-          </b-form-group>
-        </b-col>
-        <b-col md="6" class="my-1">
-          <b-form-group label-cols-sm="3" label="Filter" class="mb-0">
-            <b-input-group>
-              <b-form-input v-model="filter" placeholder="Type to Search" />
-              <b-input-group-append>
+    <div class="two-box-box">
+      <section class="filterSelection col-lg-5">
+        <div class="selectionHeader">Filter</div>
+        <multiselect v-model="filters.workers" :options="uniqueWorkers" :multiple="true" placeholder="Pick a worker"></multiselect>
+        <multiselect v-model="filters.category" :options="uniqueCategory" :multiple="true" placeholder="Pick a category"></multiselect>
+        <multiselect v-model="filters.paidMonth" :options="uniquePaid" :multiple="true" placeholder="Pick a paidMonth"></multiselect>
+        <multiselect v-model="filters.customer" :options="uniqueCustomer" :multiple="true" placeholder="Pick a customer"></multiselect>
+        <multiselect v-model="filters.project" :options="uniqueProject" :multiple="true" placeholder="Pick a project"></multiselect>
+        <bue-field>
+          <bue-datepicker placeholder="Pick a start and end date" v-model="filters.dateFrom" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
+        </bue-field>
+      </section>
+      <section class="categoryOverview col-lg-8">
+        <div class="selectionHeader">Economy</div>
+      </section>
+    </div>
+    <div class="filterBars">
+      <button class="clear-button">Clear Selection</button>
+      <div class="filterBars-right col-lg-7">
+      <section>
+        <b-row>
+          <b-col md="6" class="my-1">
+            <b-form-group label-cols-sm="3" label="Per page" class="mb-0">
+              <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
+            </b-form-group>
+          </b-col>
+          <b-col md="6" class="my-1">
+            <b-form-group label-cols-sm="3" label="Filter" class="mb-0">
+              <b-input-group>
+                <b-form-input v-model="filter" placeholder="Type to Search" />
+                  <b-input-group-append>
                 <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
-              </b-input-group-append>
-            </b-input-group>
-          </b-form-group>
-        </b-col>
-      </b-row>
-    </section>
+                  </b-input-group-append>
+              </b-input-group>
+            </b-form-group>
+          </b-col>
+        </b-row>
+      </section>
+      </div>
+  </div>
     <section>
       <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl" :filter="filter">
         <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
@@ -58,12 +55,12 @@
           {{getWorkhours(data.item.startTime,data.item.endTime)}}
         </template>
       </b-table>
-      <section>
+      <section class="myPagination">
         <b-col md="6" class="my-1">
           <b-pagination v-model="currentPage" :total-rows="totalRows" :per-page="perPage" class="my-0"></b-pagination>
         </b-col>
       </section>
-      <section> Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
+      <section class="myPaginationInfo"> Sorting By: <b>{{ sortBy }}</b>, Sort Direction:
         <b>{{ sortDesc ? 'Descending' : 'Ascending' }}</b></section>
     </section>
   </div>
@@ -413,3 +410,21 @@ export default {
 
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
+
+
+
+<!-- Calendar icon for later use: icon-pack="fa" icon="calendar" -->
+
+<!-- Something that got removed, that we might keep for later use aswell:
+
+<section class="myDataFilter">
+      <bue-field v-for="(field,key) in fields">
+        <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(key)">
+          <span>{{field.label}}</span>
+        </b-checkbox-button>
+      </bue-field>
+      <p class="content">
+        <b>Selection:</b>
+        {{ checkboxGroup }}
+      </p>
+    </section>-->

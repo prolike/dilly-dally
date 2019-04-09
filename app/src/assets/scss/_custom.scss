@@ -1,12 +1,11 @@
 // Here you can add other styles
-
 * {
     font-family: 'Montserrat', sans-serif;
 }
+
 .breadcrumb-item {
     font-weight: 500;
 }
-
 
 .column-hidden {
     display: none;
@@ -15,29 +14,27 @@
 .sidebar {
     background: #ffffff;
     font-weight: 500;
-
     .nav-dropdown.open {
         background: #ffc400;
     }
     .nav-dropdown.open .nav-link {
         color: #1A2336;
     }
-    
     .nav-link .nav-icon {
         color: #000000;
     }
-
-    .nav-link:hover, .nav-dropdown.open .nav-link:hover{
+    .nav-link:hover,
+    .nav-dropdown.open .nav-link:hover {
         background: #1A2336;
         color: #ffffff;
     }
-
     .nav-dropdown.open .nav-link.active {
         background: #1a2336;
         color: #ffffff;
     }
 }
-.app-header .nav-item .nav-link > .img-avatar {
+
+.app-header .nav-item .nav-link>.img-avatar {
     margin-right: 30px;
 }
 
@@ -81,14 +78,12 @@ div.mdl-progress::after {
     align-items: center;
     flex-direction: column;
     background: #1a2336;
-
     h1 {
         color: #ffffff;
         font-size: 18.5px;
         text-transform: uppercase;
-        letter-spacing:2.5px;
+        letter-spacing: 2.5px;
     }
-
     #googleLogin {
         height: 50px;
         width: 235px;
@@ -102,37 +97,46 @@ div.mdl-progress::after {
         font-weight: 600;
         box-shadow: 0 0 2.5px #000000;
     }
-
     .loginLogo {
         height: 55px;
         width: auto;
         margin-bottom: 10px;
     }
-
     .googleIcon {
         height: 25px;
         padding-left: 12.5px;
         padding-right: 20px;
     }
-
     .spinner-logo {
         height: 75px;
         animation: flash 3s ease-in-out infinite;
     }
-
     @-webkit-keyframes flash {
-        0%, 50%, 100% {opacity: 1;}
-        25%, 75% {opacity: 0;}
+        0%,
+        50%,
+        100% {
+            opacity: 1;
+        }
+        25%,
+        75% {
+            opacity: 0;
+        }
     }
     @keyframes flash {
-        0%, 50%, 100% {opacity: 1;}
-        25%, 75% {opacity: 0;}
+        0%,
+        50%,
+        100% {
+            opacity: 1;
+        }
+        25%,
+        75% {
+            opacity: 0;
+        }
     }
     .flash {
         -webkit-animation-name: flash;
         animation-name: flash;
     }
-
     h2 {
         color: white;
         font-size: 18px;
@@ -143,7 +147,6 @@ div.mdl-progress::after {
 }
 
 //Datepicker arrows
-
 .fa-angle-left::before {
     content: "";
 }
@@ -162,10 +165,10 @@ div.mdl-progress::after {
     border-top: solid 2px currentColor;
     border-right: solid 2px currentColor;
     -webkit-transform: rotate(-135deg);
-            transform: rotate(-135deg);
-  }
-  
-  .pagination-next::after {
+    transform: rotate(-135deg);
+}
+
+.pagination-next::after {
     content: '';
     color: #7957d5;
     right: 1px;
@@ -175,12 +178,11 @@ div.mdl-progress::after {
     border-top: solid 2px currentColor;
     border-right: solid 2px currentColor;
     -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-  }
+    transform: rotate(45deg);
+}
 
 // Prevents the input fields to jump around
 // whenever the form validator is triggered
-
 .help.is-danger {
     font-family: 'Monserrat', sans-serif;
     font-weight: bold;
@@ -188,8 +190,7 @@ div.mdl-progress::after {
 }
 
 //Custom error text for time picker
-
-.error-text{
+.error-text {
     font-family: 'Montserrat', sans-serif;
     position: absolute;
     color: #ff3860 !important;
@@ -206,7 +207,6 @@ div.mdl-progress::after {
 .comments {
     display: block !important;
     padding-top: 45px;
-
 }
 
 .tab-content {
@@ -220,7 +220,6 @@ div.mdl-progress::after {
 
 // Section for the data toggler on the
 // 'My Registrations' page.
-
 .myDataFilter {
     display: flex;
     flex-wrap: wrap;
@@ -233,4 +232,118 @@ div.mdl-progress::after {
 .content {
     flex-basis: 100%;
     margin-bottom: 20px;
+}
+
+// Styling for the two upper boxes on the analysis
+// page, and for the two filter bars below them.
+.two-box-box {
+    height: auto;
+    width: 90.5%; // !!! Fix this at some point
+    display: flex;
+    justify-content: space-between;
+    .col-lg-5,
+    .col-lg-8 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    // Filter Selection
+    .filterSelection {
+        width: 650px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+    }
+    .selectionHeader {
+        width: 100%;
+        height: 55px;
+        background: #1a2336;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+    // Category Overview
+    .categoryOverview {
+        height: 312px;
+        width: inherit;
+        background: #fff;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+        margin-left: 30px;
+    }
+}
+
+// Styling for the two filter bars
+.filterBars {
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    .custom-select,
+    .form-control {
+        height: 45px;
+    }
+    .btn-secondary.disabled,
+    .btn-secondary:disabled {
+        background: #ffc400;
+        color: #1a2336;
+        font-weight: 600;
+        width: 100px;
+        opacity: 1;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+        height: 45px;
+    }
+}
+
+.clear-button {
+    width: 160px;
+    height: 45px;
+    background: #ffc400;
+    border: none;
+    color: #1a2336;
+    font-weight: 600;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+}
+
+.filterBars-right {
+    padding: 0;
+}
+
+// Miscellaneous
+.custom-select,
+.form-control {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+}
+
+.datepicker .input {
+    height: 43px;
+}
+
+.myPagination {
+    display: flex;
+    width: 100px;
+    padding: 30px 0;
+    .col-md-6 {
+        padding: 0;
+    }
+}
+
+.myPaginationInfo {
+    padding-bottom: 30px;
+    font-size: 15px;
+}
+
+.page-item.active .page-link {
+    background-color: #ffc400;
+    color: #1a2336;
+    font-weight: 600;
+    border-color: #dfac04
+}
+
+.page-link,
+.page-link:hover {
+    color: #1a2336;
+}
+
+.page-link:focus {
+    outline: none !important;
+    box-shadow: none;
 }
