@@ -10,7 +10,7 @@
         <multiselect v-model="filters.project" :options="uniqueProject" :multiple="true" placeholder="Pick a project"></multiselect>
         <bue-field>
           <bue-datepicker class="dual-datepicker" placeholder="Pick a start date" v-model="filters.dateFrom" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
-          <bue-datepicker class="dual-datepicker" placeholder="Pick a end date" v-model="filters.dateFrom" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
+          <bue-datepicker class="dual-datepicker" placeholder="Pick a end date" v-model="filters.dateTo" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
         </bue-field>
       </section>
       <section class="categoryOverview col-lg-8">

@@ -5,17 +5,16 @@ let db = admin.firestore();
 
 const fs = require('fs')
 var filename = __dirname + "/registrations.csv"
+var legends = __dirname + "/legend.csv"
 
 const csv = require('csvtojson')
 
 exports.timeRegistrationAdd = async (db2) => {
     csv()
-        .fromFile(filename)
+        .fromFile(legends)
         .then((row) => {
             row.forEach(obj => {
-                var j = {}
-                j = format(obj)
-                addReg(j)
+                console.log(obj)
             })
         })
 }
