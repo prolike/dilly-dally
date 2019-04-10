@@ -18,7 +18,7 @@
       </section>
     </div>
     <div class="filterBars">
-      <button class="clear-button">Clear Selection</button>
+      <button class="clear-button" v-on:click="clearFilters">Clear Selection</button>
       <div class="filterBars-right col-lg-6">
         <h1>Per page</h1>
         <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
@@ -180,6 +180,8 @@ export default {
         project: [],
         dateFrom: undefined,
         dateTo: undefined,
+        status: [],
+        paidMonth: []
       },
     }
   },
@@ -205,9 +207,6 @@ export default {
     },
     uniqueProject: function() {
       return _.uniq(_.map(this.timeRegistration, 'project.id'))
-    },
-    uniqueYear: function() {
-      return "?"
     },
     uniqueIssues: function() {
       return _.uniq(_.flatMap(this.timeRegistration, 'issues'))
@@ -446,6 +445,17 @@ export default {
       var dateoptions = { year: "numeric", month: "numeric", day: "numeric" };
       return dt.toLocaleDateString("en-GB", dateoptions);
     },
+    clearFilters() {
+      this.filters.workers = []
+      this.filters.category = []
+      this.filters.customer = []
+      this.filters.project = []
+      this.filters.status = []
+      this.filters.paidMonth = []
+      this.filters.dateFrom = undefined
+      this.filters.dateTo = undefined
+
+    }
   },
   mounted() {
     // firestoreHandler.getTest()
