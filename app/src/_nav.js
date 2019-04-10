@@ -17,8 +17,18 @@ export default {
     },
     {
       name: 'Analysis',
-      url: '/home/invoice/report',
-      icon: 'cui-calculator',
+      url: '/home/analysis',
+      icon: 'icon-calculator',
+    },
+    {
+      name: 'Add Project',
+      url: '/home/project/add',
+      icon: 'fa fa-plus'
+    },
+    {
+      name: 'Edit Project',
+      url: '/home/project/edit',
+      icon: 'fa fa-edit'
     }
   ]
 }

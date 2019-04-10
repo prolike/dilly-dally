@@ -12,6 +12,8 @@ const Login = () => import('@/views/login/Login')
 const Timeregistration = () => import('@/views/timeregistration/Registration')
 const Timeoverview = () => import('@/views/timeregistration/Timeoverview')
 const InvoiceReport = () => import('@/views/invoice/Report')
+const Add = () => import('@/views/AddProject')
+const Edit = () => import('@/views/EditProject')
 
 Vue.use(Router)
 
@@ -45,14 +47,24 @@ var router = new Router({
           component: Timeoverview
         },
         {
-          path: 'invoice/report',
-          name: 'Invoice Report',
+          path: 'analysis',
+          name: 'Analysis',
           component: InvoiceReport
         },
         {
           path: 'dashboard',
           name: 'Dashboard',
           component: Dashboard
+        },
+        {
+          path: 'project/add',
+          name: 'Add',
+          component: Add
+        },
+        {
+          path: 'project/edit',
+          name: 'Edit',
+          component: Edit
         }
       ]
     }
