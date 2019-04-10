@@ -31,9 +31,6 @@
     </div>
     <section>
       <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl" :filter="filter">
-        <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
-          <i class="fa fa-check-square"></i>
-        </template>
         <template slot="year" slot-scope="data">
           {{getYear(data.item.startTime)}}
         </template>
@@ -78,9 +75,9 @@ export default {
         color: 'red'
       },
       fields: {
-        approved: {
-          key: 'isApproved',
-          label: 'Approved',
+        status: {
+          key: 'status',
+          label: 'Status',
           sortable: true,
           tdClass: null,
           thClass: null
@@ -213,6 +210,9 @@ export default {
     },
     uniqueWorkers: function() {
       return _.uniq(_.map(this.timeRegistration, 'worker.id'))
+    },
+    uniqueStatus: function() {
+      return _.uniq(_.map(this.timeRegistration, 'status'))
     },
     groupByFilteredCategory: function() {
       var grouped = _(this.filtered)
