@@ -9,7 +9,8 @@
         <multiselect v-model="filters.customer" :options="uniqueCustomer" :multiple="true" placeholder="Pick a customer"></multiselect>
         <multiselect v-model="filters.project" :options="uniqueProject" :multiple="true" placeholder="Pick a project"></multiselect>
         <bue-field>
-          <bue-datepicker placeholder="Pick a start and end date" v-model="filters.dateFrom" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
+          <bue-datepicker class="dual-datepicker" placeholder="Pick a start date" v-model="filters.dateFrom" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
+          <bue-datepicker class="dual-datepicker" placeholder="Pick a end date" v-model="filters.dateFrom" :max-date="date" :first-day-of-week="1" editable></bue-datepicker>
         </bue-field>
       </section>
       <section class="categoryOverview col-lg-8">
@@ -17,7 +18,7 @@
       </section>
     </div>
     <div class="filterBars">
-      <button class="clear-button" v-on:click="clearFilters">Clear Selection</button>
+      <button class="analysis-button" v-on:click="clearFilters">Clear Selection</button>
       <div class="filterBars-right col-lg-6">
         <h1>Per page</h1>
         <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
@@ -466,7 +467,11 @@ export default {
 
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-<!-- Calendar icon for later use: icon-pack="fa" icon="calendar" -->
+
+<!-- Font Awesome icon for a calendar that we might use in our datepicker at a later date. -->
+
+<!-- icon-pack="fa" icon="calendar" -->
+
 <!-- Something that got removed, that we might keep for later use aswell:
 
 <section class="myDataFilter">
