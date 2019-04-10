@@ -224,22 +224,23 @@ export default {
           var totalCost = _.sum(value.map((val, k) => {
             var sumHours = this.sumDate(val["startTime"], val["endTime"])
             var total = this.getWorkhours1(sumHours)
-            var sum = 0
+            var sum = total * val["category"]["cost"]
             if (val["project"]["categories"].hasOwnProperty(key)) {
-              sum = total * val["project"]["categories"][key]["cost"]
-            } else {
-              sum = total * val["category"]["cost"]
+              if (val["project"]["categories"][key].hasOwnProperty("cost")) {
+                sum = total * val["project"]["categories"][key]["cost"]
+              }
             }
             return sum
           }))
           var totalPrice = _.sum(value.map((val, k) => {
             var sumHours = this.sumDate(val["startTime"], val["endTime"])
             var total = this.getWorkhours1(sumHours)
+            sum = total * val["category"]["price"]
             var sum = 0
             if (val["project"]["categories"].hasOwnProperty(key)) {
-              sum = total * val["project"]["categories"][key]["price"]
-            } else {
-              sum = total * val["category"]["price"]
+              if (val["project"]["categories"][key].hasOwnProperty("price")) {
+                sum = total * val["project"]["categories"][key]["price"]
+              }
             }
             return sum
           }))
@@ -467,11 +468,8 @@ export default {
 
 </script>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-
 <!-- Font Awesome icon for a calendar that we might use in our datepicker at a later date. -->
-
 <!-- icon-pack="fa" icon="calendar" -->
-
 <!-- Something that got removed, that we might keep for later use aswell:
 
 <section class="myDataFilter">
