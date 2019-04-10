@@ -13,8 +13,7 @@
         </bue-field>
       </section>
       <section class="categoryOverview col-lg-8">
-        <div class="selectionHeader">Economy</div>
-        <b-table show-empty striped hover head-variant='dark' :items="groupByFilteredCategory"></b-table>
+        <b-table show-empty striped hover :items="groupByFilteredCategory"></b-table>
       </section>
     </div>
     <div class="filterBars">

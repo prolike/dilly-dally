@@ -37,6 +37,7 @@
 
 // Styling for the two filter bars and the
 // entire section containing them.
+
 .filterBars {
     width: 100%;
     height: auto;
@@ -64,14 +65,17 @@
     }
 }
 
-.clear-button {
-    width: 160px;
-    height: 45px;
+// Styling for the two buttons that says Save Selection
+// and Clear Selection in the middle of the Analysis page.
+
+.analysis-button {
+    padding: 10.5px 25px;
     background: #ffc400;
     border: none;
     color: #1a2336;
     font-weight: 600;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
+    margin-right: 20px;
 }
 
 .filterBars-right {
@@ -91,9 +95,8 @@
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.10);
 }
 
-.datepicker .input {
-    height: 43px;
-}
+// Styling for the pagination at the very
+// bottom of the Analysis page; slightly messy.
 
 .myPagination {
     display: flex;
@@ -124,4 +127,27 @@
 .page-link:focus {
     outline: none !important;
     box-shadow: none;
+}
+
+// Styling for the two datepickers in the Filter
+// div, on the Analysis page.
+
+.dual-datepicker {
+    width: 50%;
+}
+
+.datepicker .input {
+    height: 43px;
+}
+
+// Styling for the category overview divs header
+// and the subsequent bue-field data aswell.
+
+.table thead td, .table thead th {
+    color: #ffffff !important;
+    line-height: 36px;
+    background: #1a2336;
+    font-weight: 600;
+    color: #ffffff !important;
+    height: 55px;
 }
