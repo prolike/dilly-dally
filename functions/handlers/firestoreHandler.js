@@ -5,7 +5,8 @@ let db = admin.firestore();
 
 const fs = require('fs')
 var filename = __dirname + "/registrations.csv"
-var legends = __dirname + "/legend.csv"
+var legends = __dirname + "/discount.csv"
+var defaultCategories = __dirname + "/categories.csv"
 
 const csv = require('csvtojson')
 
@@ -13,15 +14,21 @@ exports.timeRegistrationAdd = async (db2) => {
     csv()
         .fromFile(legends)
         .then((legend) => {
-            startReg(legend)
-
+            getDefaultCategories(legend)
         })
-
-
-
 }
 
-function startReg(legend) {
+function getDefaultCategories(legend) {
+    csv()
+        .fromFile(defaultCategories)
+        .then((defaultCategories) => {
+            console.log(defaultCategories)
+            startReg(legend, defaultCategories)
+
+        })
+}
+
+function startReg(legend, defaultCategories) {
     //console.log(legend)
     csv()
         .fromFile(filename)
@@ -30,7 +37,8 @@ function startReg(legend) {
             //console.log(row)
             row.forEach(obj => {
                 var j = {}
-                j = format(obj, legend)
+                j = format(obj, legend, defaultCategories)
+                console.log(j)
                 addReg(j)
                 //console.log(j)
             })
@@ -50,7 +58,7 @@ function addReg(data) {
 }
 
 
-function format(row, legend) {
+function format(row, legend, defaultCategories) {
     //    console.log(legend)
     //console.log(row)
     //console.log(legend)
@@ -73,7 +81,13 @@ function format(row, legend) {
     date2.setHours(hour)
     date2.setMinutes(minute)
     row['endTime'] = date2
-    row['category'] = { id: row.Category }
+    var defaultCategory = { id: row.Category }
+    for(var i in defaultCategories){
+        if(defaultCategories[i]["Categories"] === row.Category){
+            defaultCategory = {"id":row.Category, "cost":defaultCategories[i]["Cost"], "price":defaultCategories[i]["Price"]}
+        }
+    }
+    row['category'] = defaultCategory
     row["paidMonth"] = row['Paid (month)']
     var categories = undefined
     for (var obj in legend) {
