@@ -14,7 +14,9 @@
         </bue-field>
       </section>
       <section class="categoryOverview col-lg-8">
-        <b-table show-empty striped hover :items="groupByFilteredCategory"></b-table>
+        <b-table show-empty striped hover :items="groupByFilteredCategory" :tbody-tr-class="totalClass">
+          
+        </b-table>
       </section>
     </div>
     <div class="filterBars">
@@ -332,6 +334,10 @@ export default {
         ref.thClass = "column-hidden"
         console.log(ref)
       }
+    },
+    totalClass(item,type){
+      if(!item) return
+      if(item.label === "Total") return 'table-success'
     },
     sortCompare(a1, b1, key) {
       switch (key) {
