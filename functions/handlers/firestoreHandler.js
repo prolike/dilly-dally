@@ -12,9 +12,27 @@ const csv = require('csvtojson')
 exports.timeRegistrationAdd = async (db2) => {
     csv()
         .fromFile(legends)
+        .then((legend) => {
+            startReg(legend)
+
+        })
+
+
+
+}
+
+function startReg(legend) {
+    //console.log(legend)
+    csv()
+        .fromFile(filename)
         .then((row) => {
+            var asd = legend
+            //console.log(row)
             row.forEach(obj => {
-                console.log(obj)
+                var j = {}
+                j = format(obj, legend)
+                addReg(j)
+                //console.log(j)
             })
         })
 }
@@ -32,8 +50,10 @@ function addReg(data) {
 }
 
 
-function format(row) {
+function format(row, legend) {
+    //    console.log(legend)
     //console.log(row)
+    //console.log(legend)
     row["worker"] = { id: row.Worker + "@prolike.io" }
     var date = new Date(row['Date (work)'])
     var date2 = new Date(row['Date (work)'])
@@ -55,7 +75,21 @@ function format(row) {
     row['endTime'] = date2
     row['category'] = { id: row.Category }
     row["paidMonth"] = row['Paid (month)']
-    row["project"] = { id: row['Assignment'], customer: { name: row['Assignment'] } }
+    var categories = undefined
+    for (var obj in legend) {
+        if (legend[obj]["Customers"] === row['Assignment']) {
+            var ob = {}
+            Object.assign(ob, legend[obj])
+            delete ob["Customers"]
+            for (var o in ob) {
+                var num = Number(ob[o])
+                ob[o] = { "price": num }
+            }
+            categories = ob
+        }
+    }
+    // console.log(categories)
+    row["project"] = { id: row['Assignment'], customer: { name: row['Assignment'] }, "categories": categories }
     row["status"] = row["Status"]
     //row["invoice"] = row["Invoice No"]
     row["comment"] = row["Comment"]
@@ -63,7 +97,7 @@ function format(row) {
     row["cost"] = row["Cost"]
     row["issues"] = row["comment"].match(/\#[0-9]*/g)
     //console.log(row["issues"])
-   // console.log(row["comment"])
+    // console.log(row["comment"])
     delete row['Paid (month)'];
     delete row['Worker'];
     delete row['Assignment'];
