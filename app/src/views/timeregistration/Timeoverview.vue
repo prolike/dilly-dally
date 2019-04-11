@@ -1,6 +1,6 @@
 <template>
   <section>
-    <section class="myDataFilter">
+<!--     <section class="myDataFilter">
       <bue-field v-for="(field,key) in fields" v-if="field.label != 'Delete me'">
         <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(key)">
           <span>{{field.label}}</span>
@@ -10,7 +10,7 @@
         <b>Selection:</b>
         {{ checkboxGroup }}
       </p>
-    </section>
+    </section> -->
     <b-table striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
       <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
         <i class="fa fa-check-square"></i>
