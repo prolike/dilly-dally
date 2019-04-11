@@ -3,6 +3,7 @@
     <div class="two-box-box">
       <section class="filterSelection col-lg-5">
         <div class="selectionHeader">Filter</div>
+        <multiselect v-model="filters.status" :options="uniqueStatus" placeholder="Pick a status"></multiselect>
         <multiselect v-model="filters.workers" :options="uniqueWorkers" :multiple="true" placeholder="Pick a worker"></multiselect>
         <multiselect v-model="filters.category" :options="uniqueCategory" :multiple="true" placeholder="Pick a category"></multiselect>
         <multiselect v-model="filters.paidMonth" :options="uniquePaid" :multiple="true" placeholder="Pick a paid month"></multiselect>
@@ -179,7 +180,7 @@ export default {
         project: [],
         dateFrom: undefined,
         dateTo: undefined,
-        status: [],
+        status: "",
         paidMonth: []
       },
     }
@@ -211,7 +212,9 @@ export default {
       return _.sortBy(_.uniq(_.map(this.timeRegistration, 'worker.id')))
     },
     uniqueStatus: function() {
-      return _.uniq(_.map(this.timeRegistration, 'status'))
+      var status =  _.sortBy(_.uniq(_.map(this.timeRegistration, 'status')))
+      status.push("!OK")
+      return status
     },
     groupByFilteredCategory: function() {
       var grouped = _(this.filtered)
@@ -305,6 +308,20 @@ export default {
             return true
           } else {
             return this.filters[key].some(r => String(item["paidMonth"]).includes(r))
+          }
+          break;
+        case "status":
+          if (this.filters["status"] === "") {
+            return true
+          } else {
+            if(this.filters["status"] === "OK"){
+               return String(item["status"]).includes("OK")
+            }
+            else if(this.filters["status"] === "!OK"){
+               return !String(item["status"]).includes("OK")
+            }
+
+           
           }
           break;
         default:
