@@ -1,6 +1,6 @@
 <template>
   <section>
-<!--     <section class="myDataFilter">
+    <!--     <section class="myDataFilter">
       <bue-field v-for="(field,key) in fields" v-if="field.label != 'Delete me'">
         <b-checkbox-button v-model="checkboxGroup" :native-value="field.label" type="is-danger" @input="hiddenThis(key)">
           <span>{{field.label}}</span>
@@ -11,13 +11,7 @@
         {{ checkboxGroup }}
       </p>
     </section> -->
-    <b-table striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="timeRegistration" :fields="fields" :sort-compare="sortCompare" stacked="lg" :filter="filter">
-      <template slot="isApproved" slot-scope="data" v-if="data.item.isApproved">
-        <i class="fa fa-check-square"></i>
-      </template>
-      <template slot="year" slot-scope="data">
-        {{getYear(data.item.startTime)}}
-      </template>
+    <b-table striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="lg" show-empty>
       <template slot="date" slot-scope="data">
         {{getDate(data.item.startTime)}}
       </template>
@@ -145,8 +139,15 @@ export default {
       workers: {},
       email: "",
       user: "",
-      filter: null,
     }
+  },
+  computed: {
+    filtered() {
+      const filtered = this.timeRegistration.filter(item => {
+        return item["worker"]["id"] === this.email
+      })
+      return filtered
+    },
   },
   methods: {
     hiddenThis(event) {
@@ -229,10 +230,7 @@ export default {
     },
     getAllMyRegistrations() {
       var reg = firestoreHandler.getAllTimeregs()
-      console.log(reg)
-      console.log(this.timeRegistration)
       this.timeRegistration = reg
-      console.log(this.timeRegistration)
     },
     deleteMe(id) {
       firestoreHandler.timeRegistrationRemove(id)
