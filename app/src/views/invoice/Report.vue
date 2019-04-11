@@ -244,24 +244,20 @@ export default {
             }
             return sum
           }))
-
           return {
             label: key,
             count: _.size(value),
             hours: totalHours,
-            cost: totalCost,
-            price: totalPrice,
+            cost: _.round(totalCost,2),
+            price: _.round(totalPrice,2),
           }
         })
         .value();
-      var totalCost = _.sumBy(grouped, 'cost')
-      var totalPrice = _.sumBy(grouped, 'price')
-      var totalHours = _.sumBy(grouped, 'hours')
+      var totalCost = _.sumBy(grouped, 'cost').toFixed(2)
+      var totalPrice = _.sumBy(grouped, 'price').toFixed(2)
+      var totalHours = _.sumBy(grouped, 'hours').toFixed(1)
       var totalCount = _.sumBy(grouped, 'count')
-      console.log(totalPrice)
       grouped.push({ "label": "Total", "count": totalCount, "hours": totalHours, "cost": totalCost, "price": totalPrice })
-      console.log(grouped)
-
       return grouped
     },
   },
