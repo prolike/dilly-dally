@@ -196,22 +196,19 @@ export default {
       return this.filtered.length
     },
     uniqueCategory: function() {
-      return _.uniq(_.map(this.timeRegistration, 'category.id'))
+      return _.sortBy(_.uniq(_.map(this.timeRegistration, 'category.id')))
     },
     uniquePaid: function() {
-      return _.uniq(_.map(this.timeRegistration, 'paidMonth'))
+      return _.sortBy(_.uniq(_.map(this.timeRegistration, 'paidMonth')))
     },
     uniqueCustomer: function() {
-      return _.uniq(_.map(this.timeRegistration, 'project.customer.name'))
+      return _.sortBy(_.uniq(_.map(this.timeRegistration, 'project.customer.name')))
     },
     uniqueProject: function() {
-      return _.uniq(_.map(this.timeRegistration, 'project.id'))
-    },
-    uniqueIssues: function() {
-      return _.uniq(_.flatMap(this.timeRegistration, 'issues'))
+      return _.sortBy(_.uniq(_.map(this.timeRegistration, 'project.id')))
     },
     uniqueWorkers: function() {
-      return _.uniq(_.map(this.timeRegistration, 'worker.id'))
+      return _.sortBy(_.uniq(_.map(this.timeRegistration, 'worker.id')))
     },
     uniqueStatus: function() {
       return _.uniq(_.map(this.timeRegistration, 'status'))
