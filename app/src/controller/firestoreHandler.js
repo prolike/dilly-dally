@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { firebaseHandler } from './firebaseHandler'
 import VueFirestore from 'vue-firestore'
-import * as firebase from 'firebase';
+//import * as firebase from 'firebase';
 
 Vue.use(VueFirestore, {
   key: 'id', // the name of the property. Default is '.key'.
@@ -31,38 +31,43 @@ var firestoreHandler = new Vue({
   },
   methods: {
     timeRegistrationAdd(data) {
-      this.$firestore.timeregistration.add(data)
+      this.$firestore.timeregistration.add(data);
     },
     timeRegistrationRemove(id) {
-      this.$firestore.timeregistration.doc(id).delete()
+      this.$firestore.timeregistration.doc(id).delete();
+    },
+    projectEdit(name, data) {
+      this.$firestore.customers.doc(name).update(data);
+    },
+    projectAdd(name, data) {
+      this.$firestore.projects.doc(name).set(data);
     },
     getAllTimeregs() {
-      return this.timeregistration
+      return this.timeregistration;
     },
     getAllWorkers() {
-      return this.workers
+      return this.workers;
     },
     getTheWorker(email) {
-      console.log(this.workers)
-      var worker = this.workers.find(worker => worker.id === email)
-      console.log(worker)
-      return worker
+      console.log(this.workers);
+      var worker = this.workers.find(worker => worker.id === email);
+      console.log(worker);
+      return worker;
     },
     getCategories() {
-      return this.categories
+      return this.categories;
     },
     getProjects() {
-      return this.projects
+      return this.projects;
     },
     getCustomers() {
-      return this.customers
+      return this.customers;
     },
     getCurrentTimestamp(){
-      return this.db.Timestamp.fromDate(new Date())
+      return this.db.Timestamp.fromDate(new Date());
     }
   },
   mounted() {
-    
   }
 })
 
