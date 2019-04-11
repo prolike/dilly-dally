@@ -16,7 +16,6 @@
       </section>
       <section class="categoryOverview col-lg-8">
         <b-table show-empty striped hover :items="groupByFilteredCategory" :tbody-tr-class="totalClass">
-          
         </b-table>
       </section>
     </div>
@@ -27,13 +26,13 @@
         <b-form-select v-model="perPage" :options="pageOptions"></b-form-select>
         <h1>Filter</h1>
         <div class="search-and-button">
-          <b-form-input v-model="filter" placeholder="Type to Search" />
-          <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+          <b-form-input v-model="filters.global" placeholder="Type to Search" />
+          <b-button :disabled="!filters.global" @click="filters.global = ''">Clear</b-button>
         </div>
       </div>
     </div>
     <section>
-      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl" :filter="filter">
+      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl">
         <template slot="year" slot-scope="data">
           {{getYear(data.item.startTime)}}
         </template>
@@ -68,8 +67,6 @@ export default {
   data: function() {
     return {
       date: new Date(),
-      value: [],
-      options: ["asd", "asdx"],
       sortBy: 'date',
       sortDesc: false,
       sortDirection: 'asc',
@@ -169,7 +166,6 @@ export default {
       workers: {},
       email: "",
       user: "",
-      filter: null,
       currentPage: 1,
       perPage: 10,
       pageOptions: [10, 25, 50],
@@ -181,7 +177,8 @@ export default {
         dateFrom: undefined,
         dateTo: undefined,
         status: "",
-        paidMonth: []
+        paidMonth: [],
+        global: ""
       },
     }
   },
@@ -212,7 +209,7 @@ export default {
       return _.sortBy(_.uniq(_.map(this.timeRegistration, 'worker.id')))
     },
     uniqueStatus: function() {
-      var status =  _.sortBy(_.uniq(_.map(this.timeRegistration, 'status')))
+      var status = _.sortBy(_.uniq(_.map(this.timeRegistration, 'status')))
       status.push("!OK")
       return status
     },
@@ -250,8 +247,8 @@ export default {
             label: key,
             count: _.size(value),
             hours: totalHours,
-            cost: _.round(totalCost,2),
-            price: _.round(totalPrice,2),
+            cost: _.round(totalCost, 2),
+            price: _.round(totalPrice, 2),
           }
         })
         .value();
@@ -314,14 +311,21 @@ export default {
           if (this.filters["status"] === "") {
             return true
           } else {
-            if(this.filters["status"] === "OK"){
-               return String(item["status"]).includes("OK")
+            if (this.filters["status"] === "OK") {
+              return String(item["status"]).includes("OK")
+            } else if (this.filters["status"] === "!OK") {
+              return !String(item["status"]).includes("OK")
             }
-            else if(this.filters["status"] === "!OK"){
-               return !String(item["status"]).includes("OK")
-            }
-
-           
+          }
+          break;
+        case "global":
+          if (this.filters["global"] === "") {
+            return true
+          } else {
+            if (String(item["comment"]).includes(this.filters.global)) return true
+            if (String(item["issues"]).includes(this.filters.global)) return true
+            if (String(item["worker"]["id"]).includes(this.filters.global)) return true
+            return false
           }
           break;
         default:
@@ -345,9 +349,9 @@ export default {
         console.log(ref)
       }
     },
-    totalClass(item,type){
-      if(!item) return
-      if(item.label === "Total") return 'table-success'
+    totalClass(item, type) {
+      if (!item) return
+      if (item.label === "Total") return 'table-success'
     },
     sortCompare(a1, b1, key) {
       switch (key) {
@@ -467,10 +471,11 @@ export default {
       this.filters.category = []
       this.filters.customer = []
       this.filters.project = []
-      this.filters.status = []
+      this.filters.status = ""
       this.filters.paidMonth = []
       this.filters.dateFrom = undefined
       this.filters.dateTo = undefined
+      this.filters.global = ""
 
     }
   },
