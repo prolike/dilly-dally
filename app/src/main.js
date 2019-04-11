@@ -15,16 +15,18 @@ import { Table } from 'buefy/dist/components/table'
 import { Input } from 'buefy/dist/components/input'
 import { Field } from 'buefy/dist/components/field'
 import { Datepicker } from 'buefy/dist/components/datepicker'
-import { Timepicker } from 'buefy/dist/components/timepicker'
+import { Clockpicker } from 'buefy/dist/components/clockpicker'
 import { Select } from 'buefy/dist/components/select'
+import { Icon } from 'buefy/dist/components/icon'
 import 'buefy/dist/buefy.css'
 
 Vue.component('bue-table', Table)
 Vue.component('bue-input', Input)
 Vue.component('bue-field', Field)
+Vue.component('bue-clockpicker', Clockpicker)
 Vue.component('bue-datepicker', Datepicker)
-Vue.component('bue-timepicker', Timepicker)
 Vue.component('bue-select', Select)
+Vue.component('bue-icon', Icon)
 
 Vue.use(VueSweetalert2)
 Vue.use(BootstrapVue)
