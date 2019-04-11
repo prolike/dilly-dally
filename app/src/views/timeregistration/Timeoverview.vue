@@ -44,14 +44,11 @@ export default {
       sortDesc: true,
       sortDirection: 'asc',
       checkboxGroup: [],
-      display: {
-        color: 'red'
-      },
       fields: {
-        approved: {
+        status: {
           // This key overrides `foo`!
-          key: 'isApproved',
-          label: 'Approved',
+          key: 'status',
+          label: 'Status',
           sortable: true,
           tdClass: null,
           thClass: null
@@ -93,14 +90,6 @@ export default {
           sortable: true,
           tdClass: null,
           thClass: null //formatter: 'getDate'
-        },
-        year: {
-          //key: 'startTime',
-          label: 'Year',
-          sortable: true,
-          tdClass: null,
-          thClass: null
-          //formatter: 'getDate'
         },
         startTime: {
           // This key overrides `foo`!
@@ -179,19 +168,6 @@ export default {
     },
     sortCompare(a1, b1, key) {
       switch (key) {
-        case "year":
-          var a = a1.startTime.toDate().getFullYear()
-          var b = b1.startTime.toDate().getFullYear()
-          if (a > b) {
-            return -1
-            break;
-          } else if (a === b) {
-            return 0
-            break;
-          } else if (a < b) {
-            return 1
-            break;
-          }
         case "date":
           var a = a1.startTime.toDate()
           var b = b1.startTime.toDate()
@@ -277,7 +253,7 @@ export default {
     },
     getDate(timestamp) {
       //Using 'en-GB' to get day before month: 'weekday', 'day' 'month'
-      return timestamp.toDate().toLocaleString("en-GB", { weekday: 'short', month: 'short', day: 'numeric' });
+      return timestamp.toDate().toLocaleString("en-GB", { year: 'numeric', weekday: 'short', month: 'short', day: 'numeric' });
     },
     getYear(timestamp) {
       return timestamp.toDate().getFullYear();
