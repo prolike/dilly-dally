@@ -10,7 +10,7 @@
             <div class="cell">
               <bue-field label="Project">
                 <bue-select placeholder="Select a project" v-model="chosenProject">
-                  <option v-for="item in projects" :value="item">{{ item.id }}</option>
+                  <option v-for="item in projects">{{ item.id }}</option>
                 </bue-select>
               </bue-field>
             </div>

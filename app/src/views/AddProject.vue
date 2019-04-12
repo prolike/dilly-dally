@@ -187,6 +187,10 @@ export default {
   }
 }
 
+.row {
+  padding: 10px 0 15px 0;
+}
+
 .specialized-box {
   label {
     font-weight: 500;
