@@ -20,28 +20,25 @@
             <div class="cell">
               <bue-field class="label" label="Start time">
                 <bue-clockpicker placeholder="Select or enter time" icon-pack="fa" icon="clock-o" hour-format="24" :readonly="false" v-model="form.startTime" :mobile-native="false">
-                  <button class="button is-primary"
-                    @click="form.startTime = new Date()">
+                  <button class="button is-primary" @click="form.startTime = new Date()">
                     <span>Now</span>
-                </button>
-                <button class="button is-danger"
-                    @click="form.startTime = null">
+                  </button>
+                  <button class="button is-danger" @click="form.startTime = null">
                     <span>Clear</span>
-                </button>
+                  </button>
                 </bue-clockpicker>
               </bue-field>
               <div below class="error-text">{{errors.start}}</div>
             </div>
             <div class="cell">
               <bue-field class="label" label="End time">
-                <bue-clockpicker placeholder="Select or enter time" icon-pack="fa" icon="clock-o"  hour-format="24" :readonly="false" v-model="form.endTime" :mobile-native="false">
+                <bue-clockpicker placeholder="Select or enter time" icon-pack="fa" icon="clock-o" hour-format="24" :readonly="false" v-model="form.endTime" :mobile-native="false">
                   <button class="button is-primary" @click="form.endTime = new Date()">
                     <span>Now</span>
                   </button>
-                  <button class="button is-danger"
-                    @click="form.endTime = null">
+                  <button class="button is-danger" @click="form.endTime = null">
                     <span>Clear</span>
-                </button>
+                  </button>
                 </bue-clockpicker>
               </bue-field>
               <div below class="error-text">{{errors.end}}</div>
@@ -101,7 +98,6 @@ export default {
       time: undefined,
       valid: true,
       errors: {},
-      groupedProjects: null
     };
   },
   props: {
@@ -110,12 +106,18 @@ export default {
     projects: Array,
     todayDate: Date
   },
+  computed: {
+    groupedProjects() {
+      var groupedProjects = _(this.projects)
+        .groupBy("customer.name")
+        .value();
+        console.log(groupedProjects)
+      return groupedProjects
+    }
+  },
   mounted() {
     this.date = new Date();
-    this.groupedProjects = _(this.projects)
-      .groupBy("customer.name")
-      .value();
-    console.log(this.groupedProjects);
+
   },
   methods: {
     deleteBox() {
