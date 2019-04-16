@@ -33,8 +33,21 @@
     </div>
     <section>
       <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl">
-        <template slot="year" slot-scope="data">
-          {{getYear(data.item.startTime)}}
+        <template slot="status" slot-scope="data">
+          <p v-if="isAdmin">
+            <multiselect :show-labels="false" preselectFirst :options="statusOptions" placeholder="set a status" @input="setAction(data.item)" @select="setSelected" :value="data.item.status">
+            </multiselect>
+          </p>
+        </template>
+        <template slot="paidMonth" slot-scope="data">
+          <p v-if="isAdmin">
+            <multiselect :show-labels="false" :options="paidMonths" preselectFirst :value="data.item.paidMonth" placeholder="set a paidMonth" @input="setPaidMonth" @search-change="setPaidMonth" @select= " option => setPaidAction(data.item, option)">
+              <template slot="noResult"  slot-scope="props">
+                <button v-on:click="addPaidMonth">Add paid Month</button>
+              </template>
+           
+            </multiselect>
+          </p>
         </template>
         <template slot="date" slot-scope="data">
           {{getDate(data.item.startTime)}}
@@ -71,12 +84,16 @@ export default {
       sortDesc: false,
       sortDirection: 'asc',
       checkboxGroup: [],
+      statusOptions: ["", "OK", "Review"], //Predefined choices
+      paidMonthSelected: '',
+      paidMonthSelectedItem: null,
+      selected: "",
       display: {
         color: 'red'
       },
       fields: {
         status: {
-          key: 'status',
+          //key: 'status',
           label: 'Status',
           sortable: true,
           tdClass: null,
@@ -164,6 +181,7 @@ export default {
       },
       timeRegistration: [],
       workers: {},
+      paidMonths: [],
       email: "",
       user: "",
       currentPage: 1,
@@ -193,11 +211,14 @@ export default {
     totalRows: function() {
       return this.filtered.length
     },
+
     uniqueCategory: function() {
       return _.sortBy(_.uniq(_.map(this.timeRegistration, 'category.id')))
     },
     uniquePaid: function() {
-      return _.sortBy(_.uniq(_.map(this.timeRegistration, 'paidMonth')))
+      var paid = _.compact(_.sortBy(_.uniq(_.map(this.timeRegistration, 'paidMonth'))))
+      Object.assign(this.paidMonths,paid)
+      return paid
     },
     uniqueCustomer: function() {
       return _.sortBy(_.uniq(_.map(this.timeRegistration, 'project.customer.name')))
@@ -212,6 +233,9 @@ export default {
       var status = _.sortBy(_.uniq(_.map(this.timeRegistration, 'status')))
       status.push("!OK")
       return status
+    },
+    isAdmin() {
+      return _.some(firestoreHandler.getAdmins(), { "id": this.email })
     },
     groupByFilteredCategory: function() {
       var grouped = _(this.filtered)
@@ -315,7 +339,7 @@ export default {
               return String(item["status"]).includes("OK")
             } else if (this.filters["status"] === "!OK") {
               return !String(item["status"]).includes("OK")
-            }
+            } else return String(item["status"]).includes(this.filters["status"])
           }
           break;
         case "global":
@@ -466,6 +490,26 @@ export default {
       var dateoptions = { year: "numeric", month: "numeric", day: "numeric" };
       return dt.toLocaleDateString("en-GB", dateoptions);
     },
+    setSelected(selectedValue) {
+      this.selected = selectedValue
+    },
+    setAction(data) {
+      data["status"] = this.selected
+      this.timeRegistrationUpdate(data.id, data)
+    },
+    setPaidMonth(selectedValue) {
+      this.paidMonthSelected = selectedValue
+    },
+    addPaidMonth(val) {
+      this.paidMonths.push(this.paidMonthSelected)
+    },
+    setPaidAction(data, selectedVal) {
+      data["paidMonth"] = selectedVal
+      this.timeRegistrationUpdate(data.id, data)
+    },
+    timeRegistrationUpdate(id, data) {
+      firestoreHandler.timeRegistrationUpdate(id, data)
+    },
     clearFilters() {
       this.filters.workers = []
       this.filters.category = []
@@ -481,6 +525,8 @@ export default {
   },
   mounted() {
     // firestoreHandler.getTest()
+
+
     this.email = firebaseHandler.getUser().email
     this.getAllMyRegistrations()
 

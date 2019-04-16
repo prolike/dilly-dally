@@ -12,12 +12,13 @@ var firestoreHandler = new Vue({
   name: 'firestoreHandler',
   firestore() {
     return {
-    workers:  this.db.collection('workers'),
-    categories: this.db.collection('categories'),
-    customers: this.db.collection('customers'),
-    timeregistration: this.db.collection('timeregistration'),
-    projects: this.db.collection('projects'),
-  }
+      workers: this.db.collection('workers'),
+      categories: this.db.collection('categories'),
+      customers: this.db.collection('customers'),
+      timeregistration: this.db.collection('timeregistration'),
+      projects: this.db.collection('projects'),
+      admins: this.db.collection('admins')
+    }
   },
   data() {
     return {
@@ -35,6 +36,9 @@ var firestoreHandler = new Vue({
     },
     timeRegistrationRemove(id) {
       this.$firestore.timeregistration.doc(id).delete();
+    },
+    timeRegistrationUpdate(id, data) {
+      this.$firestore.timeregistration.doc(id).update(data);
     },
     projectEdit(name, data) {
       this.$firestore.customers.doc(name).update(data);
@@ -54,6 +58,9 @@ var firestoreHandler = new Vue({
       console.log(worker);
       return worker;
     },
+    getAdmins() {
+      return this.admins;
+    },
     getCategories() {
       return this.categories;
     },
@@ -63,12 +70,11 @@ var firestoreHandler = new Vue({
     getCustomers() {
       return this.customers;
     },
-    getCurrentTimestamp(){
+    getCurrentTimestamp() {
       return this.db.Timestamp.fromDate(new Date());
     }
   },
-  mounted() {
-  }
+  mounted() {}
 })
 
 export { firestoreHandler }
