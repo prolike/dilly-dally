@@ -24,7 +24,6 @@ function getDefaultCategories(legend) {
         .then((defaultCategories) => {
             console.log(defaultCategories)
             startReg(legend, defaultCategories)
-
         })
 }
 
@@ -40,7 +39,7 @@ function startReg(legend, defaultCategories) {
                 j = format(obj, legend, defaultCategories)
                 console.log(j)
                 addReg(j)
-                //console.log(j)
+                addProject(j)
             })
         })
 }
@@ -57,11 +56,22 @@ function addReg(data) {
         });
 }
 
+function addProject(data) {
+    // console.log(data)
+    var id = data.project.id
+    console.log(id)
+     db.collection("projects")
+        .doc(id)
+        .set(data.project)
+        .then(function(doc) {
+            console.log("doc added")
+        })
+        .catch(function(error) {
+            console.error("Error", error);
+        });
+}
 
 function format(row, legend, defaultCategories) {
-    //    console.log(legend)
-    //console.log(row)
-    //console.log(legend)
     row["worker"] = { id: row.Worker + "@prolike.io" }
     var date = new Date(row['Date (work)'])
     var date2 = new Date(row['Date (work)'])
