@@ -150,5 +150,25 @@
     font-weight: 600;
     color: #ffffff !important;
     height: 55px;
-
 }
+
+.table .thead-dark th {
+    background: #1a2336;
+}
+
+// We encountered an issue where the width of the data overview div would go out of the browser
+// when the user zoomed in, due to the pixel size - to combat this for now, we've made a font media query
+
+.data-overview {
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 1600px) {
+    .data-overview {
+        font-size: 11px;
+    }
+
+    .table thead td, .table thead th {
+        font-size: 12px;
+    }
+  }

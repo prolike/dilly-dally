@@ -32,7 +32,7 @@
       </div>
     </div>
     <section>
-      <b-table show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl">
+      <b-table class="data-overview" show-empty :current-page="currentPage" :per-page="perPage" striped hover head-variant='dark' :sort-by.sync="sortBy" :sort-desc.sync="sortDesc" :items="filtered" :fields="fields" :sort-compare="sortCompare" stacked="xl">
         <template slot="status" slot-scope="data">
           <p v-if="isAdmin">
             <multiselect :show-labels="false" preselectFirst :options="statusOptions" placeholder="set a status" @input="setAction(data.item)" @select="setSelected" :value="data.item.status">
