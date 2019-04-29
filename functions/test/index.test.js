@@ -1,30 +1,21 @@
-const csv = require('csv-parser');
-const fs = require('fs')
-const httpMocks       = require('node-mocks-http');
-const eventEmitter    = require('events').EventEmitter;
-
-var filename = __dirname + "/registrations.csv"
+const httpMocks = require('node-mocks-http');
+const eventEmitter = require('events').EventEmitter;
 const myFunctions = require('../index.js');
 const firestore = require('../handlers/firestoreHandler.js');
 
-var parsedData = []
 
+describe('#### BACKUP TEST ####', function(done) {
 
-describe('#### API TEST - Testing our API entrypoint ####', function(done) {
+    it('should run the backup function and import all google sheet data into firestore', function(done) {
+        let options = {
+            method: 'GET'
+        };
+        var req = httpMocks.createRequest(options);
+        var res = httpMocks.createResponse({ eventEmitter: eventEmitter });
+        myFunctions.runBackup(req, res);
 
-  var apiKey = "itsatest"
-
-  it('should return 401 (Forbidden request method) with a invalid request(GET) & no APIkey', function (done) {
-    let options = {
-      method: 'GET'};
-    var req = httpMocks.createRequest(options);
-    var res = httpMocks.createResponse({eventEmitter:eventEmitter});
-    myFunctions.timeRegistrationAdd(req,res);
-    var expectedStatusCode = 401
-    var expectedStatusMessage = "Forbidden request method"
-    
-    //console.log(res)
-    //console.log(res)
-    done();
-  });
+        //console.log(res)
+        //console.log(res)
+        done();
+    });
 })
