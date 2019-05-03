@@ -24,12 +24,12 @@ var firebaseHandler = new Vue({
 
       if (this.env === "production") {
         config = { //production
-          apiKey: "AIzaSyAPqEsUTkxgNJl_4sz6LKi-XHgP_3S25No",
-          authDomain: "prolike-stack-prod.firebaseapp.com",
-          databaseURL: "https://prolike-stack-prod.firebaseio.com",
-          projectId: "prolike-stack-prod",
-          storageBucket: "prolike-stack-prod.appspot.com",
-          messagingSenderId: "14479827823"
+          apiKey: "AIzaSyANOI74BpFALPtG54JSs8FejR3TADbVPkg",
+          authDomain: "prolike-stack-prod1.firebaseapp.com",
+          databaseURL: "https://prolike-stack-prod1.firebaseio.com",
+          projectId: "prolike-stack-prod1",
+          storageBucket: "prolike-stack-prod1.appspot.com",
+          messagingSenderId: "930128719346"
         };
       }
       this.firebaseApp = firebase.initializeApp(config);

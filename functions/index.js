@@ -11,8 +11,15 @@ exports.runBackup = functions.https.onRequest((request, response) => {
 
 
 // Functions called from http API
-exports.getWorkers = functions.https.onRequest((request, response) => {
+exports.workers = functions.https.onRequest((request, response) => {
     if (request.method === "GET") {
+        var result = firestoreHandler.getWorkers();
+        result.then(msg => {
+            response.status(201)
+            response.statusMessage = "Success"
+            return response.send(msg)
+        })
+    } else if (request.method === "POST") {
         var result = firestoreHandler.getWorkers();
         result.then(msg => {
             response.status(201)

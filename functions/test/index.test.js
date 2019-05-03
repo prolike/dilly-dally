@@ -1,7 +1,6 @@
 var myFunctions = require('../index.js');
 var firestore = require('../handlers/firestoreHandler.js');
 var eventEmitter = require('events').EventEmitter;
-
 var proxyquire = require('proxyquire');
 var httpMocks = require('node-mocks-http');
 var sinon = require('sinon');
@@ -17,6 +16,11 @@ var mocksdk = firebasemock.MockFirebaseSdk(null, function() {
 var proxyFirestore = proxyquire('../handlers/firestoreHandler', {
     'firebase-admin': mocksdk,
 });
+
+var proxyAPIandFirestore = proxyquire('../index', {
+    './handlers/firestoreHandler.js': proxyFirestore
+});0
+
 
 
 /*
@@ -48,7 +52,8 @@ describe('#### API TEST ####', function(done) {
         myFunctions.getWorkers(request, response);
         response.on('send', function() {
             var data = response._getData();
-            var actualStatusMessage = response._getStatusMessage();
+            var actualSt
+atusMessage = response._getStatusMessage();
             var expectedStatusMessage = "Success"
             expect(expectedStatusMessage).to.equal(actualStatusMessage)
         });
@@ -58,7 +63,9 @@ describe('#### API TEST ####', function(done) {
 })
 */
 
-describe('#### API TEST WITH FIREBASE MOCK ####', function() {
+
+
+describe('#### PROXYQUIRE TEST WITH API AND MOCK FIRESTORE ####', function() {
     beforeEach(function() {
         console.log("test")
         mockfirestore = new firebasemock.MockFirestore();
@@ -72,7 +79,47 @@ describe('#### API TEST WITH FIREBASE MOCK ####', function() {
         }
     });
 
-    it('should successfully getting data from mocked firestore', function() {
+    it('PROXY API - Test getting worker', function() {
+        var ref = mockfirestore.collection('workers')
+        ref.doc("bob@prolike.io").set({
+            name: 'bob'
+        });
+        console.log(ref._getData())
+        let options = {
+            method: 'GET'
+        };
+        var request = httpMocks.createRequest(options);
+        var response = httpMocks.createResponse({ eventEmitter: eventEmitter });
+        proxyAPIandFirestore.workers(request, response);
+        response.on('send', function() {
+            var data = response._getData();
+            console.log(data)
+            var actualStatusMessage = response._getStatusMessage();
+            var expectedStatusMessage = "Success"
+            var expectedName = "bob"
+            var actualName = data["bob@prolike.io"].name
+            expect(expectedName).to.equal(actualName)
+            expect(expectedStatusMessage).to.equal(actualStatusMessage)
+
+        });
+    });
+});
+
+describe('#### FIRESTORE TEST WITH MOCK FIRESTORE ####', function() {
+    beforeEach(function() {
+        console.log("test")
+        mockfirestore = new firebasemock.MockFirestore();
+        mockfirestore.autoFlush();
+        mockauth = new firebasemock.MockFirebase();
+        mockauth.autoFlush();
+        if (null == this.sinon) {
+            this.sinon = sinon.createSandbox();
+        } else {
+            this.sinon.restore();
+        }
+    });
+
+    it('getWorkers - should successfully getting data from mocked firestore', function() {
         var ref = mockfirestore.collection('workers')
         ref.doc("bob@prolike.io").set({
             name: 'bob'
@@ -85,7 +132,7 @@ describe('#### API TEST WITH FIREBASE MOCK ####', function() {
         })
     });
 
-    it('should successfully inserting data to mocked firestore and then loads them from mocked firestore successfully', function() {
+    it('addWorker,getWorkers- should successfully inserting data to mocked firestore and then loads them from mocked firestore successfully', function() {
         var ref = mockfirestore.collection('workers')
         var data = { displayName: "Test tester", email: "test@prolike.io", photoURL: "www.something.dk/asd.img" }
         proxyFirestore.addWorker(data).then(function(msg) {
@@ -101,4 +148,7 @@ describe('#### API TEST WITH FIREBASE MOCK ####', function() {
             //expect(expectedName).to.equal(actualName)
         })
     });
+
+
+
 });

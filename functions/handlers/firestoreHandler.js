@@ -7,29 +7,32 @@ admin.initializeApp(config);
 
 
 exports.addReg = function(data) {
-    // console.log(data)
-    admin.firestore().collection("timeregistration")
-        .add(data)
-        .then(function(doc) {
-            console.log("doc added")
-        })
-        .catch(function(error) {
-            console.error("Error", error);
-        });
+    return new Promise((resolve, reject) => {
+       admin.firestore().collection("timeregistration")
+            .add(data)
+            .then(function(doc) {
+                console.log("doc added")
+            })
+            .catch(function(error) {
+                console.error("Error", error);
+            });
+    })
 }
 
 exports.addProject = function(data) {
     // console.log(data)
-    var id = data.project.id
-    admin.firestore().collection("projects")
-        .doc(id)
-        .set(data.project)
-        .then(function(doc) {
-            console.log("doc added")
-        })
-        .catch(function(error) {
-            console.error("Error", error);
-        });
+    return new Promise((resolve, reject) => {
+        var id = data.project.id
+        admin.firestore().collection("projects")
+            .doc(id)
+            .set(data.project)
+            .then(function(doc) {
+                console.log("doc added")
+            })
+            .catch(function(error) {
+                console.error("Error", error);
+            });
+    })
 }
 
 exports.addWorker = function(data) {
@@ -51,6 +54,11 @@ exports.addWorker = function(data) {
 }
 
 exports.getWorkers = function() {
+    console.log("############################")
+    console.log(admin.firestore().collection("workers")._getData())
+    console.log(db.collection("workers")._getData())
+    console.log("############################")
+
     return new Promise((resolve, reject) => {
         admin.firestore().collection("workers")
             .get()
