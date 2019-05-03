@@ -68,7 +68,7 @@ app.get('/cloud-firestore-export', async (req, res) => {
 app.get('/', (req, res) => {
   res
     .status(200)
-    .send('Scheduled backups: All data, every 24 hours, @staging.prolike-stack.appspot.com')
+    .send('Scheduled backups: All data, every 24 hours, @prolike-stack-prod1.appspot.com')
     .end();
 });
 
