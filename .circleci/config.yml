@@ -115,8 +115,8 @@ jobs:
           name: Install Firebase Tools
           command: sudo npm install --prefix=./firebase-deploy firebase-tools
       - run:
-          name: Run npm build-staging
-          command: cd app && sudo npm run build-staging
+          name: Run npm build-production
+          command: cd app && sudo npm run build-production
       - run:
           name: Deploy to production
           command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting -P production --token=$FIREBASE_TOKEN
