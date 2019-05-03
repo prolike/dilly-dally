@@ -2,6 +2,6 @@
   "projects": {
     "default": "prolike-stack",
     "staging": "prolike-stack",
-    "production": "prolike-stack-prod"
+    "production": "prolike-stack-prod1"
   }
 }
