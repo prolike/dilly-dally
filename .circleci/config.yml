@@ -98,7 +98,7 @@ jobs:
           command: sudo ./firebase-deploy/node_modules/.bin/firebase functions:config:set env.type="staging" -P staging
       - run:
           name: Deploy to stage
-          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting,firestore:rules,firestore:indexes -P staging --token=$FIREBASE_TOKEN
+          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting,firestore:rules,firestore:indexes -P staging
   prod:
     docker:
       - image: circleci/node:8.10
@@ -125,7 +125,7 @@ jobs:
           command: sudo ./firebase-deploy/node_modules/.bin/firebase functions:config:set env.type="production" -P production
       - run:
           name: Deploy to production
-          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting,firestore:rules,firestore:indexes -P production --token=$FIREBASE_TOKEN
+          command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting,firestore:rules,firestore:indexes -P production
 
 workflows:
   version: 2
