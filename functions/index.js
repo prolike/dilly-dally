@@ -10,7 +10,6 @@ exports.runBackup = functions.https.onRequest((request, response) => {
 });
 
 
-// Functions called from http API
 exports.workers = functions.https.onRequest((request, response) => {
     if (request.method === "GET") {
         var result = firestoreHandler.getWorkers();
@@ -32,6 +31,7 @@ exports.workers = functions.https.onRequest((request, response) => {
         return response.send()
     }
 });
+
 
 /*
 

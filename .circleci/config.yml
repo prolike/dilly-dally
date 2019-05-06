@@ -94,6 +94,9 @@ jobs:
           name: Run npm build-staging
           command: cd app && sudo npm run build-staging
       - run:
+          name: Set environment type to staging
+          command: sudo ./firebase-deploy/node_modules/.bin/firebase functions:config:set env.type="staging"
+      - run:
           name: Deploy to stage
           command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting,firestore:rules,firestore:indexes -P staging --token=$FIREBASE_TOKEN
   prod:
@@ -117,6 +120,9 @@ jobs:
       - run:
           name: Run npm build-production
           command: cd app && sudo npm run build-production
+      - run:
+          name: Set environment type to production
+          command: sudo ./firebase-deploy/node_modules/.bin/firebase functions:config:set env.type="production"
       - run:
           name: Deploy to production
           command: sudo ./firebase-deploy/node_modules/.bin/firebase deploy --only hosting,firestore:rules,firestore:indexes -P production --token=$FIREBASE_TOKEN

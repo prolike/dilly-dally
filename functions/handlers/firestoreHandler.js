@@ -1,14 +1,33 @@
 const admin = require('firebase-admin');
-var config = {
-    projectId: "prolike-stack",
-};
+const functions = require('firebase-functions');
+
+
+
+var config = getConfig()
 admin.initializeApp(config);
 
+function getConfig() {
+    // Staging
+    var config = {
+        projectId: "prolike-stack",
+    };
+    try {
+        if(functions.config().env.type === "production"){
+            config = {
+                projectId: "prolike-stack-prod1"
+            }
+        }
+    } catch(e) {
+        // statements
+        console.log("No found local config");
+    }
+    return config
+}
 
 
 exports.addTimeregistration = function(data) {
     return new Promise((resolve, reject) => {
-       admin.firestore().collection("timeregistration")
+        admin.firestore().collection("timeregistration")
             .add(data)
             .then(function(doc) {
                 console.log("doc added")
