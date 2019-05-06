@@ -135,7 +135,7 @@ describe('#### FIRESTORE TEST WITH MOCK FIRESTORE ####', function() {
     it('addWorker,getWorkers- should successfully inserting data to mocked firestore and then loads them from mocked firestore successfully', function() {
         var ref = mockfirestore.collection('workers')
         var data = { displayName: "Test tester", email: "test@prolike.io", photoURL: "www.something.dk/asd.img" }
-        proxyFirestore.addWorker(data).then(function(msg) {
+        proxyFirestore.setWorker(data).then(function(msg) {
             var expectedDisplayName = "Test tester"
             proxyFirestore.getWorkers().then(function(result) {
                 var expectedDisplayName = "Test tester"

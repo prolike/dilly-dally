@@ -6,7 +6,7 @@ admin.initializeApp(config);
 
 
 
-exports.addReg = function(data) {
+exports.addTimeregistration = function(data) {
     return new Promise((resolve, reject) => {
        admin.firestore().collection("timeregistration")
             .add(data)
@@ -19,7 +19,7 @@ exports.addReg = function(data) {
     })
 }
 
-exports.addProject = function(data) {
+exports.setProject = function(data) {
     // console.log(data)
     return new Promise((resolve, reject) => {
         var id = data.project.id
@@ -35,7 +35,7 @@ exports.addProject = function(data) {
     })
 }
 
-exports.addWorker = function(data) {
+exports.setWorker = function(data) {
     return new Promise((resolve, reject) => {
         // console.log(data)
         var id = data.email
@@ -54,11 +54,6 @@ exports.addWorker = function(data) {
 }
 
 exports.getWorkers = function() {
-    console.log("############################")
-    console.log(admin.firestore().collection("workers")._getData())
-    console.log(db.collection("workers")._getData())
-    console.log("############################")
-
     return new Promise((resolve, reject) => {
         admin.firestore().collection("workers")
             .get()
