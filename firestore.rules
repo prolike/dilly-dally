@@ -13,14 +13,11 @@ service cloud.firestore {
     match /categories/{document=**} {
       allow read, write: if signedIn();
     }
-    match /customers/{document=**} {
-      allow read, write: if signedIn();
-    }
     match /projects/{document=**} {
       allow read, write: if signedIn();
     }
-    match /invoices/{document=**} {
-      allow read, write: if signedIn();
+    match /admins/{document=**} {
+      allow read: if signedIn();
     }
   }
 }
