@@ -44,7 +44,7 @@
         </template>
         <template slot="paidMonth" slot-scope="data">
           <p v-if="isAdmin">
-            <multiselect :show-labels="false" :options="paidMonths" preselectFirst :value="data.item.paidMonth" placeholder="set a paidMonth" @input="setPaidMonth" @search-change="setPaidMonth" @select=" option => setPaidAction(data.item, option)">
+            <multiselect :show-labels="false" :options="paidMonths" :value="data.item.paidMonth" placeholder="set a paidMonth" @input="setPaidMonth" @search-change="setPaidMonth" @select=" option => setPaidAction(data.item, option)">
               <template slot="noResult" slot-scope="props">
                 <button v-on:click="addPaidMonth">Add paid Month</button>
               </template>
@@ -475,7 +475,6 @@ export default {
       return time;
     },
     getWorkhours1(timestamp) {
-
       var time = timestamp / 3600000 + 1
       return time;
     },

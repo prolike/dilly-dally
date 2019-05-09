@@ -38,8 +38,8 @@ function startReg(discounts, defaultCategories) {
             row.forEach(obj => {
                 var j = {}
                 j = format(obj, discounts, defaultCategories)
-                //firestoreHandler.addTimeregistration(j)
-                //firestoreHandler.setProject(j)
+                firestoreHandler.addTimeregistration(j)
+                firestoreHandler.setProject(j)
                 
                 //console.log(defaultCategories)
             })
