@@ -1,386 +1,386 @@
 Paid (month),Invoice No.,Worker,Date (work),Assignment,Hours,Category,Comment,Status,Cost,Price
-N/A,2018-1,lakruzz,3/13/2018,Phable - DI,2.0,Prolike,Proof of concept,OK,400,748
-N/A,2018-1,lakruzz,3/16/2018,Phable - DI,3.0,Prolike,"Ugly workaround on the fonts, logo size, footers, ugly merge",OK,600,1122
-March 2018,2018-1,anetacamo,3/19/2018,Phable - DI,3.0,Prolike,services into the liquid + first fixes,OK,600,1122
-March 2018,2018-1,anetacamo,3/20/2018,Phable - DI,8.0,Prolike,services + solutions into liquid + blog for loop,OK,1600,2992
-March 2018,2018-1,anetacamo,3/21/2018,Phable - DI,4.0,Prolike,creating another liquid includes + adding links in Customer Hub,OK,800,1496
-March 2018,2018-1,anetacamo,3/22/2018,Phable - DI,11.0,Prolike,new blog post page + transfering pages into the liquid + fixing the linking + CSS styling,OK,2200,4114
-N/A,2018-1,lakruzz,3/22/2018,Phable - DI,0.5,Prolike,Status on DI with JC and Aneta,OK,100,187
-March 2018,2018-1,anetacamo,3/23/2018,Phable - DI,6.0,Prolike,new includes + fixing runway issues + testimony & solutions into liquid + favicon + counters,OK,1200,2244
-March 2018,2018-1,anetacamo,3/24/2018,Phable - DI,4.0,Prolike,adding the code text in the blog + logo link fix + other links from previous include changes,OK,800,1496
-N/A,2018-1,lakruzz,3/24/2018,Phable - DI,2.0,Prolike,Add release script,OK,400,748
-March 2018,2018-1,anetacamo,3/25/2018,Phable - DI,4.0,Prolike,creating the code and ading tables into the blog content + some footer should not have social images,OK,800,1496
-March 2018,2018-1,anetacamo,3/26/2018,Phable - DI,10.0,Prolike,new event page + event layout + fixing CSS issues + removing unused files,OK,2000,3740
-March 2018,2018-1,anetacamo,3/27/2018,Phable - DI,5.0,Prolike,finishing event page layout + services into liquid + fixing CSS and HTML issues ,OK,1000,1870
-March 2018,2018-1,anetacamo,3/28/2018,Phable - DI,3.0,Prolike,Management + speakers images + removing links from all the faces,OK,600,1122
-March 2018,2018-1,anetacamo,3/29/2018,Phable - DI,2.0,Prolike,fixing the mobile issue with icons + aligning text to them + smaller nav icons on slider,OK,400,748
-March 2018,2018-1,anetacamo,3/30/2018,Phable - DI,8.0,Prolike,Transfering files into folders. More pages into liquid + fixing links,OK,1600,2992
-March 2018,2018-1,anetacamo,3/31/2018,Phable - DI,4.0,Prolike,Removing CSS from HTML layout + remove empty alts  ,OK,800,1496
-N/A,2018-1,lakruzz,3/31/2018,Phable - DI,3.0,Prolike,Setup Circle CI,OK,600,1122
-April 2018,2018-3,anetacamo,4/2/2018,Phable - DI,5.0,Prolike,Privacy Policy into liquid + more includes into folders,OK,1000,1870
-April 2018,2018-2,anetacamo,4/3/2018,Phable - DI,1.0,Prolike,adding Careers,OK,200,374
-April 2018,2018-2,anetacamo,4/4/2018,Phable - DI,2.0,Prolike,Tracker Script + Logo fix + collaborate fix,OK,400,748
-April 2018,2018-2,anetacamo,4/5/2018,Phable - DI,2.0,Prolike,Chat Service + deactivate careers,OK,400,748
-N/A,2018-2,lakruzz,4/5/2018,Phable - DI,1.0,Prolike,Retrospective,OK,200,374
-April 2018,2018-2,anetacamo,4/6/2018,Phable - DI,6.0,Prolike,Careers reactivate + add text + fixing CSS issues,OK,1200,2244
-N/A,2018-2,lakruzz,4/7/2018,Phable - DI,3.0,Prolike,Fixing PHP stuff,OK,600,1122
-N/A,2018-2,lakruzz,4/8/2018,Phable - DI,3.0,Prolike,Setup the LAMP stack environment,OK,600,1122
-April 2018,2018-2,anetacamo,4/9/2018,Phable - DI,5.0,Prolike,The Customer Hub page - new. + Chat overlay + tech challenges going through with Lars,OK,1000,1870
-N/A,2018-2,lakruzz,4/9/2018,Phable - DI,1.0,Prolike,Sprint planning with Aneta and JC,OK,200,374
-April 2018,2018-2,anetacamo,4/11/2018,Phable - DI,8.0,Prolike,Create Collections for the hub + Remove fb icon and more issues,OK,1600,2992
-N/A,2018-2,lakruzz,4/11/2018,Phable - DI,0.5,Prolike,DI Tech Challenges with Aneta,OK,100,187
-April 2018,2018-2,anetacamo,4/12/2018,Phable - DI,4.5,Prolike,Services PRO vs Managed + CSS issues,OK,900,1683
-N/A,2018-2,lakruzz,4/12/2018,Phable - DI,1.0,Prolike,Planning milestone with Aneta and JC,OK,200,374
-N/A,2018-2,lakruzz,4/12/2018,Phable - DI,2.0,Prolike,Working on optimizing the images in the slider on the front page,OK,400,748
-April 2018,2018-2,anetacamo,4/13/2018,Phable - DI,5.0,Prolike,Creating datasheet section + fixing wording + new images,OK,1000,1870
-April 2018,2018-2,anetacamo,4/16/2018,Phable - DI,8.0,Prolike,Race 2.0 - new event + News page build + diff phones ,OK,1600,2992
-April 2018,2018-2,anetacamo,4/17/2018,Phable - DI,5.5,Prolike,News page activating + finishing race event + fixing links ,OK,1100,2057
-April 2018,2018-2,anetacamo,4/18/2018,Phable - DI,0.5,Prolike,Rollback,OK,100,187
-April 2018,2018-2,anetacamo,4/20/2018,Phable - DI,4.5,Prolike,text area + PHP mails fix + adding back collapsible + maarkdown fix,OK,900,1683
-April 2018,2018-2,anetacamo,4/23/2018,Phable - DI,7.5,Prolike,Logo for SEO + Blogs into markdowns + working on the SEO tagging in the posts,OK,1500,2805
-April 2018,2018-2,anetacamo,4/24/2018,Phable - DI,1.0,Prolike,finishing SEO tagging,OK,200,374
-April 2018,2018-2,anetacamo,4/27/2018,Phable - DI,4.0,Explore,Trying to disable Javascripts + image optimisation,OK,270,0
-N/A,2018-2,lakruzz,4/27/2018,Phable - DI,0.5,Prolike,Testing the upload access (SFTP) to DI stage servers,OK,100,187
-April 2018,2018-2,anetacamo,4/30/2018,Phable - DI,8.0,Prolike,sprint planning + image resizing + new blog + removing the old blog ,OK,1600,2992
-N/A,2018-2,lakruzz,4/30/2018,Phable - DI,1.2,Prolike,Sprint planning with Aneta and JC,OK,240,448.8
-N/A,2018-2,lakruzz,4/30/2018,Phable - DI,2.0,Prolike,"Investigating the SFTP access to servers, designing new solution, presting it to DI in a mail",OK,400,748
-N/A,2018-3,lakruzz,5/1/2018,Phable - DI,3.0,Prolike,Configuring Deploy on Circle CI /Github,OK,600,1122
-N/A,2018-3,lakruzz,5/2/2018,Phable - DI,0.5,Prolike,Certificate on GitHub/GitHub pages,OK,100,187
-May 2018,2018-3,anetacamo,5/2/2018,Phable - DI,6.0,Prolike,Customer Hub features + adding the time & recent post feature + sorting chronollogically + starting new page - PARTNERS,OK,1200,2244
-May 2018,2018-3,anetacamo,5/3/2018,Phable - DI,0.5,Prolike,Fixed failing test (#209),OK,100,187
-May 2018,2018-3,anetacamo,5/4/2018,Phable - DI,3.5,Prolike,(#210),OK,700,1309
+N/A,Invoice 1,lakruzz,3/13/2018,Phable - DI,2.0,Prolike,Proof of concept,OK,400,748
+N/A,Invoice 1,lakruzz,3/16/2018,Phable - DI,3.0,Prolike,"Ugly workaround on the fonts, logo size, footers, ugly merge",OK,600,1122
+March 2018,Invoice 1,anetacamo,3/19/2018,Phable - DI,3.0,Prolike,services into the liquid + first fixes,OK,600,1122
+March 2018,Invoice 1,anetacamo,3/20/2018,Phable - DI,8.0,Prolike,services + solutions into liquid + blog for loop,OK,1600,2992
+March 2018,Invoice 1,anetacamo,3/21/2018,Phable - DI,4.0,Prolike,creating another liquid includes + adding links in Customer Hub,OK,800,1496
+March 2018,Invoice 1,anetacamo,3/22/2018,Phable - DI,11.0,Prolike,new blog post page + transfering pages into the liquid + fixing the linking + CSS styling,OK,2200,4114
+N/A,Invoice 1,lakruzz,3/22/2018,Phable - DI,0.5,Prolike,Status on DI with JC and Aneta,OK,100,187
+March 2018,Invoice 1,anetacamo,3/23/2018,Phable - DI,6.0,Prolike,new includes + fixing runway issues + testimony & solutions into liquid + favicon + counters,OK,1200,2244
+March 2018,Invoice 1,anetacamo,3/24/2018,Phable - DI,4.0,Prolike,adding the code text in the blog + logo link fix + other links from previous include changes,OK,800,1496
+N/A,Invoice 1,lakruzz,3/24/2018,Phable - DI,2.0,Prolike,Add release script,OK,400,748
+March 2018,Invoice 1,anetacamo,3/25/2018,Phable - DI,4.0,Prolike,creating the code and ading tables into the blog content + some footer should not have social images,OK,800,1496
+March 2018,Invoice 1,anetacamo,3/26/2018,Phable - DI,10.0,Prolike,new event page + event layout + fixing CSS issues + removing unused files,OK,2000,3740
+March 2018,Invoice 1,anetacamo,3/27/2018,Phable - DI,5.0,Prolike,finishing event page layout + services into liquid + fixing CSS and HTML issues ,OK,1000,1870
+March 2018,Invoice 1,anetacamo,3/28/2018,Phable - DI,3.0,Prolike,Management + speakers images + removing links from all the faces,OK,600,1122
+March 2018,Invoice 1,anetacamo,3/29/2018,Phable - DI,2.0,Prolike,fixing the mobile issue with icons + aligning text to them + smaller nav icons on slider,OK,400,748
+March 2018,Invoice 1,anetacamo,3/30/2018,Phable - DI,8.0,Prolike,Transfering files into folders. More pages into liquid + fixing links,OK,1600,2992
+March 2018,Invoice 1,anetacamo,3/31/2018,Phable - DI,4.0,Prolike,Removing CSS from HTML layout + remove empty alts  ,OK,800,1496
+N/A,Invoice 1,lakruzz,3/31/2018,Phable - DI,3.0,Prolike,Setup Circle CI,OK,600,1122
+April 2018,Invoice 3,anetacamo,4/2/2018,Phable - DI,5.0,Prolike,Privacy Policy into liquid + more includes into folders,OK,1000,1870
+April 2018,Invoice 2,anetacamo,4/3/2018,Phable - DI,1.0,Prolike,adding Careers,OK,200,374
+April 2018,Invoice 2,anetacamo,4/4/2018,Phable - DI,2.0,Prolike,Tracker Script + Logo fix + collaborate fix,OK,400,748
+April 2018,Invoice 2,anetacamo,4/5/2018,Phable - DI,2.0,Prolike,Chat Service + deactivate careers,OK,400,748
+N/A,Invoice 2,lakruzz,4/5/2018,Phable - DI,1.0,Prolike,Retrospective,OK,200,374
+April 2018,Invoice 2,anetacamo,4/6/2018,Phable - DI,6.0,Prolike,Careers reactivate + add text + fixing CSS issues,OK,1200,2244
+N/A,Invoice 2,lakruzz,4/7/2018,Phable - DI,3.0,Prolike,Fixing PHP stuff,OK,600,1122
+N/A,Invoice 2,lakruzz,4/8/2018,Phable - DI,3.0,Prolike,Setup the LAMP stack environment,OK,600,1122
+April 2018,Invoice 2,anetacamo,4/9/2018,Phable - DI,5.0,Prolike,The Customer Hub page - new. + Chat overlay + tech challenges going through with Lars,OK,1000,1870
+N/A,Invoice 2,lakruzz,4/9/2018,Phable - DI,1.0,Prolike,Sprint planning with Aneta and JC,OK,200,374
+April 2018,Invoice 2,anetacamo,4/11/2018,Phable - DI,8.0,Prolike,Create Collections for the hub + Remove fb icon and more issues,OK,1600,2992
+N/A,Invoice 2,lakruzz,4/11/2018,Phable - DI,0.5,Prolike,DI Tech Challenges with Aneta,OK,100,187
+April 2018,Invoice 2,anetacamo,4/12/2018,Phable - DI,4.5,Prolike,Services PRO vs Managed + CSS issues,OK,900,1683
+N/A,Invoice 2,lakruzz,4/12/2018,Phable - DI,1.0,Prolike,Planning milestone with Aneta and JC,OK,200,374
+N/A,Invoice 2,lakruzz,4/12/2018,Phable - DI,2.0,Prolike,Working on optimizing the images in the slider on the front page,OK,400,748
+April 2018,Invoice 2,anetacamo,4/13/2018,Phable - DI,5.0,Prolike,Creating datasheet section + fixing wording + new images,OK,1000,1870
+April 2018,Invoice 2,anetacamo,4/16/2018,Phable - DI,8.0,Prolike,Race 2.0 - new event + News page build + diff phones ,OK,1600,2992
+April 2018,Invoice 2,anetacamo,4/17/2018,Phable - DI,5.5,Prolike,News page activating + finishing race event + fixing links ,OK,1100,2057
+April 2018,Invoice 2,anetacamo,4/18/2018,Phable - DI,0.5,Prolike,Rollback,OK,100,187
+April 2018,Invoice 2,anetacamo,4/20/2018,Phable - DI,4.5,Prolike,text area + PHP mails fix + adding back collapsible + maarkdown fix,OK,900,1683
+April 2018,Invoice 2,anetacamo,4/23/2018,Phable - DI,7.5,Prolike,Logo for SEO + Blogs into markdowns + working on the SEO tagging in the posts,OK,1500,2805
+April 2018,Invoice 2,anetacamo,4/24/2018,Phable - DI,1.0,Prolike,finishing SEO tagging,OK,200,374
+April 2018,Invoice 2,anetacamo,4/27/2018,Phable - DI,4.0,Explore,Trying to disable Javascripts + image optimisation,OK,270,0
+N/A,Invoice 2,lakruzz,4/27/2018,Phable - DI,0.5,Prolike,Testing the upload access (SFTP) to DI stage servers,OK,100,187
+April 2018,Invoice 2,anetacamo,4/30/2018,Phable - DI,8.0,Prolike,sprint planning + image resizing + new blog + removing the old blog ,OK,1600,2992
+N/A,Invoice 2,lakruzz,4/30/2018,Phable - DI,1.2,Prolike,Sprint planning with Aneta and JC,OK,240,448.8
+N/A,Invoice 2,lakruzz,4/30/2018,Phable - DI,2.0,Prolike,"Investigating the SFTP access to servers, designing new solution, presting it to DI in a mail",OK,400,748
+N/A,Invoice 3,lakruzz,5/1/2018,Phable - DI,3.0,Prolike,Configuring Deploy on Circle CI /Github,OK,600,1122
+N/A,Invoice 3,lakruzz,5/2/2018,Phable - DI,0.5,Prolike,Certificate on GitHub/GitHub pages,OK,100,187
+May 2018,Invoice 3,anetacamo,5/2/2018,Phable - DI,6.0,Prolike,Customer Hub features + adding the time & recent post feature + sorting chronollogically + starting new page - PARTNERS,OK,1200,2244
+May 2018,Invoice 3,anetacamo,5/3/2018,Phable - DI,0.5,Prolike,Fixed failing test (#209),OK,100,187
+May 2018,Invoice 3,anetacamo,5/4/2018,Phable - DI,3.5,Prolike,(#210),OK,700,1309
 May 2018,PROLIKE,anetacamo,5/4/2018,Prolike,3.0,Honeypot,Meeting Kris and Laura,OK,405,0
-May 2018,2018-3,anetacamo,5/7/2018,Phable - DI,7.5,Prolike,"Finishing the layouts for the new partners page (#212), (#200), (#199), (#198), (#197)",OK,1500,2805
-May 2018,2018-3,anetacamo,5/9/2018,Phable - DI,8.5,Prolike,"tracker code + tags + new blog (#213), (#218), (#217), (#214), (#204), (#208),",OK,1700,3179
-May 2018,2018-3,anetacamo,5/10/2018,Phable - DI,7.5,Prolike,"finishing tags + events section into the markdown + other fixes (#219), (#211), (#223), (#225), (#222), (#216), (#215), (#213), (#221)",OK,1500,2805
-May 2018,2018-3,anetacamo,5/11/2018,Phable - DI,1.5,Prolike,hangout about the website,OK,300,561
-May 2018,2018-3,anetacamo,5/14/2018,Phable - DI,9.0,Prolike,"installing the bootstrap carousel + adjusting CSS + creating a better linking system in the web (#224), (#227), (#230), (#231), (#232), (#226)",OK,1800,3366
-May 2018,2018-3,anetacamo,5/16/2018,Phable - DI,8.5,Prolike,"replacing revo slider and carousel by custom carousel and revo slider - 239, 238, 237, 235, 236, 234 ",OK,1700,3179
-May 2018,2018-3,anetacamo,5/17/2018,Phable - DI,4.5,Prolike,"246, 245, 229, 241, 240",OK,900,1683
-May 2018,2018-3,anetacamo,5/18/2018,Phable - DI,5.0,Prolike,"263, 258, 259, 181, 244, 254, 256, 253, 250, 248, 243, 247, 242",OK,1000,1870
-May 2018,2018-3,anetacamo,5/18/2018,Phable - DI,1.0,Explore,Tech challenge,OK,67.5,0
-N/A,2018-3,lakruzz,5/18/2018,Phable - DI,0.5,Prolike,Meeting with DI + preparing Git repo transfer,OK,100,187
-May 2018,workbook-VHHR-1,loubnielsen,5/22/2018,VHHR,4.0,Prolike,Meeting VHHR and research,OK,800,#N/A
-N/A,workbook-VHHR-1,lakruzz,5/22/2018,VHHR,2.0,Prolike,Meeting VHHR,OK,400,#N/A
-May 2018,2018-3,anetacamo,5/23/2018,Phable - DI,1.5,Prolike,weekly website meeting / planning the work,OK,300,561
-May 2018,workbook-VHHR-1,loubnielsen,5/23/2018,VHHR,3.5,Prolike,Working on (#1),OK,700,#N/A
-May 2018,2018-3,anetacamo,5/23/2018,Phable - DI,9.0,Prolike,"272, 266, 275, 273, 270, 263, 271, 265, 268",OK,1800,3366
-May 2018,2018-3,loubnielsen,5/23/2018,Phable - DI,1.5,Explore,Meeting intern training,OK,101.25,0
-May 2018,workbook-VHHR-1,loubnielsen,5/24/2018,VHHR,4.5,Prolike,Working on (#1) and (#2),OK,900,#N/A
-May 2018,2018-3,anetacamo,5/25/2018,Phable - DI,3.0,Prolike,"Content hub: featured items + partners icons into carousel (284), (252)",OK,600,1122
-May 2018,workbook-VHHR-1,loubnielsen,5/25/2018,VHHR,4.5,Prolike,Forming backlog for drop-gdpr,OK,900,#N/A
-N/A,2018-3,lakruzz,5/25/2018,Phable - DI,1.0,Prolike,Planning,OK,200,374
-May 2018,2018-3,anetacamo,5/26/2018,Phable - DI,4.5,Prolike,"Creating global data file + logos mobile version + creating loops and merging files (265, 266)",OK,900,1683
-May 2018,workbook-VHHR-1,loubnielsen,5/28/2018,VHHR,5.0,Prolike,"Working on #1, #2, #5",OK,1000,#N/A
-May 2018,2018-6,anetacamo,5/28/2018,Phable - DI,8.5,Prolike,"creating global data files + new GDPR (286, 264, 285)",OK,1700,3179
-May 2018,workbook-VHHR-1,loubnielsen,5/29/2018,VHHR,1.5,Explore,"Running docker on windows, zsh and ghi documentation",OK,101.25,#N/A
+May 2018,Invoice 3,anetacamo,5/7/2018,Phable - DI,7.5,Prolike,"Finishing the layouts for the new partners page (#212), (#200), (#199), (#198), (#197)",OK,1500,2805
+May 2018,Invoice 3,anetacamo,5/9/2018,Phable - DI,8.5,Prolike,"tracker code + tags + new blog (#213), (#218), (#217), (#214), (#204), (#208),",OK,1700,3179
+May 2018,Invoice 3,anetacamo,5/10/2018,Phable - DI,7.5,Prolike,"finishing tags + events section into the markdown + other fixes (#219), (#211), (#223), (#225), (#222), (#216), (#215), (#213), (#221)",OK,1500,2805
+May 2018,Invoice 3,anetacamo,5/11/2018,Phable - DI,1.5,Prolike,hangout about the website,OK,300,561
+May 2018,Invoice 3,anetacamo,5/14/2018,Phable - DI,9.0,Prolike,"installing the bootstrap carousel + adjusting CSS + creating a better linking system in the web (#224), (#227), (#230), (#231), (#232), (#226)",OK,1800,3366
+May 2018,Invoice 3,anetacamo,5/16/2018,Phable - DI,8.5,Prolike,"replacing revo slider and carousel by custom carousel and revo slider - 239, 238, 237, 235, 236, 234 ",OK,1700,3179
+May 2018,Invoice 3,anetacamo,5/17/2018,Phable - DI,4.5,Prolike,"246, 245, 229, 241, 240",OK,900,1683
+May 2018,Invoice 3,anetacamo,5/18/2018,Phable - DI,5.0,Prolike,"263, 258, 259, 181, 244, 254, 256, 253, 250, 248, 243, 247, 242",OK,1000,1870
+May 2018,Invoice 3,anetacamo,5/18/2018,Phable - DI,1.0,Explore,Tech challenge,OK,67.5,0
+N/A,Invoice 3,lakruzz,5/18/2018,Phable - DI,0.5,Prolike,Meeting with DI + preparing Git repo transfer,OK,100,187
+May 2018,Invoice 4,loubnielsen,5/22/2018,VHHR,4.0,Prolike,Meeting VHHR and research,OK,800,#N/A
+N/A,Invoice 4,lakruzz,5/22/2018,VHHR,2.0,Prolike,Meeting VHHR,OK,400,#N/A
+May 2018,Invoice 3,anetacamo,5/23/2018,Phable - DI,1.5,Prolike,weekly website meeting / planning the work,OK,300,561
+May 2018,Invoice 4,loubnielsen,5/23/2018,VHHR,3.5,Prolike,Working on (#1),OK,700,#N/A
+May 2018,Invoice 3,anetacamo,5/23/2018,Phable - DI,9.0,Prolike,"272, 266, 275, 273, 270, 263, 271, 265, 268",OK,1800,3366
+May 2018,Invoice 3,loubnielsen,5/23/2018,Phable - DI,1.5,Explore,Meeting intern training,OK,101.25,0
+May 2018,Invoice 4,loubnielsen,5/24/2018,VHHR,4.5,Prolike,Working on (#1) and (#2),OK,900,#N/A
+May 2018,Invoice 3,anetacamo,5/25/2018,Phable - DI,3.0,Prolike,"Content hub: featured items + partners icons into carousel (284), (252)",OK,600,1122
+May 2018,Invoice 4,loubnielsen,5/25/2018,VHHR,4.5,Prolike,Forming backlog for drop-gdpr,OK,900,#N/A
+N/A,Invoice 3,lakruzz,5/25/2018,Phable - DI,1.0,Prolike,Planning,OK,200,374
+May 2018,Invoice 3,anetacamo,5/26/2018,Phable - DI,4.5,Prolike,"Creating global data file + logos mobile version + creating loops and merging files (265, 266)",OK,900,1683
+May 2018,Invoice 4,loubnielsen,5/28/2018,VHHR,5.0,Prolike,"Working on #1, #2, #5",OK,1000,#N/A
+May 2018,Invoice 6,anetacamo,5/28/2018,Phable - DI,8.5,Prolike,"creating global data files + new GDPR (286, 264, 285)",OK,1700,3179
+May 2018,Invoice 4,loubnielsen,5/29/2018,VHHR,1.5,Explore,"Running docker on windows, zsh and ghi documentation",OK,101.25,#N/A
 May 2018,PROLIKE,loubnielsen,5/29/2018,Prolike,1.0,Honeypot,Meeting with Eddie + Lars,OK,135,0
-May 2018,workbook-VHHR-1,loubnielsen,5/29/2018,VHHR,4.5,Prolike,Dockerizing development env. and defining #7,OK,900,#N/A
-June 2018,2018-6,anetacamo,5/30/2018,Phable - DI,7.0,Prolike,"#202, #292, #282, #290, #291",OK,1400,2618
-June 2018,2018-6,anetacamo,6/1/2018,Phable - DI,3.0,Prolike,"#300, #298, #299, #297",OK,600,1122
-June 2018,2018-6,anetacamo,6/4/2018,Phable - DI,7.0,Prolike,"solution briefs section + talk with Aaron + readme files for easy navigation through blogs #307, #303, #308, #309, #310, #311, #264",OK,1400,2618
-N/A,2018-6,lakruzz,6/5/2018,Phable - DI,5.0,Explore,Supervision,OK,337.5,0
-June 2018,workbook-VHHR-2,loubnielsen,6/1/2018,VHHR,3.0,Prolike,#1,OK,600,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/2/2018,VHHR,1.5,Prolike,#1,OK,300,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/4/2018,VHHR,5.5,Prolike,"#11, #10",OK,1100,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/5/2018,VHHR,4.5,Prolike,"#7, #10, #13, #14, #15",OK,900,#N/A
-June 2018,2018-6,anetacamo,6/6/2018,Phable - DI,3.0,Explore,comments section,OK,202.5,0
-June 2018,workbook-VHHR-2,loubnielsen,6/6/2018,VHHR,3.5,Prolike,#1 - related to #12,OK,700,#N/A
-June 2018,2018-6,anetacamo,6/6/2018,Phable - DI,4.5,Prolike,"#278, #315, #267, #301, #302, #314",OK,900,1683
-June 2018,workbook-VHHR-2,loubnielsen,6/7/2018,VHHR,2.0,Prolike,"#1, #9",OK,400,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/8/2018,VHHR,5.0,Prolike,#1 #9,OK,1000,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/11/2018,VHHR,5.0,Prolike,"#1, git branch/merge issues, #22",OK,1000,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/9/2018,VHHR,1.5,Prolike,#1,OK,300,#N/A
-June 2018,2018-6,anetacamo,6/11/2018,Phable - DI,7.0,Prolike,"#318, #319, #320",OK,1400,2618
-,,anetacamo,6/11/2018,Prolike,1.5,Explore,parallax scroll on the solutions + services  #257,OK,101.25,0
-June 2018,workbook-VHHR-2,loubnielsen,6/12/2018,VHHR,3.5,Prolike,"git branch/merge issues, #22, #24, #25",OK,700,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/13/2018,VHHR,3.0,Prolike,Project vulnerabilities fixes and npm outdated packages upgrade,OK,600,#N/A
-June 2018,2018-6,anetacamo,6/12/2018,Phable - DI,3.0,Prolike,"#321, help to Aaron",OK,600,1122
-June 2018,2018-6,anetacamo,6/14/2018,Phable - DI,9.0,Prolike,"#305, #323, #327, #329",OK,1800,3366
-June 2018,workbook-VHHR-2,loubnielsen,6/16/2018,VHHR,1.5,Prolike,Update npm packages and fix vulnerabilities,OK,300,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/18/2018,VHHR,5.5,Prolike,"Preparing for meeting with VHHR, git phlow fixes, #16, readme.md",OK,1100,#N/A
-June 2018,2018-6,anetacamo,6/18/2018,Phable - DI,7.0,Prolike,"#334, #332, #331, #333",OK,1400,2618
-June 2018,workbook-VHHR-2,loubnielsen,6/19/2018,VHHR,3.5,Prolike,"Diving into Karma, Gulp, test, Ghook, hangout with VHHR",OK,700,#N/A
-N/A,workbook-VHHR-2,lakruzz,6/19/2018,VHHR,1.0,Prolike,Hangout with VHHR,OK,200,#N/A
-June 2018,2018-6,anetacamo,6/19/2018,Phable - DI,1.0,Prolike,"#338, fixing broken commits",OK,200,374
-June 2018,2018-6,anetacamo,6/20/2018,Phable - DI,7.5,Prolike,"#343, #344, #337",OK,1500,2805
-,,anetacamo,6/21/2018,Prolike,2.5,Explore,"#343, #344, #337",OK,168.75,0
-June 2018,2018-6,anetacamo,6/21/2018,Phable - DI,4.0,Prolike,"#343, #344, #337",OK,800,1496
-June 2018,2018-6,anetacamo,6/22/2018,Phable - DI,2.0,Prolike,#350,OK,400,748
-June 2018,workbook-VHHR-2,loubnielsen,6/22/2018,VHHR,5.5,Prolike,"#41, #42, #46, #47, #52, #52, #54",OK,1100,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/24/2018,VHHR,4.0,Prolike,"CircleCI, test",OK,800,#N/A
-June 2018,workbook-VHHR-2,loubnielsen,6/24/2018,VHHR,5.0,Prolike,"CircleCI, test",OK,1000,#N/A
-N/A,workbook-VHHR-2,lakruzz,6/26/2018,VHHR,2.0,Prolike,Circle CI setup,OK,400,#N/A
-July 2018,workbook-VHHR-2,loubnielsen,6/27/2018,VHHR,3.5,Prolike,"#61, #64",OK,700,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,6/29/2018,VHHR,2.5,Prolike,"#55, #62, #64, #65",OK,500,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,6/30/2018,VHHR,2.5,Prolike,"#45, #6, preparing for meeting with VHHR",OK,500,#N/A
-July 2018,2018-7,anetacamo,6/25/2018,Phable - DI,5.5,Prolike,"#351, #352",OK,1100,2057
+May 2018,Invoice 4,loubnielsen,5/29/2018,VHHR,4.5,Prolike,Dockerizing development env. and defining #7,OK,900,#N/A
+June 2018,Invoice 6,anetacamo,5/30/2018,Phable - DI,7.0,Prolike,"#202, #292, #282, #290, #291",OK,1400,2618
+June 2018,Invoice 6,anetacamo,6/1/2018,Phable - DI,3.0,Prolike,"#300, #298, #299, #297",OK,600,1122
+June 2018,Invoice 6,anetacamo,6/4/2018,Phable - DI,7.0,Prolike,"solution briefs section + talk with Aaron + readme files for easy navigation through blogs #307, #303, #308, #309, #310, #311, #264",OK,1400,2618
+N/A,Invoice 6,lakruzz,6/5/2018,Phable - DI,5.0,Explore,Supervision,OK,337.5,0
+June 2018,Invoice 5,loubnielsen,6/1/2018,VHHR,3.0,Prolike,#1,OK,600,#N/A
+June 2018,Invoice 5,loubnielsen,6/2/2018,VHHR,1.5,Prolike,#1,OK,300,#N/A
+June 2018,Invoice 5,loubnielsen,6/4/2018,VHHR,5.5,Prolike,"#11, #10",OK,1100,#N/A
+June 2018,Invoice 5,loubnielsen,6/5/2018,VHHR,4.5,Prolike,"#7, #10, #13, #14, #15",OK,900,#N/A
+June 2018,Invoice 6,anetacamo,6/6/2018,Phable - DI,3.0,Explore,comments section,OK,202.5,0
+June 2018,Invoice 5,loubnielsen,6/6/2018,VHHR,3.5,Prolike,#1 - related to #12,OK,700,#N/A
+June 2018,Invoice 6,anetacamo,6/6/2018,Phable - DI,4.5,Prolike,"#278, #315, #267, #301, #302, #314",OK,900,1683
+June 2018,Invoice 5,loubnielsen,6/7/2018,VHHR,2.0,Prolike,"#1, #9",OK,400,#N/A
+June 2018,Invoice 5,loubnielsen,6/8/2018,VHHR,5.0,Prolike,#1 #9,OK,1000,#N/A
+June 2018,Invoice 5,loubnielsen,6/11/2018,VHHR,5.0,Prolike,"#1, git branch/merge issues, #22",OK,1000,#N/A
+June 2018,Invoice 5,loubnielsen,6/9/2018,VHHR,1.5,Prolike,#1,OK,300,#N/A
+June 2018,Invoice 6,anetacamo,6/11/2018,Phable - DI,7.0,Prolike,"#318, #319, #320",OK,1400,2618
+N/A,PROLIKE,anetacamo,6/11/2018,Prolike,1.5,Explore,parallax scroll on the solutions + services  #257,OK,101.25,0
+June 2018,Invoice 5,loubnielsen,6/12/2018,VHHR,3.5,Prolike,"git branch/merge issues, #22, #24, #25",OK,700,#N/A
+June 2018,Invoice 5,loubnielsen,6/13/2018,VHHR,3.0,Prolike,Project vulnerabilities fixes and npm outdated packages upgrade,OK,600,#N/A
+June 2018,Invoice 6,anetacamo,6/12/2018,Phable - DI,3.0,Prolike,"#321, help to Aaron",OK,600,1122
+June 2018,Invoice 6,anetacamo,6/14/2018,Phable - DI,9.0,Prolike,"#305, #323, #327, #329",OK,1800,3366
+June 2018,Invoice 5,loubnielsen,6/16/2018,VHHR,1.5,Prolike,Update npm packages and fix vulnerabilities,OK,300,#N/A
+June 2018,Invoice 5,loubnielsen,6/18/2018,VHHR,5.5,Prolike,"Preparing for meeting with VHHR, git phlow fixes, #16, readme.md",OK,1100,#N/A
+June 2018,Invoice 6,anetacamo,6/18/2018,Phable - DI,7.0,Prolike,"#334, #332, #331, #333",OK,1400,2618
+June 2018,Invoice 5,loubnielsen,6/19/2018,VHHR,3.5,Prolike,"Diving into Karma, Gulp, test, Ghook, hangout with VHHR",OK,700,#N/A
+N/A,Invoice 5,lakruzz,6/19/2018,VHHR,1.0,Prolike,Hangout with VHHR,OK,200,#N/A
+June 2018,Invoice 6,anetacamo,6/19/2018,Phable - DI,1.0,Prolike,"#338, fixing broken commits",OK,200,374
+June 2018,Invoice 6,anetacamo,6/20/2018,Phable - DI,7.5,Prolike,"#343, #344, #337",OK,1500,2805
+N/A,PROLIKE,anetacamo,6/21/2018,Prolike,2.5,Explore,"#343, #344, #337",OK,168.75,0
+June 2018,Invoice 6,anetacamo,6/21/2018,Phable - DI,4.0,Prolike,"#343, #344, #337",OK,800,1496
+June 2018,Invoice 6,anetacamo,6/22/2018,Phable - DI,2.0,Prolike,#350,OK,400,748
+June 2018,Invoice 5,loubnielsen,6/22/2018,VHHR,5.5,Prolike,"#41, #42, #46, #47, #52, #52, #54",OK,1100,#N/A
+June 2018,Invoice 5,loubnielsen,6/24/2018,VHHR,4.0,Prolike,"CircleCI, test",OK,800,#N/A
+June 2018,Invoice 5,loubnielsen,6/24/2018,VHHR,5.0,Prolike,"CircleCI, test",OK,1000,#N/A
+N/A,Invoice 5,lakruzz,6/26/2018,VHHR,2.0,Prolike,Circle CI setup,OK,400,#N/A
+July 2018,Invoice 5,loubnielsen,6/27/2018,VHHR,3.5,Prolike,"#61, #64",OK,700,#N/A
+July 2018,Invoice 4,loubnielsen,6/29/2018,VHHR,2.5,Prolike,"#55, #62, #64, #65",OK,500,#N/A
+July 2018,Invoice 4,loubnielsen,6/30/2018,VHHR,2.5,Prolike,"#45, #6, preparing for meeting with VHHR",OK,500,#N/A
+July 2018,Invoice 7,anetacamo,6/25/2018,Phable - DI,5.5,Prolike,"#351, #352",OK,1100,2057
 July 2018,PROLIKE,anetacamo,6/26/2018,Prolike,2.0,Explore,"#351, #353",OK,135,0
-July 2018,2018-7,anetacamo,6/27/2018,Phable - DI,4.5,Prolike,"#351, pagination and code review",OK,900,1683
+July 2018,Invoice 7,anetacamo,6/27/2018,Phable - DI,4.5,Prolike,"#351, pagination and code review",OK,900,1683
 July 2018,PROLIKE,anetacamo,6/28/2018,Prolike,3.0,Explore,"#351, pagination and code review",OK,202.5,0
-July 2018,2018-7,anetacamo,7/1/2018,Phable - DI,4.0,Prolike,"#352, #354",OK,800,1496
-July 2018,2018-7,anetacamo,7/2/2018,Phable - DI,9.0,Prolike,"#354, #355, #356, #357, #359, #360",OK,1800,3366
-July 2018,workbook-VHHR-1,loubnielsen,7/2/2018,VHHR,4.0,Prolike,"#Meeting with VHHR, evaluating on meeting, #6",OK,800,#N/A
-July 2018,2018-7,anetacamo,7/3/2018,Phable - DI,1.5,Prolike,#360,OK,300,561
-July 2018,workbook-VHHR-1,loubnielsen,7/3/2018,VHHR,4.0,Prolike,"#65, #66, #70, #72/#73",OK,800,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,7/8/2018,VHHR,5.5,Prolike,#73,OK,1100,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,7/9/2018,VHHR,4.5,Prolike,#73,OK,900,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,7/19/2018,VHHR,2.0,Prolike,#73,OK,400,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,7/20/2018,VHHR,3.0,Prolike,#73,OK,600,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,7/23/2018,VHHR,4.5,Prolike,"#73, #74, #76",OK,900,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,7/24/2018,VHHR,5.0,Prolike,"#70, #71, #73, #74, #48",OK,1000,#N/A
-July 2018,workbook-VHHR-1,loubnielsen,7/25/2018,VHHR,4.0,Prolike,"#77, #75, #71, css and styling",OK,800,#N/A
-July 2018,workbook-VHHR-3,loubnielsen,7/27/2018,VHHR,3.0,Prolike,expected worktime for friday 27.,OK,600,#N/A
-August 2018,2018-8,anetacamo,7/4/2018,Phable - DI,2.0,Prolike,#362,OK,400,748
-August 2018,2018-8,anetacamo,7/5/2018,Phable - DI,2.0,Prolike,#361,OK,400,748
-August 2018,2018-8,anetacamo,7/11/2018,Phable - DI,0.5,Prolike,update tile_loop - no issue name,OK,100,187
-August 2018,2018-8,anetacamo,7/12/2018,Phable - DI,3.5,Prolike,"work in prose, outside the issues",OK,700,1309
-August 2018,2018-8,anetacamo,7/16/2018,Phable - DI,5.5,Prolike,"work in prose, outside the issues, getting ready tags and videos",OK,1100,2057
-August 2018,2018-8,anetacamo,7/25/2018,Phable - DI,7.0,Prolike,"#382, #381, #380, #379",OK,1400,2618
-August 2018,2018-8,anetacamo,7/30/2018,Phable - DI,4.0,Prolike,"#385, #384",OK,800,1496
-August 2018,2018-8,anetacamo,7/31/2018,Phable - DI,3.5,Prolike,"#386, videos updates",OK,700,1309
-August 2018,workbook-VHHR-3,loubnielsen,8/2/2018,VHHR,6.0,Prolike,"#3, #4, #8, #68, #75, #83, #86, #87",OK,1200,#N/A
-August 2018,workbook-VHHR-3,loubnielsen,8/4/2018,VHHR,3.0,Prolike,"#78, #82, '#85, #89, #91",OK,600,#N/A
-August 2018,workbook-VHHR-3,loubnielsen,8/6/2018,VHHR,5.0,Prolike,"#84, #88, #90, #92",OK,1000,#N/A
-August 2018,2018-8,anetacamo,8/13/2018,Phable - DI,4.0,Prolike,"#393, #390",OK,800,1496
-August 2018,2018-8,anetacamo,8/15/2018,Phable - DI,9.0,Prolike,"#393, #394, #395, #396, #398, #400",OK,1800,3366
-August 2018,workbook-VHHR-3,loubnielsen,8/17/2018,VHHR,4.5,Prolike,"#93, #94, #96",OK,900,#N/A
-August 2018,2018-8,anetacamo,8/16/2018,Phable - DI,4.5,Prolike,#397,OK,900,1683
-August 2018,2018-8,anetacamo,8/18/2018,Phable - DI,5.5,Prolike,"#397, #403, #358, #404",OK,1100,2057
-August 2018,2018-8,anetacamo,8/19/2018,Phable - DI,5.0,Prolike,"#407, #408, #309/#409",OK,1000,1870
-August 2018,workbook-VHHR-3,loubnielsen,8/20/2018,VHHR,6.5,Prolike,"#49, #80, #98 + meetings",OK,1300,#N/A
-August 2018,workbook-VHHR-3,loubnielsen,8/21/2018,VHHR,5.0,Prolike,"#96, #101",OK,1000,#N/A
-August 2018,workbook-VHHR-3,loubnielsen,8/22/2018,VHHR,4.0,Prolike,"#103, #106, #107, #108",OK,800,#N/A
-August 2018,2018-8,anetacamo,8/20/2018,Phable - DI,8.5,Prolike,"#411, #410, #405",OK,1700,3179
-August 2018,2018-8,anetacamo,8/21/2018,Phable - DI,1.0,Prolike,updates directly via prose.io,OK,200,374
-August 2018,2018-8,anetacamo,8/22/2018,Phable - DI,9.0,Prolike,"#405, #415, #414",OK,1800,3366
-August 2018,2018-8,anetacamo,8/23/2018,Phable - DI,2.5,Prolike,"#413, #414",OK,500,935
-August 2018,2018-8,anetacamo,8/24/2018,Phable - DI,10.0,Prolike,"#418, #416, #417, #418, #413, #419, #420, #421, #422, #401",OK,2000,3740
-August 2018,workbook-VHHR-3,loubnielsen,8/24/2018,VHHR,5.0,Prolike,"#97, #101, #109",OK,1000,#N/A
+July 2018,Invoice 7,anetacamo,7/1/2018,Phable - DI,4.0,Prolike,"#352, #354",OK,800,1496
+July 2018,Invoice 7,anetacamo,7/2/2018,Phable - DI,9.0,Prolike,"#354, #355, #356, #357, #359, #360",OK,1800,3366
+July 2018,Invoice 4,loubnielsen,7/2/2018,VHHR,4.0,Prolike,"#Meeting with VHHR, evaluating on meeting, #6",OK,800,#N/A
+July 2018,Invoice 7,anetacamo,7/3/2018,Phable - DI,1.5,Prolike,#360,OK,300,561
+July 2018,Invoice 4,loubnielsen,7/3/2018,VHHR,4.0,Prolike,"#65, #66, #70, #72/#73",OK,800,#N/A
+July 2018,Invoice 4,loubnielsen,7/8/2018,VHHR,5.5,Prolike,#73,OK,1100,#N/A
+July 2018,Invoice 4,loubnielsen,7/9/2018,VHHR,4.5,Prolike,#73,OK,900,#N/A
+July 2018,Invoice 4,loubnielsen,7/19/2018,VHHR,2.0,Prolike,#73,OK,400,#N/A
+July 2018,Invoice 4,loubnielsen,7/20/2018,VHHR,3.0,Prolike,#73,OK,600,#N/A
+July 2018,Invoice 4,loubnielsen,7/23/2018,VHHR,4.5,Prolike,"#73, #74, #76",OK,900,#N/A
+July 2018,Invoice 4,loubnielsen,7/24/2018,VHHR,5.0,Prolike,"#70, #71, #73, #74, #48",OK,1000,#N/A
+July 2018,Invoice 4,loubnielsen,7/25/2018,VHHR,4.0,Prolike,"#77, #75, #71, css and styling",OK,800,#N/A
+July 2018,Invoice 9,loubnielsen,7/27/2018,VHHR,3.0,Prolike,expected worktime for friday 27.,OK,600,#N/A
+August 2018,Invoice 8,anetacamo,7/4/2018,Phable - DI,2.0,Prolike,#362,OK,400,748
+August 2018,Invoice 8,anetacamo,7/5/2018,Phable - DI,2.0,Prolike,#361,OK,400,748
+August 2018,Invoice 8,anetacamo,7/11/2018,Phable - DI,0.5,Prolike,update tile_loop - no issue name,OK,100,187
+August 2018,Invoice 8,anetacamo,7/12/2018,Phable - DI,3.5,Prolike,"work in prose, outside the issues",OK,700,1309
+August 2018,Invoice 8,anetacamo,7/16/2018,Phable - DI,5.5,Prolike,"work in prose, outside the issues, getting ready tags and videos",OK,1100,2057
+August 2018,Invoice 8,anetacamo,7/25/2018,Phable - DI,7.0,Prolike,"#382, #381, #380, #379",OK,1400,2618
+August 2018,Invoice 8,anetacamo,7/30/2018,Phable - DI,4.0,Prolike,"#385, #384",OK,800,1496
+August 2018,Invoice 8,anetacamo,7/31/2018,Phable - DI,3.5,Prolike,"#386, videos updates",OK,700,1309
+August 2018,Invoice 9,loubnielsen,8/2/2018,VHHR,6.0,Prolike,"#3, #4, #8, #68, #75, #83, #86, #87",OK,1200,#N/A
+August 2018,Invoice 9,loubnielsen,8/4/2018,VHHR,3.0,Prolike,"#78, #82, '#85, #89, #91",OK,600,#N/A
+August 2018,Invoice 9,loubnielsen,8/6/2018,VHHR,5.0,Prolike,"#84, #88, #90, #92",OK,1000,#N/A
+August 2018,Invoice 8,anetacamo,8/13/2018,Phable - DI,4.0,Prolike,"#393, #390",OK,800,1496
+August 2018,Invoice 8,anetacamo,8/15/2018,Phable - DI,9.0,Prolike,"#393, #394, #395, #396, #398, #400",OK,1800,3366
+August 2018,Invoice 9,loubnielsen,8/17/2018,VHHR,4.5,Prolike,"#93, #94, #96",OK,900,#N/A
+August 2018,Invoice 8,anetacamo,8/16/2018,Phable - DI,4.5,Prolike,#397,OK,900,1683
+August 2018,Invoice 8,anetacamo,8/18/2018,Phable - DI,5.5,Prolike,"#397, #403, #358, #404",OK,1100,2057
+August 2018,Invoice 8,anetacamo,8/19/2018,Phable - DI,5.0,Prolike,"#407, #408, #309/#409",OK,1000,1870
+August 2018,Invoice 9,loubnielsen,8/20/2018,VHHR,6.5,Prolike,"#49, #80, #98 + meetings",OK,1300,#N/A
+August 2018,Invoice 9,loubnielsen,8/21/2018,VHHR,5.0,Prolike,"#96, #101",OK,1000,#N/A
+August 2018,Invoice 9,loubnielsen,8/22/2018,VHHR,4.0,Prolike,"#103, #106, #107, #108",OK,800,#N/A
+August 2018,Invoice 8,anetacamo,8/20/2018,Phable - DI,8.5,Prolike,"#411, #410, #405",OK,1700,3179
+August 2018,Invoice 8,anetacamo,8/21/2018,Phable - DI,1.0,Prolike,updates directly via prose.io,OK,200,374
+August 2018,Invoice 8,anetacamo,8/22/2018,Phable - DI,9.0,Prolike,"#405, #415, #414",OK,1800,3366
+August 2018,Invoice 8,anetacamo,8/23/2018,Phable - DI,2.5,Prolike,"#413, #414",OK,500,935
+August 2018,Invoice 8,anetacamo,8/24/2018,Phable - DI,10.0,Prolike,"#418, #416, #417, #418, #413, #419, #420, #421, #422, #401",OK,2000,3740
+August 2018,Invoice 9,loubnielsen,8/24/2018,VHHR,5.0,Prolike,"#97, #101, #109",OK,1000,#N/A
 August 2018,PROLIKE,loubnielsen,8/27/2018,Prolike,2.0,Prolike,Timereg meeting,OK,400,0
-August 2018,workbook-VHHR-3,loubnielsen,8/27/2018,VHHR,3.5,Prolike,"#101, #102",OK,700,#N/A
-August 2018,workbook-VHHR-3,loubnielsen,8/28/2018,VHHR,6.0,Prolike,"#69, #101, #102, #104",OK,1200,#N/A
-August 2018,workbook-VHHR-3,loubnielsen,8/29/2018,VHHR,7.0,Prolike,"#104, #105, #112, #113, #115, #117, #118",OK,1400,#N/A
-August 2018,2018-8,anetacamo,8/27/2018,Phable - DI,3.0,Prolike,"catch up, #423",OK,600,1122
-August 2018,2018-8,anetacamo,8/29/2018,Phable - DI,1.0,Prolike,"mail communication, catch up + fixes via prose.io",OK,200,374
-September 2018,workbook-VHHR-3,loubnielsen,8/30/2018,VHHR,6.0,Prolike,"#110, #111, #113, #116",OK,1200,#N/A
-September 2018,workbook-VHHR-3,loubnielsen,8/31/2018,VHHR,4.5,Prolike,"#56, #66, #120, #121, #122",OK,900,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/3/2018,VHHR,5.0,Prolike,"#99, #114, #119, #122, #124",OK,1000,#N/A
-September 2018,2018-10,anetacamo,9/2/2018,Phable - DI,5.0,Prolike,#423,OK,1000,1870
-September 2018,2018-10,anetacamo,9/3/2018,Phable - DI,1.5,Prolike,#426,OK,300,561
-September 2018,2018-10,anetacamo,9/4/2018,Phable - DI,7.0,Prolike,"#425, #426",OK,1400,2618
-N/A,2018-10,lakruzz,9/5/2018,Phable - DI,4.0,Prolike,"Handover, Circle CI, Zip archive, intoducting Louise",OK,800,1496
-September 2018,2018-10,loubnielsen,9/5/2018,Phable - DI,4.5,Prolike,"Transfer dataintensity.com repository, email consulting, #issue",OK,900,1683
-September 2018,workbook-VHHR-4,loubnielsen,9/5/2018,VHHR,2.0,Prolike,"#114, settings.json",OK,400,#N/A
-September 2018,2018-10,anetacamo,9/6/2018,Phable - DI,6.0,Prolike,"#429, #430, #426 + adding descriptions ",OK,1200,2244
-September 2018,2018-10,anetacamo,9/7/2018,Phable - DI,6.0,Prolike,"#436, #435, #178",OK,1200,2244
-September 2018,2018-10,loubnielsen,9/7/2018,Phable - DI,4.5,Prolike,Project transfer,OK,900,1683
-September 2018,workbook-VHHR-3,loubnielsen,9/7/2018,VHHR,2.0,Prolike,#114,OK,400,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/8/2018,VHHR,1.0,Prolike,#66,OK,200,#N/A
-September 2018,2018-10,anetacamo,9/8/2018,Phable - DI,5.0,Prolike,"#428, #363, #438",OK,1000,1870
-September 2018,2018-10,anetacamo,9/10/2018,Phable - DI,2.0,Prolike,"#432, #431, #439",OK,400,748
-September 2018,workbook-VHHR-4,loubnielsen,9/11/2018,VHHR,8.0,Prolike,"#79, #110, #131, #133, #134, #136, #137, #138, #139, #140, #142, #143",OK,1600,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/12/2018,VHHR,6.5,Prolike,"#129, #130 #139, #141, #144, #146 Docker on windows and limux start.script",OK,1300,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/13/2018,VHHR,8.0,Prolike,"#144, #146, #147, #148, #149, #152 , setup three instances of VHHR, #152",OK,1600,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/14/2018,VHHR,6.0,Prolike,"#145, #156, #155, #154, #132, #157",OK,1200,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/17/2018,VHHR,5.5,Prolike,"#158, #145",OK,1100,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/18/2018,VHHR,5.0,Prolike,"#158, #145, status meeting/what's next, proxy setup, #151",OK,1000,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/19/2018,VHHR,2.0,Prolike,"#123, #159, #164, #158",OK,400,#N/A
-September 2018,workbook-VHHR-4,loubnielsen,9/20/2018,VHHR,5.0,Prolike,"Backlog forming, #158, #161 #167",OK,1000,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,9/22/2018,VHHR,4.5,Prolike,"#135, #176, #173",OK,900,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,9/25/2018,VHHR,6.5,Prolike,#173,OK,1300,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,9/26/2018,VHHR,6.5,Prolike,"#182, #173, CircleCI and Selenium/frontend test",OK,1300,#N/A
-October 2018,workbook-VHHR-4,alfen321,9/12/2018,VHHR,5.0,Prolike,"#147, #148",OK,1000,#N/A
-October 2018,workbook-VHHR-4,davidcarl,9/12/2018,VHHR,5.0,Prolike,"#147, #148",OK,1000,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,9/27/2018,VHHR,5.0,Prolike,"#169, #178, #179, #180, #181, #183, #186",OK,1000,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,9/28/2018,VHHR,5.0,Prolike,#100,OK,1000,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/1/2018,VHHR,4.0,Prolike,"#100, #163",OK,800,#N/A
+August 2018,Invoice 9,loubnielsen,8/27/2018,VHHR,3.5,Prolike,"#101, #102",OK,700,#N/A
+August 2018,Invoice 9,loubnielsen,8/28/2018,VHHR,6.0,Prolike,"#69, #101, #102, #104",OK,1200,#N/A
+August 2018,Invoice 9,loubnielsen,8/29/2018,VHHR,7.0,Prolike,"#104, #105, #112, #113, #115, #117, #118",OK,1400,#N/A
+August 2018,Invoice 8,anetacamo,8/27/2018,Phable - DI,3.0,Prolike,"catch up, #423",OK,600,1122
+August 2018,Invoice 8,anetacamo,8/29/2018,Phable - DI,1.0,Prolike,"mail communication, catch up + fixes via prose.io",OK,200,374
+September 2018,Invoice 9,loubnielsen,8/30/2018,VHHR,6.0,Prolike,"#110, #111, #113, #116",OK,1200,#N/A
+September 2018,Invoice 9,loubnielsen,8/31/2018,VHHR,4.5,Prolike,"#56, #66, #120, #121, #122",OK,900,#N/A
+September 2018,Invoice 11,loubnielsen,9/3/2018,VHHR,5.0,Prolike,"#99, #114, #119, #122, #124",OK,1000,#N/A
+September 2018,Invoice 10,anetacamo,9/2/2018,Phable - DI,5.0,Prolike,#423,OK,1000,1870
+September 2018,Invoice 10,anetacamo,9/3/2018,Phable - DI,1.5,Prolike,#426,OK,300,561
+September 2018,Invoice 10,anetacamo,9/4/2018,Phable - DI,7.0,Prolike,"#425, #426",OK,1400,2618
+N/A,Invoice 10,lakruzz,9/5/2018,Phable - DI,4.0,Prolike,"Handover, Circle CI, Zip archive, intoducting Louise",OK,800,1496
+September 2018,Invoice 10,loubnielsen,9/5/2018,Phable - DI,4.5,Prolike,"Transfer dataintensity.com repository, email consulting, #issue",OK,900,1683
+September 2018,Invoice 11,loubnielsen,9/5/2018,VHHR,2.0,Prolike,"#114, settings.json",OK,400,#N/A
+September 2018,Invoice 10,anetacamo,9/6/2018,Phable - DI,6.0,Prolike,"#429, #430, #426 + adding descriptions ",OK,1200,2244
+September 2018,Invoice 10,anetacamo,9/7/2018,Phable - DI,6.0,Prolike,"#436, #435, #178",OK,1200,2244
+September 2018,Invoice 10,loubnielsen,9/7/2018,Phable - DI,4.5,Prolike,Project transfer,OK,900,1683
+September 2018,Invoice 9,loubnielsen,9/7/2018,VHHR,2.0,Prolike,#114,OK,400,#N/A
+September 2018,Invoice 11,loubnielsen,9/8/2018,VHHR,1.0,Prolike,#66,OK,200,#N/A
+September 2018,Invoice 10,anetacamo,9/8/2018,Phable - DI,5.0,Prolike,"#428, #363, #438",OK,1000,1870
+September 2018,Invoice 10,anetacamo,9/10/2018,Phable - DI,2.0,Prolike,"#432, #431, #439",OK,400,748
+September 2018,Invoice 11,loubnielsen,9/11/2018,VHHR,8.0,Prolike,"#79, #110, #131, #133, #134, #136, #137, #138, #139, #140, #142, #143",OK,1600,#N/A
+September 2018,Invoice 11,loubnielsen,9/12/2018,VHHR,6.5,Prolike,"#129, #130 #139, #141, #144, #146 Docker on windows and limux start.script",OK,1300,#N/A
+September 2018,Invoice 11,loubnielsen,9/13/2018,VHHR,8.0,Prolike,"#144, #146, #147, #148, #149, #152 , setup three instances of VHHR, #152",OK,1600,#N/A
+September 2018,Invoice 11,loubnielsen,9/14/2018,VHHR,6.0,Prolike,"#145, #156, #155, #154, #132, #157",OK,1200,#N/A
+September 2018,Invoice 11,loubnielsen,9/17/2018,VHHR,5.5,Prolike,"#158, #145",OK,1100,#N/A
+September 2018,Invoice 11,loubnielsen,9/18/2018,VHHR,5.0,Prolike,"#158, #145, status meeting/what's next, proxy setup, #151",OK,1000,#N/A
+September 2018,Invoice 11,loubnielsen,9/19/2018,VHHR,2.0,Prolike,"#123, #159, #164, #158",OK,400,#N/A
+September 2018,Invoice 11,loubnielsen,9/20/2018,VHHR,5.0,Prolike,"Backlog forming, #158, #161 #167",OK,1000,#N/A
+October 2018,Invoice 11,loubnielsen,9/22/2018,VHHR,4.5,Prolike,"#135, #176, #173",OK,900,#N/A
+October 2018,Invoice 11,loubnielsen,9/25/2018,VHHR,6.5,Prolike,#173,OK,1300,#N/A
+October 2018,Invoice 11,loubnielsen,9/26/2018,VHHR,6.5,Prolike,"#182, #173, CircleCI and Selenium/frontend test",OK,1300,#N/A
+October 2018,Invoice 11,alfen321,9/12/2018,VHHR,5.0,Prolike,"#147, #148",OK,1000,#N/A
+October 2018,Invoice 11,davidcarl,9/12/2018,VHHR,5.0,Prolike,"#147, #148",OK,1000,#N/A
+October 2018,Invoice 11,loubnielsen,9/27/2018,VHHR,5.0,Prolike,"#169, #178, #179, #180, #181, #183, #186",OK,1000,#N/A
+October 2018,Invoice 11,loubnielsen,9/28/2018,VHHR,5.0,Prolike,#100,OK,1000,#N/A
+October 2018,Invoice 11,loubnielsen,10/1/2018,VHHR,4.0,Prolike,"#100, #163",OK,800,#N/A
 October 2018,PROLIKE,loubnielsen,10/2/2018,Prolike,1.0,Prolike,Timereg meeting,OK,200,0
-October 2018,workbook-VHHR-4,loubnielsen,10/2/2018,VHHR,5.0,Prolike,"#150, #177, #189, #190, #192",OK,1000,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/3/2018,VHHR,5.5,Prolike,"#163, #188, #193, #194",OK,1100,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/5/2018,VHHR,5.5,Prolike,"#185, #175",OK,1100,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/9/2018,VHHR,6.0,Prolike,"#195, #196",OK,1200,#N/A
-October 2018,workbook-VHHR-4,alfen321,10/10/2018,VHHR,2.0,Prolike,#197 - Fix broken filesafe,OK,400,#N/A
-October 2018,workbook-VHHR-4,davidcarl,10/10/2018,VHHR,2.0,Prolike,#187/#165 - Fix broken filesafe,OK,400,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/10/2018,VHHR,5.0,Prolike,"#165/#187, #197, #198  - Fix broken filesafe",OK,1000,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/12/2018,VHHR,4.0,Prolike,"#194, #200",OK,800,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/15/2018,VHHR,4.0,Prolike,Submodules and #184 selenium on circleci,OK,800,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/17/2018,VHHR,4.0,Prolike,#184 and VHHR configuration,OK,800,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/22/2018,VHHR,2.0,Prolike,"Preparing for meeting with VHHR, #191, #168",OK,400,#N/A
-October 2018,workbook-VHHR-4,loubnielsen,10/24/2018,VHHR,4.5,Prolike,Meeting with VHHR and backlog grooming,OK,900,#N/A
-N/A,workbook-VHHR-4,lakruzz,10/24/2018,VHHR,3.0,Prolike,Meeting with VHHR,OK,600,#N/A
-November 2018,workbook-VHHR-5,davidcarl,10/26/2018,VHHR,1.0,Prolike,Investigating how to setup live update environment for VHHR,OK,200,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,10/26/2018,VHHR,5.0,Prolike,"#207, #217, Investigating how to setup live update environment for VHHR, preparing for VHHR meeting on Monday 29/10",OK,1000,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,10/29/2018,VHHR,2.5,Prolike,Meeting with VHHR #205,OK,500,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,10/30/2018,VHHR,5.0,Prolike,"#174, #201, #213, #217, #219, #220",OK,1000,#N/A
-November 2018,workbook-VHHR-5,davidcarl,10/30/2018,VHHR,2.0,Prolike,#209,OK,400,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,10/31/2018,VHHR,5.0,Prolike,"#191, #209",OK,1000,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,11/2/2018,VHHR,5.5,Prolike,"#209, #223, #222",OK,1100,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,11/5/2018,VHHR,2.0,Prolike,"#165, #187, #222, #221",OK,400,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,11/6/2018,VHHR,5.5,Prolike,"#221, #226, #230, #231",OK,1100,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,11/7/2018,VHHR,5.0,Prolike,"#231, #232, #219, #220, #228, #229, #233",OK,1000,#N/A
-March 2019,,loubnielsen,11/8/2018,Prolike,5.5,Explore,"Meeting Microsoft, Cph business",OK,371.25,0
-March 2019,,loubnielsen,11/8/2018,Prolike,1.5,Explore,#233,OK,101.25,0
-November 2018,workbook-VHHR-5,loubnielsen,11/9/2018,VHHR,4.0,Prolike,#233,OK,800,#N/A
-March 2019,,loubnielsen,11/9/2018,Prolike,2.5,Explore,"Backlog grooming, #2, #6",OK,168.75,0
-March 2019,,loubnielsen,11/12/2018,Prolike,2.5,Explore,Meeting with tenak,OK,168.75,0
-November 2018,workbook-VHHR-5,loubnielsen,11/13/2018,VHHR,5.5,Prolike,"#233, #234, #235, #236, #220",OK,1100,#N/A
-March 2019,,loubnielsen,11/13/2018,Prolike,1.0,Honeypot,send meeting link and write to those who are attending + beeing in allerød,OK,135,0
-November 2018,workbook-VHHR-5,loubnielsen,11/14/2018,VHHR,3.5,Prolike,"Skypemeeting, backlog grooming, #237, #240",OK,700,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,11/15/2018,VHHR,4.0,Prolike,"#241, #247, #244, #242, #246, #243",OK,800,#N/A
-March 2019,,loubnielsen,11/15/2018,Prolike,1.5,Honeypot,"Status, beeing in Allerød, rejsekort",OK,202.5,0
-November 2018,workbook-VHHR-5,loubnielsen,11/16/2018,VHHR,4.5,Prolike,"#253, #245 , #248, #225, #255, #254",OK,900,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,11/19/2018,VHHR,6.0,Prolike,"#254, #238",OK,1200,#N/A
-March 2019,,loubnielsen,11/20/2018,Prolike,0.5,Honeypot,"Rejsekort, email korrespondance ",OK,67.5,0
-November 2018,workbook-VHHR-5,loubnielsen,11/20/2018,VHHR,3.0,Prolike,"#260, #238, #251",OK,600,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,11/22/2018,VHHR,5.0,Prolike,#260,OK,1000,#N/A
-March 2019,,loubnielsen,11/22/2018,Prolike,5.0,Honeypot,Meetup info-meeting,OK,675,0
-November 2018,workbook-VHHR-5,loubnielsen,11/23/2018,VHHR,4.5,Prolike,"#260, #224, setup config lok1-5",OK,900,#N/A
-November 2018,workbook-VHHR-5,loubnielsen,11/26/2018,VHHR,10.5,Prolike,"#252, #257 ||||| TIRSDAG 27/11: #267, #269, #257 (added 6 hours)",OK,2100,#N/A
-December 2018,workbook-VHHR-5,loubnielsen,11/28/2018,VHHR,5.5,Prolike,#266,OK,1100,#N/A
+October 2018,Invoice 11,loubnielsen,10/2/2018,VHHR,5.0,Prolike,"#150, #177, #189, #190, #192",OK,1000,#N/A
+October 2018,Invoice 11,loubnielsen,10/3/2018,VHHR,5.5,Prolike,"#163, #188, #193, #194",OK,1100,#N/A
+October 2018,Invoice 11,loubnielsen,10/5/2018,VHHR,5.5,Prolike,"#185, #175",OK,1100,#N/A
+October 2018,Invoice 11,loubnielsen,10/9/2018,VHHR,6.0,Prolike,"#195, #196",OK,1200,#N/A
+October 2018,Invoice 11,alfen321,10/10/2018,VHHR,2.0,Prolike,#197 - Fix broken filesafe,OK,400,#N/A
+October 2018,Invoice 11,davidcarl,10/10/2018,VHHR,2.0,Prolike,#187/#165 - Fix broken filesafe,OK,400,#N/A
+October 2018,Invoice 11,loubnielsen,10/10/2018,VHHR,5.0,Prolike,"#165/#187, #197, #198  - Fix broken filesafe",OK,1000,#N/A
+October 2018,Invoice 11,loubnielsen,10/12/2018,VHHR,4.0,Prolike,"#194, #200",OK,800,#N/A
+October 2018,Invoice 11,loubnielsen,10/15/2018,VHHR,4.0,Prolike,Submodules and #184 selenium on circleci,OK,800,#N/A
+October 2018,Invoice 11,loubnielsen,10/17/2018,VHHR,4.0,Prolike,#184 and VHHR configuration,OK,800,#N/A
+October 2018,Invoice 11,loubnielsen,10/22/2018,VHHR,2.0,Prolike,"Preparing for meeting with VHHR, #191, #168",OK,400,#N/A
+October 2018,Invoice 11,loubnielsen,10/24/2018,VHHR,4.5,Prolike,Meeting with VHHR and backlog grooming,OK,900,#N/A
+N/A,Invoice 11,lakruzz,10/24/2018,VHHR,3.0,Prolike,Meeting with VHHR,OK,600,#N/A
+November 2018,Invoice 12,davidcarl,10/26/2018,VHHR,1.0,Prolike,Investigating how to setup live update environment for VHHR,OK,200,#N/A
+November 2018,Invoice 12,loubnielsen,10/26/2018,VHHR,5.0,Prolike,"#207, #217, Investigating how to setup live update environment for VHHR, preparing for VHHR meeting on Monday 29/10",OK,1000,#N/A
+November 2018,Invoice 12,loubnielsen,10/29/2018,VHHR,2.5,Prolike,Meeting with VHHR #205,OK,500,#N/A
+November 2018,Invoice 12,loubnielsen,10/30/2018,VHHR,5.0,Prolike,"#174, #201, #213, #217, #219, #220",OK,1000,#N/A
+November 2018,Invoice 12,davidcarl,10/30/2018,VHHR,2.0,Prolike,#209,OK,400,#N/A
+November 2018,Invoice 12,loubnielsen,10/31/2018,VHHR,5.0,Prolike,"#191, #209",OK,1000,#N/A
+November 2018,Invoice 12,loubnielsen,11/2/2018,VHHR,5.5,Prolike,"#209, #223, #222",OK,1100,#N/A
+November 2018,Invoice 12,loubnielsen,11/5/2018,VHHR,2.0,Prolike,"#165, #187, #222, #221",OK,400,#N/A
+November 2018,Invoice 12,loubnielsen,11/6/2018,VHHR,5.5,Prolike,"#221, #226, #230, #231",OK,1100,#N/A
+November 2018,Invoice 12,loubnielsen,11/7/2018,VHHR,5.0,Prolike,"#231, #232, #219, #220, #228, #229, #233",OK,1000,#N/A
+March 2019,PROLIKE,loubnielsen,11/8/2018,Prolike,5.5,Sale,"Meeting Microsoft, Cph business",OK,742.5,0
+March 2019,PROLIKE,loubnielsen,11/8/2018,Prolike,1.5,Explore,#233,OK,101.25,0
+November 2018,Invoice 12,loubnielsen,11/9/2018,VHHR,4.0,Prolike,#233,OK,800,#N/A
+March 2019,PROLIKE,loubnielsen,11/9/2018,Prolike,2.5,Explore,"Backlog grooming, #2, #6",OK,168.75,0
+March 2019,PROLIKE,loubnielsen,11/12/2018,Prolike,2.5,Sale,Meeting with tenak,OK,337.5,0
+November 2018,Invoice 12,loubnielsen,11/13/2018,VHHR,5.5,Prolike,"#233, #234, #235, #236, #220",OK,1100,#N/A
+March 2019,PROLIKE,loubnielsen,11/13/2018,Prolike,1.0,Honeypot,send meeting link and write to those who are attending + beeing in allerød,OK,135,0
+November 2018,Invoice 12,loubnielsen,11/14/2018,VHHR,3.5,Prolike,"Skypemeeting, backlog grooming, #237, #240",OK,700,#N/A
+November 2018,Invoice 12,loubnielsen,11/15/2018,VHHR,4.0,Prolike,"#241, #247, #244, #242, #246, #243",OK,800,#N/A
+March 2019,PROLIKE,loubnielsen,11/15/2018,Prolike,1.5,Honeypot,"Status, beeing in Allerød, rejsekort",OK,202.5,0
+November 2018,Invoice 12,loubnielsen,11/16/2018,VHHR,4.5,Prolike,"#253, #245 , #248, #225, #255, #254",OK,900,#N/A
+November 2018,Invoice 12,loubnielsen,11/19/2018,VHHR,6.0,Prolike,"#254, #238",OK,1200,#N/A
+March 2019,PROLIKE,loubnielsen,11/20/2018,Prolike,0.5,Honeypot,"Rejsekort, email korrespondance ",OK,67.5,0
+November 2018,Invoice 12,loubnielsen,11/20/2018,VHHR,3.0,Prolike,"#260, #238, #251",OK,600,#N/A
+November 2018,Invoice 12,loubnielsen,11/22/2018,VHHR,5.0,Prolike,#260,OK,1000,#N/A
+March 2019,PROLIKE,loubnielsen,11/22/2018,Prolike,5.0,Honeypot,Meetup info-meeting,OK,675,0
+November 2018,Invoice 12,loubnielsen,11/23/2018,VHHR,4.5,Prolike,"#260, #224, setup config lok1-5",OK,900,#N/A
+November 2018,Invoice 12,loubnielsen,11/26/2018,VHHR,10.5,Prolike,"#252, #257 ||||| TIRSDAG 27/11: #267, #269, #257 (added 6 hours)",OK,2100,#N/A
+December 2018,Invoice 12,loubnielsen,11/28/2018,VHHR,5.5,Prolike,#266,OK,1100,#N/A
 December 2018,PROLIKE,loubnielsen,11/28/2018,Prolike,0.5,Honeypot,"Rejsekort, allerød, emails",OK,67.5,0
 December 2018,PROLIKE,loubnielsen,11/29/2018,Prolike,0.8,Honeypot,"Helge svar formulering, emails, allerød",OK,101.25,0
-December 2018,workbook-VHHR-5,loubnielsen,11/29/2018,VHHR,4.5,Prolike,#266 - backlog grooming,OK,900,#N/A
-December 2018,workbook-VHHR-5,loubnielsen,11/30/2018,VHHR,5.0,Prolike,"#277, #276, #271, #268 - meeting with vhhr",OK,1000,#N/A
-December 2018,workbook-VHHR-6,davidcarl,12/3/2018,VHHR,13.5,Prolike,#227 #279 ||||| WED 28/11: #153 (added 9 hours),OK,2700,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/3/2018,VHHR,6.0,Prolike,"Fixing reported issue from Peter, fixing removed dependency",OK,1200,#N/A
+December 2018,Invoice 12,loubnielsen,11/29/2018,VHHR,4.5,Prolike,#266 - backlog grooming,OK,900,#N/A
+December 2018,Invoice 12,loubnielsen,11/30/2018,VHHR,5.0,Prolike,"#277, #276, #271, #268 - meeting with vhhr",OK,1000,#N/A
+December 2018,Invoice 13,davidcarl,12/3/2018,VHHR,13.5,Prolike,#227 #279 ||||| WED 28/11: #153 (added 9 hours),OK,2700,#N/A
+December 2018,Invoice 13,loubnielsen,12/3/2018,VHHR,6.0,Prolike,"Fixing reported issue from Peter, fixing removed dependency",OK,1200,#N/A
 December 2018,PROLIKE,loubnielsen,12/3/2018,Prolike,0.5,Honeypot,Allerød,OK,67.5,0
-December 2018,workbook-VHHR-6,alfen321,12/3/2018,VHHR,7.0,Prolike,#208,OK,1400,#N/A
-December 2018,workbook-VHHR-6,davidcarl,12/4/2018,VHHR,3.0,Prolike,"#153, Mail to Michael",OK,600,#N/A
-December 2018,workbook-VHHR-6,alfen321,12/4/2018,VHHR,4.5,Prolike,#208,OK,900,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/4/2018,VHHR,5.5,Prolike,"Backlog grooming, #208 (working with tjalje), #265, planning on and working on how to fix Settings panel and the things that are broken",OK,1100,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/5/2018,VHHR,6.0,Prolike,"#287, #283, #282, #269",OK,1200,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/6/2018,VHHR,4.5,Prolike,"#285, #289",OK,900,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/7/2018,VHHR,1.5,Prolike,Fix mistake from #285 ,OK,300,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/10/2018,VHHR,6.0,Prolike,#263 - Sætte Rasmus ind i Filesafe,OK,1200,#N/A
-December 2018,workbook-VHHR-6,rhoeberg,12/10/2018,VHHR,7.5,Prolike,#258 #278,OK,1500,#N/A
-December 2018,tenak-approved,loubnielsen,12/11/2018,Tenak,4.0,Explore,Meeting with Tenak,OK,270,0
-December 2018,tenak-approved,rhoeberg,12/11/2018,Tenak,2.0,Explore,Meeting with Tenak,OK,135,0
-December 2018,workbook-VHHR-6,loubnielsen,12/12/2018,VHHR,3.0,Prolike,"#290, #291, #292",OK,600,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/13/2018,VHHR,4.5,Prolike,"#265, #292, #296, #295",OK,900,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/14/2018,VHHR,4.0,Prolike,"#299, #298, #301, #289",OK,800,#N/A
-December 2018,workbook-VHHR-6,rhoeberg,12/17/2018,VHHR,7.5,Prolike,"#309, #308, #270, #302, #312, #273, #274, #310, #275, #297",OK,1500,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/17/2018,VHHR,7.5,Prolike,"#304, #307 #297 #305 #300 #289 + meeting with vhhr",OK,1500,#N/A
-December 2018,workbook-VHHR-6,loubnielsen,12/18/2018,VHHR,3.0,Prolike,"Setup instances (#311), #315",OK,600,#N/A
-December 2018,tenak-approved,loubnielsen,12/18/2018,Tenak,2.5,Explore,Setup project,OK,168.75,0
-January 2019,tenak-approved,nexao,12/18/2018,Tenak,4.5,Explore,Setup project,OK,303.75,0
-December 2018,workbook-VHHR-6,rhoeberg,12/18/2018,VHHR,1.0,Prolike,Starting on documentation,OK,200,#N/A
-December 2018,tenak-approved,rhoeberg,12/18/2018,Tenak,4.5,Explore,Setup project,OK,303.75,0
-N/A,tenak-approved,yunas09,12/11/2018,Tenak,2.0,Internship,Meeting with Tenak,OK,0,0
-N/A,tenak-approved,yunas09,12/18/2018,Tenak,4.0,Internship,Setup project,OK,0,0
-December 2018,Faktura #16,loubnielsen,12/19/2018,VHHR,5.0,Prolike,"Setup instances (#311), #320, #303, #203, #318, #317",OK,1000,#N/A
-December 2018,Faktura #16,loubnielsen,12/21/2018,VHHR,6.5,Prolike,"#323, #322, #311, #324, #327, #328, #329, #325, #330, #331, #326, #332, #315",OK,1300,#N/A
-January 2019,tenak-approved,nexao,11/12/2018,Tenak,2.0,Internship,Meeting with Tenak,OK,0,0
-January 2019,Faktura #16,davidcarl,12/19/2018,VHHR,3.0,Prolike,#321 #319 #316,OK,600,#N/A
-January 2019,Faktura #16,loubnielsen,1/2/2019,VHHR,1.0,Prolike,"Mails VHHR/Tenak, snak med Lars (Tenak), mm.",OK,200,#N/A
-January 2019,tenak-approved,loubnielsen,1/4/2019,Tenak,4.5,Prolike,Common understanding and principles,OK,900,418.005
-January 2019,tenak-approved,rhoeberg,1/4/2019,Tenak,4.0,Explore,jamstack and frontend research,OK,270,0
-N/A,tenak-approved,yunas09,1/4/2019,Tenak,3.0,Internship,Snak med Lars samt research,OK,0,0
-January 2019,alf-fyn-approved,davidcarl,1/7/2019,Als-fynbroen,2.0,Prolike,"#4, Diverse research omkring hosting og opbygning til evt løsning",OK,400,880
-January 2019,tenak-approved,davidcarl,1/7/2019,Tenak,1.0,Explore,Research,OK,67.5,0
-January 2019,tenak-approved,davidcarl,1/7/2019,Tenak,2.0,Prolike,"Snak om opbygning, definere issues",OK,400,185.78
-January 2019,tenak-approved,loubnielsen,1/7/2019,Tenak,6.0,Prolike,"project management, setup frontend/backend",OK,1200,557.34
-January 2019,tenak-approved,alfen321,1/7/2019,Tenak,5.0,Prolike,"#4, #3, Setup Backend with CircleCI",OK,1000,464.45
-January 2019,tenak-approved,rhoeberg,1/7/2019,Tenak,5.0,Prolike,#10,OK,1000,464.45
-January 2019,tenak-approved,rhoeberg,1/8/2019,Tenak,5.0,Prolike,#11,OK,1000,464.45
-January 2019,tenak-approved,davidcarl,1/8/2019,Tenak,2.0,Explore,Jamstack research,OK,135,0
-January 2019,alf-fyn-approved,davidcarl,1/8/2019,Als-fynbroen,1.5,Prolike,"Læring om projektet, #4",OK,300,660
-January 2019,tenak-approved,alfen321,1/8/2019,Tenak,2.0,Prolike,"#10, #5",OK,400,185.78
-January 2019,tenak-approved,loubnielsen,1/8/2019,Tenak,2.0,Explore,Jekyll and Github pages,OK,135,0
-January 2019,tenak-approved,loubnielsen,1/8/2019,Tenak,2.0,Prolike,Jekyll and Github pages: setup frontend environment,OK,400,185.78
+December 2018,Invoice 13,alfen321,12/3/2018,VHHR,7.0,Prolike,#208,OK,1400,#N/A
+December 2018,Invoice 13,davidcarl,12/4/2018,VHHR,3.0,Prolike,"#153, Mail to Michael",OK,600,#N/A
+December 2018,Invoice 13,alfen321,12/4/2018,VHHR,4.5,Prolike,#208,OK,900,#N/A
+December 2018,Invoice 13,loubnielsen,12/4/2018,VHHR,5.5,Prolike,"Backlog grooming, #208 (working with tjalje), #265, planning on and working on how to fix Settings panel and the things that are broken",OK,1100,#N/A
+December 2018,Invoice 13,loubnielsen,12/5/2018,VHHR,6.0,Prolike,"#287, #283, #282, #269",OK,1200,#N/A
+December 2018,Invoice 13,loubnielsen,12/6/2018,VHHR,4.5,Prolike,"#285, #289",OK,900,#N/A
+December 2018,Invoice 13,loubnielsen,12/7/2018,VHHR,1.5,Prolike,Fix mistake from #285 ,OK,300,#N/A
+December 2018,Invoice 13,loubnielsen,12/10/2018,VHHR,6.0,Prolike,#263 - Sætte Rasmus ind i Filesafe,OK,1200,#N/A
+December 2018,Invoice 13,rhoeberg,12/10/2018,VHHR,7.5,Prolike,#258 #278,OK,1500,#N/A
+December 2018,Invoice 18,loubnielsen,12/11/2018,Tenak,4.0,Explore,Meeting with Tenak,OK,270,0
+December 2018,Invoice 18,rhoeberg,12/11/2018,Tenak,2.0,Explore,Meeting with Tenak,OK,135,0
+December 2018,Invoice 13,loubnielsen,12/12/2018,VHHR,3.0,Prolike,"#290, #291, #292",OK,600,#N/A
+December 2018,Invoice 13,loubnielsen,12/13/2018,VHHR,4.5,Prolike,"#265, #292, #296, #295",OK,900,#N/A
+December 2018,Invoice 13,loubnielsen,12/14/2018,VHHR,4.0,Prolike,"#299, #298, #301, #289",OK,800,#N/A
+December 2018,Invoice 13,rhoeberg,12/17/2018,VHHR,7.5,Prolike,"#309, #308, #270, #302, #312, #273, #274, #310, #275, #297",OK,1500,#N/A
+December 2018,Invoice 13,loubnielsen,12/17/2018,VHHR,7.5,Prolike,"#304, #307 #297 #305 #300 #289 + meeting with vhhr",OK,1500,#N/A
+December 2018,Invoice 13,loubnielsen,12/18/2018,VHHR,3.0,Prolike,"Setup instances (#311), #315",OK,600,#N/A
+December 2018,Invoice 18,loubnielsen,12/18/2018,Tenak,2.5,Explore,Setup project,OK,168.75,0
+January 2019,Invoice 18,nexao,12/18/2018,Tenak,4.5,Explore,Setup project,OK,303.75,0
+December 2018,Invoice 13,rhoeberg,12/18/2018,VHHR,1.0,Prolike,Starting on documentation,OK,200,#N/A
+December 2018,Invoice 18,rhoeberg,12/18/2018,Tenak,4.5,Explore,Setup project,OK,303.75,0
+N/A,Invoice 18,yunas09,12/11/2018,Tenak,2.0,Internship,Meeting with Tenak,OK,0,0
+N/A,Invoice 18,yunas09,12/18/2018,Tenak,4.0,Internship,Setup project,OK,0,0
+December 2018,Invoice 16,loubnielsen,12/19/2018,VHHR,5.0,Prolike,"Setup instances (#311), #320, #303, #203, #318, #317",OK,1000,#N/A
+December 2018,Invoice 16,loubnielsen,12/21/2018,VHHR,6.5,Prolike,"#323, #322, #311, #324, #327, #328, #329, #325, #330, #331, #326, #332, #315",OK,1300,#N/A
+January 2019,Invoice 18,nexao,11/12/2018,Tenak,2.0,Internship,Meeting with Tenak,OK,0,0
+January 2019,Invoice 16,davidcarl,12/19/2018,VHHR,3.0,Prolike,#321 #319 #316,OK,600,#N/A
+January 2019,Invoice 16,loubnielsen,1/2/2019,VHHR,1.0,Prolike,"Mails VHHR/Tenak, snak med Lars (Tenak), mm.",OK,200,#N/A
+January 2019,Invoice 18,loubnielsen,1/4/2019,Tenak,4.5,Prolike,Common understanding and principles,OK,900,418.005
+January 2019,Invoice 18,rhoeberg,1/4/2019,Tenak,4.0,Explore,jamstack and frontend research,OK,270,0
+N/A,Invoice 18,yunas09,1/4/2019,Tenak,3.0,Internship,Snak med Lars samt research,OK,0,0
+January 2019,Invoice 17,davidcarl,1/7/2019,Als-fynbroen,2.0,Prolike,"#4, Diverse research omkring hosting og opbygning til evt løsning",OK,400,880
+January 2019,Invoice 18,davidcarl,1/7/2019,Tenak,1.0,Explore,Research,OK,67.5,0
+January 2019,Invoice 18,davidcarl,1/7/2019,Tenak,2.0,Prolike,"Snak om opbygning, definere issues",OK,400,185.78
+January 2019,Invoice 18,loubnielsen,1/7/2019,Tenak,6.0,Prolike,"project management, setup frontend/backend",OK,1200,557.34
+January 2019,Invoice 18,alfen321,1/7/2019,Tenak,5.0,Prolike,"#4, #3, Setup Backend with CircleCI",OK,1000,464.45
+January 2019,Invoice 18,rhoeberg,1/7/2019,Tenak,5.0,Prolike,#10,OK,1000,464.45
+January 2019,Invoice 18,rhoeberg,1/8/2019,Tenak,5.0,Prolike,#11,OK,1000,464.45
+January 2019,Invoice 18,davidcarl,1/8/2019,Tenak,2.0,Explore,Jamstack research,OK,135,0
+January 2019,Invoice 17,davidcarl,1/8/2019,Als-fynbroen,1.5,Prolike,"Læring om projektet, #4",OK,300,660
+January 2019,Invoice 18,alfen321,1/8/2019,Tenak,2.0,Prolike,"#10, #5",OK,400,185.78
+January 2019,Invoice 18,loubnielsen,1/8/2019,Tenak,2.0,Explore,Jekyll and Github pages,OK,135,0
+January 2019,Invoice 18,loubnielsen,1/8/2019,Tenak,2.0,Prolike,Jekyll and Github pages: setup frontend environment,OK,400,185.78
 January 2019,PROLIKE,loubnielsen,1/8/2019,Prolike,1.5,Honeypot,Production like environment,OK,202.5,0
 January 2019,PROLIKE,alfen321,1/8/2019,Prolike,1.5,Honeypot,Production like environment,OK,202.5,0
 January 2019,PROLIKE,davidcarl,1/8/2019,Prolike,1.0,Honeypot,Production like environment,OK,135,0
 January 2019,PROLIKE,loubnielsen,1/9/2019,Prolike,0.5,Honeypot,https://docs.google.com/spreadsheets/d/1FD8rgzjz5PoNgw4JiZIxbu8SAuyHh5O8ApUvrmnLO90/edit?ts=5b041082#gid=1053476023&range=H297,OK,67.5,0
-January 2019,tenak-approved,loubnielsen,1/9/2019,Tenak,5.0,Prolike,#4 (Setup frontend structure and create reference guide box),OK,1000,464.45
-January 2019,tenak-approved,alfen321,1/9/2019,Tenak,2.5,Prolike,#5,OK,500,232.225
-January 2019,alf-fyn-approved,alfen321,1/9/2019,Als-fynbroen,3.0,Prolike,"Læring om projektet, MSQL lokal setup, #3",OK,600,1320
-January 2019,alf-fyn-approved,davidcarl,1/9/2019,Als-fynbroen,5.5,Prolike,"#3, #5, #6, #7, #8, #9, #10 ",OK,1100,2420
-January 2019,tenak-approved,rhoeberg,1/9/2019,Tenak,6.0,Prolike,#14 #17 + omstrukturering af businesslayout interfact,OK,1200,557.34
-December 2018,tenak-approved,loubnielsen,12/11/2018,Tenak,2.0,Prolike,"- setup Gitub repo and define issues, project leading",OK,400,185.78
-N/A,tenak-approved,yunas09,1/7/2019,Tenak,4.0,Internship,"Github Pages & Jekyll, JAMStack",OK,0,0
-N/A,tenak-approved,yunas09,1/8/2019,Tenak,4.0,Internship,"Github Pages & Jekyll, JAMStack",OK,0,0
-January 2019,tenak-approved,alfen321,1/8/2019,Tenak,2.0,Explore,"Github Pages & Jekyll, JAMStack",OK,135,0
-January 2019,tenak-approved,davidcarl,1/8/2019,Tenak,1.0,Prolike,Snak om opsætning af #6 #7 #8,OK,200,92.89
-January 2019,tenak-approved,davidcarl,1/10/2019,Tenak,2.0,Prolike,backlog grooming ,OK,400,185.78
-January 2019,alf-fyn-approved,davidcarl,1/10/2019,Als-fynbroen,0.5,Prolike,backlog grooming ,OK,100,220
-January 2019,tenak-approved,rhoeberg,1/10/2019,Tenak,7.5,Prolike,#18 startet på #6,OK,1500,696.675
-January 2019,tenak-approved,loubnielsen,1/10/2019,Tenak,2.0,Prolike,Backlog grooming,OK,400,185.78
+January 2019,Invoice 18,loubnielsen,1/9/2019,Tenak,5.0,Prolike,#4 (Setup frontend structure and create reference guide box),OK,1000,464.45
+January 2019,Invoice 18,alfen321,1/9/2019,Tenak,2.5,Prolike,#5,OK,500,232.225
+January 2019,Invoice 17,alfen321,1/9/2019,Als-fynbroen,3.0,Prolike,"Læring om projektet, MSQL lokal setup, #3",OK,600,1320
+January 2019,Invoice 17,davidcarl,1/9/2019,Als-fynbroen,5.5,Prolike,"#3, #5, #6, #7, #8, #9, #10 ",OK,1100,2420
+January 2019,Invoice 18,rhoeberg,1/9/2019,Tenak,6.0,Prolike,#14 #17 + omstrukturering af businesslayout interfact,OK,1200,557.34
+December 2018,Invoice 18,loubnielsen,12/11/2018,Tenak,2.0,Prolike,"- setup Gitub repo and define issues, project leading",OK,400,185.78
+N/A,Invoice 18,yunas09,1/7/2019,Tenak,4.0,Internship,"Github Pages & Jekyll, JAMStack",OK,0,0
+N/A,Invoice 18,yunas09,1/8/2019,Tenak,4.0,Internship,"Github Pages & Jekyll, JAMStack",OK,0,0
+January 2019,Invoice 18,alfen321,1/8/2019,Tenak,2.0,Explore,"Github Pages & Jekyll, JAMStack",OK,135,0
+January 2019,Invoice 18,davidcarl,1/8/2019,Tenak,1.0,Prolike,Snak om opsætning af #6 #7 #8,OK,200,92.89
+January 2019,Invoice 18,davidcarl,1/10/2019,Tenak,2.0,Prolike,backlog grooming ,OK,400,185.78
+January 2019,Invoice 17,davidcarl,1/10/2019,Als-fynbroen,0.5,Prolike,backlog grooming ,OK,100,220
+January 2019,Invoice 18,rhoeberg,1/10/2019,Tenak,7.5,Prolike,#18 startet på #6,OK,1500,696.675
+January 2019,Invoice 18,loubnielsen,1/10/2019,Tenak,2.0,Prolike,Backlog grooming,OK,400,185.78
 January 2019,PROLIKE,loubnielsen,1/10/2019,Prolike,3.0,Honeypot,"Snak med Lars om Tenak, Prolike, Account Management, projekter, være i Allerød",OK,405,0
-January 2019,tenak-approved,loubnielsen,1/11/2019,Tenak,2.0,Prolike,"Vue.js/Jekyll, Fetch from API: #17",OK,400,185.78
-January 2019,alf-fyn-approved,davidcarl,1/11/2019,Als-fynbroen,4.5,Prolike,"More backlog grooming, #12, #16, #25, email to Mogens og Robert",OK,900,1980
-January 2019,tenak-approved,alfen321,1/10/2019,Tenak,2.0,Prolike,backlog grooming ,OK,400,185.78
-January 2019,alf-fyn-approved,alfen321,1/10/2019,Als-fynbroen,0.5,Prolike,backlog grooming ,OK,100,220
-January 2019,alf-fyn-approved,alfen321,1/11/2019,Als-fynbroen,4.0,Prolike,"#11, #15, #19, email to Mogens",OK,800,1760
-January 2019,tenak-approved,rhoeberg,1/11/2019,Tenak,4.5,Prolike,backend: #6 #13 startet on #12,OK,900,418.005
-January 2019,tenak-approved,nexao,1/2/2019,Tenak,2.0,Explore,Research of technologi ,OK,135,0
-January 2019,alf-fyn-approved,nexao,1/2/2019,Als-fynbroen,5.0,Internship,Setting up,OK,0,0
-January 2019,alf-fyn-approved,nexao,1/3/2019,Als-fynbroen,7.0,Internship,Meeting and database work,OK,0,0
-January 2019,alf-fyn-approved,nexao,1/7/2019,Als-fynbroen,5.0,Internship,Backend ,OK,0,0
-January 2019,tenak-approved,loubnielsen,1/14/2019,Tenak,5.5,Explore,"Jekyll, Webpack, Vue.js: issue #17",OK,371.25,0
+January 2019,Invoice 18,loubnielsen,1/11/2019,Tenak,2.0,Prolike,"Vue.js/Jekyll, Fetch from API: #17",OK,400,185.78
+January 2019,Invoice 17,davidcarl,1/11/2019,Als-fynbroen,4.5,Prolike,"More backlog grooming, #12, #16, #25, email to Mogens og Robert",OK,900,1980
+January 2019,Invoice 18,alfen321,1/10/2019,Tenak,2.0,Prolike,backlog grooming ,OK,400,185.78
+January 2019,Invoice 17,alfen321,1/10/2019,Als-fynbroen,0.5,Prolike,backlog grooming ,OK,100,220
+January 2019,Invoice 17,alfen321,1/11/2019,Als-fynbroen,4.0,Prolike,"#11, #15, #19, email to Mogens",OK,800,1760
+January 2019,Invoice 18,rhoeberg,1/11/2019,Tenak,4.5,Prolike,backend: #6 #13 startet on #12,OK,900,418.005
+January 2019,Invoice 18,nexao,1/2/2019,Tenak,2.0,Explore,Research of technologi ,OK,135,0
+January 2019,Invoice 17,nexao,1/2/2019,Als-fynbroen,5.0,Internship,Setting up,OK,0,0
+January 2019,Invoice 17,nexao,1/3/2019,Als-fynbroen,7.0,Internship,Meeting and database work,OK,0,0
+January 2019,Invoice 17,nexao,1/7/2019,Als-fynbroen,5.0,Internship,Backend ,OK,0,0
+January 2019,Invoice 18,loubnielsen,1/14/2019,Tenak,5.5,Explore,"Jekyll, Webpack, Vue.js: issue #17",OK,371.25,0
 January 2019,PROLIKE,loubnielsen,1/14/2019,Prolike,0.8,Honeypot,"Arbejdsforhold: ergonomisk bold, mousepad",OK,101.25,0
-January 2019,alf-fyn-approved,davidcarl,1/14/2019,Als-fynbroen,5.5,Prolike,"#20, #27, #24, møde med Mogens",OK,1100,2420
-January 2019,alf-fyn-approved,alfen321,1/14/2019,Als-fynbroen,4.5,Prolike,"#28, møde med Mogens",OK,900,1980
+January 2019,Invoice 17,davidcarl,1/14/2019,Als-fynbroen,5.5,Prolike,"#20, #27, #24, møde med Mogens",OK,1100,2420
+January 2019,Invoice 17,alfen321,1/14/2019,Als-fynbroen,4.5,Prolike,"#28, møde med Mogens",OK,900,1980
 January 2019,PROLIKE,alfen321,1/14/2019,Prolike,1.0,Honeypot,Docker to work on windows,OK,135,0
-January 2019,tenak-approved,nexao,1/14/2019,Tenak,6.0,Internship,"Frontend - Jekyll, Webpack, Vue.js",OK,0,0
-January 2019,tenak-approved,nexao,1/15/2019,Tenak,2.0,Prolike,"Frontend - Jekyll, Webpack, Vue.js",OK,400,185.78
-January 2019,tenak-approved,loubnielsen,1/15/2019,Tenak,2.5,Prolike,"Jekyll, Webpack, Vue.js: issue #17",OK,500,232.225
-January 2019,tenak-approved,loubnielsen,1/15/2019,Tenak,2.0,Prolike,"Jekyll, Webpack, Vue.js: issue #17",OK,400,185.78
+January 2019,Invoice 18,nexao,1/14/2019,Tenak,6.0,Internship,"Frontend - Jekyll, Webpack, Vue.js",OK,0,0
+January 2019,Invoice 18,nexao,1/15/2019,Tenak,2.0,Prolike,"Frontend - Jekyll, Webpack, Vue.js",OK,400,185.78
+January 2019,Invoice 18,loubnielsen,1/15/2019,Tenak,2.5,Prolike,"Jekyll, Webpack, Vue.js: issue #17",OK,500,232.225
+January 2019,Invoice 18,loubnielsen,1/15/2019,Tenak,2.0,Prolike,"Jekyll, Webpack, Vue.js: issue #17",OK,400,185.78
 January 2019,PROLIKE,loubnielsen,1/15/2019,Prolike,0.8,Honeypot,Allerød,OK,101.25,0
-January 2019,alf-fyn-approved,davidcarl,1/15/2019,Als-fynbroen,4.8,Prolike,"#13, #18, + lidt skriveri til mogens angående github og waffle",OK,950,2090
-N/A,tenak-approved,yunas09,1/15/2019,Tenak,4.0,Internship,Fronted Jekyll VueJS Setup,OK,0,0
-January 2019,tenak-approved,alfen321,1/15/2019,Tenak,4.0,Prolike,"#26, #27, #28",OK,800,371.56
-January 2019,tenak-approved,rhoeberg,1/15/2019,Tenak,3.0,Prolike,#25,OK,600,278.67
-January 2019,tenak-approved,rhoeberg,1/16/2019,Tenak,5.0,Prolike,Frontend figuring out vue+jekyll #17 #18,OK,1000,464.45
-January 2019,tenak-approved,loubnielsen,1/16/2019,Tenak,3.5,Prolike,"#17, status meeting Tenak, #20",OK,700,325.115
+January 2019,Invoice 17,davidcarl,1/15/2019,Als-fynbroen,4.8,Prolike,"#13, #18, + lidt skriveri til mogens angående github og waffle",OK,950,2090
+N/A,Invoice 18,yunas09,1/15/2019,Tenak,4.0,Internship,Fronted Jekyll VueJS Setup,OK,0,0
+January 2019,Invoice 18,alfen321,1/15/2019,Tenak,4.0,Prolike,"#26, #27, #28",OK,800,371.56
+January 2019,Invoice 18,rhoeberg,1/15/2019,Tenak,3.0,Prolike,#25,OK,600,278.67
+January 2019,Invoice 18,rhoeberg,1/16/2019,Tenak,5.0,Prolike,Frontend figuring out vue+jekyll #17 #18,OK,1000,464.45
+January 2019,Invoice 18,loubnielsen,1/16/2019,Tenak,3.5,Prolike,"#17, status meeting Tenak, #20",OK,700,325.115
 January 2019,PROLIKE,loubnielsen,1/16/2019,Prolike,2.0,Honeypot,"Meeting with Lars, Allerød",OK,270,0
-January 2019,tenak-approved,loubnielsen,1/16/2019,Tenak,1.0,Prolike,Vuejs,OK,200,92.89
-January 2019,Faktura #16,loubnielsen,1/16/2019,VHHR,1.0,Prolike,Final setup Filesafe,OK,200,#N/A
+January 2019,Invoice 18,loubnielsen,1/16/2019,Tenak,1.0,Prolike,Vuejs,OK,200,92.89
+January 2019,Invoice 16,loubnielsen,1/16/2019,VHHR,1.0,Prolike,Final setup Filesafe,OK,200,#N/A
 N/A,PROLIKE,carolineolivia,1/17/2019,Prolike,6.5,Internship,Kicking tires on Jekyll etc,OK,0,0
 January 2019,PROLIKE,loubnielsen,1/17/2019,Prolike,1.5,Honeypot,"Meeting with Lars, Allerød",OK,202.5,0
-January 2019,tenak-approved,loubnielsen,1/17/2019,Tenak,4.0,Prolike,"#17, #20, #21",OK,800,371.56
+January 2019,Invoice 18,loubnielsen,1/17/2019,Tenak,4.0,Prolike,"#17, #20, #21",OK,800,371.56
 January 2019,PROLIKE,loubnielsen,1/18/2019,Prolike,1.0,Honeypot,"Klargøre til praktikanter, Allerød",OK,135,0
-January 2019,tenak-approved,loubnielsen,1/18/2019,Tenak,5.0,Prolike,"#20, #24, #21",OK,1000,464.45
-January 2019,tenak-approved,rhoeberg,1/17/2019,Tenak,2.0,Prolike,backend: #32,OK,400,185.78
-January 2019,tenak-approved,rhoeberg,1/18/2019,Tenak,3.0,Prolike,figuring out backend+frontend through docker,OK,600,278.67
+January 2019,Invoice 18,loubnielsen,1/18/2019,Tenak,5.0,Prolike,"#20, #24, #21",OK,1000,464.45
+January 2019,Invoice 18,rhoeberg,1/17/2019,Tenak,2.0,Prolike,backend: #32,OK,400,185.78
+January 2019,Invoice 18,rhoeberg,1/18/2019,Tenak,3.0,Prolike,figuring out backend+frontend through docker,OK,600,278.67
 January 2019,PROLIKE,loubnielsen,1/21/2019,Prolike,3.5,Honeypot,Praktikanter,OK,472.5,0
-January 2019,tenak-approved,loubnielsen,1/21/2019,Tenak,2.5,Prolike,#6,OK,500,232.225
-January 2019,tenak-approved,nexao,1/21/2019,Tenak,1.0,Explore,Setting up datebase,OK,67.5,0
-January 2019,tenak-approved,nexao,1/21/2019,Tenak,5.5,Prolike,#36 Queries and connection of database,OK,1100,510.895
-January 2019,alf-fyn-approved,davidcarl,1/21/2019,Als-fynbroen,5.5,Prolike,"#17, #31, #18, #14, tlf. møde med Mogens ",OK,1100,2420
+January 2019,Invoice 18,loubnielsen,1/21/2019,Tenak,2.5,Prolike,#6,OK,500,232.225
+January 2019,Invoice 18,nexao,1/21/2019,Tenak,1.0,Explore,Setting up datebase,OK,67.5,0
+January 2019,Invoice 18,nexao,1/21/2019,Tenak,5.5,Prolike,#36 Queries and connection of database,OK,1100,510.895
+January 2019,Invoice 17,davidcarl,1/21/2019,Als-fynbroen,5.5,Prolike,"#17, #31, #18, #14, tlf. møde med Mogens ",OK,1100,2420
 January 2019,PROLIKE,loubnielsen,1/22/2019,Prolike,1.5,Honeypot,"Allerød, lave nøgler, hjælpe praktikaner",OK,202.5,0
-January 2019,tenak-approved,loubnielsen,1/22/2019,Tenak,4.5,Prolike,"#5, #24",OK,900,418.005
-January 2019,tenak-approved,rhoeberg,1/22/2019,Tenak,4.0,Prolike,backend #8 + help with mysql,OK,800,371.56
-January 2019,tenak-approved,nexao,1/22/2019,Tenak,5.0,Prolike,Backend #34 + creating connection to Tenak Database,OK,1000,464.45
-January 2019,tenak-approved,alfen321,1/22/2019,Tenak,1.0,Prolike,Fix stuck branch #20,OK,200,92.89
-January 2019,alf-fyn-approved,alfen321,1/22/2019,Als-fynbroen,3.5,Prolike,"#18, tlf. møde med Mogens",OK,700,1540
+January 2019,Invoice 18,loubnielsen,1/22/2019,Tenak,4.5,Prolike,"#5, #24",OK,900,418.005
+January 2019,Invoice 18,rhoeberg,1/22/2019,Tenak,4.0,Prolike,backend #8 + help with mysql,OK,800,371.56
+January 2019,Invoice 18,nexao,1/22/2019,Tenak,5.0,Prolike,Backend #34 + creating connection to Tenak Database,OK,1000,464.45
+January 2019,Invoice 18,alfen321,1/22/2019,Tenak,1.0,Prolike,Fix stuck branch #20,OK,200,92.89
+January 2019,Invoice 17,alfen321,1/22/2019,Als-fynbroen,3.5,Prolike,"#18, tlf. møde med Mogens",OK,700,1540
 January 2019,PROLIKE,loubnielsen,1/23/2019,Prolike,2.0,Honeypot,"Allerød, hjælpe praktikanter, prolike management",OK,270,0
-January 2019,Faktura #16,loubnielsen,1/23/2019,VHHR,0.5,Prolike,Fix lok3 and lok4,OK,100,#N/A
-January 2019,tenak-approved,loubnielsen,1/23/2019,Tenak,4.5,Prolike,"#24, #34, #35, #36 , #37",OK,900,418.005
-January 2019,alf-fyn-approved,alfen321,1/23/2019,Als-fynbroen,2.0,Prolike,"#18, sub SQL query",OK,400,880
-January 2019,alf-fyn-approved,alfen321,1/24/2019,Als-fynbroen,5.5,Prolike,"#18, #21",OK,1100,2420
-January 2019,Faktura #16,loubnielsen,1/25/2019,VHHR,0.5,Prolike,Lok3 and lok4 error,OK,100,#N/A
-January 2019,tenak-approved,loubnielsen,1/25/2019,Tenak,5.5,Prolike,"#37, #12, #7, backlog grooming",OK,1100,510.895
-January 2019,alf-fyn-approved,alfen321,1/25/2019,Als-fynbroen,5.0,Prolike,"#21, Testing",OK,1000,2200
-January 2019,alf-fyn-approved,davidcarl,1/25/2019,Als-fynbroen,5.0,Prolike,"#32, #31, Testing",OK,1000,2200
-N/A,tenak-approved,bentreadwell,1/23/2019,Tenak,3.5,Prolike,"#25, #27, #29",OK,700,325.115
-January 2019,tenak-approved,loubnielsen,1/28/2019,Tenak,5.5,Prolike,"#28,",OK,1100,510.895
+January 2019,Invoice 16,loubnielsen,1/23/2019,VHHR,0.5,Prolike,Fix lok3 and lok4,OK,100,#N/A
+January 2019,Invoice 18,loubnielsen,1/23/2019,Tenak,4.5,Prolike,"#24, #34, #35, #36 , #37",OK,900,418.005
+January 2019,Invoice 17,alfen321,1/23/2019,Als-fynbroen,2.0,Prolike,"#18, sub SQL query",OK,400,880
+January 2019,Invoice 17,alfen321,1/24/2019,Als-fynbroen,5.5,Prolike,"#18, #21",OK,1100,2420
+January 2019,Invoice 16,loubnielsen,1/25/2019,VHHR,0.5,Prolike,Lok3 and lok4 error,OK,100,#N/A
+January 2019,Invoice 18,loubnielsen,1/25/2019,Tenak,5.5,Prolike,"#37, #12, #7, backlog grooming",OK,1100,510.895
+January 2019,Invoice 17,alfen321,1/25/2019,Als-fynbroen,5.0,Prolike,"#21, Testing",OK,1000,2200
+January 2019,Invoice 17,davidcarl,1/25/2019,Als-fynbroen,5.0,Prolike,"#32, #31, Testing",OK,1000,2200
+N/A,Invoice 18,bentreadwell,1/23/2019,Tenak,3.5,Prolike,"#25, #27, #29",OK,700,325.115
+January 2019,Invoice 18,loubnielsen,1/28/2019,Tenak,5.5,Prolike,"#28,",OK,1100,510.895
 January 2019,PROLIKE,loubnielsen,1/28/2019,Prolike,0.5,Honeypot,Prolike,OK,67.5,0
-N/A,tenak-approved,carolineolivia,1/23/2019,Tenak,4.0,Prolike,"#26, tables and header",OK,800,371.56
-N/A,tenak-approved,carolineolivia,1/24/2019,Tenak,1.5,Prolike,#30 Vue collapse on tables,OK,300,139.335
+N/A,Invoice 18,carolineolivia,1/23/2019,Tenak,4.0,Prolike,"#26, tables and header",OK,800,371.56
+N/A,Invoice 18,carolineolivia,1/24/2019,Tenak,1.5,Prolike,#30 Vue collapse on tables,OK,300,139.335
 January 2019,PROLIKE,edipetres,1/28/2019,Prolike,20.0,Explore,Pre-registered,OK,1350,0
-January 2019,Faktura #22,loubnielsen,1/29/2019,Erhvervshuset - Filesafe,1.0,Prolike,Lok0 error,OK,200,374
-January 2019,tenak-approved,loubnielsen,1/29/2019,Tenak,3.0,Prolike,Statusmøde Tenak/Prolike,OK,600,278.67
-January 2019,tenak-approved,loubnielsen,1/29/2019,Tenak,0.5,Prolike,Explore database: #24,OK,100,46.445
+January 2019,Invoice 22,loubnielsen,1/29/2019,Erhvervshuset - Filesafe,1.0,Prolike,Lok0 error,OK,200,374
+January 2019,Invoice 18,loubnielsen,1/29/2019,Tenak,3.0,Prolike,Statusmøde Tenak/Prolike,OK,600,278.67
+January 2019,Invoice 18,loubnielsen,1/29/2019,Tenak,0.5,Prolike,Explore database: #24,OK,100,46.445
 January 2019,PROLIKE,loubnielsen,1/29/2019,Prolike,2.5,Honeypot,"Talking with Lars, help out Benjamin, transport Værløse-Allerød",OK,337.5,0
-January 2019,tenak-approved,loubnielsen,1/30/2019,Tenak,3.5,Prolike,"Explore database: #24, project management/backlog grooming",OK,700,325.115
+January 2019,Invoice 18,loubnielsen,1/30/2019,Tenak,3.5,Prolike,"Explore database: #24, project management/backlog grooming",OK,700,325.115
 January 2019,PROLIKE,loubnielsen,1/30/2019,Prolike,3.5,Honeypot,"Allerød, help out benjamin, Vue studying",OK,472.5,0
-February 2019,alf-fyn-approved,davidcarl,1/28/2019,Als-fynbroen,4.5,Prolike,"#32, #33, Meeting with Mogens",OK,900,1980
-February 2019,alf-fyn-approved,alfen321,1/28/2019,Als-fynbroen,4.5,Prolike,"#33, Meeting with Mogens",OK,900,1980
-February 2019,alf-fyn-approved,davidcarl,1/29/2019,Als-fynbroen,2.5,Prolike,"#34, #35",OK,500,1100
-February 2019,alf-fyn-approved,alfen321,1/29/2019,Als-fynbroen,4.0,Prolike,"#34, #35, #38, #39",OK,800,1760
-February 2019,alf-fyn-approved,davidcarl,1/30/2019,Als-fynbroen,3.8,Prolike,"#34, #37, #36, meetings with Mogens ",OK,750,1650
-February 2019,alf-fyn-approved,alfen321,1/30/2019,Als-fynbroen,3.5,Prolike,"#34, #37, #36, meetings with Mogens",OK,700,1540
+February 2019,Invoice 17,davidcarl,1/28/2019,Als-fynbroen,4.5,Prolike,"#32, #33, Meeting with Mogens",OK,900,1980
+February 2019,Invoice 17,alfen321,1/28/2019,Als-fynbroen,4.5,Prolike,"#33, Meeting with Mogens",OK,900,1980
+February 2019,Invoice 17,davidcarl,1/29/2019,Als-fynbroen,2.5,Prolike,"#34, #35",OK,500,1100
+February 2019,Invoice 17,alfen321,1/29/2019,Als-fynbroen,4.0,Prolike,"#34, #35, #38, #39",OK,800,1760
+February 2019,Invoice 17,davidcarl,1/30/2019,Als-fynbroen,3.8,Prolike,"#34, #37, #36, meetings with Mogens ",OK,750,1650
+February 2019,Invoice 17,alfen321,1/30/2019,Als-fynbroen,3.5,Prolike,"#34, #37, #36, meetings with Mogens",OK,700,1540
 January 2019,PROLIKE,loubnielsen,1/31/2019,Prolike,5.5,Honeypot,"Filesafe demo: grooming backlog, cload hosting, write to Michael and Elders
 Allerød, help out Benjamin and Caroline",OK,742.5,0
 February 2019,PROLIKE,loubnielsen,2/1/2019,Prolike,6.0,Honeypot,"#343 (Google Cloud: Create VM instance, push docker image to google container registry, deploy)
@@ -392,7 +392,7 @@ February 2019,PROLIKE,loubnielsen,2/6/2019,Prolike,6.0,Honeypot,"#341, #345, SSL
 February 2019,PROLIKE,loubnielsen,2/7/2019,Prolike,7.3,Honeypot,"SSL certificate and proxy, kubernetes on google cloud
 Arbejde hjemmefra (afprøv 'filesafe.prolike.io, fortsæt med at finde løsning)",OK,978.75,0
 February 2019,PROLIKE,loubnielsen,2/8/2019,Prolike,3.0,Honeypot,"Hjælpe Benjamin, error (bind: port already in use, cloud kubernetes hosting)",OK,405,0
-February 2019,,loubnielsen,2/8/2019,Tenak,2.5,Prolike,Møde med Tenak,OK,500,232.225
+February 2019,N/A,loubnielsen,2/8/2019,Tenak,2.5,Prolike,Møde med Tenak,OK,500,232.225
 February 2019,PROLIKE,loubnielsen,2/11/2019,Prolike,6.0,Honeypot,"#350, #348, #345 (mail to VHHR)",OK,810,0
 February 2019,PROLIKE,loubnielsen,2/12/2019,Prolike,5.8,Honeypot,"#350, #348 (get live-reload python script to work on gcloud), dokumentér",OK,776.25,0
 February 2019,PROLIKE,loubnielsen,2/13/2019,Prolike,6.0,Honeypot,"#351 (SMTP server virker ikke på google cloud, porte er blokeret. Derfor skal vi skifte til en anden server. Vi har beslutter os for Hetzner (id skal bekræftes), Tjalfe og certificate)
@@ -401,153 +401,255 @@ February 2019,PROLIKE,alfen321,2/12/2019,Prolike,5.0,Honeypot,"#211, #341 (Getti
 February 2019,PROLIKE,alfen321,2/13/2019,Prolike,4.0,Honeypot,"#211, #341 (Getting a reverse proxy working in a docker and automate certificate)",OK,540,0
 February 2019,PROLIKE,loubnielsen,2/14/2019,Prolike,4.0,Honeypot,"#352, #353, #346, #358, #359, #360",OK,540,0
 February 2019,PROLIKE,loubnielsen,2/15/2019,Prolike,7.0,Honeypot,"#361, #364, #367, #368 , #369, #368",OK,945,0
-February 2019,Faktura #22,loubnielsen,2/18/2019,Erhvervshuset - Filesafe,2.0,Prolike,Filesafe instanser setup på server så de kører tag 1.3.0 fremfor latest. Rydde op på server. Snakke med Michael. Email korrespondance,OK,400,748
+February 2019,Invoice 22,loubnielsen,2/18/2019,Erhvervshuset - Filesafe,2.0,Prolike,Filesafe instanser setup på server så de kører tag 1.3.0 fremfor latest. Rydde op på server. Snakke med Michael. Email korrespondance,OK,400,748
 February 2019,PROLIKE,loubnielsen,2/18/2019,Prolike,4.5,Honeypot,"#368, #367, #369, #373, #361, 371, #374, nemlig.com, Dilly-dally",OK,607.5,0
 February 2019,PROLIKE,loubnielsen,2/19/2019,Prolike,6.0,Honeypot,"#371, #374, #370",OK,810,0
 February 2019,PROLIKE,loubnielsen,2/20/2019,Prolike,6.0,Honeypot,"#375, #374, #376, #379",OK,810,0
-N/A,Faktura #20,lakruzz,2/20/2019,Specshell,2.0,Prolike,Startup meeting,OK,400,792
-N/A,Faktura #20,lakruzz,2/20/2019,Specshell,3.0,Prolike,Setup ,OK,600,1188
+N/A,Invoice 20,lakruzz,2/20/2019,Specshell,2.0,Prolike,Startup meeting,OK,400,792
+N/A,Invoice 20,lakruzz,2/20/2019,Specshell,3.0,Prolike,Setup ,OK,600,1188
 February 2019,Sale,rhoeberg,2/20/2019,Specshell,2.0,Honeypot,Startup meeting,OK,270,0
-February 2019,Faktura #20,rhoeberg,2/20/2019,Specshell,3.0,Prolike,Setup,OK,600,1188
-February 2019,Faktura #20,rhoeberg,2/13/2019,Specshell,2.0,Prolike,Initial meeting,OK,400,792
-February 2019,Faktura #20,rhoeberg,2/21/2019,Specshell,5.0,Prolike,Architecture + circle ci setup,OK,1000,1980
-February 2019,Faktura #20,edipetres,2/21/2019,Specshell,5.0,Prolike,"Reviewing architecture, elaborate on backlog with Lars; setup backend architecture with serverless framework.",OK,1000,1980
-February 2019,Faktura #20,edipetres,2/21/2019,Specshell,2.5,Explore,Exploring tech for the architecture,OK,168.75,0
-February 2019,Faktura #20,rhoeberg,2/21/2019,Specshell,2.5,Explore,exploring different technologies,OK,168.75,0
+February 2019,Invoice 20,rhoeberg,2/20/2019,Specshell,3.0,Prolike,Setup,OK,600,1188
+February 2019,Invoice 20,rhoeberg,2/13/2019,Specshell,2.0,Prolike,Initial meeting,OK,400,792
+February 2019,Invoice 20,rhoeberg,2/21/2019,Specshell,5.0,Prolike,Architecture + circle ci setup,OK,1000,1980
+February 2019,Invoice 20,edipetres,2/21/2019,Specshell,5.0,Prolike,"Reviewing architecture, elaborate on backlog with Lars; setup backend architecture with serverless framework.",OK,1000,1980
+February 2019,Invoice 20,edipetres,2/21/2019,Specshell,2.5,Explore,Exploring tech for the architecture,OK,168.75,0
+February 2019,Invoice 20,rhoeberg,2/21/2019,Specshell,2.5,Explore,exploring different technologies,OK,168.75,0
 February 2019,PROLIKE,loubnielsen,2/21/2019,Prolike,6.0,Honeypot,"#361, #377, #378, #382, #387, #392, #386 + backlog grooming",OK,810,0
 February 2019,PROLIKE,loubnielsen,2/21/2019,Prolike,6.0,Honeypot,"#386, #384, Filesafe logging, #380, Filesafe markedsføring undersøg",OK,810,0
 February 2019,PROLIKE,edipetres,2/22/2019,Prolike,4.0,Honeypot,"Deploy bakend to S3 via pipeline; Set up front-end toolstack (incl Vue, Bootstrap, tests etc.)",OK,540,0
-February 2019,Faktura #20,edipetres,2/22/2019,Specshell,1.5,Explore,Learning about the CircleCI git phlow implementation; AWS policies for deployment,OK,101.25,0
+February 2019,Invoice 20,edipetres,2/22/2019,Specshell,1.5,Explore,Learning about the CircleCI git phlow implementation; AWS policies for deployment,OK,101.25,0
 February 2019,PROLIKE,edipetres,2/22/2019,Prolike,30.0,Explore,Borrowed hours to meet SU requirements (min 43 hr/month) agreed upon with Lars,OK,2025,0
 February 2019,Sale,darksidematters,2/13/2019,Specshell,2.0,Honeypot,Initial meeting,OK,270,0
-February 2019,Faktura #20,darksidematters,2/21/2019,Specshell,5.0,Prolike,Project kick-off,OK,1000,1980
-February 2019,Faktura #20,darksidematters,2/21/2019,Specshell,2.0,Explore,Exploration of setup and technologies,OK,135,0
-February 2019,Faktura #20,darksidematters,2/22/2019,Specshell,2.0,Prolike,"Running through the backlog, setting up the github page ""stage"" of the git phlow in the FE",OK,400,792
-February 2019,Faktura #20,darksidematters,2/22/2019,Specshell,4.0,Explore,Researching template of a JAM stack and work on pipeline,OK,270,0
+February 2019,Invoice 20,darksidematters,2/21/2019,Specshell,5.0,Prolike,Project kick-off,OK,1000,1980
+February 2019,Invoice 20,darksidematters,2/21/2019,Specshell,2.0,Explore,Exploration of setup and technologies,OK,135,0
+February 2019,Invoice 20,darksidematters,2/22/2019,Specshell,2.0,Prolike,"Running through the backlog, setting up the github page ""stage"" of the git phlow in the FE",OK,400,792
+February 2019,Invoice 20,darksidematters,2/22/2019,Specshell,4.0,Explore,Researching template of a JAM stack and work on pipeline,OK,270,0
 February 2019,PROLIKE,darksidematters,2/22/2019,Prolike,28.0,Explore,Borrowed hours to meet SU requirements (min 43 hr/month) agreed upon with Lars,OK,1890,0
 February 2019,PROLIKE,alfen321,2/20/2019,Prolike,3.0,Honeypot,"#357, Hetzner setup",OK,405,0
 February 2019,PROLIKE,alfen321,2/22/2019,Prolike,3.0,Honeypot,Hetzner server documentation,OK,405,0
-February 2019,Faktura #20,rhoeberg,2/23/2019,Specshell,4.0,Explore,Exploring the newly installed framework,OK,270,0
+February 2019,Invoice 20,rhoeberg,2/23/2019,Specshell,4.0,Explore,Exploring the newly installed framework,OK,270,0
 February 2019,PROLIKE,loubnielsen,2/25/2019,Prolike,3.0,Honeypot,"#380. #393, #351, #347 , #389, ",OK,405,0
 February 2019,PROLIKE,loubnielsen,2/25/2019,Erhvervshuset - Filesafe,3.0,Explore,"Undersøg Audit Log, Installér Neo4j: #394",OK,202.5,0
-February 2019,Faktura #20,rhoeberg,2/25/2019,Specshell,6.0,Prolike,fe: #3 #8 #9 #10 be: #7,OK,1200,2376
-February 2019,Faktura #20,rhoeberg,2/25/2019,Specshell,1.0,Explore,circleci walkthrough with Lars,OK,67.5,0
+February 2019,Invoice 20,rhoeberg,2/25/2019,Specshell,6.0,Prolike,fe: #3 #8 #9 #10 be: #7,OK,1200,2376
+February 2019,Invoice 20,rhoeberg,2/25/2019,Specshell,1.0,Explore,circleci walkthrough with Lars,OK,67.5,0
 February 2019,PROLIKE,loubnielsen,2/26/2019,Erhvervshuset - Filesafe,1.0,Prolike,"Lok1 error, live reload",OK,200,374
 February 2019,PROLIKE,davidcarl,2/26/2019,Erhvervshuset - Filesafe,0.5,Prolike,"Lok1 error, live reload",OK,100,187
 February 2019,PROLIKE,loubnielsen,2/26/2019,Erhvervshuset - Filesafe,1.5,Honeypot,"Install neo4j, Connect to online neo4j database with Nodejs",OK,202.5,0
 February 2019,PROLIKE,loubnielsen,2/26/2019,Prolike,3.5,Honeypot,"256-admin-interface-test-api, merge conflict and cleanup git",OK,472.5,0
-February 2019,Faktura #20,edipetres,2/26/2019,Specshell,3.0,Prolike,Set up db connection in production. Connect front-end to backend. Add POST/GET for handling data on the server.,OK,600,1188
+February 2019,Invoice 20,edipetres,2/26/2019,Specshell,3.0,Prolike,Set up db connection in production. Connect front-end to backend. Add POST/GET for handling data on the server.,OK,600,1188
 February 2019,PROLIKE,nexao,2/26/2019,Erhvervshuset - Filesafe,3.0,Explore,#394 Connection to neo4j,OK,202.5,0
 February 2019,PROLIKE,nexao,2/26/2019,Prolike,2.0,Internship,,OK,0,0
 February 2019,PROLIKE,rhoeberg,2/26/2019,Prolike,2.5,Honeypot,fe: #11,OK,337.5,0
 March 2019,PROLIKE,davidcarl,2/27/2019,Prolike - Filesafe,4.0,Honeypot,#406,OK,540,0
-,Faktura #22,loubnielsen,2/27/2019,Erhvervshuset - Filesafe,1.0,Prolike,#404: undersøg audit_log,,200,374
-March 2019,Faktura #22,loubnielsen,2/27/2019,Erhvervshuset - Filesafe,5.0,Prolike,"#402, #403",OK,1000,1870
-March 2019,Faktura #22,nexao,2/27/2019,Erhvervshuset - Filesafe,6.0,Prolike,#403 #408 Searching for alternative to ELK,OK,1200,2244
-March 2019,Faktura #20,edipetres,2/27/2019,Specshell,6.0,Prolike,"On-site at Specshell. Build auth system for sensor units. Meetings, co-ops and plannig for next week.",OK,1200,2376
-March 2019,Faktura #20,edipetres,2/27/2019,Specshell,1.5,Explore,Learning about API authentication. Administrative work and issue planning.,OK,101.25,0
-March 2019,Faktura #20,darksidematters,2/26/2019,Specshell,2.0,Prolike,Work on staging the github pages and management of accounts,OK,400,792
-March 2019,Faktura #20,darksidematters,2/26/2019,Specshell,3.0,Explore,Usage of our toolstack and connection throughout it.,OK,202.5,0
-March 2019,Faktura #20,darksidematters,2/27/2019,Specshell,6.0,Prolike,"On-site at Specshell. Build auth system for sensor units. Meetings, co-ops and plannig for next week.",OK,1200,2376
-March 2019,Faktura #20,darksidematters,2/27/2019,Specshell,1.5,Explore,"Issue management, reading on authorization and database uses.",OK,101.25,0
-March 2019,Faktura #22,loubnielsen,2/28/2019,Erhvervshuset - Filesafe,0.5,Prolike,#404,OK,100,187
-March 2019,,loubnielsen,2/28/2019,Tenak,2.0,Explore,Defining issues from Tenak report,OK,135,0
-March 2019,,loubnielsen,2/28/2019,Prolike - Filesafe,3.5,Honeypot,"#410, #405, #250",OK,472.5,0
-March 2019,Faktura #20,rhoeberg,2/27/2019,Specshell,6.0,Prolike,"On-site at Specshell. Security design.Meetings, co-ops and plannig for next week. Started on fe#18",OK,1200,2376
-March 2019,Faktura #20,rhoeberg,2/27/2019,Specshell,1.5,Explore,Exploring typescript with vuejs,OK,101.25,0
-March 2019,Faktura #20,rhoeberg,2/28/2019,Specshell,3.0,Explore,Exploring typescript with vuejs finished #18,OK,202.5,0
-March 2019,,loubnielsen,3/1/2019,Prolike,6.0,Explore,"#413, #412 testing, Code café dilly-dally tech-challange",OK,405,0
-March 2019,Faktura #22,nexao,3/7/2019,Erhvervshuset - Filesafe,4.0,Explore, Info about Humio for drop-gdpr #414,OK,270,0
-March 2019,Faktura #24,darksidematters,3/7/2019,Specshell,5.0,Prolike,"Work on api endpoints, data models and plotting data. Issues #14,15,17 be , #19 fe",OK,1000,1980
-March 2019,Faktura #24,rhoeberg,3/7/2019,Specshell,5.0,Prolike,"Work on api endpoints, data models and plotting data. Issues #14,15,17 be , #19 fe",OK,1000,1980
-March 2019,Faktura #24,darksidematters,3/7/2019,Specshell,1.5,Explore,"Exploring plotting, mongoose binding and backend queries.",OK,101.25,0
-March 2019,Faktura #24,rhoeberg,3/7/2019,Specshell,1.5,Explore,"Exploring plotting, mongoose binding and backend queries.",OK,101.25,0
-March 2019,Faktura #22,nexao,3/8/2019,Erhvervshuset - Filesafe,3.0,Prolike,#407 #415,OK,600,1122
-March 2019,Faktura #22,nexao,3/8/2019,Erhvervshuset - Filesafe,2.5,Explore,#416 (not yet resloved),OK,168.75,0
-March 2019,Faktura #24,edipetres,3/8/2019,Specshell,2.0,Prolike,Authentication system - possible solutions. Issue management.,OK,400,792
-March 2019,Faktura #24,edipetres,3/8/2019,Specshell,1.0,Explore,Exploring solutions for auth. ,OK,67.5,0
-March 2019,Faktura #24,rhoeberg,3/11/2019,Specshell,2.5,Explore,Specshell meeting,OK,168.75,0
-March 2019,Faktura #23,davidcarl,3/8/2019,Reepay,5.0,Prolike,"#5, #6",OK,1000,2200
-March 2019,Faktura #23,alfen321,3/8/2019,Reepay,4.0,Prolike,#7,OK,800,1760
-March 2019,Faktura #23,davidcarl,3/13/2019,Reepay,4.0,Prolike,#11 #12,OK,800,1760
-March 2019,Faktura #23,alfen321,3/13/2019,Reepay,4.0,Prolike,"#9, #11, #12",OK,800,1760
-March 2019,Faktura #24,rhoeberg,3/13/2019,Specshell,6.0,Prolike,be:#23 #25 fe:#22 #23,OK,1200,2376
-March 2019,Faktura #24,darksidematters,3/11/2019,Specshell,2.5,Prolike,Meeting with Specshell,OK,500,990
-March 2019,Faktura #24,edipetres,3/11/2019,Specshell,2.5,Prolike,Meeting with Specshell,OK,500,990
-March 2019,Faktura #24,edipetres,3/14/2019,Specshell,4.0,Prolike,"Backend authentication, presentation to specshell, deployment configuration",OK,800,1584
-March 2019,Faktura #24,darksidematters,3/14/2019,Specshell,4.0,Prolike,"AWS account configuration, backend JWT. ",OK,800,1584
-March 2019,Faktura #22,loubnielsen,3/21/2019,Erhvervshuset - Filesafe,2.5,Prolike,"Filesafe craches. Find error, understand error, fix error - related to tech-challange #66 ",OK,500,935
-,Faktura #22,loubnielsen,3/21/2019,Erhvervshuset - Filesafe,2.0,Prolike,"#409 (custom format metadata into json), https://stackoverflow.com/questions/55280579/winston-append-log-data-into-json-array",,400,748
-March 2019,,loubnielsen,3/21/2019,Prolike,0.5,Explore,"ZenHub, remove instances from Digital Ocean and Google, mails",OK,33.75,0
-,Faktura #22,loubnielsen,3/21/2019,Erhvervshuset - Filesafe,1.0,Prolike,"(custom format metadata into json), https://stackoverflow.com/questions/55280579/winston-append-log-data-into-json-array",,200,374
-,Faktura #22,nexao,3/21/2019,Erhvervshuset - Filesafe,1.0,Explore,#409,,67.5,0
-,Faktura #22,nexao,3/21/2019,Erhvervshuset - Filesafe,3.5,Prolike,"#409, #415",,700,1309
-,Faktura #22,nexao,3/21/2019,Erhvervshuset - Filesafe,1.0,Explore,Installation of Humio and Filbeat,,67.5,0
-March 2019,Faktura #24,edipetres,3/15/2019,Specshell,2.0,Prolike,"Setting up the Lambda API for development (IP whitelist, etc);
+,Invoice 22,loubnielsen,2/27/2019,Erhvervshuset - Filesafe,1.0,Prolike,#404: undersøg audit_log,OK,200,374
+March 2019,Invoice 22,loubnielsen,2/27/2019,Erhvervshuset - Filesafe,5.0,Prolike,"#402, #403",OK,1000,1870
+March 2019,Invoice 22,nexao,2/27/2019,Erhvervshuset - Filesafe,6.0,Prolike,#403 #408 Searching for alternative to ELK,OK,1200,2244
+March 2019,Invoice 20,edipetres,2/27/2019,Specshell,6.0,Prolike,"On-site at Specshell. Build auth system for sensor units. Meetings, co-ops and plannig for next week.",OK,1200,2376
+March 2019,Invoice 20,edipetres,2/27/2019,Specshell,1.5,Explore,Learning about API authentication. Administrative work and issue planning.,OK,101.25,0
+March 2019,Invoice 20,darksidematters,2/26/2019,Specshell,2.0,Prolike,Work on staging the github pages and management of accounts,OK,400,792
+March 2019,Invoice 20,darksidematters,2/26/2019,Specshell,3.0,Explore,Usage of our toolstack and connection throughout it.,OK,202.5,0
+March 2019,Invoice 20,darksidematters,2/27/2019,Specshell,6.0,Prolike,"On-site at Specshell. Build auth system for sensor units. Meetings, co-ops and plannig for next week.",OK,1200,2376
+March 2019,Invoice 20,darksidematters,2/27/2019,Specshell,1.5,Explore,"Issue management, reading on authorization and database uses.",OK,101.25,0
+March 2019,Invoice 22,loubnielsen,2/28/2019,Erhvervshuset - Filesafe,0.5,Prolike,#404,OK,100,187
+March 2019,N/A,loubnielsen,2/28/2019,Tenak,2.0,Explore,Defining issues from Tenak report,OK,135,0
+March 2019,PROLIKE,loubnielsen,2/28/2019,Prolike - Filesafe,3.5,Honeypot,"#410, #405, #250",OK,472.5,0
+March 2019,Invoice 20,rhoeberg,2/27/2019,Specshell,6.0,Prolike,"On-site at Specshell. Security design.Meetings, co-ops and plannig for next week. Started on fe#18",OK,1200,2376
+March 2019,Invoice 20,rhoeberg,2/27/2019,Specshell,1.5,Explore,Exploring typescript with vuejs,OK,101.25,0
+March 2019,Invoice 20,rhoeberg,2/28/2019,Specshell,3.0,Explore,Exploring typescript with vuejs finished #18,OK,202.5,0
+March 2019,PROLIKE,loubnielsen,3/1/2019,Prolike,6.0,Explore,"#413, #412 testing, Code café dilly-dally tech-challange",OK,405,0
+March 2019,Invoice 22,nexao,3/7/2019,Erhvervshuset - Filesafe,4.0,Explore, Info about Humio for drop-gdpr #414,OK,270,0
+March 2019,Invoice 25,darksidematters,3/7/2019,Specshell,5.0,Prolike,"Work on api endpoints, data models and plotting data. Issues #14,15,17 be , #19 fe",OK,1000,1980
+March 2019,Invoice 25,rhoeberg,3/7/2019,Specshell,5.0,Prolike,"Work on api endpoints, data models and plotting data. Issues #14,15,17 be , #19 fe",OK,1000,1980
+March 2019,Invoice 25,darksidematters,3/7/2019,Specshell,1.5,Explore,"Exploring plotting, mongoose binding and backend queries.",OK,101.25,0
+March 2019,Invoice 25,rhoeberg,3/7/2019,Specshell,1.5,Explore,"Exploring plotting, mongoose binding and backend queries.",OK,101.25,0
+March 2019,Invoice 22,nexao,3/8/2019,Erhvervshuset - Filesafe,3.0,Prolike,#407 #415,OK,600,1122
+March 2019,Invoice 22,nexao,3/8/2019,Erhvervshuset - Filesafe,2.5,Explore,#416 (not yet resloved),OK,168.75,0
+March 2019,Invoice 25,edipetres,3/8/2019,Specshell,2.0,Prolike,Authentication system - possible solutions. Issue management.,OK,400,792
+March 2019,Invoice 25,edipetres,3/8/2019,Specshell,1.0,Explore,Exploring solutions for auth. ,OK,67.5,0
+March 2019,Invoice 25,rhoeberg,3/11/2019,Specshell,2.5,Explore,Specshell meeting,OK,168.75,0
+March 2019,Invoice 23,davidcarl,3/8/2019,Reepay,5.0,Prolike,"#5, #6",OK,1000,2200
+March 2019,Invoice 23,alfen321,3/8/2019,Reepay,4.0,Prolike,#7,OK,800,1760
+March 2019,Invoice 23,davidcarl,3/13/2019,Reepay,4.0,Prolike,#11 #12,OK,800,1760
+March 2019,Invoice 23,alfen321,3/13/2019,Reepay,4.0,Prolike,"#9, #11, #12",OK,800,1760
+March 2019,Invoice 25,rhoeberg,3/13/2019,Specshell,6.0,Prolike,be:#23 #25 fe:#22 #23,OK,1200,2376
+March 2019,Invoice 25,darksidematters,3/11/2019,Specshell,2.5,Prolike,Meeting with Specshell,OK,500,990
+March 2019,Invoice 25,edipetres,3/11/2019,Specshell,2.5,Prolike,Meeting with Specshell,OK,500,990
+March 2019,Invoice 25,edipetres,3/14/2019,Specshell,4.0,Prolike,"Backend authentication, presentation to specshell, deployment configuration",OK,800,1584
+March 2019,Invoice 25,darksidematters,3/14/2019,Specshell,4.0,Prolike,"AWS account configuration, backend JWT. ",OK,800,1584
+March 2019,Invoice 22,loubnielsen,3/21/2019,Erhvervshuset - Filesafe,2.5,Prolike,"Filesafe craches. Find error, understand error, fix error - related to tech-challange #66 ",OK,500,935
+,Invoice 22,loubnielsen,3/21/2019,Erhvervshuset - Filesafe,2.0,Prolike,"#409 (custom format metadata into json), https://stackoverflow.com/questions/55280579/winston-append-log-data-into-json-array",OK,400,748
+March 2019,PROLIKE,loubnielsen,3/21/2019,Prolike,0.5,Explore,"ZenHub, remove instances from Digital Ocean and Google, mails",OK,33.75,0
+,Invoice 22,loubnielsen,3/21/2019,Erhvervshuset - Filesafe,1.0,Prolike,"(custom format metadata into json), https://stackoverflow.com/questions/55280579/winston-append-log-data-into-json-array",OK,200,374
+,Invoice 22,nexao,3/21/2019,Erhvervshuset - Filesafe,1.0,Explore,#409,Review,67.5,0
+,Invoice 22,nexao,3/21/2019,Erhvervshuset - Filesafe,3.5,Prolike,"#409, #415",OK,700,1309
+,Invoice 22,nexao,3/21/2019,Erhvervshuset - Filesafe,1.0,Explore,Installation of Humio and Filbeat,Review,67.5,0
+March 2019,Invoice 25,edipetres,3/15/2019,Specshell,2.0,Prolike,"Setting up the Lambda API for development (IP whitelist, etc);
 Working with Specshell to debug issues with API;",OK,400,792
-March 2019,Faktura #24,edipetres,3/15/2019,Specshell,1.5,Explore,"Learing how to whitelist IP's on AWS Gateway;
+March 2019,Invoice 25,edipetres,3/15/2019,Specshell,1.5,Explore,"Learing how to whitelist IP's on AWS Gateway;
 Time spent with Specshell on debugging.",OK,101.25,0
-,Faktura #22,loubnielsen,3/22/2019,Erhvervshuset - Filesafe,4.0,Prolike,"Mail to P&M (what do they want), Describing problem for Elders, discussing logging (how to), #418",,800,1496
-March 2019,,loubnielsen,3/22/2019,Prolike,2.0,Explore,"Status updates Lars, #413",OK,135,0
-,Faktura #22,nexao,3/22/2019,Erhvervshuset - Filesafe,2.0,Explore,Continued work on #409,,135,0
-,Faktura #22,nexao,3/22/2019,Erhvervshuset - Filesafe,3.0,Prolike,#419 and discussed logging,,600,1122
-,Faktura #22,nexao,3/22/2019,Erhvervshuset - Filesafe,1.0,Prolike,Reading up on winston,,200,374
-March 2019,,rhoeberg,3/21/2019,Prolike,3.0,Prolike,"implementing new api entry-points, be: #30 #33",OK,600,0
-March 2019,,rhoeberg,3/22/2019,Prolike,2.0,Prolike,bugfixing new entry points be:#42 #43,OK,400,0
-,,darksidematters,3/21/2019,Specshell,1.0,Explore,Grooming issues and prep for new ones,,67.5,0
-,,darksidematters,3/22/2019,Specshell,3.0,Explore,"Update meeting with the rest of the team, researching testing and having a mock db",,202.5,0
-March 2019,,darksidematters,3/22/2019,Specshell,1.0,Prolike,Test cases for API,OK,200,396
-March 2019,Faktura #23,alfen321,3/20/2019,Reepay,4.0,Prolike,"#13, #14",OK,800,1760
-March 2019,Faktura #23,davidcarl,3/20/2019,Reepay,3.0,Prolike,#8,OK,600,1320
-March 2019,,edipetres,3/22/2019,Specshell,1.0,Explore,Test planning; meeting with the team and planning;,OK,67.5,0
-March 2019,,edipetres,3/22/2019,Specshell,2.0,Explore,Test database deployment on Atlas,OK,135,0
-,Faktura #22,loubnielsen,3/25/2019,Erhvervshuset - Filesafe,2.5,Prolike,"#421, #418, #419, #420",,500,935
-,Faktura #22,loubnielsen,3/25/2019,Erhvervshuset - Filesafe,2.5,Prolike,"#421, #418, #419, #420",,500,935
-,Faktura #22,loubnielsen,3/25/2019,Erhvervshuset - Filesafe,1.0,Prolike,Discuss implementation of audit log,,200,374
-,,edipetres,3/26/2019,Specshell,20.0,Explore,Hours to be distributed,,1350,0
-,Faktura #22,loubnielsen,3/26/2019,Erhvervshuset - Filesafe,1.5,Prolike,"#421, Peter og Michael fejlsafe error email formulering/forslag til problemløsning",,300,561
-,Faktura #22,loubnielsen,3/26/2019,Erhvervshuset - Filesafe,0.5,Explore,Humio for audit log,,33.75,0
-,,loubnielsen,3/26/2019,CCC,2.5,Explore,"Forberede CCC møde, Moodle as open source, Moodle on docker, DB setup, PHP, WordPress, MS 365 and CRM",,168.75,0
-,Faktura #22,davidcarl,3/25/2019,Erhvervshuset - Filesafe,1.0,Prolike,Looking into crash issue and theory test,,200,374
-,Faktura #22,alfen321,3/27/2019,Erhvervshuset - Filesafe,4.0,Prolike,#66 (version 1.4.0),,800,1496
-,Faktura #22,davidcarl,3/27/2019,Erhvervshuset - Filesafe,4.0,Prolike,#66,,800,1496
-,,edipetres,3/27/2019,Specshell,4.0,Prolike,Optimizing database query time,,800,1584
-,,edipetres,3/27/2019,Specshell,2.0,Explore,Learning about timeouts in AWS and serverless,,135,0
-,,rhoeberg,3/27/2019,Specshell,5.0,Prolike,setting up token auth for get. be:#48,,1000,1980
-,,rhoeberg,3/27/2019,Specshell,2.0,Explore,AWS timeouts,,135,0
-,Faktura #22,loubnielsen,3/27/2019,Erhvervshuset - Filesafe,1.0,Explore,#422,,67.5,0
-,Faktura #22,loubnielsen,3/27/2019,Erhvervshuset - Filesafe,3.0,Prolike,#422,,600,1122
-,,loubnielsen,3/27/2019,Prolike,2.0,Explore,Meeetings Lars,,135,0
-,Faktura #22,loubnielsen,3/28/2019,Erhvervshuset - Filesafe,1.0,Explore,parsing and searching data in humio,,67.5,0
-,Faktura #22,loubnielsen,3/28/2019,Erhvervshuset - Filesafe,4.0,Prolike,"#422, #424",,800,1496
-,,loubnielsen,3/28/2019,Prolike,1.0,Explore,"Crisp status/talk with the others, preparing for CCC with Caroline, #391, #288, #385 (just closing issues with comment due to done already)",,67.5,0
-,,nexao,3/29/2019,Prolike - Filesafe,5.0,Honeypot,"Installing filebeat, setting up humio and looking at queries for Humio",,675,0
-,,rhoeberg,3/29/2019,Specshell,5.0,Prolike,client tokens + new json file. #50 #51 #52 #53 #54 #56,,1000,1980
-,Faktura #22,davidcarl,3/29/2019,Erhvervshuset - Filesafe,1.0,Prolike,Test af #66,,200,374
-,Faktura #22,alfen321,3/29/2019,Erhvervshuset - Filesafe,1.0,Prolike,Test af #66,,200,374
-,,loubnielsen,3/29/2019,CCC,5.0,Prolike,"Konsultering hos CCC (opstart af #9, #10)",,1000,1650
-,,loubnielsen,4/1/2019,CCC,2.0,Prolike,"Status, Backlog grooming, email med Bianca, #9, #10",,400,660
-,,loubnielsen,4/1/2019,CCC,1.0,Explore,Explore datasets,,67.5,0
-,Faktura #22,,4/1/2019,Erhvervshuset - Filesafe,1.0,Prolike,"Test af version 1.4.0 før aflevering
-Opsætning af version 1.4.0 på server",,200,374
-,,loubnielsen,4/1/2019,Prolike - Filesafe,2.0,Honeypot,"Klargøring af Filesafe (det det efter i syningerne), forberede snak med Carsten fra CA",,270,0
-,,darksidematters,3/27/2019,Specshell,5.0,Prolike,Work on dummy database and testing.,,1000,1980
-,,darksidematters,3/27/2019,Specshell,2.0,Explore,Research suitable testing and tools for lambda,,135,0
-,,loubnielsen,4/2/2019,Prolike,1.5,Explore,"Digital ocean (still charges), slack news and emails, stand-up",,101.25,0
-,,loubnielsen,4/2/2019,CCC,3.0,Prolike,#9,,600,990
-,,loubnielsen,4/2/2019,CCC,1.5,Explore,#9 (read the manual and ask community for help),,101.25,0
-,,loubnielsen,4/3/2019,CCC,2.0,Prolike,"Groomet backlog with estimates, emails, read SharePoint comminity answer, Forventningsafstemning CCC, #18",,400,660
-,,loubnielsen,4/3/2019,Prolike - Filesafe,4.0,Honeypot,"#425, #412, Merge conflict, #381, #429, #427",,540,0
-,,rhoeberg,4/3/2019,Specshell,6.0,Prolike,"#57, #58, #59, #60, #61, removed whitelisting, added aws api-keys",,1200,2376
-,,rhoeberg,4/3/2019,Ballroom fintess,1.0,Explore,"Ballroomfitness, first look at technology stack",,67.5,0
-,,loubnielsen,4/4/2019,Prolike,3.5,Explore,"#433, #428, keep track of used hours EHHR, Prolike Gmail signature, #431",,236.25,0
-,Faktura #22,loubnielsen,4/4/2019,Erhvervshuset - Filesafe,2.5,Prolike,"LOK0 error (#435), #436",,500,935
-,,loubnielsen,4/4/2019,CCC,0.5,Prolike,#22 ,,100,165
-,Faktura #22,alfen321,4/3/2019,Erhvervshuset - Filesafe,2.0,Prolike,"#66, #430",,400,748
-,,alfen321,4/3/2019,CCC,2.5,Explore,Moodle,,168.75,0
-,,loubnielsen,4/5/2019,CCC,6.0,Prolike,"Konsultering hos CCC (opsætning af kalendere, Wordpress, opsæt kims computer med onedrive, forstå sharepoint dataset, ",,1200,1980
-,,loubnielsen,4/8/2019,CCC,6.0,Prolike,"Møde hos CCC, problemløsning af Sharepoint, fundet mulig løsning til Sharepoint som CMS, opsætning af lister",,1200,1980
-,Faktura #22,loubnielsen,4/4/2019,Erhvervshuset - Filesafe,0.5,Prolike,Skrive til Peter og Michael,,100,187
-,,loubnielsen,4/9/2019,Erhvervshuset - Filesafe,1.0,Prolike,Skrive til Peter og Michael - Status med faktura 22,,200,374
-,,loubnielsen,4/9/2019,CCC,3.0,Prolike,"Backlog Grooming, SharePoint data struktur",,600,990
-,,loubnielsen,4/9/2019,Prolike,2.0,Explore,Snakke med Lars om Prolike løn og faktura,,135,0
+,Invoice 22,loubnielsen,3/22/2019,Erhvervshuset - Filesafe,4.0,Prolike,"Mail to P&M (what do they want), Describing problem for Elders, discussing logging (how to), #418",OK,800,1496
+March 2019,PROLIKE,loubnielsen,3/22/2019,Prolike,2.0,Explore,"Status updates Lars, #413",OK,135,0
+,Invoice 22,nexao,3/22/2019,Erhvervshuset - Filesafe,2.0,Explore,Continued work on #409,Review,135,0
+,Invoice 22,nexao,3/22/2019,Erhvervshuset - Filesafe,3.0,Prolike,#419 and discussed logging,OK,600,1122
+,Invoice 22,nexao,3/22/2019,Erhvervshuset - Filesafe,1.0,Prolike,Reading up on winston,OK,200,374
+March 2019,Invoice 27,rhoeberg,3/21/2019,Specshell,3.0,Prolike,"implementing new api entry-points, be: #30 #33",OK,600,1188
+March 2019,Invoice 27,rhoeberg,3/22/2019,Specshell,2.0,Prolike,bugfixing new entry points be:#42 #43,OK,400,792
+,Invoice 27,darksidematters,3/21/2019,Specshell,1.0,Prolike,Grooming issues and prep for new ones,OK,200,396
+,Invoice 27,darksidematters,3/22/2019,Specshell,3.0,Explore,"Update meeting with the rest of the team, researching testing and having a mock db",OK,202.5,0
+March 2019,Invoice 27,darksidematters,3/22/2019,Specshell,1.0,Prolike,Test cases for API,OK,200,396
+March 2019,Invoice 23,alfen321,3/20/2019,Reepay,4.0,Prolike,"#13, #14",OK,800,1760
+March 2019,Invoice 23,davidcarl,3/20/2019,Reepay,3.0,Prolike,#8,OK,600,1320
+March 2019,Invoice 27,edipetres,3/22/2019,Specshell,1.0,Prolike,Test planning; meeting with the team and planning;,OK,200,396
+March 2019,Invoice 27,edipetres,3/22/2019,Specshell,2.0,Prolike,Test database deployment on Atlas,OK,400,792
+April 2019,Invoice 22,loubnielsen,3/25/2019,Erhvervshuset - Filesafe,2.5,Prolike,"#421, #418, #419, #420",OK,500,935
+April 2019,Invoice 22,loubnielsen,3/25/2019,Erhvervshuset - Filesafe,2.5,Prolike,"#421, #418, #419, #420",OK,500,935
+April 2019,Invoice 22,loubnielsen,3/25/2019,Erhvervshuset - Filesafe,1.0,Prolike,Discuss implementation of audit log,OK,200,374
+March 2019,,edipetres,3/26/2019,Prolike,20.0,Explore,Hours to be distributed,Review,1350,0
+April 2019,Invoice 22,loubnielsen,3/26/2019,Erhvervshuset - Filesafe,1.5,Prolike,"#421, Peter og Michael fejlsafe error email formulering/forslag til problemløsning",OK,300,561
+April 2019,Invoice 22,loubnielsen,3/26/2019,Erhvervshuset - Filesafe,0.5,Explore,Humio for audit log,OK,33.75,0
+April 2019,Invoice 26,loubnielsen,3/26/2019,CCC,2.5,Prolike,"Forberede CCC møde, Moodle as open source, Moodle on docker, DB setup, PHP, WordPress, MS 365 and CRM",OK,500,825
+April 2019,Invoice 22,davidcarl,3/25/2019,Erhvervshuset - Filesafe,1.0,Prolike,Looking into crash issue and theory test,OK,200,374
+April 2019,Invoice 22,alfen321,3/27/2019,Erhvervshuset - Filesafe,4.0,Prolike,#66 (version 1.4.0),OK,800,1496
+April 2019,Invoice 22,davidcarl,3/27/2019,Erhvervshuset - Filesafe,4.0,Prolike,#66,OK,800,1496
+April 2019,Invoice 27,edipetres,3/27/2019,Specshell,4.0,Prolike,Optimizing database query time,OK,800,1584
+April 2019,Invoice 27,edipetres,3/27/2019,Specshell,2.0,Explore,Learning about timeouts in AWS and serverless,OK,135,0
+April 2019,Invoice 27,rhoeberg,3/27/2019,Specshell,5.0,Prolike,setting up token auth for get. be:#48,OK,1000,1980
+April 2019,Invoice 27,rhoeberg,3/27/2019,Specshell,2.0,Explore,AWS timeouts,OK,135,0
+April 2019,Invoice 22,loubnielsen,3/27/2019,Erhvervshuset - Filesafe,1.0,Explore,#422,Review,67.5,0
+April 2019,Invoice 22,loubnielsen,3/27/2019,Erhvervshuset - Filesafe,3.0,Prolike,#422,OK,600,1122
+April 2019,PROLIKE,loubnielsen,3/27/2019,Prolike,2.0,Explore,Meeetings Lars,OK,135,0
+April 2019,Invoice 22,loubnielsen,3/28/2019,Erhvervshuset - Filesafe,1.0,Explore,parsing and searching data in humio,Review,67.5,0
+April 2019,Invoice 22,loubnielsen,3/28/2019,Erhvervshuset - Filesafe,4.0,Prolike,"#422, #424",OK,800,1496
+April 2019,PROLIKE,loubnielsen,3/28/2019,Prolike,1.0,Explore,"Crisp status/talk with the others, preparing for CCC with Caroline, #391, #288, #385 (just closing issues with comment due to done already)",OK,67.5,0
+April 2019,,nexao,3/29/2019,Prolike - Filesafe,5.0,Honeypot,"Installing filebeat, setting up humio and looking at queries for Humio",Review,675,0
+April 2019,Invoice 27,rhoeberg,3/29/2019,Specshell,5.0,Prolike,client tokens + new json file. #50 #51 #52 #53 #54 #56,OK,1000,1980
+April 2019,Invoice 22,davidcarl,3/29/2019,Erhvervshuset - Filesafe,1.0,Prolike,Test af #66,OK,200,374
+April 2019,Invoice 22,alfen321,3/29/2019,Erhvervshuset - Filesafe,1.0,Prolike,Test af #66,OK,200,374
+April 2019,Invoice 26,loubnielsen,3/29/2019,CCC,5.0,Prolike,"Konsultering hos CCC (opstart af #9, #10)",OK,1000,1650
+April 2019,Invoice 26,loubnielsen,4/1/2019,CCC,2.0,Prolike,"Status, Backlog grooming, email med Bianca, #9, #10",OK,400,660
+April 2019,Invoice 26,loubnielsen,4/1/2019,CCC,1.0,Prolike,Explore datasets,OK,200,330
+April 2019,Invoice 22,loubnielsen,4/1/2019,Erhvervshuset - Filesafe,1.0,Prolike,"Test af version 1.4.0 før aflevering
+Opsætning af version 1.4.0 på server",OK,200,374
+April 2019,PROLIKE,loubnielsen,4/1/2019,Prolike - Filesafe,2.0,Honeypot,"Klargøring af Filesafe (det det efter i syningerne), forberede snak med Carsten fra CA",OK,270,0
+April 2019,Invoice 27,darksidematters,3/27/2019,Specshell,5.0,Prolike,Work on dummy database and testing.,OK,1000,1980
+April 2019,Invoice 27,darksidematters,3/27/2019,Specshell,2.0,Explore,Research suitable testing and tools for lambda,OK,135,0
+April 2019,PROLIKE,loubnielsen,4/2/2019,Prolike,1.5,Explore,"Digital ocean (still charges), slack news and emails, stand-up",OK,101.25,0
+April 2019,Invoice 26,loubnielsen,4/2/2019,CCC,3.0,Prolike,#9,OK,600,990
+April 2019,Invoice 26,loubnielsen,4/2/2019,CCC,1.5,Prolike,#9 (read the manual and ask community for help),OK,300,495
+April 2019,Invoice 26,loubnielsen,4/3/2019,CCC,2.0,Prolike,"Groomet backlog with estimates, emails, read SharePoint comminity answer, Forventningsafstemning CCC, #18",OK,400,660
+April 2019,,loubnielsen,4/3/2019,Prolike - Filesafe,4.0,Honeypot,"#425, #412, Merge conflict, #381, #429, #427",Review,540,0
+April 2019,Invoice 27,rhoeberg,4/3/2019,Specshell,6.0,Prolike,"#57, #58, #59, #60, #61, removed whitelisting, added aws api-keys",OK,1200,2376
+April 2019,PROLIKE,rhoeberg,4/3/2019,Ballroom fintess,1.0,Sale,"Ballroomfitness, first look at technology stack",OK,135,0
+April 2019,PROLIKE,loubnielsen,4/4/2019,Prolike,3.5,Explore,"#433, #428, keep track of used hours EHHR, Prolike Gmail signature, #431",OK,236.25,0
+April 2019,Invoice 22,loubnielsen,4/4/2019,Erhvervshuset - Filesafe,2.5,Prolike,"LOK0 error (#435), #436",OK,500,935
+April 2019,Invoice 26,loubnielsen,4/4/2019,CCC,0.5,Prolike,#22 ,OK,100,165
+April 2019,Invoice 22,alfen321,4/3/2019,Erhvervshuset - Filesafe,2.0,Prolike,"#66, #430",OK,400,748
+April 2019,Invoice 26,alfen321,4/3/2019,CCC,2.5,Prolike,Moodle,OK,500,825
+April 2019,Invoice 26,loubnielsen,4/5/2019,CCC,6.0,Prolike,"Konsultering hos CCC (opsætning af kalendere, Wordpress, opsæt kims computer med onedrive, forstå sharepoint dataset, ",OK,1200,1980
+April 2019,Invoice 26,loubnielsen,4/8/2019,CCC,6.0,Prolike,"Møde hos CCC, problemløsning af Sharepoint, fundet mulig løsning til Sharepoint som CMS, opsætning af lister",OK,1200,1980
+April 2019,Invoice 22,loubnielsen,4/4/2019,Erhvervshuset - Filesafe,0.5,Prolike,Skrive til Peter og Michael,OK,100,187
+April 2019,,loubnielsen,4/9/2019,Erhvervshuset - Filesafe,1.0,Prolike,Skrive til Peter og Michael - Status med faktura 22,OK,200,374
+April 2019,Invoice 26,loubnielsen,4/9/2019,CCC,3.0,Prolike,"Backlog Grooming, SharePoint data struktur",OK,600,990
+April 2019,PROLIKE,loubnielsen,4/9/2019,Prolike,2.0,Explore,Snakke med Lars om Prolike løn og faktura,OK,135,0
+April 2019,Invoice 26,loubnielsen,4/10/2019,CCC,6.5,Prolike,"#23, #13, #24, #10, #20, oprette kursist liste og virksomhed liste med data",OK,1300,2145
+,CCC-LAKRUZZ,lakruzz,4/8/2019,CCC,3.5,Master,Opstartsmøde med CCC,OK,0,7350
+,CCC-LAKRUZZ,lakruzz,4/10/2019,CCC,2.0,Master,"#49, #48, #47",OK,0,4200
+,CCC-LAKRUZZ,lakruzz,4/10/2019,CCC,1.0,Master,"Opstart af Milestone ""Moodle"" med Tjalfe og David",OK,0,2100
+,CCC-LAKRUZZ,lakruzz,4/10/2019,CCC,0.5,Master,"Opstart af milestone ""Web"" med Benjamin",OK,0,1050
+,CCC-LAKRUZZ,lakruzz,4/10/2019,CCC,0.5,Master,"Kanban status, opdatering",OK,0,1050
+,CCC-LAKRUZZ,lakruzz,4/5/2019,CCC,3.0,Master,Value stream workshop med CCC'erne,OK,0,6300
+,CCC-LAKRUZZ,lakruzz,4/5/2019,CCC,2.0,Master,"Opstart med Lars, Andreas Frederikke",OK,0,4200
+,CCC-LAKRUZZ,lakruzz,3/15/2019,CCC,3.0,Master,M.A.R.S. strategi,OK,0,6300
+N/A,Invoice 26,carolineolivia,3/29/2019,CCC,5.0,Prolike,"Konsultering hos CCC (opstart af #14, #15)",OK,1000,1650
+N/A,Invoice 26,carolineolivia,4/5/2019,CCC,6.0,Prolike,"Konsultering hos CCC (opsætning af kalendere, opsæt kims computer med onedrive)",OK,1200,1980
+N/A,Invoice 26,carolineolivia,4/8/2019,CCC,3.0,Prolike,Møde hos CCC med Lars og Louise.,OK,600,990
+N/A,Invoice 26,carolineolivia,4/9/2019,CCC,5.0,Prolike,"Grooming af backlog med Lars, opretning af user stories, fremadrettet planlægning og exploring office 365",OK,1000,1650
+N/A,Invoice 26,carolineolivia,4/10/2019,CCC,5.0,Prolike,"#34, start på #33, video møde med Bianca om github",OK,1000,1650
+April 2019,Invoice 26,loubnielsen,4/11/2019,CCC,6.0,Prolike,"#29, #9, #30, #20, #27, #54",OK,1200,1980
+April 2019,,loubnielsen,4/11/2019,Erhvervshuset - Filesafe,0.5,Prolike,Skrive til Peter og Michael - Status med faktura 22,OK,100,187
+N/A,Invoice 26,carolineolivia,4/11/2019,CCC,6.0,Prolike,#33 #15 done,OK,1200,1980
+April 2019,Invoice 26,davidcarl,4/10/2019,CCC,4.0,Prolike,"Backlog Grooming, #39 #35",OK,800,1320
+April 2019,Invoice 26,loubnielsen,4/12/2019,CCC,4.0,Prolike,"Support for Lars (kalenderdeling) og Bianca (Sharepoint - at trække lister (problem med Mac/Office)), #55 (guide til hvordan man trækker lister) ",OK,800,1320
+April 2019,Invoice 26,alfen321,4/10/2019,CCC,4.0,Prolike,"Backlog Grooming, #35",OK,800,1320
+April 2019,Invoice 26,alfen321,4/12/2019,CCC,3.0,Prolike,#35,OK,600,990
+April 2019,Invoice 26,loubnielsen,4/15/2019,CCC,3.0,Prolike,Projektliste export to excel fra Mac support,OK,600,990
+April 2019,,loubnielsen,4/15/2019,Erhvervshuset - Filesafe,2.0,Prolike,"#436, #439, #442, backlog grooming (epic with audit log issues)",OK,400,748
+April 2019,PROLIKE,loubnielsen,4/15/2019,Prolike,0.5,Explore,Prolike future,OK,33.75,0
+April 2019,,loubnielsen,4/15/2019,Erhvervshuset - Filesafe,1.0,Explore,Power Bi,Review,67.5,0
+April 2019,Invoice 26,carolineolivia,4/12/2019,CCC,5.0,Prolike,Reaserching for #16,OK,1000,1650
+April 2019,Invoice 26,carolineolivia,4/15/2019,CCC,3.0,Prolike,#16,OK,600,990
+April 2019,,rhoeberg,4/16/2019,Reepay,2.0,Explore,Understanding the reepay API,OK,135,0
+April 2019,,loubnielsen,4/16/2019,Prolike,4.0,Explore,Prolike future,OK,,
+April 2019,,loubnielsen,4/16/2019,Erhvervshuset - Filesafe,3.0,Prolike,"#440, #441, #438, #210",OK,,
+April 2019,Invoice 26,loubnielsen,4/17/2019,CCC,3.5,Prolike,Meeting with Bianca - status on backlog issues. Skrive til Lars - status på 120 t,OK,700,1155
+N/A,Invoice 26,carolineolivia,4/17/2019,CCC,3.0,Prolike,Meeting with Bianca - status on backlog issues,OK,600,990
+N/A,Invoice 26,bentreadwell,4/17/2019,CCC,7.5,Prolike,Design webpage / mockups - #58,OK,1500,2475
+April 2019,,loubnielsen,4/17/2019,Prolike,0.5,Explore,"Who is on to what, project management CCC",OK,33.75,0
+April 2019,Invoice 26,edipetres,4/18/2019,CCC,4.0,Prolike,"Deploy to ECS, create DB, architectural overview",OK,800,1320
+April 2019,Invoice 26,edipetres,4/18/2019,CCC,2.0,Prolike,"Investigate deployment methods, Fargate, ECS EFS etc.",OK,400,660
+April 2019,Invoice 26,alfen321,4/18/2019,CCC,4.0,Prolike,"Deploy to ECS, create DB, architectural overview",OK,800,1320
+April 2019,Invoice 26,alfen321,4/18/2019,CCC,2.0,Prolike,"Investigate deployment methods, Fargate, ECS EFS etc.",OK,400,660
+April 2019,Invoice 26,loubnielsen,4/19/2019,CCC,2.0,Prolike,"#53, #54, #64",OK,400,660
+April 2019,Invoice 26,loubnielsen,4/23/2019,CCC,4.5,Prolike,"#65, #66, refactored formularforms for 'kunder', 'projekter', 'virksomheder' and 'projektdeltagere'",OK,900,1485
+April 2019,,loubnielsen,4/23/2019,Erhvervshuset - Filesafe,1.0,Prolike,Backlog grooming,OK,200,374
+April 2019,,loubnielsen,4/23/2019,Prolike - Filesafe,1.0,Honeypot,"GDPR, Filesafe og hypoteser. Hvorfor har virksomheder brug for Filesafe. https://docs.google.com/document/d/1-SxoBIB9GHyAiQUe57-XqbLZRFpyAZ0yLgeTiUZ8w9E/edit#",OK,135,0
+April 2019,,nexao,4/23/2019,Erhvervshuset - Filesafe,5.0,Prolike,#437 #449 449 i s currently in progress as it's setting up power bi,OK,1000,1870
+April 2019,,rhoeberg,4/24/2019,Mino,4.0,Sale,Estimate + started on #43,OK,540,0
+April 2019,,rhoeberg,4/24/2019,Mino,1.0,Sale,Understanding woocommerce,OK,135,0
+April 2019,Invoice 26,edipetres,4/24/2019,CCC,4.0,Prolike,Moodle deployment work on AWS; Final deployment to of Bitnami Moodle image to Azure,OK,800,1320
+April 2019,Invoice 26,edipetres,4/24/2019,CCC,2.0,Prolike,Exploring AWS deployments; Figuring out Bitnami's moodle images,OK,400,660
+April 2019,Invoice 26,loubnielsen,4/24/2019,CCC,5.0,Prolike,"#27, initialize jekyll web project ",OK,1000,1650
+April 2019,,loubnielsen,4/24/2019,Prolike,2.5,Explore,"Meeting with Periamma, project management (who's on what)",Review,168.75,0
+April 2019,,nexao,4/24/2019,Erhvervshuset - Filesafe,3.0,Prolike,Working on #449,OK,600,1122
+April 2019,,rhoeberg,4/25/2019,Specshell,1.0,Prolike,Account management,OK,200,396
+April 2019,,rhoeberg,4/25/2019,Ballroom fintess,4.0,Sale,Meeting and inital setup talk,OK,540,0
+N/A,Invoice 26,carolineolivia,4/23/2019,CCC,5.5,Prolike,"#47, #12, #16",OK,1100,1815
+N/A,Invoice 26,carolineolivia,4/24/2019,CCC,5.0,Prolike,"Support: #47 Web: #1, #3 & #7",OK,1000,1650
+N/A,Invoice 26,carolineolivia,4/25/2019,CCC,6.0,Prolike,"Web: #8, #9",OK,1200,1980
+N/A,Invoice 26,carolineolivia,4/25/2019,CCC,3.0,Prolike,Web: #9,OK,600,990
+April 2019,PROLIKE,loubnielsen,4/25/2019,Prolike,6.0,Sale,"Tilbud Periamma, møde Ballroom fitness, backlog grooming Balroom Fitness, Andreas tilbud om arbejde her",OK,810,0
+April 2019,PROLIKE,loubnielsen,4/26/2019,Prolike,5.0,Sale,"Tilbud Periamma færdig, tilbud Rehappy/Ballroom færdig, backlog grooming Balroom Fitness færdig samt estimering, skrive til Peter og Michael og møde",OK,675,0
+April 2019,,loubnielsen,4/26/2019,Erhvervshuset - Filesafe,0.5,Prolike,Power Bi and Firebeat connection,OK,100,187
+April 2019,,nexao,4/26/2019,Erhvervshuset - Filesafe,5.0,Prolike,"Continued work on setting up power bi, now trying to get in contact with Erhvershuset for information for power bi login",OK,1000,1870
+,,nexao,4/29/2019,Erhvervshuset - Filesafe,2.0,Explore,Research on testing for logging,Review,135,0
+,,nexao,4/29/2019,Erhvervshuset - Filesafe,1.5,Prolike,Testing - working on #411,OK,300,561
+N/A,Invoice 26,carolineolivia,4/26/2019,CCC,5.0,Prolike,"Møde med CCC, med Benjamin og Lars. #57",OK,1000,1650
+,,loubnielsen,4/29/2019,Prolike,2.0,Explore,"Mails, Prolike tilbud, ballroom fitness hjælp benjamin med design mockups (#23)",Review,135,0
+,Invoice 26,loubnielsen,4/29/2019,CCC,1.5,Prolike,Konsultering (setup maries computer),OK,300,495
+,,loubnielsen,4/29/2019,Prolike - Filesafe,2.5,Honeypot,"#464, #463, #447",Review,337.5,0
+,PROLIKE,bentreadwell,4/29/2019,Ballroom fintess,1.0,Sale,#23 design mockups,OK,135,0
+,Invoice 26,bentreadwell,4/26/2019,CCC,5.0,Prolike,Var til møde hos CCC omkring design m.m.,OK,1000,1650
+N/A,Invoice 26,carolineolivia,4/29/2019,CCC,5.0,Prolike,"Support: #57 Web: #10, #11, #12, #13 & #14",OK,1000,1650
+,,loubnielsen,4/30/2019,Prolike,4.5,Explore,"Læring om estimater, tilbud, account management og at skabe arbejde, påbegyndt blogpost, skrive til Elisabeth, skrive til github, ferie",Review,303.75,0
+,Invoice 26,loubnielsen,4/30/2019,CCC,1.5,Prolike,"OneDrive and CloudMounter, skrive til bianca",OK,300,495
+,,loubnielsen,5/1/2019,CCC,1.5,Prolike,"OneDrive and CloudMounter, skrive til bianca",OK,300,495
+,,loubnielsen,5/1/2019,Prolike,1.0,Explore,"prolike management, WTeam tilbud",Review,67.5,0
+,,loubnielsen,5/1/2019,Erhvervshuset - Filesafe,1.0,Explore,PowerBI,Review,67.5,0
+,,loubnielsen,5/1/2019,WTeam,1.5,Prolike,Backlog grooming,Review,300,#N/A
+,,loubnielsen,5/1/2019,CCC,3.5,Prolike,"Backlog grooming, #27, hostmaster",OK,700,1155
+,,rhoeberg,5/1/2019,Prolike,2.0,Honeypot,Projekt koordinering,OK,270,0
+,,rhoeberg,5/1/2019,Prolike,4.5,Prolike,"spectator-be: #62, #63, #64",OK,900,0
+,,bentreadwell,5/1/2019,CCC,3.0,Prolike,Updated the Mockup for Copenhagen Coaching Center,OK,600,990
+,,bentreadwell,5/1/2019,CCC,3.0,Prolike,Updated the Mockup for Copenhagen Coaching Center,OK,600,990
+,,loubnielsen,5/2/2019,CCC,3.5,Prolike,"#23, #24, #27, #28, #30",OK,700,1155
+,,loubnielsen,5/2/2019,Prolike,2.5,Prolike,"Hjælp fra Power Bi community, Wteam tilbud",Review,500,0
+,Prolike,loubnielsen,5/3/2019,Ballroom fintess,1.5,Sale,Backloog Grooming,OK,202.5,0
+,,loubnielsen,5/3/2019,CCC,1.0,Prolike,#19,OK,200,330
+,,loubnielsen,5/3/2019,Erhvervshuset - Filesafe,2.5,Prolike,Power Bi with Filebeat,OK,500,935
+,,carolineolivia,5/3/2019,WTeam,5.0,Prolike,"#13, #24, #28, #26, #29",OK,1000,#N/A
+,,carolineolivia,5/2/2019,WTeam,5.0,Prolike,"#11, #10, #25, #12",OK,1000,#N/A
+,,carolineolivia,5/1/2019,WTeam,1.5,Prolike,"Backlog grooming, making issues, prepping",OK,300,#N/A
+,,carolineolivia,5/3/2019,CCC,3.0,Prolike,"Helping Marie with PC, and fixing Bianca's Onedrive",OK,600,990
+,,carolineolivia,5/3/2019,CCC,2.0,Prolike,Researching onedrive and outlook,OK,400,660
+,,bentreadwell,5/3/2019,CCC,5.0,Prolike,"Planned and decided elements of mockup with Marie, and improved on the mockup for Tuesdays meeting",OK,1000,1650
+,,loubnielsen,5/7/2019,CCC,1.0,Prolike,"Support, Sharepoint (#21, #31)",,200,330
+,,loubnielsen,5/7/2019,WTeam,1.0,Prolike,#34,,200,#N/A
+,,nexao,5/7/2019,Erhvervshuset - Filesafe,3.0,Prolike,Trying to create connection with filebeat to power bi,,600,1122
+,,nexao,5/7/2019,Erhvervshuset - Filesafe,2.0,Explore,Research on setting up filebeat with power bi,,135,0
+,,nexao,5/8/2019,Erhvervshuset - Filesafe,1.0,Prolike,Installing filebeat on the Hetzner server and setting up the filebeat.yml as much as possible,,200,374
+,,loubnielsen,5/8/2019,WTeam,1.5,Prolike,#36,,300,#N/A
+,,ansty93,5/9/2019,Erhvervshuset - Filesafe,3.5,Prolike,"Filebeat, logstash og PowerBI",,500,935
+,,loubnielsen,5/9/2019,WTeam,1.0,Prolike,#36,,200,#N/A
+,,loubnielsen,5/9/2019,Erhvervshuset - Filesafe,3.5,Explore,"Arbejdet sammen med Andreas på Filebeat, logstash og PowerBI",,168.75,0
+,,bentreadwell,5/7/2019,CCC,1.0,Prolike,"Meeting with Lars, Andreas, Mette and Marie about brand identity, and website design.",,200,330
+,,bentreadwell,5/9/2019,CCC,5.0,Prolike,Closed issue 32 and 35,,1000,1650

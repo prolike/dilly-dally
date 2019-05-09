@@ -19,6 +19,12 @@ function getDefaultCategories(discounts) {
     csv()
         .fromFile(defaultCategories)
         .then((defaultCategories) => {
+            defaultCategories.forEach(cat => {
+                console.log(cat)
+                console.log(formatCategory(cat))
+                var formattedCategory = formatCategory(cat)
+                firestoreHandler.setCategory(formattedCategory)
+            })
             startReg(discounts, defaultCategories)
         })
 }
@@ -32,15 +38,21 @@ function startReg(discounts, defaultCategories) {
             row.forEach(obj => {
                 var j = {}
                 j = format(obj, discounts, defaultCategories)
-                firestoreHandler.addReg(j)
-                firestoreHandler.addProject(j)
+                //firestoreHandler.addTimeregistration(j)
+                //firestoreHandler.setProject(j)
+                
+                //console.log(defaultCategories)
             })
         })
 }
 
-
+function formatCategory(category){
+    var formattedCategory = {"id": category.Categories, "categories" : {"price" : category.Price, "cost" : category.Cost}}
+    return formattedCategory
+}
 
 function format(row, legend, defaultCategories) {
+    //console.log(row,legend,defaultCategories)
     row["worker"] = { id: row.Worker + "@prolike.io" }
     var date = new Date(row['Date (work)'])
     var date2 = new Date(row['Date (work)'])

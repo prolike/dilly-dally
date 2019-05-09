@@ -9,7 +9,7 @@ admin.initializeApp(config);
 function getConfig() {
     // Staging
     var config = {
-        projectId: "prolike-stack",
+        projectId: "prolike-stack", //stage
     };
     try {
         if(functions.config().env.type === "production"){
@@ -47,6 +47,23 @@ exports.setProject = function(data) {
             .set(data.project)
             .then(function(doc) {
                 console.log("doc added")
+            })
+            .catch(function(error) {
+                console.error("Error", error);
+            });
+    })
+}
+
+exports.setCategory = function(data) {
+    // console.log(data)
+    return new Promise((resolve, reject) => {
+        var id = data.id
+        var categories = data.categories
+        admin.firestore().collection("categories")
+            .doc(id)
+            .set(categories)
+            .then(function(doc) {
+                console.log("category added")
             })
             .catch(function(error) {
                 console.error("Error", error);
