@@ -38,15 +38,20 @@
             <multiselect :show-labels="false" preselectFirst :options="statusOptions" placeholder="set a status" @input="setAction(data.item)" @select="setSelected" :value="data.item.status">
             </multiselect>
           </p>
+          <p v-if="!isAdmin">
+            {{data.item.status}}
+          </p>
         </template>
         <template slot="paidMonth" slot-scope="data">
           <p v-if="isAdmin">
-            <multiselect :show-labels="false" :options="paidMonths" preselectFirst :value="data.item.paidMonth" placeholder="set a paidMonth" @input="setPaidMonth" @search-change="setPaidMonth" @select= " option => setPaidAction(data.item, option)">
-              <template slot="noResult"  slot-scope="props">
+            <multiselect :show-labels="false" :options="paidMonths" preselectFirst :value="data.item.paidMonth" placeholder="set a paidMonth" @input="setPaidMonth" @search-change="setPaidMonth" @select=" option => setPaidAction(data.item, option)">
+              <template slot="noResult" slot-scope="props">
                 <button v-on:click="addPaidMonth">Add paid Month</button>
               </template>
-           
             </multiselect>
+          </p>
+          <p v-if="!isAdmin">
+            {{data.item.paidMonth}}
           </p>
         </template>
         <template slot="date" slot-scope="data">
@@ -217,7 +222,7 @@ export default {
     },
     uniquePaid: function() {
       var paid = _.compact(_.sortBy(_.uniq(_.map(this.timeRegistration, 'paidMonth'))))
-      Object.assign(this.paidMonths,paid)
+      Object.assign(this.paidMonths, paid)
       return paid
     },
     uniqueCustomer: function() {
