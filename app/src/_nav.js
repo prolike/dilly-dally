@@ -25,10 +25,12 @@ export default {
       url: '/home/project/add',
       icon: 'fa fa-plus'
     },
+    /*
     {
       name: 'Edit Project',
       url: '/home/project/edit',
       icon: 'fa fa-edit'
     }
+    */
   ]
 }
