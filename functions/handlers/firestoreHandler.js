@@ -9,7 +9,7 @@ admin.initializeApp(config);
 function getConfig() {
     // Staging
     var config = {
-        projectId: "prolike-stack-prod1", //stage
+        projectId: "prolike-stack", //stage
     };
     try {
         if(functions.config().env.type === "production"){

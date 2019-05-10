@@ -19,7 +19,7 @@
             </div>
             <div class="cell">
               <bue-field class="label" label="Start time">
-                <bue-clockpicker placeholder="Select or enter time" icon-pack="fa" icon="clock-o" hour-format="24" :readonly="false" v-model="form.startTime" :mobile-native="false">
+                <bue-clockpicker placeholder="Select or enter time" icon-pack="fa" icon="clock-o" hour-format="24" editable v-model="form.startTime" :mobile-native="false">
                   <button class="button is-primary" @click="form.startTime = new Date()">
                     <span>Now</span>
                   </button>
@@ -32,7 +32,7 @@
             </div>
             <div class="cell">
               <bue-field class="label" label="End time">
-                <bue-clockpicker placeholder="Select or enter time" icon-pack="fa" icon="clock-o" hour-format="24" :readonly="false" v-model="form.endTime" :mobile-native="false">
+                <bue-clockpicker placeholder="Select or enter time" icon-pack="fa" icon="clock-o" hour-format="24" editable v-model="form.endTime" :mobile-native="false">
                   <button class="button is-primary" @click="form.endTime = new Date()">
                     <span>Now</span>
                   </button>
