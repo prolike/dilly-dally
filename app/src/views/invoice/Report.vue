@@ -229,7 +229,13 @@ export default {
       return _.sortBy(_.uniq(_.map(this.timeRegistration, 'category.id')))
     },
     uniquePaid: function() {
-      var paid = _.compact(_.sortBy(_.uniq(_.map(this.timeRegistration, 'paidMonth'))))
+      var paid = _.sortBy(_.compact(_.sortBy(_.uniq(_.map(this.timeRegistration, 'paidMonth')))),function(elm){
+        var d = elm.split(" ")
+        var dateParsed = String(d[0]) + String(" 1, ") + String(d[1])
+        var date = new Date(Date.parse(dateParsed))
+        console.log(date)
+        return date
+      }).reverse()
       Object.assign(this.paidMonths, paid)
       return paid
     },
