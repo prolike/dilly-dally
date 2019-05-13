@@ -7,6 +7,7 @@
         <multiselect v-model="filters.workers" :options="uniqueWorkers" :multiple="true" placeholder="Pick a worker"></multiselect>
         <multiselect v-model="filters.category" :options="uniqueCategory" :multiple="true" placeholder="Pick a category"></multiselect>
         <multiselect v-model="filters.paidMonth" :options="uniquePaid" :multiple="true" placeholder="Pick a paid month"></multiselect>
+        <multiselect v-model="filters.invoiceNo" :options="uniqueInvoiceNo" :multiple="true" placeholder="Pick a invoiceNo"></multiselect>
         <multiselect v-model="filters.customer" :options="uniqueCustomer" :multiple="true" placeholder="Pick a customer"></multiselect>
         <multiselect v-model="filters.project" :options="uniqueProject" :multiple="true" placeholder="Pick a project"></multiselect>
         <bue-field>
@@ -110,6 +111,12 @@ export default {
           tdClass: null,
           thClass: null
         },
+        invoiceNo: {
+          label: 'Invoice',
+          sortable: true,
+          tdClass: null,
+          thClass: null
+        },
         category: {
           key: 'category.id',
           label: 'Category',
@@ -199,6 +206,7 @@ export default {
         project: [],
         dateFrom: undefined,
         dateTo: undefined,
+        invoiceNo: [],
         status: "",
         paidMonth: [],
         global: ""
@@ -230,6 +238,9 @@ export default {
     },
     uniqueProject: function() {
       return _.sortBy(_.uniq(_.map(this.timeRegistration, 'project.id')))
+    },
+    uniqueInvoiceNo: function() {
+      return _.sortBy(_.uniq(_.map(this.timeRegistration, 'invoiceNo')))
     },
     uniqueWorkers: function() {
       return _.sortBy(_.uniq(_.map(this.timeRegistration, 'worker.id')))
@@ -334,6 +345,17 @@ export default {
             return true
           } else {
             return this.filters[key].some(r => String(item["paidMonth"]).includes(r))
+          }
+          break;
+        case "invoiceNo":
+          if (this.filters["invoiceNo"].length === 0) {
+            return true
+          } else {
+            // return this.filters[key].some(r => String(item["invoiceNo"]).includes(r))
+            var f = _.some(this.filters[key], function(r) {
+              return String(r) ===  String(item["invoiceNo"]);
+            })
+            return f
           }
           break;
         case "status":
