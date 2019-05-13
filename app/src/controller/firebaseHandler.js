@@ -80,6 +80,7 @@ var firebaseHandler = new Vue({
   created() {
     console.log(this.env)
     this.initApp()
+    console.log(this.env)
   }
 })
 

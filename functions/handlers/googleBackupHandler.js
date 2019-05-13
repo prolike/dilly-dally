@@ -96,7 +96,7 @@ function format(row, legend, defaultCategories) {
     // console.log(categories)
     row["project"] = { id: row['Assignment'], customer: { name: row['Assignment'] }, "categories": categories }
     row["status"] = row["Status"]
-    //row["invoice"] = row["Invoice No"]
+    row["invoiceNo"] = row["Invoice No"][""]
     row["comment"] = row["Comment"]
     row["price"] = row["Price"]
     row["cost"] = row["Cost"]
