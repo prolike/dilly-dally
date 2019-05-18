@@ -32,6 +32,7 @@ exports.workers = functions.https.onRequest((request, response) => {
     }
 });
 
+exports.anyUpdate = require('./integrations/gratisal/trigger');
 
 /*
 

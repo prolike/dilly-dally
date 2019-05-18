@@ -20,7 +20,7 @@ var proxyFirestore = proxyquire('../handlers/firestoreHandler', {
 
 var proxyAPIandFirestore = proxyquire('../index', {
     './handlers/firestoreHandler.js': proxyFirestore
-});0
+});
 
 
 
@@ -43,7 +43,7 @@ describe('#### PROXYQUIRE TEST WITH API AND MOCK FIRESTORE ####', function() {
         var ref = mockfirestore.collection('workers')
         ref.doc("bob@prolike.io").set({
             name: 'bob'
-        });
+        }); //men hvor meget af det skal jeg bruge, er ikke helt sikker på hvad der er hvad
         console.log(ref._getData())
         let options = {
             method: 'GET'
