@@ -1,13 +1,74 @@
 var translator = require('../translator.js');
-var eventEmitter = require('events').EventEmitter;
-var proxyquire = require('proxyquire');
-var httpMocks = require('node-mocks-http');
 var sinon = require('sinon');
 var expect = require('chai').use(require('sinon-chai')).expect;
+const httpMocks = require('node-mocks-http');
+const eventEmitter = require('events').EventEmitter;
+const nock = require('nock')
+var request = require('request');
+
+
 
 
 describe('#### UNIT TEST ####', function() {
-    var data = {
+
+    beforeEach(function() {
+
+    });
+
+
+});
+
+
+describe('#### UNIT TEST WITH MOCK ####', function() {
+
+    var url = "https://api.gratisaltest.dk"
+    beforeEach(function() {
+
+    });
+
+    it('should send a post request and query for the token', function(done) {
+        //Mock server 
+        const scope = nock(url) //Api url
+            .post('/api/auth/login') //The url-path we are going to recieve HTTP request on
+            .reply(function(uri, requestBody) { // The reply function
+                //console.log('path:', this.req)
+                console.log('headers:', this.req.headers)
+                //console.log('headers:', requestBody)
+                var auth = this.req.headers.authorization.split(" ")
+                let buff = new Buffer(auth[1], 'base64');  
+                var decodedAuth = buff.toString("ascii")
+                console.log(decodedAuth)
+                var reply = {Token : "something"}
+                expect(auth[0]).to.equal("Basic")
+                expect(decodedAuth).to.include(":")
+                return reply
+            })
+        //.log(console.log)
+        translator.getToken();
+        done();
+    });
+
+    it('should send a post request and query for the token', function(done) {
+        //Mock server 
+        const scope = nock(url) //Api url
+            .post('/api/auth/login') //The url-path we are going to recieve HTTP request on
+            .reply(function(uri, requestBody) { // The reply function
+                //console.log('path:', this.req)
+                console.log('headers:', this.req.headers)
+                //console.log('headers:', requestBody)
+                var authBasic = this.req.headers.authorization.split(" ")
+                var reply = {Token : "something"}
+                expect(authBasic[0]).to.equal("Basic")
+                return reply
+            })
+        //.log(console.log)
+        translator.getToken();
+        done();
+    });
+
+});
+/*
+var data = {
         category: {
             cost: "0",
             id: "Master",
@@ -40,22 +101,8 @@ describe('#### UNIT TEST ####', function() {
         status: "OK",
         worker: { id: "lakruzz@prolike.io" }
     }
-    beforeEach(function() {
-
-    });
-
-    it('should parse data correctly', function() {
-        //var data = { displayName: "Test tester", email: "test@prolike.io", photoURL: "www.something.dk/asd.img" }
-        var expectedResult = 
-        var result = translator.parseData(data)
-        expect(expectedResult).to.equal(result)
-    });
 
 
-
-});
-
-/*
 {
     category: {
         cost: "0",
