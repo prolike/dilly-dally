@@ -28,35 +28,85 @@ exports.gratisalTimeentry = functions.https.onRequest((request, response) => {
     }
 });
 
-exports.parseData = function(data) {
-    return ""
+/*
+{
+    "UnitType": {
+        "Name": "Prolike",
+    },
+    "Status": {
+        "Name": "Åben",
+    },
+    "EmployeeName": "Andreas",
+    "UserEmploymentId": 3289,
+    "EntryDate": "2019-04-14T00:00:00",
+    "TimeEntryTypeId": 12217,
+    "UnitTypeId": 2,
+    "Description": "Working on gratisal - #125125125",
+    "SalaryPeriodId": 111
+}
+*/
+exports.parseData = function(employmentsOverview,timeEntryTypes,salaryPeriods,timeregistration) {
+
+    var employeeName = timeregistration.worker.fullName
+    var unitTypeName = timeregistration.category.id
+    var userEmploymentId = this.getUserEmployementIDbyFullName(employmentsOverview, employeeName)
+    var entryDate = this.formatDate(timeregistration.startTime)
+    var timeEntryType = this.getTimeEntryTypeByName(timeEntryTypes, unitTypeName)
+    var timeEntryTypeId = timeEntryType.TimeEntryTypeId
+    var unitTypeId = timeEntryType.UnitTypeId
+    var descriptoion = timeregistration.comment + timeregistration.issues
+    var currentDate = new Date(entryDate)
+    var salaryPeriod = this.getSalaryPeriodByDate(salaryPeriods, currentDate)
+    var salaryPeriodId = salaryPeriod.Id
+    var timeEntry = {
+        "UnitType": {
+            "Name": unitTypeName
+        },
+        "Status": {
+            "Name": "Åben"
+        },
+        "EmployeeName": employeeName,
+        "UserEmploymentId": userEmploymentId,
+        "EntryDate": entryDate,
+        "TimeEntryTypeId": timeEntryTypeId,
+        "UnitTypeId": unitTypeId,
+        "Description": descriptoion,
+        "SalaryPeriodId": salaryPeriodId
+    }
+    return timeEntry
 }
 
 
-exports.formatDate = function(timestamp){
-     var seconds = timestamp.seconds
-     var date = new Date(seconds*1000)
-     var formattedDate = date.toJSON().split(".")[0]
-     return formattedDate
+exports.formatDate = function(timestamp) {
+    var seconds = timestamp.seconds
+    var date = new Date(seconds * 1000)
+    var formattedDate = date.toJSON().split(".")[0]
+    return formattedDate
+}
+exports.formatDescription = function(comment, issues) {
+    var formattedDescription = ""
+    if(issues !== null && issues ){
+        
+    }    
+    return formattedDescription
 }
 
 exports.getDateObject = function(date) {
-   return new Date(date)
+    return new Date(date)
 }
 
 exports.isDateBetween = function(startDate, endDate, currentDate) {
-    if(startDate < currentDate && endDate > currentDate) return true
+    if (startDate < currentDate && endDate > currentDate) return true
     return false
 }
+
 
 exports.getSalaryPeriodByDate = function(salaryPeriods, currentDate) {
     var self = this
     var salaryPeriods = salaryPeriods.find(item => {
         var startDate = new Date(item.StartDate)
         var endDate = new Date(item.EndDate)
-        console.log(startDate)
-        console.log(endDate)
-        return self.isDateBetween(startDate,endDate,currentDate)
+        return self.isDateBetween(startDate, endDate, currentDate)
     })
     return salaryPeriods
 }
@@ -66,14 +116,11 @@ exports.getTimeEntryTypeByName = function(timeEntryTypes, name) {
     return timeEntryTypeObj
 }
 
-exports.getUserEmployementIDbyFullName = function(employmentsOverview, fullName) {
-    var obj = employmentsOverview.find(item => item.FullName === fullName)
+exports.getUserEmployementIDbyFullName = function(employmentsOverview, EmployeeName) {
+    var obj = employmentsOverview.find(item => item.FullName === EmployeeName)
     var UserEmploymentId = obj.UserEmploymentId
     return UserEmploymentId
 }
-
-
-
 
 exports.getToken = function() {
     return new Promise(function(resolve, reject) {
@@ -167,7 +214,6 @@ exports.getEmployments = function(token) {
 exports.getAllCategories = function() {
 
 }
-
 
 exports.postTimeEntry = function(token, data) {
     return new Promise(function(resolve, reject) {

@@ -1,7 +1,7 @@
 {
     "category": {
         "cost": "0",
-        "id": "Master",
+        "id": "Prolike",
         "price": "2100"
     },
     "comment": "M.A.R.S. strategi",
@@ -36,6 +36,7 @@
     },
     "status": "OK",
     "worker": {
-        "id": "lakruzz@prolike.io"
+        "id": "lakruzz@prolike.io",
+        "fullName": "Laura Hartig"
     }
 }

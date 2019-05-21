@@ -107,6 +107,29 @@ describe('#### UNIT TEST ####', function() {
         expect(expectedResultJson).to.equal(resultJson)
         done();
     });
+
+    it('parseData()', function(done) {
+        var expectedResult = {
+            UnitType: {
+                Name: 'Prolike'
+            },
+            Status: {
+                Name: 'Åben'
+            },
+            EmployeeName: 'Laura Hartig',
+            UserEmploymentId: 3293,
+            EntryDate: '2019-05-20T08:43:20',
+            TimeEntryTypeId: 12217,
+            UnitTypeId: 2,
+            Description: 'M.A.R.S. strateginull',
+            SalaryPeriodId: 111
+        }
+        var expectedResultJson = JSON.stringify(expectedResult)
+        var result = translator.parseData(employmentsOverview, timeEntryTypes, salaryPeriods, timeregistration1);
+        var resultJson = JSON.stringify(result)
+        expect(expectedResultJson).to.equal(resultJson)
+        done();
+    });
 });
 
 
@@ -195,18 +218,25 @@ describe('#### UNIT TEST WITH MOCK ####', function() {
         })
         done()
     });
-    /*it('should send a POST request and query for timeEntry', function(done) {
+
+    it('should send a POST request and query for timeEntry', function(done) {
         var token = "something"
         const scope = nock(url)
             .post('/api/timeentry')
             .reply(function(uri, requestBody) {
                 var reqToken = this.req.headers.authorization
-                var reply = employmentsOverview
+                var reply = salaryPeriods
                 var expectedToken = "Token " + token
-                expect(token).to.equal(reqToken)
+                expect(expectedToken).to.equal(reqToken)
                 return [200, reply]
             })
-        translator.postTimeEntry(token,data).should.eventually.equal(employmentsOverview).notify(done)
-    });*/
+        var expectedResult = JSON.stringify(salaryPeriods)
+        translator.getSalaryPeriods(token).then(result => {
+            var resultJson = JSON.stringify(result)
+            expect(expectedResult).to.equal(resultJson)
+        })
+        done()
+    });
+    
 
 });
