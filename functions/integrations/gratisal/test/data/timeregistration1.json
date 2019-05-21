@@ -6,7 +6,10 @@
     },
     "comment": "M.A.R.S. strategi",
     "cost": "0",
-    "endTime": "March 15, 2019 at 12:00:00 PM UTC+1",
+    "endTime": {
+        "seconds": 1558342800,
+        "nanoseconds": 0
+    },
     "issues": null,
     "paidMonth": "",
     "price": "6300",
@@ -27,7 +30,10 @@
             }
         }
     },
-    "startTime": "March 15, 2019 at 9:00:00 AM UTC+1",
+    "startTime": {
+        "seconds": 1558341800,
+        "nanoseconds": 0
+    },
     "status": "OK",
     "worker": {
         "id": "lakruzz@prolike.io"

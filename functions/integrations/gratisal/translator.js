@@ -40,12 +40,38 @@ exports.formatDate = function(timestamp){
      return formattedDate
 }
 
+exports.getDateObject = function(date) {
+   return new Date(date)
+}
+
+exports.isDateBetween = function(startDate, endDate, currentDate) {
+    if(startDate < currentDate && endDate > currentDate) return true
+    return false
+}
+
+exports.getSalaryPeriodByDate = function(salaryPeriods, currentDate) {
+    var self = this
+    var salaryPeriods = salaryPeriods.find(item => {
+        var startDate = new Date(item.StartDate)
+        var endDate = new Date(item.EndDate)
+        console.log(startDate)
+        console.log(endDate)
+        return self.isDateBetween(startDate,endDate,currentDate)
+    })
+    return salaryPeriods
+}
+
+exports.getTimeEntryTypeByName = function(timeEntryTypes, name) {
+    var timeEntryTypeObj = timeEntryTypes.find(item => item.Name === name)
+    return timeEntryTypeObj
+}
 
 exports.getUserEmployementIDbyFullName = function(employmentsOverview, fullName) {
     var obj = employmentsOverview.find(item => item.FullName === fullName)
     var UserEmploymentId = obj.UserEmploymentId
     return UserEmploymentId
 }
+
 
 
 
@@ -65,6 +91,49 @@ exports.getToken = function() {
                 var data = JSON.parse(body);
                 var token = data.Token
                 resolve(token)
+            } else {
+                reject(error)
+            }
+        }
+        req(options, callback);
+    })
+}
+exports.getTimeEntryTypes = function(token) {
+    return new Promise(function(resolve, reject) {
+        var options = {
+            method: 'GET',
+            url: URL + "/api/timeentrytypes",
+            headers: {
+                'Authorization': "Token " + token
+            }
+        };
+
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                var data = JSON.parse(body);
+                resolve(data)
+            } else {
+                reject(error)
+            }
+        }
+        req(options, callback);
+    })
+}
+
+exports.getSalaryPeriods = function(token) {
+    return new Promise(function(resolve, reject) {
+        var options = {
+            method: 'GET',
+            url: URL + "/api/salarybatches/periods/relevant",
+            headers: {
+                'Authorization': "Token " + token
+            }
+        };
+
+        function callback(error, response, body) {
+            if (!error && response.statusCode == 200) {
+                var data = JSON.parse(body);
+                resolve(data)
             } else {
                 reject(error)
             }

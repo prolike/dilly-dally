@@ -12,6 +12,8 @@ chai.should();
 
 let employmentsOverview = require('./data/employmentsOverview.json');
 let timeregistration1 = require('./data/timeregistration1.json');
+let timeEntryTypes = require('./data/timeEntryTypes.json');
+let salaryPeriods = require('./data/salaryPeriods.json');
 
 
 describe('#### UNIT TEST ####', function() {
@@ -36,6 +38,73 @@ describe('#### UNIT TEST ####', function() {
         var expectedResult = 3293
         var result = translator.getUserEmployementIDbyFullName(employmentsOverview, fullName);
         expect(expectedResult).to.equal(result)
+        done();
+    });
+
+    it('should return true - isBetween()', function(done) {
+        var startDate = new Date("2019-05-01T09:00:00")
+        var endDate = new Date("2019-05-30T12:00:00")
+        var currentDate = new Date("2019-05-20T12:00:00")
+        var expectedResult = true
+        var result = translator.isDateBetween(startDate, endDate, currentDate);
+        expect(expectedResult).to.equal(result)
+        done();
+    });
+
+    it('should return false - isBetween()', function(done) {
+        var startDate = new Date("2019-05-01T09:00:00")
+        var endDate = new Date("2019-05-30T12:00:00")
+        var currentDate = new Date("2019-02-20T12:00:00")
+        var expectedResult = false
+        var result = translator.isDateBetween(startDate, endDate, currentDate);
+        expect(expectedResult).to.equal(result)
+        done();
+    });
+
+    it('should find the SalaryPeriodObject from SalaryPeriods.json by currentDate', function(done) {
+        var currentDate = new Date()
+        var expectedResult = {
+            "SalaryCycle": null,
+            "Id": 111,
+            "StartDate": "2019-05-01T00:00:00",
+            "EndDate": "2019-05-31T00:00:00",
+            "SalaryCycleId": 0,
+            "SuggestedPayoutDate": "2019-05-31T00:00:00",
+            "FriendlyName": "Maj 2019 (Månedlig (standard))"
+        }
+        var result = translator.getSalaryPeriodByDate(salaryPeriods, currentDate);
+        var resultJson = JSON.stringify(result)
+        var expectedResultJson = JSON.stringify(expectedResult)
+        expect(expectedResultJson).to.equal(resultJson)
+        done();
+    });
+
+
+    it('should find the TimeEntryType from TimeEntryTypes by name', function(done) {
+        var name = "Prolike"
+        var expectedResult = {
+            IsVacation: false,
+            TimeEntryTypeId: 12217,
+            BaseTimeEntryTypeId: 3,
+            CompanyId: 214,
+            LanguageId: 1,
+            Name: 'Prolike',
+            Description: null,
+            DefaultPayslipText: 'Arbejde',
+            IsActive: true,
+            UnitTypeId: 2,
+            ExternalReference: null,
+            SortOrder: 18,
+            AllowEditUnitType: false,
+            IsIllness: false,
+            SalaryTypeId: 14882,
+            SalaryTypeName: 'Løn',
+            Identifier: 'Work'
+        }
+        var expectedResultJson = JSON.stringify(expectedResult)
+        var result = translator.getTimeEntryTypeByName(timeEntryTypes, name);
+        var resultJson = JSON.stringify(result)
+        expect(expectedResultJson).to.equal(resultJson)
         done();
     });
 });
@@ -81,9 +150,51 @@ describe('#### UNIT TEST WITH MOCK ####', function() {
                 expect(expectedToken).to.equal(reqToken)
                 return [200, reply]
             })
-        translator.getEmployments(token).should.eventually.equal(employmentsOverview).notify(done)
+        var expectedResult = JSON.stringify(employmentsOverview)
+        translator.getEmployments(token).then(result => {
+            var resultJson = JSON.stringify(result)
+            expect(expectedResult).to.equal(resultJson)
+        })
+        done()
     });
 
+    it('should send a GET request and query for the timeEntryTypes', function(done) {
+        var token = "something"
+        const scope = nock(url)
+            .get('/api/timeentrytypes')
+            .reply(function(uri, requestBody) {
+                var reqToken = this.req.headers.authorization
+                var reply = timeEntryTypes
+                var expectedToken = "Token " + token
+                expect(expectedToken).to.equal(reqToken)
+                return [200, reply]
+            })
+        var expectedResult = JSON.stringify(timeEntryTypes)
+        translator.getTimeEntryTypes(token).then(result => {
+            var resultJson = JSON.stringify(result)
+            expect(expectedResult).to.equal(resultJson)
+        })
+        done()
+    });
+
+    it('should send a GET request and query for the salaryPeriods', function(done) {
+        var token = "something"
+        const scope = nock(url)
+            .get('/api/salarybatches/periods/relevant')
+            .reply(function(uri, requestBody) {
+                var reqToken = this.req.headers.authorization
+                var reply = salaryPeriods
+                var expectedToken = "Token " + token
+                expect(expectedToken).to.equal(reqToken)
+                return [200, reply]
+            })
+        var expectedResult = JSON.stringify(salaryPeriods)
+        translator.getSalaryPeriods(token).then(result => {
+            var resultJson = JSON.stringify(result)
+            expect(expectedResult).to.equal(resultJson)
+        })
+        done()
+    });
     /*it('should send a POST request and query for timeEntry', function(done) {
         var token = "something"
         const scope = nock(url)
