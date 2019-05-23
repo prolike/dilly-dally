@@ -5,47 +5,24 @@ var username = "ansty93@prolike.io"
 var password = "Solve99GL"
 var URL = "https://api.gratisaltest.dk"
 
-exports.gratisalTimeentry = functions.https.onRequest((request, response) => {
-    if (request.method === "GET") {
-        var result = firestoreHandler.getWorkers();
-        result.then(msg => {
-            response.status(201)
-            response.statusMessage = "Success"
-            return response.send(msg)
-        })
-    }
-    if (request.method === "POST") {
-        var result = firestoreHandler.getWorkers();
-        result.then(msg => {
-            response.status(201)
-            response.statusMessage = "Success"
-            return response.send(msg)
-        })
-    } else {
-        response.status(400)
-        response.statusMessage = "Forbidden request method"
-        return response.send()
-    }
-});
 
-/*
-{
-    "UnitType": {
-        "Name": "Prolike",
-    },
-    "Status": {
-        "Name": "Åben",
-    },
-    "EmployeeName": "Andreas",
-    "UserEmploymentId": 3289,
-    "EntryDate": "2019-04-14T00:00:00",
-    "TimeEntryTypeId": 12217,
-    "UnitTypeId": 2,
-    "Description": "Working on gratisal - #125125125",
-    "SalaryPeriodId": 111
+
+exports.gratisalTimeentry = function(data) {
+    var token = this.getToken().then(validToken => {
+        var employmentsOverview = this.getEmployments(validToken)
+        var timeEntryTypes = this.getTimeEntryTypes(validToken)
+        var salaryPeriods = this.getSalaryPeriods(validToken)
+        Promise.all([employmentsOverview, timeEntryTypes, salaryPeriods]).then(result => {
+            console.log(result)
+            var parsedData = this.parseData(result[0], result[1], result[2], data)
+
+        })
+    })
+
+
 }
-*/
-exports.parseData = function(employmentsOverview,timeEntryTypes,salaryPeriods,timeregistration) {
+
+exports.parseData = function(employmentsOverview, timeEntryTypes, salaryPeriods, timeregistration) {
 
     var employeeName = timeregistration.worker.fullName
     var unitTypeName = timeregistration.category.id
@@ -85,9 +62,9 @@ exports.formatDate = function(timestamp) {
 }
 exports.formatDescription = function(comment, issues) {
     var formattedDescription = ""
-    if(issues !== null && issues ){
-        
-    }    
+    if (issues !== null && issues) {
+
+    }
     return formattedDescription
 }
 
@@ -219,7 +196,7 @@ exports.postTimeEntry = function(token, data) {
     return new Promise(function(resolve, reject) {
         var options = {
             method: 'POST',
-            url: URL + "/api/auth/login",
+            url: URL + "/api/timeentry",
             headers: {
                 'Authorization': "Token " + token
             }
@@ -227,9 +204,8 @@ exports.postTimeEntry = function(token, data) {
 
         function callback(error, response, body) {
             if (!error && response.statusCode == 200) {
-                var info = JSON.parse(body);
-                var token = info.Token
-                resolve(token)
+                var data = JSON.parse(body);
+                resolve(data)
             } else {
                 reject(error)
             }

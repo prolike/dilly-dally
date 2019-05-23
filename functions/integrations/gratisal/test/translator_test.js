@@ -14,6 +14,7 @@ let employmentsOverview = require('./data/employmentsOverview.json');
 let timeregistration1 = require('./data/timeregistration1.json');
 let timeEntryTypes = require('./data/timeEntryTypes.json');
 let salaryPeriods = require('./data/salaryPeriods.json');
+let timeEntryExample = require('./data/timeEntryExample.json');
 
 
 describe('#### UNIT TEST ####', function() {
@@ -21,6 +22,9 @@ describe('#### UNIT TEST ####', function() {
     beforeEach(function() {
 
     });
+
+
+
 
     it('should format the date correctly', function(done) {
         var timestamp = {
@@ -158,7 +162,7 @@ describe('#### UNIT TEST WITH MOCK ####', function() {
                 expect(decodedAuth).to.include(":")
                 return [200, reply]
             })
-            //.log(console.log)
+        //.log(console.log)
         translator.getToken().should.eventually.equal(token).notify(done)
     });
 
@@ -225,18 +229,75 @@ describe('#### UNIT TEST WITH MOCK ####', function() {
             .post('/api/timeentry')
             .reply(function(uri, requestBody) {
                 var reqToken = this.req.headers.authorization
-                var reply = salaryPeriods
+                var reply = timeEntryExample
                 var expectedToken = "Token " + token
                 expect(expectedToken).to.equal(reqToken)
                 return [200, reply]
             })
-        var expectedResult = JSON.stringify(salaryPeriods)
-        translator.getSalaryPeriods(token).then(result => {
+        var expectedResult = JSON.stringify(timeEntryExample)
+        translator.postTimeEntry(token).then(result => {
             var resultJson = JSON.stringify(result)
             expect(expectedResult).to.equal(resultJson)
         })
         done()
     });
-    
+
+    it('should send a POST request and query for timeEntry', function(done) {
+        var token = "something"
+        const scope = nock(url) //Api url
+            .post('/api/auth/login') //The url-path we are going to recieve HTTP request on
+            .reply(function(uri, requestBody) { // The reply function
+                var auth = this.req.headers.authorization.split(" ")
+                var buff = new Buffer.from(auth[1], 'base64');
+                var decodedAuth = buff.toString("ascii")
+                var reply = {
+                    Token: token
+                }
+                expect(auth[0]).to.equal("Basic")
+                expect(decodedAuth).to.include(":")
+                return [200, reply]
+            })
+        const scope2 = nock(url)
+            .get('/api/employments/overview')
+            .reply(function(uri, requestBody) {
+                var reqToken = this.req.headers.authorization
+                var reply = employmentsOverview
+                var expectedToken = "Token " + token
+                expect(expectedToken).to.equal(reqToken)
+                return [200, reply]
+            })
+        const scope3 = nock(url)
+            .get('/api/timeentrytypes')
+            .reply(function(uri, requestBody) {
+                var reqToken = this.req.headers.authorization
+                var reply = timeEntryTypes
+                var expectedToken = "Token " + token
+                expect(expectedToken).to.equal(reqToken)
+                return [200, reply]
+            })
+        const scope4 = nock(url)
+            .get('/api/salarybatches/periods/relevant')
+            .reply(function(uri, requestBody) {
+                var reqToken = this.req.headers.authorization
+                var reply = salaryPeriods
+                var expectedToken = "Token " + token
+                expect(expectedToken).to.equal(reqToken)
+                return [200, reply]
+            })
+        const scope5 = nock(url)
+            .post('/api/timeentry')
+            .reply(function(uri, requestBody) {
+                var reqToken = this.req.headers.authorization
+                var reply = timeEntryExample
+                var expectedToken = "Token " + token
+                expect(expectedToken).to.equal(reqToken)
+                return [200, reply]
+            })
+
+        //var expectedResult = JSON.stringify(timeEntryExample)
+        translator.gratisalTimeentry(timeregistration1)
+        done()
+    });
+
 
 });
