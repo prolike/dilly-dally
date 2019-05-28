@@ -1,6 +1,7 @@
 const functions = require('firebase-functions');
 const firestoreHandler = require('./handlers/firestoreHandler.js');
 const googleBackupHandler = require('./handlers/googleBackupHandler.js');
+const trigger = require('./integrations/gratisal/trigger.js');
 
 
 // Functions called from http API
@@ -32,8 +33,13 @@ exports.workers = functions.https.onRequest((request, response) => {
     }
 });
 
-exports.anyUpdate = require('./integrations/gratisal/trigger');
-exports.isStatusOk = require('./integrations/gratisal/trigger');
+exports.anyUpdate = functions.firestore
+    .document('timeregistration/{regId}')
+    .onUpdate((change) => {
+        trigger.anyUpdate(change) //Forwards the changedata to trigger.js
+    });
+
+//exports.isStatusOk = require('./integrations/gratisal/trigger');
 
 /*
 
