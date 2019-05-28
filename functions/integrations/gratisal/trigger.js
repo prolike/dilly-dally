@@ -5,15 +5,17 @@ module.exports = anyUpdate = functions.firestore
 .document('timeregistration/{regId}')
 .onUpdate((change) => {
     if (this.isStatusOk(change))
-    {
-        sendTimeReg(change.after.data);
+    {	
+        this.sendTimeReg(change.after.data());
     }
 });
 
-module.exports = isStatusOk = function(change) {
+
+// Jeg skal teste, og jeg skal vist gøre det fra
+exports.isStatusOk = function(change) {
     const data = change.after.data();
     const prevData = change.before.data();
-    console.log(prevData, data);
+    //console.log(prevData, data);
     if(data.status != "OK") return false;
     return true;
 }
@@ -21,3 +23,6 @@ module.exports = isStatusOk = function(change) {
 exports.sendTimeReg = function(data) {
     parse.gratisalTimeentry(data);    
 }
+
+
+
