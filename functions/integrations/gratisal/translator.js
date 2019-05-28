@@ -7,23 +7,20 @@ var URL = "https://api.gratisaltest.dk"
 
 
 
-exports.gratisalTimeentry = function(data) {
+exports.gratisalTimeentry = function(timeregistration) {
     var token = this.getToken().then(validToken => {
         var employmentsOverview = this.getEmployments(validToken)
         var timeEntryTypes = this.getTimeEntryTypes(validToken)
-        var salaryPeriods = this.getSalaryPeriods(validToken)
-        Promise.all([employmentsOverview, timeEntryTypes, salaryPeriods]).then(result => {
-            console.log(result)
-            var parsedData = this.parseData(result[0], result[1], result[2], data)
-
-        })
+        //var salaryPeriods = this.getSalaryPeriods(validToken) //Not needed
+        Promise.all([employmentsOverview, timeEntryTypes]).then(result => {
+            var parsedData = this.parseData(result[0], result[1], timeregistration)
+            })
     })
 
 
 }
 
-exports.parseData = function(employmentsOverview, timeEntryTypes, salaryPeriods, timeregistration) {
-
+exports.parseData = function(employmentsOverview, timeEntryTypes, timeregistration) {
     var employeeName = timeregistration.worker.fullName
     var unitTypeName = timeregistration.category.id
     var userEmploymentId = this.getUserEmployementIDbyFullName(employmentsOverview, employeeName)
@@ -33,8 +30,8 @@ exports.parseData = function(employmentsOverview, timeEntryTypes, salaryPeriods,
     var unitTypeId = timeEntryType.UnitTypeId
     var descriptoion = timeregistration.comment + timeregistration.issues
     var currentDate = new Date(entryDate)
-    var salaryPeriod = this.getSalaryPeriodByDate(salaryPeriods, currentDate)
-    var salaryPeriodId = salaryPeriod.Id
+    //var salaryPeriod = this.getSalaryPeriodByDate(salaryPeriods, currentDate)
+    //var salaryPeriodId = salaryPeriod.Id
     var timeEntry = {
         "UnitType": {
             "Name": unitTypeName
@@ -48,7 +45,6 @@ exports.parseData = function(employmentsOverview, timeEntryTypes, salaryPeriods,
         "TimeEntryTypeId": timeEntryTypeId,
         "UnitTypeId": unitTypeId,
         "Description": descriptoion,
-        "SalaryPeriodId": salaryPeriodId
     }
     return timeEntry
 }

@@ -125,11 +125,10 @@ describe('#### UNIT TEST ####', function() {
             EntryDate: '2019-05-20T08:43:20',
             TimeEntryTypeId: 12217,
             UnitTypeId: 2,
-            Description: 'M.A.R.S. strateginull',
-            SalaryPeriodId: 111
+            Description: 'M.A.R.S. strateginull'
         }
         var expectedResultJson = JSON.stringify(expectedResult)
-        var result = translator.parseData(employmentsOverview, timeEntryTypes, salaryPeriods, timeregistration1);
+        var result = translator.parseData(employmentsOverview, timeEntryTypes, timeregistration1);
         var resultJson = JSON.stringify(result)
         expect(expectedResultJson).to.equal(resultJson)
         done();
@@ -275,6 +274,7 @@ describe('#### UNIT TEST WITH MOCK ####', function() {
                 expect(expectedToken).to.equal(reqToken)
                 return [200, reply]
             })
+        /*
         const scope4 = nock(url)
             .get('/api/salarybatches/periods/relevant')
             .reply(function(uri, requestBody) {
@@ -284,6 +284,7 @@ describe('#### UNIT TEST WITH MOCK ####', function() {
                 expect(expectedToken).to.equal(reqToken)
                 return [200, reply]
             })
+            */
         const scope5 = nock(url)
             .post('/api/timeentry')
             .reply(function(uri, requestBody) {
