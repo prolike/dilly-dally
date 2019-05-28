@@ -34,10 +34,9 @@
         "seconds": 1558341800,
         "nanoseconds": 0
     },
-    "status": "OK",
+    "status": "",
     "worker": {
         "id": "lakruzz@prolike.io",
         "fullName": "Laura Hartig"
     }
 }
-

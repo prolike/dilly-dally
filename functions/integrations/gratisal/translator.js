@@ -7,17 +7,18 @@ var URL = "https://api.gratisaltest.dk"
 
 
 
-exports.gratisalTimeentry = function(timeregistration) {
-    var token = this.getToken().then(validToken => {
-        var employmentsOverview = this.getEmployments(validToken)
-        var timeEntryTypes = this.getTimeEntryTypes(validToken)
-        //var salaryPeriods = this.getSalaryPeriods(validToken) //Not needed
-        Promise.all([employmentsOverview, timeEntryTypes]).then(result => {
-            var parsedData = this.parseData(result[0], result[1], timeregistration)
-            })
-    })
+exports.gratisalTimeentry = async function(timeregistration) {
+    var validToken = await this.getToken()
+    
+    var employmentsOverview = await this.getEmployments(validToken)
 
+    var timeEntryTypes = await this.getTimeEntryTypes(validToken)
+    //var salaryPeriods = this.getSalaryPeriods(validToken) //Not needed
+    var parsedData = this.parseData(employmentsOverview, timeEntryTypes, timeregistration)
 
+    var result = await this.postTimeEntry(validToken, parsedData)
+
+    return result
 }
 
 exports.parseData = function(employmentsOverview, timeEntryTypes, timeregistration) {
@@ -95,7 +96,7 @@ exports.getUserEmployementIDbyFullName = function(employmentsOverview, EmployeeN
     return UserEmploymentId
 }
 
-exports.getToken = function() {
+exports.getToken = async function() {
     return new Promise(function(resolve, reject) {
         auth = "Basic " + new Buffer.from(username + ":" + password).toString("base64");
         var options = {
@@ -118,7 +119,7 @@ exports.getToken = function() {
         req(options, callback);
     })
 }
-exports.getTimeEntryTypes = function(token) {
+exports.getTimeEntryTypes = async function(token) {
     return new Promise(function(resolve, reject) {
         var options = {
             method: 'GET',
@@ -140,7 +141,7 @@ exports.getTimeEntryTypes = function(token) {
     })
 }
 
-exports.getSalaryPeriods = function(token) {
+exports.getSalaryPeriods = async function(token) {
     return new Promise(function(resolve, reject) {
         var options = {
             method: 'GET',
@@ -162,7 +163,7 @@ exports.getSalaryPeriods = function(token) {
     })
 }
 
-exports.getEmployments = function(token) {
+exports.getEmployments = async function(token) {
     return new Promise(function(resolve, reject) {
         var options = {
             method: 'GET',
@@ -188,21 +189,26 @@ exports.getAllCategories = function() {
 
 }
 
-exports.postTimeEntry = function(token, data) {
+exports.postTimeEntry =  async function(token, data) {
     return new Promise(function(resolve, reject) {
         var options = {
             method: 'POST',
             url: URL + "/api/timeentry",
             headers: {
                 'Authorization': "Token " + token
-            }
+            },
+            json: true,
+            body: data
         };
 
         function callback(error, response, body) {
+            console.log(body)
             if (!error && response.statusCode == 200) {
                 var data = JSON.parse(body);
+                console.log("TIMEENTRY POSTED SUCCESSED")
                 resolve(data)
             } else {
+                console.log(response)
                 reject(error)
             }
         }

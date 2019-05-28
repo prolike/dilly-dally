@@ -140,7 +140,6 @@ describe('#### UNIT TEST WITH MOCK ####', function() {
 
     var url = "https://api.gratisaltest.dk"
 
-
     beforeEach(function() {
 
     });
@@ -296,9 +295,67 @@ describe('#### UNIT TEST WITH MOCK ####', function() {
             })
 
         //var expectedResult = JSON.stringify(timeEntryExample)
-        translator.gratisalTimeentry(timeregistration1)
+        translator.gratisalTimeentry(timeregistration1).then(result => {
+            console.log(result)
+        })
         done()
     });
+});
+
+
+
+describe('#### UNIT TEST WITHOUT MOCK ####', function() {
+
+    var url = "https://api.gratisaltest.dk"
+    var token = ""
+    beforeEach(async function() {
+      
+    });
+    /*
+        it('should send a GET request and query for the employments overview', function(done) {
+            const scope = nock(url, { allowUnmocked: true })
+                .get('?')
+                .reply(function(uri, requestBody) {
+                    return [200, "OK"]
+                })
+            var expectedResult = JSON.stringify(employmentsOverview)
+            translator.getEmployments(token).then(result => {
+                var resultJson = JSON.stringify(result)
+                //console.log(result)
+                //expect(result).to.equal(resultJson)
+            })
+            done()
+        });
+        it('should send a GET request and query for the timeEntryTypes', function(done) {
+            //var token = "something"
+            const scope = nock(url, { allowUnmocked: true })
+                .get('?')
+                .reply(function(uri, requestBody) {
+                    return [200, "OK"]
+                })
+            //var expectedResult = JSON.stringify(timeEntryTypes)
+            translator.getTimeEntryTypes(token).then(result => {
+                var resultJson = JSON.stringify(result)
+                //console.log(resultJson)
+            })
+            done()
+        });
+    */
+    it('should send a GET request and query for the timeEntryTypes', function(done) {
+        //var token = "something"
+        const scope = nock(url, { allowUnmocked: true })
+            .get('?')
+            .reply(function(uri, requestBody) {
+                return [200, "OK"]
+            })
+        //var expectedResult = JSON.stringify(timeEntryTypes)
+        translator.gratisalTimeentry(timeregistration1).then(result => {
+            console.log(result)
+        })
+        done()
+    });
+
+
 
 
 });
