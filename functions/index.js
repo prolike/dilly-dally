@@ -33,6 +33,7 @@ exports.workers = functions.https.onRequest((request, response) => {
 });
 
 exports.anyUpdate = require('./integrations/gratisal/trigger');
+exports.isStatusOk = require('./integrations/gratisal/trigger');
 
 /*
 
