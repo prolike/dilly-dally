@@ -17,7 +17,3 @@ exports.isStatusOk = function(change) {
 exports.sendTimeReg = function(data) {
     parse.gratisalTimeentry(data);
 }
-exports.hello = function() {
-
-	console.log("hello")
-}
