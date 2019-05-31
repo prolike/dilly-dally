@@ -9,7 +9,7 @@ var URL = "https://api.gratisaltest.dk"
 
 exports.gratisalTimeentry = async function(timeregistration) {
     var validToken = await this.getToken()
-    
+
     var employmentsOverview = await this.getEmployments(validToken)
 
     var timeEntryTypes = await this.getTimeEntryTypes(validToken)
@@ -23,8 +23,9 @@ exports.gratisalTimeentry = async function(timeregistration) {
 
 exports.parseData = function(employmentsOverview, timeEntryTypes, timeregistration) {
     var employeeName = timeregistration.worker.fullName
+    var employeeEmail = timeregistration.worker.id
     var unitTypeName = timeregistration.category.id
-    var userEmploymentId = this.getUserEmployementIDbyFullName(employmentsOverview, employeeName)
+    var userEmploymentId = this.getUserEmployementIDbyEmail(employmentsOverview, employeeEmail)
     var entryDate = this.formatDate(timeregistration.startTime)
     var timeEntryType = this.getTimeEntryTypeByName(timeEntryTypes, unitTypeName)
     var timeEntryTypeId = timeEntryType.TimeEntryTypeId
@@ -90,8 +91,14 @@ exports.getTimeEntryTypeByName = function(timeEntryTypes, name) {
     return timeEntryTypeObj
 }
 
-exports.getUserEmployementIDbyFullName = function(employmentsOverview, EmployeeName) {
-    var obj = employmentsOverview.find(item => item.FullName === EmployeeName)
+exports.getUserEmployementIDbyFullName = function(employmentsOverview, employeeName) {
+    var obj = employmentsOverview.find(item => item.FullName === employeeName)
+    var UserEmploymentId = obj.UserEmploymentId
+    return UserEmploymentId
+}
+
+exports.getUserEmployementIDbyEmail = function(employmentsOverview, employeeEmail) {
+    var obj = employmentsOverview.find(item => item.CompanyEmail === employeeEmail)
     var UserEmploymentId = obj.UserEmploymentId
     return UserEmploymentId
 }
@@ -189,7 +196,7 @@ exports.getAllCategories = function() {
 
 }
 
-exports.postTimeEntry =  async function(token, data) {
+exports.postTimeEntry = async function(token, data) {
     return new Promise(function(resolve, reject) {
         var options = {
             method: 'POST',
@@ -202,7 +209,6 @@ exports.postTimeEntry =  async function(token, data) {
         };
 
         function callback(error, response, body) {
-            console.log(body)
             if (!error && response.statusCode == 200) {
                 var data = JSON.parse(body);
                 console.log("TIMEENTRY POSTED SUCCESSED")
@@ -214,4 +220,9 @@ exports.postTimeEntry =  async function(token, data) {
         }
         req(options, callback);
     })
+}
+
+
+exports.apiCall = function(options, callback) {
+    req(options, callback);
 }

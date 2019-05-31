@@ -7,7 +7,6 @@ exports.anyUpdate = function(change) { //Getting data from database
 }
 // jeg har en fungerende eksemple her
 exports.isStatusOk = function(change) {
-    console.log(change)
     const data = change.after.data();
     const prevData = change.before.data();
     //console.log(prevData, data);
