@@ -35,7 +35,7 @@ describe('#### INTEGRATION TEST WITH MOCK ####', function() {
         const scope = nock(url,{ allowUnmocked: true }) //Api url
             .post('/api/auth/login') //The url-path we are going to recieve HTTP request on
             .reply(function(uri, requestBody) { // The reply function
-                var auth = this.req.headers.authorization.split(" ")
+                v{ allowUnmocked: true }ar auth = this.req.headers.authorization.split(" ")
                 var buff = new Buffer.from(auth[1], 'base64');
                 var decodedAuth = buff.toString("ascii")
                 var reply = {

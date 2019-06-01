@@ -9,19 +9,13 @@ var URL = "https://api.gratisaltest.dk"
 
 exports.gratisalTimeentry = async function(timeregistration) {
     var validToken = await this.getToken()
-
     var employmentsOverview = await this.getEmployments(validToken)
-
     var timeEntryTypes = await this.getTimeEntryTypes(validToken)
-    //var salaryPeriods = this.getSalaryPeriods(validToken) //Not needed
-    var parsedData = this.parseData(employmentsOverview, timeEntryTypes, timeregistration)
-
-    var result = await this.postTimeEntry(validToken, parsedData)
-
-    return result
+    var formattedTimeEntry = this.formatTimeEntry(employmentsOverview, timeEntryTypes, timeregistration)
+    var result = await this.postTimeEntry(validToken, formattedTimeEntry)
 }
 
-exports.parseData = function(employmentsOverview, timeEntryTypes, timeregistration) {
+exports.formatTimeEntry = function(employmentsOverview, timeEntryTypes, timeregistration) {
     var employeeName = timeregistration.worker.fullName
     var employeeEmail = timeregistration.worker.id
     var unitTypeName = timeregistration.category.id
@@ -192,9 +186,6 @@ exports.getEmployments = async function(token) {
     })
 }
 
-exports.getAllCategories = function() {
-
-}
 
 exports.postTimeEntry = async function(token, data) {
     return new Promise(function(resolve, reject) {
@@ -220,9 +211,4 @@ exports.postTimeEntry = async function(token, data) {
         }
         req(options, callback);
     })
-}
-
-
-exports.apiCall = function(options, callback) {
-    req(options, callback);
 }

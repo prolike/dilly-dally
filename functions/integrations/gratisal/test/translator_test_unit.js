@@ -100,7 +100,7 @@ describe('#### UNIT TEST ####', function() {
         done();
     });
 
-    it('parseData()', function(done) {
+    it('formatTimeEntry()', function(done) {
         var expectedResult = {
             UnitType: {
                 Name: 'Prolike'
@@ -116,7 +116,7 @@ describe('#### UNIT TEST ####', function() {
             Description: 'M.A.R.S. strateginull'
         }
         var expectedResultJson = JSON.stringify(expectedResult)
-        var result = translator.parseData(employmentsOverview, timeEntryTypes, timeregistration1);
+        var result = translator.formatTimeEntry(employmentsOverview, timeEntryTypes, timeregistration1);
         var resultJson = JSON.stringify(result)
         expect(expectedResultJson).to.equal(resultJson)
         done();
